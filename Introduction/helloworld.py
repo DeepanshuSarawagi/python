@@ -1,1 +1,5 @@
 print('Hello, World!')
+print(1 +7)
+print(100 * 2.5)
+print()
+print("The End!")
