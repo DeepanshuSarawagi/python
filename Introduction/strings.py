@@ -11,3 +11,7 @@ print('This is string' + ' concatenation')
 greeting = "Hello"
 name = "Deepanshu!"
 print(greeting + ' ' + name)
+# We can also get the variables as input.
+
+name1 = input("Please enter your name: ")
+print(greeting + ' ' + name1)
