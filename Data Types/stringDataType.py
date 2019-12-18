@@ -11,3 +11,10 @@ print(parrot[3])
 print(parrot[-4])
 print(parrot[-5])
 print(parrot[-6])
+
+print(50 * "=")
+# Slicing the string
+
+print(parrot[0:6])
+
+# In this example we have asked python to slice the string from index 0 upto and not including index 6.
