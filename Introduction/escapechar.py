@@ -21,5 +21,9 @@ split over
 several 
 lines."""
 print(anotherSplitString)
-
+# Below example shows how to escape the backslash character. In this example, consider we need a backslash character in
+# the output then we need to tell python to escape it. We can get that done in two ways.
+print("C:\\Users\deepanshusarawagi\\notes.txt")
+# We can create a raw string by adding the letter "r" in front of the string.
+print(r"C:\Users\deepanshusarawagi\notes.txt")
 
