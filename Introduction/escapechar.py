@@ -13,3 +13,13 @@ print('The pet shop owner said, "No, No \'e \'s... uh, He\'s resting." ')
 # We can also use the triple quotes like this which will not require us to use the backslash.
 print("""The pet shop owner said, "No, No 'e 's... uh, He's resting". """)
 
+# Another way of splitting strings is using the triple quotes. Python recognizes that string has not ended until it
+# finds the closing triple quotes.
+
+anotherSplitString = """This string has been 
+split over
+several 
+lines."""
+print(anotherSplitString)
+
+
