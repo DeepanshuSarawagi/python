@@ -32,3 +32,14 @@ print(parrot[10:])
 # Below example will slice the entire string because we have not provided the start and end value.
 
 print(parrot[:])
+
+# Negative indexing to slice a string
+
+print(parrot[-4:-2])
+
+# Or you can the get the same output using the below code.
+
+print(parrot[-4:12])
+
+# since the positive index value of l is same as negative index value when calculated.
+# One important thing to note is that we cannot slice a string backwards
