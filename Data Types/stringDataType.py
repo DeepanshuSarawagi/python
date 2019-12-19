@@ -66,3 +66,13 @@ print(backwards)
 
 Backwards = letters[25::-1]
 print(Backwards)
+
+# Challenge1
+print(letters[16:13:-1])
+
+# Challenge2
+print(letters[4::-1])
+
+# Challenge3
+
+print(letters[25:17:-1])
