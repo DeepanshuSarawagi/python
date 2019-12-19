@@ -43,3 +43,13 @@ print(parrot[-4:12])
 
 # since the positive index value of l is same as negative index value when calculated.
 # One important thing to note is that we cannot slice a string backwards
+
+# Using a step in a slice. We can use the step in slicing. Let`s see an example to understand how step is used in
+# slicing.
+
+print(parrot[0:6:2])  # Here, slice starts from index 0 and extends upto index value 6 (not including 6 and every 2nd
+                      # index value is omitted.
+# Norwegian Blue
+# 01234567890123
+# hence output of print(parrot[0:6:2]) is Nre
+print(parrot[0:14:3])
