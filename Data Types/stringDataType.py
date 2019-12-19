@@ -53,3 +53,16 @@ print(parrot[0:6:2])  # Here, slice starts from index 0 and extends upto index v
 # 01234567890123
 # hence output of print(parrot[0:6:2]) is Nre
 print(parrot[0:14:3])
+
+# Negative step in slicing
+
+letters = "abcdefghijklmnopqrstuvwxyz"
+backwards = letters[25:0:-1]
+
+# when we print backwards, it will print the letters in backwards excluding a because index stop value is till index 0
+# and not including that
+
+print(backwards)
+
+Backwards = letters[25::-1]
+print(Backwards)
