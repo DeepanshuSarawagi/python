@@ -76,3 +76,12 @@ print(letters[4::-1])
 # Challenge3
 
 print(letters[25:17:-1])
+
+# print(letters[::-1]) is a python idiom which prints the string backwards
+
+print(letters[::-1])
+
+# Some more python idioms used in slicing
+
+print(letters[-1:])  # this will print the last letter in the sequence
+print(letters[:1])  # this will print the first letter in the sequence
