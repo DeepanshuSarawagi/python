@@ -34,5 +34,15 @@ print("The value of pi is approximately {0:62.50f}".format(22 / 7))
 print("The value of pi is approximately {0:<72.50f}".format(22 / 7))
 print("The value of pi is approximately {0:<72.54f}".format(22 / 7))
 
+print()
 # As you can compare the output after executing the code in line 34 and 35, python is able to get the value of pi upto
 # 51 places after the decimal point (precision value)
+
+# We are going to learn about f-strings.
+# we can also calculate the value of Pi and then using print function display the result. This time we wont use
+# .format() method in the print function.
+
+Pi = (22 / 7)
+print(f"The value of Pi is approximately {Pi:12.50f}")
+
+# Remember that f-strings will not work for python 3.6 and earlier.
