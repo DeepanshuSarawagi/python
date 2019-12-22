@@ -4,3 +4,10 @@ name = input("Please enter your name: ")
 # variable.
 age = int(input("How old are you, {0}? ".format(name)))
 print(age)
+
+# Simple if..else program
+
+if age >= 18:
+    print("You are eligible to cast your vote, {}.".format(name))
+else:
+    print("Please come back after {} years, {}".format(18 - age, name))
