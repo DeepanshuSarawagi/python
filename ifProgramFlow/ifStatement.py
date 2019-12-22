@@ -15,18 +15,33 @@ else:
 print()
 
 guess = int(input("Please guess a number between 1 to 10: "))
-if guess < 5:
-    print("Please guess a higher number")
-    guess = int(input())
-    if guess == 5:
-        print("Well done, you guessed it correctly")
+# if guess < 5:
+#     print("Please guess a higher number")
+#     guess = int(input())
+#     if guess == 5:
+#         print("Well done, you guessed it correctly")
+#     else:
+#         print("Sorry you got it wrong this time")
+# elif guess > 5:
+#     print("Please guess a lower number")
+#     guess = int(input())
+#     if guess == 5:
+#         print("Well done, you guessed it correctly")
+#     else:
+#         print("Sorry you got it wrong this time")
+# else:
+#     print("Well done, you got it right first time")
+
+# The above block of code can be simplified like below avoiding the repetition.
+
+if guess != 5:
+    if guess < 5:
+        print("Please guess a higher number")
     else:
-        print("Sorry you got it wrong this time")
-elif guess > 5:
-    print("Please guess a lower number")
+        print("Please guess a lower number")
     guess = int(input())
     if guess == 5:
-        print("Well done, you guessed it correctly")
+        print("Well done, you guessed it right")
     else:
         print("Sorry you got it wrong this time")
 else:
