@@ -14,3 +14,10 @@ for item in meal:
         break
 # In the above example, when we use a break statement in loop, if item matches spam in the "meal" list, the for loop
 # breaks and stops executing further. This is a basic difference between continue and break.
+
+# Coding exercise on using break
+
+for i in range (0, 100, 7):
+    print(i)
+    if i > 0 and (i % 11) == 0:
+        break
