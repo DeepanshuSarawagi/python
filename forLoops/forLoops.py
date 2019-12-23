@@ -31,3 +31,15 @@ for i in range(1, 16):
     for j in range(1, 11):
         print("{0:2} times {1:2} is {2:3}".format(i, j, i*j))
     print(50*"=")
+
+# A simple program to extract capitals
+
+quote = """
+Alright, but apart from the Sanitation, the Medicine, Education, Wine,
+Public Order, Irrigation, Roads, the Fresh-Water System,
+and Public Health, what have the Romans ever done for us?
+"""
+
+for i in range(0, len(quote)):
+    if quote[i] in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        print(quote[i], end="\t")
