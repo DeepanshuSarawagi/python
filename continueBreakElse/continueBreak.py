@@ -12,3 +12,5 @@ for item in meal:
     if item == "spam":
         print("Can`t I have a meal without {}".format(item))
         break
+# In the above example, when we use a break statement in loop, if item matches spam in the "meal" list, the for loop
+# breaks and stops executing further. This is a basic difference between continue and break.
