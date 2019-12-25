@@ -33,3 +33,15 @@ print(greeting)
 
 greeting *= 5
 print(greeting)
+
+# Coding exercise
+
+number = 5
+multiplier = 8
+answer = 0
+
+# add your loop after this comment
+for i in range(answer, multiplier):
+    answer += number
+
+print(answer)

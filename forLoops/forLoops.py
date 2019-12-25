@@ -43,3 +43,21 @@ and Public Health, what have the Romans ever done for us?
 for i in range(0, len(quote)):
     if quote[i] in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
         print(quote[i], end="\t")
+print()
+
+# Coding challenge on Udemy. Write a program so that it calculates the no. of segments and each segment length of
+# Ip address
+
+ipAddress = input("Please enter a IP address: ")
+segment = 1
+segment_len = 0
+
+for char in ipAddress:
+    if char == ".":
+        print("Segment {} has {} characters".format(segment, segment_len))
+        segment += 1
+        segment_len = 0
+    else:
+        segment_len += 1
+if char != ".":
+    print("Segment {} has {} characters".format(segment, segment_len))
