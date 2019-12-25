@@ -72,9 +72,16 @@ segment = 1
 segment_len = 0
 
 for char in ipAddress:
+    if segment > 4:
+        print("IP address should not contain more than 4 segments. Please enter a valid IP address")
+        break
     if char == ".":
         print("Segment {} has {} characters".format(segment, segment_len))
         segment += 1
         segment_len = 0
     else:
         segment_len += 1
+        if segment_len > 3:
+            print("Segment {} has more than 3 characters which is not a valid IP address.".format(segment))
+            print("Please enter a valid IP address.")
+            break
