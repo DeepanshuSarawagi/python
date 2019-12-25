@@ -85,3 +85,11 @@ print(letters[::-1])
 
 print(letters[-1:])  # this will print the last letter in the sequence
 print(letters[:1])  # this will print the first letter in the sequence
+
+print(parrot[:6])
+print(parrot[6:])
+print(parrot[:6] + "\t" + parrot[6:])
+
+greeting = "Good "
+greeting += "Morning"
+print(greeting)
