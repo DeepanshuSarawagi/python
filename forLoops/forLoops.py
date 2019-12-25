@@ -1,4 +1,4 @@
-for i in range(1,20):
+for i in range(1, 20):
     print(f"i is now {i}.")
 
 number = "9,223,456,865,207,590,007"
@@ -29,8 +29,8 @@ for a in range(0, 100, 5):
 print()
 for i in range(1, 16):
     for j in range(1, 11):
-        print("{0:2} times {1:2} is {2:3}".format(i, j, i*j))
-    print(50*"=")
+        print("{0:2} times {1:2} is {2:3}".format(i, j, i * j))
+    print(50 * "=")
 
 # A simple program to extract capitals
 
@@ -48,7 +48,26 @@ print()
 # Coding challenge on Udemy. Write a program so that it calculates the no. of segments and each segment length of
 # Ip address
 
-ipAddress = input("Please enter a IP address: ")
+# ipAddress = input("Please enter a IP address: ")
+# segment = 1
+# segment_len = 0
+#
+# for char in ipAddress:
+#     if char == ".":
+#         print("Segment {} has {} characters".format(segment, segment_len))
+#         segment += 1
+#         segment_len = 0
+#     else:
+#         segment_len += 1
+# if char != ".":
+#     print("Segment {} has {} characters".format(segment, segment_len))
+# There is a better way of doing this. We can add a period; "." at the end of the Ip address this way we dont have to
+# check for the last if condition.
+
+ipAddress = input("Enter an IP address: ")
+if ipAddress[-1] != ".":
+    ipAddress += "."
+
 segment = 1
 segment_len = 0
 
@@ -59,5 +78,3 @@ for char in ipAddress:
         segment_len = 0
     else:
         segment_len += 1
-if char != ".":
-    print("Segment {} has {} characters".format(segment, segment_len))
