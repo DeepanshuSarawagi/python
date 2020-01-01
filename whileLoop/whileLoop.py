@@ -10,5 +10,8 @@ available_exit =["east", "west", "south"]
 chosen_exit = ""
 while chosen_exit not in available_exit:
     chosen_exit = input("Please enter a direction: ")
-
-print("Glad that you got out of here")
+    if chosen_exit == "quit":
+        print("Game over")
+        break
+else:
+    print("Glad that you got out of here")
