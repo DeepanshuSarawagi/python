@@ -28,3 +28,16 @@ print(next(my_iterator))
 """Basically you get the same output when you execute the for loop. The for loop actually creates an iterator object 
 and executes the next() method for each loop"""
 
+# Iterator challenge. Create a list of items and then create a iterator using the iter() function
+# Use a for loop to loop n times where n is the number of items in your list.
+# Each time round the loop, use next() on your list to print the next time.
+
+print()
+
+myList = ["This", "is", "an", "iterator", "challenge"]
+myIter = iter(myList)
+
+for items in range(0, len(myList)):
+    print(next(myIter))
+
+
