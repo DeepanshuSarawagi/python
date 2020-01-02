@@ -20,3 +20,11 @@ odd = [1, 3, 5, 7, 9]
 numbers = even + odd
 numbers.sort()
 print(numbers)
+
+print(list("The lists are equal"))  # Python will automatically create a list and print the list of characters.
+print()
+even = [2, 4, 6, 8]
+another_even = even
+another_even.sort(reverse=True)
+print(even)
+
