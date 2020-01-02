@@ -39,3 +39,26 @@ for number_set in numbers:
     print(number_set)  # this will print the list members
     for value in number_set:
         print(value)  # this will print the members of the individual lists.
+
+# Lists challenge
+
+menu = []
+menu.append(["egg", "spam", "bacon"])
+menu.append(["egg", "sausage", "bacon"])
+menu.append(["egg", "spam"])
+menu.append(["egg", "bacon", "spam"])
+menu.append(["egg", "bacon", "sausage", "spam"])
+menu.append(["spam", "bacon", "sausage", "spam"])
+menu.append(["spam", "egg", "spam", "spam", "bacon", "spam"])
+menu.append(["spam", "egg", "sausage", "spam"])
+print()
+print(menu)
+
+# write a program in such a way that it finds a meal without spam and then prints out each individual ingredients of the
+# meal
+print()
+
+for meal in menu:
+    if "spam" not in meal:
+        for ingredients in meal:
+            print(ingredients)
