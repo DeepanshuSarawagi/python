@@ -25,4 +25,6 @@ print(next(my_iterator))
 print(next(my_iterator))
 print(next(my_iterator))
 
-"""Basically you get the same output when you execute the for loop."""
+"""Basically you get the same output when you execute the for loop. The for loop actually creates an iterator object 
+and executes the next() method for each loop"""
+
