@@ -28,3 +28,7 @@ another_even = even
 another_even.sort(reverse=True)
 print(even)
 
+print()
+
+numbers = [even, odd]
+print(numbers)  # This will return a list containing two lists.
