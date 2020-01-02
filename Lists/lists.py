@@ -32,3 +32,10 @@ print()
 
 numbers = [even, odd]
 print(numbers)  # This will return a list containing two lists.
+
+print()
+
+for number_set in numbers:
+    print(number_set)  # this will print the list members
+    for value in number_set:
+        print(value)  # this will print the members of the individual lists.
