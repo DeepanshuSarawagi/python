@@ -73,3 +73,17 @@ for i in range(99, 0, -2):
 print("=" * 50)
 backString = "egaugnal lufrewop yrev a si nohtyp"
 print(backString[::-1])
+
+print("=" * 50)
+o = range(0, 100, 4)
+print(o)
+p = o[::-5]
+print(p)
+for i in p:
+    print(i)
+
+print("=" * 50)
+print(list(range(0, 100)[::-2]))
+print(range(0, 100)[::-2])
+print(list(range(0, 100, 2)[::-2]))
+print(range(0, 100, 2)[::-2])
