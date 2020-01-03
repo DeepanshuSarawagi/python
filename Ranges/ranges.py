@@ -51,3 +51,25 @@ for i in range(3, 40, 3):
 
 print()
 print(myRange == range(3, 40, 3))
+
+print("=" * 50)
+
+print(range(0, 5, 2) == range(0, 6, 2))
+
+"""Even though the value of ranges are different, we get the output as True because python compares the list of values 
+in the range and not the range itself. Lets try to print the list of both the ranges to understand"""
+print(list(range(0, 5, 2)))
+print(list(range(0, 6, 2)))
+
+"""Similarly lets try to see what happens when we print the below line."""
+print("=" * 50)
+print(range(0, 100)[::-2] == range(99, 0, -2))
+for i in range(0, 100)[::-2]:
+    print(i)
+print("=" * 50)
+for i in range(99, 0, -2):
+    print(i)
+"""First for loop in the above example shows a simple way to process the range in reverse order."""
+print("=" * 50)
+backString = "egaugnal lufrewop yrev a si nohtyp"
+print(backString[::-1])
