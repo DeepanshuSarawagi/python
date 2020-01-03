@@ -20,3 +20,14 @@ print(myString[4])
 largeNumber = range(1, 10000000, 3)
 print(largeNumber)
 print(largeNumber[5550])
+
+print()
+
+fives = range(5, 100000, 5)
+print(fives[2455])
+print()
+
+x = int(input("Please enter a number less than 100000: "))
+if x in fives:
+    print(f"{x} is divisible by fives")
+    print(f"Index of {x} is {fives.index(x)}")
