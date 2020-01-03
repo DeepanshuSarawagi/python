@@ -31,3 +31,19 @@ print(metallica2)
 
 """As you can see from line 26 to 30, we created a list called metallica2 and changed the first item in the list and
 it worked, however, changing the items in a tuple is not possible since they are immutable."""
+
+"""However, there is a work around if we want to change the contents of the tuple. Lets try to understand the below 
+code."""
+
+imelda = "More Mayhem", "Emilda May", 2011
+print(imelda)
+"""Good thing about tuples is that they support indexing hence we can something like to change the imelda[1] from 
+"Emilda May" to "Imelda May"""
+print()
+imelda = imelda[0], "Imelda May", imelda[2]
+print(imelda)
+
+"""There are two important concepts here to understand that tuples are immutable but that doesn`t mean that your 
+variable can't be assigned new objects of that type. We have assigned new object to the variable imelda to correct the 
+typo from "Emilda" to "Imelda". We just assigned new objects to that variable."""
+
