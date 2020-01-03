@@ -31,3 +31,23 @@ x = int(input("Please enter a number less than 100000: "))
 if x in fives:
     print(f"{x} is divisible by fives")
     print(f"Index of {x} is {fives.index(x)}")
+else:
+    print(f"{x} is not found in the range")
+
+print()
+
+decimals = range(0, 100)
+print(decimals)
+
+print()
+myRange = decimals[3:40:3]
+print(myRange)
+print()
+for i in myRange:
+    print(i)
+print()
+for i in range(3, 40, 3):
+    print(i)
+
+print()
+print(myRange == range(3, 40, 3))
