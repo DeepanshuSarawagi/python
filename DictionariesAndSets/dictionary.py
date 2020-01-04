@@ -38,7 +38,7 @@ its value. Let's print fruits to confirm it."""
 
 print(fruits)
 
-"""We can also retreive the values using the keys in the dictionaries by using the below while loop."""
+"""We can also retrieve the values using the keys in the dictionaries by using the below while loop."""
 # while True:
 #     dictKey = input("Please enter a fruit name: ")
 #     if dictKey == "quit":
@@ -67,7 +67,7 @@ for snack in fruits:
     print(snack, fruits[snack])
 print()
 
-"""Whenever we retreive a key value pair in dictionary, the value of key changes. To understand more, run the below
+"""Whenever we retrieve a key value pair in dictionary, the value of key changes. To understand more, run the below
 code and see that the order is getting changed."""
 for i in range(10):
     for snack in fruits:
@@ -75,7 +75,14 @@ for i in range(10):
     print("=" * 50)
 
 print()
-ordered_keys = list(fruits.keys())
-ordered_keys.sort()
+# ordered_keys = list(fruits.keys())
+# ordered_keys.sort()
+ordered_keys = sorted(list(fruits.keys()))
 for f in ordered_keys:
+    print(f + " - " + fruits[f])
+
+"""reduced line of code for sorting the keys in alphabetical order"""
+print()
+
+for f in sorted(fruits.keys()):
     print(f + " - " + fruits[f])
