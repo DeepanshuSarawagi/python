@@ -21,3 +21,12 @@ bike = {"make": "Bajaj",
 print(bike)
 print(bike["year"])
 print(bike["model"])
+
+"""We can also add a key: pair value to dictionary like below."""
+fruits["Pear"] = "An odd shaped green apple"
+print(fruits)
+print()
+"""When we assign a new value to the already existing key in the dictionary, we end up replacing the value rather than
+creating new entry. Let's below example to understand more."""
+fruits["Pear"] = "Great with Tequila"
+print(fruits)
