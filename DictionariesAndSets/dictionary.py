@@ -60,3 +60,8 @@ while True:
         break
     description = fruits.get(dictKey, "We don't have a " + dictKey)
     print(description)
+
+"""we can also print just the corresponding values of the individual keys in the dictionary by using a for loop"""
+
+for snack in fruits:
+    print(snack, fruits[snack])
