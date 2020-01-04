@@ -49,8 +49,18 @@ typo from "Emilda" to "Imelda". We just assigned new objects to that variable.""
 
 """We can also unpack tuples like this."""
 
-song, artist, year = imelda
-print(song)
+# # song, artist, year = imelda
+# print(song)
+# print(artist)
+# print(year)
+imelda = imelda[0], imelda[1], imelda[2], (1, "Pulling the rug"), (2, "Psycho"), (3, "Mayhem"), (4, "Kentish Town "
+                                                                                                     "Waltz")
+print(imelda)
+title, artist, year, track1, track2, track3, track4 = imelda
+print(title)
 print(artist)
 print(year)
-
+print(track1)
+print(track1)
+print(track3)
+print(track4)
