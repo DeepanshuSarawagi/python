@@ -65,3 +65,17 @@ while True:
 
 for snack in fruits:
     print(snack, fruits[snack])
+print()
+
+"""Whenever we retreive a key value pair in dictionary, the value of key changes. To understand more, run the below
+code and see that the order is getting changed."""
+for i in range(10):
+    for snack in fruits:
+        print(snack + " is " + fruits[snack])
+    print("=" * 50)
+
+print()
+ordered_keys = list(fruits.keys())
+ordered_keys.sort()
+for f in ordered_keys:
+    print(f + " - " + fruits[f])
