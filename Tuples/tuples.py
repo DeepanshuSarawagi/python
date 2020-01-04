@@ -47,3 +47,10 @@ print(imelda)
 variable can't be assigned new objects of that type. We have assigned new object to the variable imelda to correct the 
 typo from "Emilda" to "Imelda". We just assigned new objects to that variable."""
 
+"""We can also unpack tuples like this."""
+
+song, artist, year = imelda
+print(song)
+print(artist)
+print(year)
+
