@@ -1,4 +1,4 @@
-fruits = {"orange": "A sweet citrus food. Good for skin",
+fruits = {"Orange": "A sweet citrus food. Good for skin",
           "Apple": "A sweet fruit, largely grown in Kashmir, India.",
           "Lime": "A sour green citrus fruit",
           "Lemon": "A sour yellow citrus fruit",
@@ -37,3 +37,11 @@ del fruits["Pear"]
 its value. Let's print fruits to confirm it."""
 
 print(fruits)
+
+"""We can also retreive the values using the keys in the dictionaries by using the below while loop."""
+while True:
+    dictKey = input("Please enter a fruit name: ")
+    if dictKey == "quit":
+        break
+    description = fruits.get(dictKey)
+    print(description)
