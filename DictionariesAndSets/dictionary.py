@@ -86,3 +86,13 @@ print()
 
 for f in sorted(fruits.keys()):
     print(f + " - " + fruits[f])
+
+print("=" * 50)
+fruit_keys = fruits.keys()
+print(fruit_keys)
+
+print("=" * 50)
+fruits["Tomato"] = "A fruit but normally eaten as a salad"
+print(fruit_keys)
+print("=" * 50)
+print(fruits)
