@@ -30,3 +30,10 @@ print()
 creating new entry. Let's below example to understand more."""
 fruits["Pear"] = "Great with Tequila"
 print(fruits)
+
+"""We can also delete a key: value pair in dictionary using del in Python."""
+del fruits["Pear"]
+"""In the above code on line 35, we have issued a del command to the dictionary asking it to delete Key "Pear" and 
+its value. Let's print fruits to confirm it."""
+
+print(fruits)
