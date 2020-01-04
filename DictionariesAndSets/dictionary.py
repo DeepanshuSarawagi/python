@@ -39,15 +39,24 @@ its value. Let's print fruits to confirm it."""
 print(fruits)
 
 """We can also retreive the values using the keys in the dictionaries by using the below while loop."""
+# while True:
+#     dictKey = input("Please enter a fruit name: ")
+#     if dictKey == "quit":
+#         break
+#     if dictKey == "":
+#         print("Fruit Name cannot be empty")
+#         dictKey = input("Please enter a fruit name: ")
+#     if dictKey in fruits:
+#         description = fruits.get(dictKey)
+#         print(description)
+#     else:
+#         print(f"We don't have {dictKey}")
+
+"""We have commented out above code to retreive the key:value pairs from dictionary by using an alternative way."""
+
 while True:
     dictKey = input("Please enter a fruit name: ")
     if dictKey == "quit":
         break
-    if dictKey == "":
-        print("Fruit Name cannot be empty")
-        dictKey = input("Please enter a fruit name: ")
-    if dictKey in fruits:
-        description = fruits.get(dictKey)
-        print(description)
-    else:
-        print(f"We don't have {dictKey}")
+    description = fruits.get(dictKey, "We don't have a " + dictKey)
+    print(description)
