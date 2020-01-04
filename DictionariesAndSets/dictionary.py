@@ -43,6 +43,9 @@ while True:
     dictKey = input("Please enter a fruit name: ")
     if dictKey == "quit":
         break
+    if dictKey == "":
+        print("Fruit Name cannot be empty")
+        break
     if dictKey in fruits:
         description = fruits.get(dictKey)
         print(description)
