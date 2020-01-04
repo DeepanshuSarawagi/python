@@ -77,3 +77,27 @@ print()
 for track in tracks:
     title, song = track
     print(f"Title No. {title}, Track Name: {song}")
+
+"""Although tuples are immutable but what happens when we create a tuple which contains a mutable objects such as lists.
+Lets get to below code and see."""
+
+coldplay = ("Everyday Life", "Chris Martin", 2019, ([(1, "Sunrise"), (2, "Church"), (3, "Trouble in Town"), (4, "Orpahns")]))
+
+album, artist, year, tracks = coldplay
+print(coldplay)
+coldplay[3].append((5, "Everyday Life"))
+print()
+print(coldplay)
+
+"""As you can we have a created a tuple object called coldplay which contains a mutable object called tracks.
+The list tracks has several songs of the album. On line 88, we appended a new song in the album thereby changing the 
+track list. Hence, a mutable object list can be changed inside immutable object tuple."""
+
+print(album)
+print(artist)
+print(year)
+tracks.append((6, "Old Friends"))
+for song in tracks:
+    trackNo, trackName = song
+    print("\t" "Track No. {} and Track name is {}".format(trackNo, trackName))
+"""We also unpacked the tuple in line 86 and then again in line 99, we appended one more item in the list tracks"""
