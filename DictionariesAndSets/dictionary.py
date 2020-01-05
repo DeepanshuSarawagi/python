@@ -96,3 +96,11 @@ fruits["Tomato"] = "A fruit but normally eaten as a salad"
 print(fruit_keys)
 print("=" * 50)
 print(fruits)
+print("=" * 50)
+print(fruits.items())
+f_tuple = tuple(fruits.items())
+print(f_tuple)
+print()
+for i in f_tuple:
+    name, description = i
+    print(name + " - " + description)
