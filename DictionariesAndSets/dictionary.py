@@ -104,3 +104,9 @@ print()
 for i in f_tuple:
     name, description = i
     print(name + " - " + description)
+
+"""We will learn how to use join() mnethod on the immutable objects such as string."""
+print()
+myList = ["a", "b", "c", "d"]
+newString = ", ".join(myList)
+print(newString)
