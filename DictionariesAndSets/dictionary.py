@@ -110,3 +110,7 @@ print()
 myList = ["a", "b", "c", "d"]
 newString = ", ".join(myList)
 print(newString)
+
+letters = "abcdefghijklmnopqrstuvwxyz"
+newLetters = ", ".join(letters)
+print(newLetters)
