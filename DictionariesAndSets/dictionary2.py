@@ -16,16 +16,16 @@ exits = [{"Q": 0},
 
 loc = 1
 while True:
-    availableExits = ""
-    for direction in exits[loc].keys():
-        print(direction)
-        availableExits += direction + ", "
+    availableExits = ", ".join(exits[loc].keys())
+    # for direction in exits[loc].keys():
+    #     print(direction)
+    #     availableExits += direction + ", "
     print(locations[loc])
 
     if loc == 0:
         break
 
-    chosenDirection = input("Available exits are: " + availableExits).upper()
+    chosenDirection = input("Available exits are " + availableExits + ": ").upper()
     if chosenDirection in exits[loc]:
         loc = exits[loc][chosenDirection]
         print(loc)
