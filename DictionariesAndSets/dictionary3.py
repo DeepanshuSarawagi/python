@@ -12,10 +12,11 @@ vegetables = {"cabbage": {1: "Good for health"},
 print(vegetables["carrot"][2])  # Extracting the value from dictionary within dictionary
 
 
-veg = {"cabbage": "Good for health. Mostly preferred in salads",
-       "carrot": "Very good for eyes. Rich in Vitamin A",
-       "spinach": "High proteins. Good for hair and eyes",
-       "broccoli": "Very high proteins."}
+veg = {"Cabbage": "Good for health. Mostly preferred in salads",
+       "Carrot": "Very good for eyes. Rich in Vitamin A",
+       "Spinach": "High proteins. Good for hair and eyes",
+       "Broccoli": "Very high proteins."}
+
 print(veg)
 print()
 veg.update(fruits)  # We have updated the dictionary veg by adding fruits dictionary in it.
@@ -23,4 +24,12 @@ print()
 print(veg)
 
 print(fruits["Orange"].split())
+print()
 
+nice_veg = fruits.copy()  # Creating a new dictionary by copying fruits dictionary in it
+nice_veg.update(veg)      # Updating the newly created dictionary by adding another dictionary "veg" in it
+print(nice_veg)
+print()
+
+for f in sorted(nice_veg.keys()):
+    print(f + " - " + nice_veg[f])
