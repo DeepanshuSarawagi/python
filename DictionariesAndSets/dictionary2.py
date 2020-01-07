@@ -70,8 +70,9 @@ while True:
     chosenDirection = input("Available exits are " + availableExits + ": ").upper()
     # We are going to create a for loop to check if the user input is in vocabulary
     if len(chosenDirection) > 1:
-        for word in vocabulary:
-            if word in chosenDirection:
+        words = chosenDirection.split()
+        for word in words:
+            if word in vocabulary:
                 chosenDirection = vocabulary[word]
 
     if chosenDirection in exits[loc]:
