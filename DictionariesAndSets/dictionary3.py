@@ -7,8 +7,20 @@ print(fruits)
 print(fruits.keys())
 print(fruits["Lemon"])
 
-veg = {"cabbage": {1: "Good for health"},
-       "carrot": {2: "Good for eye"}}
-print(veg["carrot"][2])  # Extracting the value from dictionary within dictionary
+vegetables = {"cabbage": {1: "Good for health"},
+              "carrot": {2: "Good for eye"}}
+print(vegetables["carrot"][2])  # Extracting the value from dictionary within dictionary
 
+
+veg = {"cabbage": "Good for health. Mostly preferred in salads",
+       "carrot": "Very good for eyes. Rich in Vitamin A",
+       "spinach": "High proteins. Good for hair and eyes",
+       "broccoli": "Very high proteins."}
+print(veg)
+print()
+veg.update(fruits)  # We have updated the dictionary veg by adding fruits dictionary in it.
+print()
+print(veg)
+
+print(fruits["Orange"].split())
 
