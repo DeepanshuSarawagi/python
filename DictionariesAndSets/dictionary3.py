@@ -47,11 +47,17 @@ locations = {0: "You are sitting in front of the computer learning Python",
 # Now we will create a list of dictionaries for available exits.
 
 exits = {0: {"Q": 0},
-         1: {"W": 2, "2": 2, "E": 3, "3": 3, "N": 5, "5": 5, "S": 4, "4": 4, "Q": 0},
-         2: {"N": 5, "5": 5, "Q": 0},
-         3: {"W": 1, "1": 1, "Q": 0},
-         4: {"N": 1, "1": 1, "W": 2, "2": 2, "Q": 0},
-         5: {"W": 2, "2": 2, "S": 1, "1": 1, "Q": 0}}
+         1: {"W": 2, "E": 3, "N": 5, "S": 4, "Q": 0},
+         2: {"N": 5, "Q": 0},
+         3: {"W": 1, "Q": 0},
+         4: {"N": 1, "W": 2, "Q": 0},
+         5: {"W": 2, "S": 1, "Q": 0}}
+
+namedExits = {1: {"2": 2, "3": 3, "5": 5, "4": 4},
+              2: {"5": 5},
+              3: {"1": 1},
+              4: {"1": 1, "2": 2},
+              5: {"2": 2, "1": 1}}
 
 vocabulary = {"QUIT": "Q",
               "NORTH": "N",
@@ -74,8 +80,12 @@ while True:
 
     if loc == 0:
         break
+    else:
+        allExits = exits[loc].copy()
+        allExits.update(namedExits[loc])
 
     chosenDirection = input("Available exits are " + availableExits + ": ").upper()
+
     # We are going to create a for loop to check if the user input is in vocabulary
     if len(chosenDirection) > 1:
         words = chosenDirection.split()
@@ -83,8 +93,8 @@ while True:
             if word in vocabulary:
                 chosenDirection = vocabulary[word]
 
-    if chosenDirection in exits[loc]:
-        loc = exits[loc][chosenDirection]
+    if chosenDirection in allExits:
+        loc = allExits[chosenDirection]
         print(loc)
     else:
         print("You cannot go in that direction")
