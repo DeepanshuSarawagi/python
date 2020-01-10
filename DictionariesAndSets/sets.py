@@ -17,3 +17,13 @@ for animal in wild_animals:
 wild_animals = sorted(wild_animals)  # we can also sort a set and it will return the list of sorted items in it
 print("=" * 50)
 print(wild_animals)
+
+"""It is also easy to add an item in the set by using the add() method."""
+farm_animals.add("buffalo")
+"""Since I sorted wild_animals, I cannot use the add method now. Hence, first we need to convert the sorted list of 
+wild_animals to set."""
+wild_animals = set(wild_animals)
+wild_animals.add("horse")
+print("=" * 50)
+print(farm_animals)
+print(wild_animals)
