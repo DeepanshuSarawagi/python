@@ -27,3 +27,21 @@ wild_animals.add("horse")
 print("=" * 50)
 print(farm_animals)
 print(wild_animals)
+
+"""Notice the warning on line 11, when you hover over the warning it says, ""Function call can be replaced with set 
+literal. Sometimes, we need to define the set function when we want to create an empty set. Because empty curly braces
+would create a dictionary and not a set. Refer to below code for illutration."""
+
+empty_set = set()
+empty_set2 = {}
+empty_set.add("6")
+#empty_set2.add("6")
+"""Notice on line 38 that add method is not available since it is an empty dictionary and not a set.
+(Uncomment the code on line 38 to understand more)"""
+print(empty_set)
+"""We can use any iterable object such as lists, tuples or ranges to create a set"""
+even = set(range(0, 40, 2))
+print(even)
+even_tuple = (2, 4, 6, 8, 10)
+even_set = set(even_tuple)
+print(even_set)
