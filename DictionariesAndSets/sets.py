@@ -45,3 +45,21 @@ print(even)
 even_tuple = (2, 4, 6, 8, 10)
 even_set = set(even_tuple)
 print(even_set)
+print("=" * 50)
+"""We can also perform operations like union, intersection, subset and superset on any object which is a set data 
+type. Union operation on two sets can be performed using the union() method"""
+odd = set(range(1, 40, 2))
+print(odd)
+print(len(odd))
+squares_tuple = (1, 4, 9, 36)
+squares = set(squares_tuple)
+print(squares)
+print(len(squares))
+print(odd.union(squares))
+print(len(odd.union(squares)))
+"""Intersection method can be performed using the intersection() method or we can use the & symbol and python will 
+recognise it as intersection because it is a built-in type"""
+print(odd.intersection(squares))
+print("=" * 50)
+print(odd & squares)
+"""When you print line 63 and 64, you will get the same output"""
