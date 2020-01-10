@@ -72,3 +72,13 @@ print(odd - squares)
 print("squares minus odd")
 print(squares.difference(odd))
 print(squares - odd)
+print("=" * 50)
+print(odd)
+"""We can also perform the difference_update() method on the sets. When we do setA.difference_update(setB), python 
+updates setA by removing the common items between setA and setB. As you can see, we performed a difference operation on 
+odd and then printed set odd on line 76. Now we will perform difference_update() operation on "odd" set and then print
+it. Look at the below example to understand more."""
+odd.difference_update(squares)
+print(odd)
+"""As you can see on line 82, it has permanently removed the items "1" and "9" from the set "odd" since we performed
+difference_update operation as per code on line 81."""
