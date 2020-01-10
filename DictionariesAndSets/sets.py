@@ -63,3 +63,12 @@ print(odd.intersection(squares))
 print("=" * 50)
 print(odd & squares)
 """When you print line 63 and 64, you will get the same output"""
+
+"""We can also perform the difference operation on sets. When you do print(setA.difference(setB)), it will remove the 
+common items between setA and setB and print rest of the items in setA"""
+print("odd minus squares")
+print(odd.difference(squares))
+print(odd - squares)
+print("squares minus odd")
+print(squares.difference(odd))
+print(squares - odd)
