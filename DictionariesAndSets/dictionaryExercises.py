@@ -31,3 +31,23 @@ dict2 = {3: 30,
 dict3 = dict1.copy()
 dict3.update(dict2)
 print("This solution is for Exercise 3: ", dict3)
+
+# Solution proposed by someone else is as follows.
+dict4 = {}
+
+for d in (dict1, dict2):
+    dict4.update(d)
+print(dict4)
+
+# Exercise 4: Write a Python script to check if a given key already exists in a dictionary.
+dict1 = {"a": "value1",
+         "b": "value2",
+         "c": "value3",
+         "d": "value4",
+         "e": "value5"}
+dict1_keys = sorted(dict1.keys())
+new_key = input("Enter a key to update the dictionary: ")
+if new_key in dict1_keys:
+    print(f"The following key {new_key} is already present in the dictionary")
+else:
+    print("This is a new key")
