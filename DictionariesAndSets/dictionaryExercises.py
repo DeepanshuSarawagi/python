@@ -59,3 +59,18 @@ squares = {}
 for i in range(1, 11):
     squares.update({i: i*i})
 print(squares)
+
+# Exercise 6: Create nested dictionaries inside a dictionary
+
+welcome = {1: "Welcome",
+           2: "to",
+           3: {"a": "to", "b": "the", "c": "world", "d": "of", "e": "Python"}}
+print(welcome.keys())
+print(welcome[3].keys())
+print(welcome[3]["e"])
+print(welcome)
+
+# Write a program to check if the key is in a dictionary
+
+print(1 in welcome.keys())  # This returns True since key "1" is in dictionary "Python"
+
