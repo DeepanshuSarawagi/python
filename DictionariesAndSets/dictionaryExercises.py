@@ -22,3 +22,12 @@ multiples_of_tens = {1: 10,
 print(multiples_of_tens)
 multiples_of_tens[5] = 50
 print(multiples_of_tens)
+
+# Exercise 3: Write a Python script to concatenate following dictionaries to create a new one.
+dict1 = {1: 10,
+         2: 20}
+dict2 = {3: 30,
+         4: 40}
+dict3 = dict1.copy()
+dict3.update(dict2)
+print("This solution is for Exercise 3: ", dict3)
