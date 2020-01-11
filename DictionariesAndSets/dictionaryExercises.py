@@ -74,3 +74,19 @@ print(welcome)
 
 print(1 in welcome.keys())  # This returns True since key "1" is in dictionary "Python"
 
+# Exercise 7: Write a python program to map two lists into dictionary
+
+keys = ["red", "green", "blue"]
+codes = ["#FF0000","#008000", "#0000FF"]
+color_codes = dict(zip(keys, codes))
+print(color_codes)
+
+# Exercise 8: Write a python program to print the maximum and values of a dictionary.
+
+values = {"a": 1245,
+          "b": 4598,
+          "c": 9654,
+          "d": 284}
+sorted_values = sorted(values.values(), reverse=True)
+n = len(sorted_values)
+print(f"Minimum value in dictionary values is {sorted_values[n-1]} and Maximum value is {sorted_values[0]}")
