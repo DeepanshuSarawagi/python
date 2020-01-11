@@ -51,3 +51,11 @@ if new_key in dict1_keys:
     print(f"The following key {new_key} is already present in the dictionary")
 else:
     print("This is a new key")
+
+# Exercise 5: Write a Python script to generate and print a dictionary that contains a number (between 1 and n)
+# in the form (x, x*x).
+
+squares = {}
+for i in range(1, 11):
+    squares.update({i: i*i})
+print(squares)
