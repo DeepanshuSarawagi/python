@@ -57,7 +57,7 @@ print(squares)
 print(len(squares))
 print(odd.union(squares))
 print(len(odd.union(squares)))
-"""Intersection method can be performed using the intersection() method or we can use the & symbol and python will 
+"""Intersection method can be performed using the intersection() method or we can use the "&" symbol and python will 
 recognise it as intersection because it is a built-in type"""
 print(odd.intersection(squares))
 print("=" * 50)
@@ -82,3 +82,14 @@ odd.difference_update(squares)
 print(odd)
 """As you can see on line 82, it has permanently removed the items "1" and "9" from the set "odd" since we performed
 difference_update operation as per code on line 81."""
+
+"""Symmetric difference in Python is nothing but union of elements that are in either setA or in setB but not in 
+both of them. Please refer to below example."""
+
+letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
+           "v", "w", "x", "y", "z"}
+print(letters)
+vowels = {"a", "e", "i", "o", "u"}
+print(sorted(letters.symmetric_difference(vowels)))
+"""When you prin the line 93, you can see that python has printed only those elements which are either in set ""letters,
+or in set "vowels" but not in both of them. We have sorted the items for easy reading/understanding."""
