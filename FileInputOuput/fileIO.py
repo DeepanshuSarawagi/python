@@ -11,3 +11,19 @@ with open("sample.txt", 'r') as f:
     for lines in f:
         if "JAB" in lines.upper():
             print(lines, end='')
+print("*" * 50)
+# More ways of reading lines from a file.
+with open("sample.txt", 'r') as jabber:
+    line = jabber.readline()
+    while line:
+        print(line, end='')
+        line = jabber.readline()
+print("*" * 50)
+
+with open("sample.txt", 'r') as jabber:
+    lines = jabber.readlines()
+print(lines)  # This will return the lines of file as a list
+print("*" * 50)
+for line in lines:
+    print(line, end='')
+
