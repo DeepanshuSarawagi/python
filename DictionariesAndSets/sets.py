@@ -117,4 +117,8 @@ if vowels.issubset(letters):
 if letters.issuperset(vowels):
     print("letters is a superset of vowels")
 
+myString = input("Please enter a string of your choice: ").lower()
+myString = set(myString)
+vowels = {"a", "e", "i", "o", "u"}
 
+print(sorted(myString.difference(vowels)))
