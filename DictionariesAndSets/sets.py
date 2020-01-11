@@ -106,3 +106,15 @@ try:
     vowels.remove("d")
 except KeyError:
     print("'d' is not a member of set 'vowels'.")
+
+"""Final two operations on sets are subset and superset. We need to use the issubset() or issuperset() method to
+perform these operations."""
+letters.add("a")
+letters.add("e")
+
+if vowels.issubset(letters):
+    print("vowels is a subset of letters")
+if letters.issuperset(vowels):
+    print("letters is a superset of vowels")
+
+
