@@ -13,3 +13,12 @@ for f in sorted(vowels.keys()):
 print(sorted(vowels.values()))
 reverse_vowels = sorted(vowels.values(), reverse=True)
 print(reverse_vowels)
+
+# Write a program to add a key in dictionary
+multiples_of_tens = {1: 10,
+                     2: 20,
+                     3: 30,
+                     4: 40}
+print(multiples_of_tens)
+multiples_of_tens[5] = 50
+print(multiples_of_tens)
