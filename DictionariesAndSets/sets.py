@@ -93,3 +93,16 @@ vowels = {"a", "e", "i", "o", "u"}
 print(sorted(letters.symmetric_difference(vowels)))
 """When you prin the line 93, you can see that python has printed only those elements which are either in set ""letters,
 or in set "vowels" but not in both of them. We have sorted the items for easy reading/understanding."""
+
+"""How to discard/remove items from the sets? We can perform the discard() or remove() method on sets"""
+letters.remove("a")
+letters.discard("e")
+print(letters)
+vowels.discard("d")
+# vowels.remove("d")  # This will throw an error since "d" is not an item of set "vowels".
+
+# We will look into the try and catch exceptions, for now just understand the below code.
+try:
+    vowels.remove("d")
+except KeyError:
+    print("'d' is not a member of set 'vowels'.")
