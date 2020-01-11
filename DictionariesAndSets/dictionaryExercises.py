@@ -13,5 +13,3 @@ for f in sorted(vowels.keys()):
 print(sorted(vowels.values()))
 reverse_vowels = sorted(vowels.values(), reverse=True)
 print(reverse_vowels)
-
-
