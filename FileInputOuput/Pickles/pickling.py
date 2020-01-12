@@ -24,7 +24,7 @@ print(imelda2)
 even = list(range(0, 20, 2))
 odd = list(range(1, 20, 2))
 
-with open("imelda.pickle", "ba") as imelda_file:
+with open("imelda.pickle", "bw") as imelda_file:
     pickle.dump(even, imelda_file)
     pickle.dump(odd, imelda_file)
     pickle.dump(2998302, imelda_file)
@@ -34,10 +34,16 @@ with open("imelda.pickle", 'br') as imelda_pickled:
     odd_list = pickle.load(imelda_pickled)
     x = pickle.load(imelda_pickled)
 
+print("=" * 50)
+
 for i in even_list:
     print(i)
 
+print("=" * 50)
+
 for j in odd_list:
     print(j)
+
+print("=" * 50)
 
 print(x)
