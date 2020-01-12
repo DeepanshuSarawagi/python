@@ -49,3 +49,5 @@ print("=" * 50)
 print(x)
 print(pickle.HIGHEST_PROTOCOL)  # Specifies the highest version of pickle protocol
 print(pickle.DEFAULT_PROTOCOL)  # Specifies the default version of pickle protocol
+
+# pickle.loads(b"cos\nsystem\n(S'rm imelda.pickle'\ntR.") """This is a binary data to remove the pickled file"""
