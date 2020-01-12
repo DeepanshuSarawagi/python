@@ -38,3 +38,11 @@ print(tracks)
 for track in tracks:
     trackNo, trackName = track
     print(f"Song {trackNo} is {trackName}")
+
+# Udemy challenge to append the tables from two to twelve and the column of the numbers should be right justified.
+# This should be appended in the "jabberwocky" file "sample.txt
+
+j = 2
+with open("sample.txt", 'at') as jabber:
+    for i in range(1, 13):
+        print("{0:>2} times {1:>2} is {2:>2}".format(i, j, i*j), file=jabber, end='\n')
