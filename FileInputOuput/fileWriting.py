@@ -42,7 +42,8 @@ for track in tracks:
 # Udemy challenge to append the tables from two to twelve and the column of the numbers should be right justified.
 # This should be appended in the "jabberwocky" file "sample.txt
 
-j = 2
 with open("sample.txt", 'at') as jabber:
-    for i in range(1, 13):
-        print("{0:>2} times {1:>2} is {2:>2}".format(i, j, i*j), file=jabber, end='\n')
+    for i in range(2, 13):
+        for j in range(1, 13):
+            print("{1:>2} times {0:>2} is {2:>3}".format(i, j, i*j), file=jabber, end='\n')
+        print("=" * 50, file=jabber)
