@@ -20,3 +20,21 @@ with open("cities.txt", 'r') as city_file_read:
 print(cities_read)
 for city in cities_read:
     print(city)
+
+imelda = "More Mayhem", "Imelda May", 2011, ((1, "Pulling the Rug"), (2, "Psycho"),
+                                             (3, "Mayhem"), (4, "Kentish Town Waltz"))
+with open("imelda.txt", 'w') as imelda_file:
+    print(imelda, file=imelda_file, flush=True)
+
+with open("imelda.txt", 'r') as imelda_file_read:
+    contents = imelda_file_read.readline()
+imelda_read = eval(contents)  # This is done to evaluate the contents from a value if its tuple.
+print(imelda_read)
+title, artist, year, tracks = imelda_read
+print(title)
+print(artist)
+print(year)
+print(tracks)
+for track in tracks:
+    trackNo, trackName = track
+    print(f"Song {trackNo} is {trackName}")
