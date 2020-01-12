@@ -11,7 +11,7 @@ imelda = ("More Mayhem",
            (3, "Kentish Town Waltz"),
            (4, "Mayhem")))
 with open("imelda.pickle", 'bw') as imelda_file:  # Write to the file with extension .pickle
-    pickle.dump(imelda, imelda_file, protocol=0)              # dump the data(imelda tuple) in the pickle file
+    pickle.dump(imelda, imelda_file, protocol=pickle.HIGHEST_PROTOCOL)              # dump the data(imelda tuple) in the pickle file
 
 # To retrieve the data from the pickled file, we need to use the pickle.load() method
 
@@ -26,8 +26,8 @@ odd = list(range(1, 20, 2))
 
 with open("imelda.pickle", "bw") as imelda_file:
     pickle.dump(even, imelda_file, protocol=0)
-    pickle.dump(odd, imelda_file, protocol=0)
-    pickle.dump(2998302, imelda_file, protocol=0)
+    pickle.dump(odd, imelda_file, protocol=pickle.DEFAULT_PROTOCOL)
+    pickle.dump(2998302, imelda_file, protocol=pickle.DEFAULT_PROTOCOL)
 
 with open("imelda.pickle", 'br') as imelda_pickled:
     even_list = pickle.load(imelda_pickled)
@@ -47,3 +47,5 @@ for j in odd_list:
 print("=" * 50)
 
 print(x)
+print(pickle.HIGHEST_PROTOCOL)  # Specifies the highest version of pickle protocol
+print(pickle.DEFAULT_PROTOCOL)  # Specifies the default version of pickle protocol
