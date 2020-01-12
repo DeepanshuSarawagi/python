@@ -12,3 +12,9 @@ imelda = ("More Mayhem",
            (4, "Mayhem")))
 with open("imelda.pickle", 'bw') as imelda_file:  # Write to the file with extension .pickle
     pickle.dump(imelda, imelda_file)              # dump the data(imelda tuple) in the pickle file
+
+# To retrieve the data from the pickled file, we need to use the pickle.load() method
+
+with open("imelda.pickle", 'br') as imelda_pickled:
+    imelda2 = pickle.load(imelda_pickled)
+print(imelda2)
