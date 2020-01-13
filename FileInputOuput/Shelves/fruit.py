@@ -37,7 +37,7 @@ print(fruit2["banana"])
 print(fruit2["lime"])
 
 fruit2["lime"] = "Great with tequila"
-for snack in fruit2:
+for snack in sorted(fruit2.keys()):
     print(snack + " - " + fruit2[snack])
 
 print("=" * 50)
