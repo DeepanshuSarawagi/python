@@ -62,24 +62,26 @@ locations["0"] = {"desc": "You are sitting in front of the computer learning Pyt
                   "namedExits": {}}
 
 locations["1"] = {"desc": "You are standing at the end of the road before a small brick building",
-                  "exits": {"W": 2, "E": 3, "N": 5, "S": 4, "Q": 0},
-                  "namedExits": {"2": 2, "3": 3, "5": 5, "4": 4}}
+                  "exits": {"W": "2", "E": '3', "N": "5", "S": "4", "Q": "0"},
+                  "namedExits": {"2": "2", "3": "3", "5": "5", "4": "4"}}
 
 locations["2"] = {"desc": "You are at the top of a hill",
-                  "exits": {"N": 5, "Q": 0},
-                  "namedExits": {"5": 5}}
+                  "exits": {"N": "5", "Q": "0"},
+                  "namedExits": {"5": "5"}}
 
 locations["3"] = {"desc": "You are inside a building, a well house for small stream",
-                  "exits": {"W": 1, "Q": 0},
-                  "namedExits": {"1": 1}}
+                  "exits": {"W": "1", "Q": "0"},
+                  "namedExits": {"1": "1"}}
 
 locations["4"] = {"desc": "You are in a valley beside a stream",
-                  "exits": {"N": 1, "W": 2, "Q": 0},
-                  "namedExits": {"1": 1, "2": 2}}
+                  "exits": {"N": "1", "W": "2", "Q": "0"},
+                  "namedExits": {"1": "1", "2": "2"}}
 
 locations["5"] = {"desc": "You are in the forest",
-                  "exits": {"W": 2, "S": 1, "Q": 0},
-                  "namedExits": {"2": 2, "1": 1}}
+                  "exits": {"W": "2", "S": "1", "Q": "0"},
+                  "namedExits": {"2": "2", "1": "1"}}
+
+locations.close()   # Manually closing the shelve
 
 vocabulary = shelve.open("vocabulary")  # Manually opening the shelve
 
@@ -95,4 +97,4 @@ vocabulary["VALLEY"] = "4"
 vocabulary["FOREST"] = "5"
 
 vocabulary.close()  # Manually closing the shelve
-locations.close()   # Manually closing the shelve
+
