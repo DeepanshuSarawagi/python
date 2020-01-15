@@ -1,10 +1,20 @@
-import turtle
-import time
+# import turtle
+# import time
+#
+# # noinspection PyUnresolvedReferences
+#
+# turtle.forward(150)
+# turtle.right(250)
+# turtle.forward(150)
+#
+# time.sleep(5)
 
-# noinspection PyUnresolvedReferences
+# importing only those functions in modules that we actually need
 
-turtle.forward(150)
-turtle.right(250)
-turtle.forward(150)
+from turtle import forward, right, done
 
-time.sleep(5)
+forward(150)
+right(250)
+forward(150)
+
+done()
