@@ -1,5 +1,7 @@
 import time
-from time import time as my_timer
+# from time import time as my_timer
+from time import perf_counter as my_timer  # This will calculate the precise elapsed time
+# from time import process_time as my_timer   # This will calculate the time taken by CPU to execute the code
 import random
 
 input("Please enter to start")
