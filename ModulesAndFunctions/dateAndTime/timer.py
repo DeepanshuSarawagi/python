@@ -14,3 +14,10 @@ end_time = my_timer()             # calculating end time and storing it in varia
 print("Started at " + time.strftime("%X", time.localtime(start_time)))
 print("Ended at " + time.strftime("%X", time.localtime(end_time)))
 print(f"Reaction time was {end_time - start_time}")
+
+"""Display information about different .get_clock_info() method"""
+
+print("time()\t\t\t", time.get_clock_info('time'))
+print("perf_counter()\t", time.get_clock_info('perf_counter'))
+print("monotonic()\t\t", time.get_clock_info('monotonic'))
+print("process_time()\t", time.get_clock_info('process_time'))
