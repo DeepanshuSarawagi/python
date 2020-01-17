@@ -11,3 +11,9 @@ else:
 
 print("The UTC time is " + time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime()))
 print("The locale time is " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+
+import datetime
+
+print(datetime.datetime.now())
+print(datetime.datetime.utcnow())
+print(datetime.datetime.today())
