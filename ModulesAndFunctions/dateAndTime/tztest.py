@@ -16,5 +16,12 @@ for x in pytz.country_names:
 
 print("=" * 50)
 
+# for x in sorted(pytz.country_names):
+#     print(f"{x}: {pytz.country_names[x]}: {pytz.country_timezones.get(x)}")
+
 for x in sorted(pytz.country_names):
-    print(f"{x}: {pytz.country_names[x]}: {pytz.country_timezones.get(x)}")
+    print(f"{x}: {pytz.country_names[x]}", end=': ')
+    if x in pytz.country_timezones:
+        print(f"{pytz.country_timezones[x]}")
+    else:
+        print("No time zones defined")
