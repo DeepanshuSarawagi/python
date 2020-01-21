@@ -13,6 +13,6 @@ label = tkinter.Label(mainWindow, text="Hello World")
 label.pack(side="top")
 
 canvas = tkinter.Canvas(mainWindow, relief="raised", borderwidth=2)
-canvas.pack(side="left")
+canvas.pack(side="left", fill=tkinter.BOTH, expand=True)
 
 mainWindow.mainloop()
