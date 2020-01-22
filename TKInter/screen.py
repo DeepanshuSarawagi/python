@@ -1,5 +1,5 @@
 import tkinter
-
+import os
 mainWindow = tkinter.Tk()
 mainWindow.title("Grid Demo")
 mainWindow.geometry("640x480-8-200")
@@ -21,5 +21,8 @@ mainWindow.rowconfigure(4, weight=3)
 fileList = tkinter.Listbox(mainWindow)
 fileList.grid(row=1, column=0, sticky="nsew", rowspan=2)
 fileList.config(relief='sunken', borderwidth=2)
+
+for zone in os.listdir('/usr/bin'):
+    fileList.insert(tkinter.END, zone)  # inserting the directory list in the list box
 
 mainWindow.mainloop()
