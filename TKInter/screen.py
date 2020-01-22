@@ -1,5 +1,6 @@
 import tkinter
 import os
+
 mainWindow = tkinter.Tk()
 mainWindow.title("Grid Demo")
 mainWindow.geometry("640x480-8-200")
@@ -24,5 +25,14 @@ fileList.config(relief='sunken', borderwidth=2)
 
 for zone in os.listdir('/usr/bin'):
     fileList.insert(tkinter.END, zone)  # inserting the directory list in the list box
+
+# Add scroll bar in the list box
+scrollList = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=fileList.yview)
+scrollList.grid(row=1, column=1, rowspan=2, sticky='nsw')
+
+# This allows to join the action of scroll bar to the list box whenever
+# the scroll bar is moved using the keyboard or when an item is added
+
+fileList['yscrollcommand'] = scrollList.set
 
 mainWindow.mainloop()
