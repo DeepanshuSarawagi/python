@@ -35,4 +35,25 @@ scrollList.grid(row=1, column=1, rowspan=2, sticky='nsw')
 
 fileList['yscrollcommand'] = scrollList.set
 
+# Frame for the radio buttons on the grid demo box
+
+optionFrame = tkinter.LabelFrame(mainWindow, text='File Details')
+optionFrame.grid(row=1, column=2, sticky='ne')
+
+# Adding the tkinter intVar() and assigning it to the variable. This is done for the radio buttons so that when
+# one option is selected, other would automatically deselected
+
+rbValue = tkinter.IntVar()
+rbValue.set(3)
+
+# Creating Radio buttons
+radioButton1 = tkinter.Radiobutton(optionFrame, text='Filename', value=1, variable=rbValue)
+radioButton2 = tkinter.Radiobutton(optionFrame, text='Path', value=2, variable=rbValue)
+radioButton3 = tkinter.Radiobutton(optionFrame, text='Time Stamp', value=3, variable=rbValue)
+
+radioButton1.grid(row=0, column=0, sticky='w')
+radioButton2.grid(row=1, column=0, sticky='w')
+radioButton3.grid(row=2, column=0, sticky='w')
+
 mainWindow.mainloop()
+print(rbValue.get())
