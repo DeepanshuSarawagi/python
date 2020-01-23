@@ -55,5 +55,12 @@ radioButton1.grid(row=0, column=0, sticky='w')
 radioButton2.grid(row=1, column=0, sticky='w')
 radioButton3.grid(row=2, column=0, sticky='w')
 
+# Add result label
+resultLabel = tkinter.Label(mainWindow, text='Result')
+resultLabel.grid(row=2, column=2, sticky='nw')
+# Add result box
+result = tkinter.Entry(mainWindow)
+result.grid(row=2, column=2, sticky='sw')
+
 mainWindow.mainloop()
 print(rbValue.get())
