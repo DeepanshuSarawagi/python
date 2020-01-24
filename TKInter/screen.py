@@ -99,5 +99,10 @@ monthSpinner.grid(row=1, column=1)
 YearSpinner = tkinter.Spinbox(dateFrame, width=5, from_=1930, to=2099)
 YearSpinner.grid(row=1, column=2)
 
+# Add OK and Cancel buttons
+okButton = tkinter.Button(mainWindow, text='Ok')
+okButton.grid(row=4, column=2, sticky='e')
+cancelButton = tkinter.Button(mainWindow, text='Cancel', command=mainWindow.quit)
+cancelButton.grid(row=4, column=3, sticky='w')
 mainWindow.mainloop()
 print(rbValue.get())
