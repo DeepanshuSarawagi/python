@@ -75,5 +75,8 @@ minuteSpinner.grid(row=0, column=2)
 tkinter.Label(timeFrame, text=':').grid(row=0, column=3)
 secondSpinner.grid(row=0, column=4)
 
+# Add padding in the timeFrame widget to move the spinners and make it look more presentable
+timeFrame['padx'] = 36
+
 mainWindow.mainloop()
 print(rbValue.get())
