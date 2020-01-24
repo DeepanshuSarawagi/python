@@ -78,5 +78,26 @@ secondSpinner.grid(row=0, column=4)
 # Add padding in the timeFrame widget to move the spinners and make it look more presentable
 timeFrame['padx'] = 36
 
+# Add date frame
+dateFrame = tkinter.Frame(mainWindow)
+dateFrame.grid(row=4, column=0, sticky='new')
+
+# Add the date Labels
+dayLabel = tkinter.Label(dateFrame, text='Day')
+dayLabel.grid(row=0, column=0, sticky='w')
+monthLabel = tkinter.Label(dateFrame, text='Month')
+monthLabel.grid(row=0, column=1, sticky='w')
+YearLabel = tkinter.Label(dateFrame, text='Year')
+YearLabel.grid(row=0, column=2, sticky='w')
+
+# Add date spinners
+daySpinner = tkinter.Spinbox(dateFrame, width=5, from_=1, to=31)
+daySpinner.grid(row=1, column=0)
+monthSpinner = tkinter.Spinbox(dateFrame, width=5, values=('Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July'
+                                                           , 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
+monthSpinner.grid(row=1, column=1)
+YearSpinner = tkinter.Spinbox(dateFrame, width=5, from_=1930, to=2099)
+YearSpinner.grid(row=1, column=2)
+
 mainWindow.mainloop()
 print(rbValue.get())
