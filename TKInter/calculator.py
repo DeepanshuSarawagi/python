@@ -77,11 +77,11 @@ import tkinter
 
 """Instead of writing so many lines of code, we can create calculator GUI using below loop. We can add the keypad values
 in a nested list and iterate over the list to create the calculator keypad."""
-
+mainWindowPadding = 8
 mainWindow = tkinter.Tk()
 mainWindow.title('Calculator')
 mainWindow.geometry('640x480-8-200')
-mainWindow['padx'] = 8
+mainWindow['padx'] = mainWindowPadding
 
 keys = [[('C', 1), ('CE', 1)],
         [('7', 1), ('8', 1), ('9', 1), ('+', 1)],
@@ -100,5 +100,8 @@ for keyRow in keys:
         tkinter.Button(keypad, text=key[0]).grid(row=row, column=col, columnspan=key[1], stick='ew')
         col += key[1]
     row += 1
+mainWindow.update()
+mainWindow.minsize(keypad.winfo_width() + mainWindowPadding, result.winfo_height() + keypad.winfo_height())
+mainWindow.maxsize(keypad.winfo_width() + mainWindowPadding, result.winfo_height() + keypad.winfo_height())
 
 mainWindow.mainloop()
