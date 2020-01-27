@@ -77,6 +77,7 @@ import tkinter
 
 """Instead of writing so many lines of code, we can create calculator GUI using below loop. We can add the keypad values
 in a nested list and iterate over the list to create the calculator keypad."""
+
 mainWindowPadding = 8
 mainWindow = tkinter.Tk()
 mainWindow.title('Calculator')
