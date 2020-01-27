@@ -102,6 +102,6 @@ for keyRow in keys:
     row += 1
 mainWindow.update()
 mainWindow.minsize(keypad.winfo_width() + mainWindowPadding, result.winfo_height() + keypad.winfo_height())
-mainWindow.maxsize(keypad.winfo_width() + mainWindowPadding, result.winfo_height() + keypad.winfo_height())
+mainWindow.maxsize(keypad.winfo_width() + 50 + mainWindowPadding, result.winfo_height() + 50 + keypad.winfo_height())
 
 mainWindow.mainloop()
