@@ -11,7 +11,7 @@ text = input("Please enter a text: ")
 center_text(text)
 
 
-def centered_text(*args, sep=' ' , end='\n', file=None, flush=False):
+def centered_text(*args, sep=' ', end='\n', file=None, flush=False):
     text = ""
     for arg in args:
         text += str(arg) + sep
@@ -20,4 +20,8 @@ def centered_text(*args, sep=' ' , end='\n', file=None, flush=False):
     print(" " * left_margin, text, end=end, file=file, flush=flush)
 
 
-centered_text("spam", 1, 2, "eggs", "number", sep=":")
+with open("centered.txt", mode='w') as centered_file:
+    centered_text("spam", 1, 2, "eggs", "number", sep=":", file=centered_file)
+    centered_text("spam and spam", file=centered_file)
+    centered_text("spam, spam and spam", file=centered_file)
+    centered_text("text without spam", file=centered_file)
