@@ -1,0 +1,4 @@
+                              spam:1:2:eggs:number
+                                 spam and spam 
+                              spam, spam and spam 
+                               text without spam 
