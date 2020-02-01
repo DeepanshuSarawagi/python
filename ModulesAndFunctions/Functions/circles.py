@@ -11,8 +11,8 @@ def draw_axes(page):
     page.create_line(0, -y_origin, 0, y_origin, fill='black')
 
 
-def circles(page, radius, g, h):
-    page.create_oval(g + radius, h + radius, g - radius, h - radius, outline='blue', width=2)
+def circles(page, radius, g, h, color):
+    page.create_oval(g + radius, h + radius, g - radius, h - radius, outline=color, width=2)
     # for x in range(g * 100, (g + radius) * 100):
     #     x /= 100
     #     y = h + (math.sqrt(radius ** 2 - ((x-g) ** 2)))
@@ -34,14 +34,14 @@ canvas = tkinter.Canvas(mainWindow, width=640, height=480)
 canvas.grid(row=0, column=0)
 # Call the function to create axes in the canvas
 draw_axes(canvas)
-circles(canvas, 100, 100, 100)
-circles(canvas, 100, -100, 100)
-circles(canvas, 100, 100, -100)
-circles(canvas, 100, -100, -100)
-circles(canvas, 10, 30, 30)
-circles(canvas, 10, -30, 30)
-circles(canvas, 10, 30, -30)
-circles(canvas, 10, -30, -30)
-circles(canvas, 30, 0, 0)
+circles(canvas, 100, 100, 100, 'green')
+circles(canvas, 100, -100, 100, 'blue')
+circles(canvas, 100, 100, -100, 'black')
+circles(canvas, 100, -100, -100, 'orange')
+circles(canvas, 10, 30, 30, 'red')
+circles(canvas, 10, -30, 30, 'red')
+circles(canvas, 10, 30, -30, 'black')
+circles(canvas, 10, -30, -30, 'orange')
+circles(canvas, 30, 0, 0, 'green')
 
 mainWindow.mainloop()
