@@ -30,6 +30,15 @@ def load_images(card_image):
             card_image.append((card, image,))
 
 
+def deal_card(frame):
+    # pop the next card off the top of the deck
+    next_card = deck.pop()
+    # Add the image to a label and display the label
+    tkinter.Label(frame, image=next_card[1], relief='sunken').pack(side='left')
+    # now return the card's face value
+    return next_card
+
+
 # setup the screen and frames for dealer and player
 
 mainWindow.title('Black Jack')
@@ -79,8 +88,13 @@ print(cards)
 deck = list(cards)
 random.shuffle(deck)
 
+# just a random check if you are loading all the cards
+for deck_card in deck:
+    card_face, suit = deck_card
+    print(f"card is {card_face} and suit is {suit}")
+
 # create new lists to store dealer`s and player`s hands
-dealer_hands = []
-player_hands = []
+dealer_hand = []
+player_hand = []
 
 mainWindow.mainloop()
