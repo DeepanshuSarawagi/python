@@ -1,8 +1,6 @@
 import tkinter
 import random
 
-mainWindow = tkinter.Tk()
-
 # Create a function to load card images
 
 
@@ -32,7 +30,7 @@ def load_images(card_image):
 
 def deal_card(frame):
     # pop the next card off the top of the deck
-    next_card = deck.pop()
+    next_card = deck.pop(0)
     # Add the image to a label and display the label
     tkinter.Label(frame, image=next_card[1], relief='sunken').pack(side='left')
     # now return the card's face value
@@ -50,8 +48,10 @@ def deal_player():
 
 # setup the screen and frames for dealer and player
 
+mainWindow = tkinter.Tk()
 mainWindow.title('Black Jack')
 mainWindow.geometry('640x480-8-200')
+mainWindow.configure(background='green')
 
 result_text = tkinter.StringVar()
 result = tkinter.Label(mainWindow, textvariable=result_text)
