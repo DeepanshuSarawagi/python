@@ -75,4 +75,12 @@ cards = []
 load_images(cards)
 print(cards)
 
+# create a deck of cards and shuffle them
+deck = list(cards)
+random.shuffle(deck)
+
+# create new lists to store dealer`s and player`s hands
+dealer_hands = []
+player_hands = []
+
 mainWindow.mainloop()
