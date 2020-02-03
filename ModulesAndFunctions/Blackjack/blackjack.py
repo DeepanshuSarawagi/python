@@ -3,6 +3,33 @@ import random
 
 mainWindow = tkinter.Tk()
 
+# Create a function to load card images
+
+
+def load_images(card_image):
+    # load images for each suit
+    suits = ['club', 'diamond', 'spade', 'heart']
+    face_cards = ['jack', 'king', 'queen']
+    # check the tkinter version for extension support
+    if tkinter.TkVersion >= 8.6:
+        extension = 'png'
+    else:
+        extension = 'ppm'
+    # for each suit retrieve the image of the cards
+    for suit in suits:
+        # first the number cards from 1 to 11
+        for card in range(1, 11):
+            name = f"cards/{str(card)}_{suit}.{extension}"
+            image = tkinter.PhotoImage(file=name)
+            card_image.append((card, image,))
+
+    # now retrieve images for face cards
+        for card in face_cards:
+            name = f"cards/{str(card)}_{suit}.{extension}"
+            image = tkinter.PhotoImage(file=name)
+            card_image.append((card, image,))
+
+
 # setup the screen and frames for dealer and player
 
 mainWindow.title('Black Jack')
@@ -43,5 +70,9 @@ dealer_button.grid(row=0, column=0)
 
 player_button = tkinter.Button(button_frame, text='Player')
 player_button.grid(row=0, column=1)
+
+cards = []
+load_images(cards)
+print(cards)
 
 mainWindow.mainloop()
