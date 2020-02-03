@@ -36,7 +36,16 @@ def deal_card(frame):
     # Add the image to a label and display the label
     tkinter.Label(frame, image=next_card[1], relief='sunken').pack(side='left')
     # now return the card's face value
-    return next_card
+    return next_card[0]
+
+
+# create a function to display the images in the dealer or player's card frame
+def deal_dealer():
+    deal_card(dealer_card_frame)
+
+
+def deal_player():
+    deal_card(player_card_frame)
 
 
 # setup the screen and frames for dealer and player
@@ -74,10 +83,10 @@ player_card_frame.grid(row=2, column=1, sticky='ew', rowspan=2)
 button_frame = tkinter.Frame(mainWindow)
 button_frame.grid(row=3, column=0, sticky='w', columnspan=3)
 
-dealer_button = tkinter.Button(button_frame, text='Dealer')
+dealer_button = tkinter.Button(button_frame, text='Dealer', command=deal_dealer)
 dealer_button.grid(row=0, column=0)
 
-player_button = tkinter.Button(button_frame, text='Player')
+player_button = tkinter.Button(button_frame, text='Player', command=deal_player)
 player_button.grid(row=0, column=1)
 
 cards = []
@@ -89,9 +98,10 @@ deck = list(cards)
 random.shuffle(deck)
 
 # just a random check if you are loading all the cards
-for deck_card in deck:
-    card_face, suit = deck_card
-    print(f"card is {card_face} and suit is {suit}")
+# for deck_card in deck:
+#     card_face, suit = deck_card
+#     print(f"card is {card_face} and suit is {suit}")
+# commented this because its no more required
 
 # create new lists to store dealer`s and player`s hands
 dealer_hand = []
