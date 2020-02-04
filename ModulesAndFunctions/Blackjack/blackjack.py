@@ -25,7 +25,12 @@ def load_images(card_image):
         for card in face_cards:
             name = f"cards/{str(card)}_{suit}.{extension}"
             image = tkinter.PhotoImage(file=name)
-            card_image.append((card, image,))
+            if card == 'jack':
+                card_image.append((11, image,))
+            if card == 'king':
+                card_image.append((13, image,))
+            if card == 'queen':
+                card_image.append((12, image,))
 
 
 def deal_card(frame):
@@ -34,7 +39,7 @@ def deal_card(frame):
     # Add the image to a label and display the label
     tkinter.Label(frame, image=next_card[1], relief='sunken').pack(side='left')
     # now return the card's face value
-    return next_card[0]
+    return next_card
 
 
 # create a function to display the images in the dealer or player's card frame
@@ -43,7 +48,20 @@ def deal_dealer():
 
 
 def deal_player():
-    deal_card(player_card_frame)
+    global player_score
+    global player_ace
+    card_value = int(deal_card(player_card_frame)[0])
+    if card_value == 1 and not player_ace:
+        player_ace = True
+        card_value = 11
+    player_score += card_value
+    # if we would bust check if there is an ace and then subtract
+    if card_value > 21 and player_ace:
+        player_score -= 10
+        player_ace = False
+    player_score_label.set(player_score)
+    if player_score > 21:
+        result_text.set("Player wins")
 
 
 # setup the screen and frames for dealer and player
@@ -72,6 +90,8 @@ dealer_card_frame.grid(row=0, column=1, sticky='ew', rowspan=2)
 
 # Player score label
 player_score_label = tkinter.IntVar()
+player_score = 0
+player_ace = False
 tkinter.Label(card_frame, text='player', background='green', fg='white').grid(row=2, column=0)
 tkinter.Label(card_frame, textvariable=player_score_label, background='green', fg='white').grid(row=3, column=0)
 
@@ -97,7 +117,7 @@ print(cards)
 deck = list(cards)
 random.shuffle(deck)
 
-# just a random check if you are loading all the cards
+# just a check if you are loading all the cards
 # for deck_card in deck:
 #     card_face, suit = deck_card
 #     print(f"card is {card_face} and suit is {suit}")
