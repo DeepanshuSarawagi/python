@@ -42,26 +42,50 @@ def deal_card(frame):
     return next_card
 
 
+def score_hand(hand):
+    # Calculate the total score of all the cards in the list
+    # Only one ace can have the value 11 and if we would bust then subtract the value by 10
+    score = 0
+    ace = False
+    for next_card in hand:
+        card_value = next_card[0]
+        if card_value == 1 and not ace:
+            ace = True
+            card_value = 11
+        score += card_value
+        # If we would bust, check if there is an ace and subtract 10 from the score
+        if score > 21 and ace:
+            score -= 10
+            ace = False
+    return score
+
+
 # create a function to display the images in the dealer or player's card frame
 def deal_dealer():
     deal_card(dealer_card_frame)
 
 
 def deal_player():
-    global player_score
-    global player_ace
-    card_value = int(deal_card(player_card_frame)[0])
-    if card_value == 1 and not player_ace:
-        player_ace = True
-        card_value = 11
-    player_score += card_value
-    # if we would bust check if there is an ace and then subtract
-    if card_value > 21 and player_ace:
-        player_score -= 10
-        player_ace = False
+    player_hand.append(deal_card(player_card_frame))
+    player_score = score_hand(player_hand)
     player_score_label.set(player_score)
     if player_score > 21:
-        result_text.set("Player wins")
+        result_text.set("Dealer Wins ")
+
+    # global player_score
+    # global player_ace
+    # card_value = int(deal_card(player_card_frame)[0])
+    # if card_value == 1 and not player_ace:
+    #     player_ace = True
+    #     card_value = 11
+    # player_score += card_value
+    # # if we would bust check if there is an ace and then subtract
+    # if card_value > 21 and player_ace:
+    #     player_score -= 10
+    #     player_ace = False
+    # player_score_label.set(player_score)
+    # if player_score > 21:
+    #     result_text.set("Player wins")
 
 
 # setup the screen and frames for dealer and player
@@ -90,8 +114,8 @@ dealer_card_frame.grid(row=0, column=1, sticky='ew', rowspan=2)
 
 # Player score label
 player_score_label = tkinter.IntVar()
-player_score = 0
-player_ace = False
+# player_score = 0
+# player_ace = False
 tkinter.Label(card_frame, text='player', background='green', fg='white').grid(row=2, column=0)
 tkinter.Label(card_frame, textvariable=player_score_label, background='green', fg='white').grid(row=3, column=0)
 
