@@ -146,6 +146,9 @@ dealer_button.grid(row=0, column=0)
 player_button = tkinter.Button(button_frame, text='Player', command=deal_player)
 player_button.grid(row=0, column=1)
 
+new_game_button = tkinter.Button(button_frame, text='New Game')
+new_game_button.grid(row=0, column=2)
+
 cards = []
 load_images(cards)
 print(cards)
