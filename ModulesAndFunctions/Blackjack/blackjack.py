@@ -162,4 +162,9 @@ random.shuffle(deck)
 dealer_hand = []
 player_hand = []
 
+# to call the function so that player hand already has two cards
+deal_player()
+dealer_hand.append(deal_card(dealer_card_frame))
+deal_player()
+
 mainWindow.mainloop()
