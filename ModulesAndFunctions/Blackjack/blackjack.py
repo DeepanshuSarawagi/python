@@ -36,6 +36,7 @@ def load_images(card_image):
 def deal_card(frame):
     # pop the next card off the top of the deck
     next_card = deck.pop(0)
+    deck.append(next_card)  # Add the card back to the end of deck
     # Add the image to a label and display the label
     tkinter.Label(frame, image=next_card[1], relief='sunken').pack(side='left')
     # now return the card's face value
