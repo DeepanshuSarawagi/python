@@ -125,6 +125,8 @@ def new_game():
     deal_player()
 
 
+print(__name__)
+
 # setup the screen and frames for dealer and player
 
 mainWindow = tkinter.Tk()
