@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Blackjack/Blackjack.iml" filepath="$PROJECT_DIR$/Blackjack/Blackjack.iml" />
       <module fileurl="file://$PROJECT_DIR$/ModulesAndFunctions.iml" filepath="$PROJECT_DIR$/ModulesAndFunctions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ScopesAndRecursive/ScopesAndRecursive.iml" filepath="$PROJECT_DIR$/ScopesAndRecursive/ScopesAndRecursive.iml" />
     </modules>
   </component>
 </project>
