@@ -29,3 +29,5 @@ hamilton = Kettle("Hamilton", 14.55)
 print(hamilton.make)
 print(hamilton.price)
 print(hamilton.on)
+
+print(f"Models: {kenwood.make} = {kenwood.price}, {hamilton.make} = {hamilton.price}")
