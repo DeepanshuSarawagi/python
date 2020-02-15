@@ -31,3 +31,11 @@ print(hamilton.price)
 print(hamilton.on)
 
 print(f"Models: {kenwood.make} = {kenwood.price}, {hamilton.make} = {hamilton.price}")
+
+"""
+Class: A template for creating objects. All objects created using the same class will share the same characteristics
+Object: An instance of a class
+Instantiate: Create an instance of a class
+Method: A function defined in the class
+Attribute: A variable bound to an instance of a class
+"""
