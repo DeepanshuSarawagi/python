@@ -2,12 +2,17 @@ a = 12
 b = 4
 print(a + b)
 print(a.__add__(b))  # notice that both the code on line 3 and line 4 gives the same result since "+" operator on line 3
-                     # calls the same builtin function __add__ as on line 4.
+
+
+# calls the same builtin function __add__ as on line 4.
 
 # create your first class and its objects.
 
 
 class Kettle(object):
+    power_source = "electricity"  # Creating an attribute for the class Kettle. All the instances of this class will
+
+    # will share the same class attribute
 
     def __init__(self, make, price):
         self.make = make
@@ -57,3 +62,6 @@ kenwood.power = 1.5
 print(kenwood.power)  # this will execute because we created a data attribute for kenwood instance of kettle class
 
 # print(hamilton.power)  # this will throw error since Kettle object has no attribute power
+
+print(kenwood.power_source)
+print(hamilton.power_source)
