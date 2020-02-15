@@ -14,6 +14,9 @@ class Kettle(object):
         self.price = price
         self.on = False
 
+    def switch_on(self):
+        self.on = True
+
 
 kenwood = Kettle("Kenwood", 8.99)
 
@@ -39,3 +42,18 @@ Instantiate: Create an instance of a class
 Method: A function defined in the class
 Attribute: A variable bound to an instance of a class
 """
+
+print(hamilton.on)
+hamilton.switch_on()
+print(hamilton.on)
+
+Kettle.switch_on(kenwood)
+print("Is it on?")
+print(kenwood.on)
+print("Is Kenwood kettle on yet?")
+kenwood.switch_on()  # this will not return any value since kenwood kettle is already on and its value is set to True
+
+kenwood.power = 1.5
+print(kenwood.power)  # this will execute because we created a data attribute for kenwood instance of kettle class
+
+# print(hamilton.power)  # this will throw error since Kettle object has no attribute power
