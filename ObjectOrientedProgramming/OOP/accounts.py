@@ -9,21 +9,25 @@ class Accounts:
     def deposit(self, amount):
         if amount > 0:
             self.balance += amount
-        print(f"Amount {amount} has been deposited in the account and balance is {self.balance}")
+        print(f"Amount {amount} has been deposited in the account")
+        self.show_balance()
 
     def withdraw(self, amount):
-        if amount > 0:
+        if 0 < amount <= self.balance:
             self.balance -= amount
-        print(f"Amount {amount} has been withdrawn from the account and balance is {self.balance}")
+            print(f"Amount {amount} has been withdrawn from the account")
+        else:
+            print("The amount has to be greater than zero no more than account balance")
+        self.show_balance()
 
     def show_balance(self):
-        print(f"Balance in the account is {self.balance}")
+        print(f"Balance in the account of {self.name} is {self.balance}")
 
 
 if __name__ == "__main__":
     deep = Accounts("Deepanshu", 0)
-    deep.show_balance()
+    # deep.show_balance()
 
     deep.deposit(1000)
     deep.withdraw(500)
-    deep.show_balance()
+    # deep.show_balance()
