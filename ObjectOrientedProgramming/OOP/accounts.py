@@ -1,9 +1,14 @@
+import datetime
+import pytz
+
+
 class Accounts:
     """A simple class for maintaining accounts"""
 
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
+        self.transaction_list = []
         print(f"The account has been created for {self.name} and balance is {self.balance}")
 
     def deposit(self, amount):
@@ -11,6 +16,7 @@ class Accounts:
             self.balance += amount
         print(f"Amount {amount} has been deposited in the account")
         self.show_balance()
+        self.transaction_list.append((pytz.utc.localize(datetime.datetime.utcnow()), amount))
 
     def withdraw(self, amount):
         if 0 < amount <= self.balance:
@@ -23,6 +29,15 @@ class Accounts:
     def show_balance(self):
         print(f"Balance in the account of {self.name} is {self.balance}")
 
+    def show_transactions(self):
+        for date, amount in self.transaction_list:
+            if amount > 0:
+                tran_type = 'deposited'
+            else:
+                tran_type = "withdrawn"
+                amount *= -1
+            print("Amount {} {} on {} and local time was {}".format(amount, tran_type, date, date.astimezone()))
+
 
 if __name__ == "__main__":
     deep = Accounts("Deepanshu", 0)
@@ -30,4 +45,5 @@ if __name__ == "__main__":
 
     deep.deposit(1000)
     deep.withdraw(500)
+    deep.show_transactions()
     # deep.show_balance()
