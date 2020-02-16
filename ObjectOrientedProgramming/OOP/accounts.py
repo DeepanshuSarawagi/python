@@ -18,3 +18,12 @@ class Accounts:
 
     def show_balance(self):
         print(f"Balance in the account is {self.balance}")
+
+
+if __name__ == "__main__":
+    deep = Accounts("Deepanshu", 0)
+    deep.show_balance()
+
+    deep.deposit(1000)
+    deep.withdraw(500)
+    deep.show_balance()
