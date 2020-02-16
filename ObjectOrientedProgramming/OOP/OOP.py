@@ -65,3 +65,13 @@ print(kenwood.power)  # this will execute because we created a data attribute fo
 
 print(kenwood.power_source)
 print(hamilton.power_source)
+print("Changing the power source to atomic")
+Kettle.power_source = 'atomic'
+print(kenwood.power_source)
+print(hamilton.power_source)
+print("changing the power source of kenwood kettle to gas")
+kenwood.power_source = 'gas'
+print(kenwood.power_source)
+"""As you can see, power_source is the data attribute of Kettle class, however defined initially as 'electricity',
+we changed it to atomic which in turn changed the power_source of all the instances of Kettle class. We then changed
+the power_source of kenwood instance of Kettle class which overrides the data attribute defined in the class"""
