@@ -5,6 +5,11 @@ import pytz
 class Accounts:
     """A simple class for maintaining accounts"""
 
+    @staticmethod
+    def _current_time():
+        utc_time = datetime.datetime.utcnow()
+        return pytz.utc.localize(utc_time)
+
     def __init__(self, name, balance):
         self.name = name
         self.balance = balance
@@ -16,11 +21,12 @@ class Accounts:
             self.balance += amount
         print(f"Amount {amount} has been deposited in the account")
         self.show_balance()
-        self.transaction_list.append((pytz.utc.localize(datetime.datetime.utcnow()), amount))
+        self.transaction_list.append((Accounts._current_time(), amount))
 
     def withdraw(self, amount):
         if 0 < amount <= self.balance:
             self.balance -= amount
+            self.transaction_list.append((Accounts._current_time(), -amount))
             print(f"Amount {amount} has been withdrawn from the account")
         else:
             print("The amount has to be greater than zero no more than account balance")
