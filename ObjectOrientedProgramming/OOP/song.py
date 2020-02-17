@@ -79,5 +79,16 @@ class Artist:
         self.albums.append(album)
 
 
+def load_data():
+    new_artist = None
+    new_album = None
+    artist_list = []
+    with open('albums.txt', 'r') as albums:
+        for line in albums:
+            artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t'))
+            year_field = int(year_field)
+            print(artist_field, album_field, year_field, song_field)
+
+
 help(Song.__init__)  # This will display the document of __init__ method of class Song
 print(Song.__doc__)  # Alternate method to print the documentation of class and it's objects if any.
