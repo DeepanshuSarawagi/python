@@ -87,7 +87,7 @@ def load_data():
         for line in albums:
             artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t'))
             year_field = int(year_field)
-            print(artist_field, album_field, year_field, song_field)
+            print(f"{artist_field}:{album_field}:{year_field}:{song_field}")
 
 
 if __name__ == '__main__':
