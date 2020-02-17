@@ -24,7 +24,7 @@ class Song:
 class Album:
     """ Class to represent an Album using it's track list.
     Attributes:
-        album_name(str): The name of the album.
+        name(str): The name of the album.
         year(int): The year album was released.
         artist: (Artist): The artist responsible for the album.
                 If not specified, the artist will default to an artist with the name "various artists"
@@ -54,6 +54,29 @@ class Album:
             self.tracks.append(song)
         else:
             self.tracks.insert(position, song)
+
+
+class Artist:
+    """Basic class to store artist details.
+    Attributes:
+        name (str): The name of the artist.
+        albums (List(Album]): A list of the album by this artist.
+            The list includes only those albums in this collections,
+            it is not an exhaustive list of all the albums by this artist.
+    Methods:
+         add_album: Used to add a new album to the artist`s list of albums.
+    """
+    def __init__(self, name):
+        self.name = name
+        self.albums = []
+
+    def add_album(self, album):
+        """ Adds a new album to the list.
+        Args:
+             album(Album): An Album object to add to the list.
+             If the album is already present, it will not be added to the list(although it is yet to be implemented)
+        """
+        self.albums.append(album)
 
 
 help(Song.__init__)  # This will display the document of __init__ method of class Song
