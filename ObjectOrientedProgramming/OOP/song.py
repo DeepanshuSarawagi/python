@@ -90,5 +90,8 @@ def load_data():
             print(artist_field, album_field, year_field, song_field)
 
 
-help(Song.__init__)  # This will display the document of __init__ method of class Song
-print(Song.__doc__)  # Alternate method to print the documentation of class and it's objects if any.
+if __name__ == '__main__':
+    load_data()
+
+# help(Song.__init__)  # This will display the document of __init__ method of class Song
+# print(Song.__doc__)  # Alternate method to print the documentation of class and it's objects if any.
