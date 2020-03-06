@@ -120,8 +120,20 @@ def load_data():
     return artist_list
 
 
+def create_checkfile(artist_list):
+    """Create a check file from the object data for comparison with the original file."""
+    with open('checkfile.txt', 'rw') as checkfile:
+        for new_artist in artist_list:
+            for new_album in new_artist.albums:
+                for new_song in new_album.tracks:
+                    print("{0.name}\t{1.name}\t{1.year}\t{2.title}".format(new_artist, new_album, new_song), file=checkfile)
+
+
 if __name__ == '__main__':
-    load_data()
+    artists = load_data()
+    print(f"There are {len(artists)} artists.")
+    create_checkfile(artists)
+
 
 # help(Song.__init__)  # This will display the document of __init__ method of class Song
 # print(Song.__doc__)  # Alternate method to print the documentation of class and it's objects if any.
