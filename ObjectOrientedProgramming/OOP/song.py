@@ -110,6 +110,15 @@ def load_data():
             new_song = Song(song_field, new_artist)
             new_album.add_song(new_song)
 
+        # After having read the last line of the text file, we will have an artist and album that haven't stored,
+        # process them now
+            if new_artist is not None:
+                if new_album is not None:
+                    new_artist.add_album(new_album)
+                artist_list.append(new_artist)
+
+    return artist_list
+
 
 if __name__ == '__main__':
     load_data()
