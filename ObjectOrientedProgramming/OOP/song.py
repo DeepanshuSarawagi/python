@@ -122,7 +122,7 @@ def load_data():
 
 def create_checkfile(artist_list):
     """Create a check file from the object data for comparison with the original file."""
-    with open('checkfile.txt', 'rw') as checkfile:
+    with open('checkfile.txt', 'w') as checkfile:
         for new_artist in artist_list:
             for new_album in new_artist.albums:
                 for new_song in new_album.tracks:
