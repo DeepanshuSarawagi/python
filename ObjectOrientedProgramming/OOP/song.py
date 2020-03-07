@@ -16,7 +16,7 @@ class Song:
             duration(Optional[int]): Initial value for the 'duration' attribute.
                 Will default to zero if not specified
         """
-        self.title = title
+        self.name = title
         self.artist = artist
         self.duration = duration
 
@@ -45,15 +45,18 @@ class Album:
     def add_song(self, song, position=None):
         """Adds a song to the track list
         Args:
-            song (Song): A song to add.
+            song (Song): The title of the song to add.
             position(optional[int]): If specified, song will be added to that position in the track list
             - inserting it between other songs if necessary.
             Otherwise, song will be added to the end of the list.
         """
-        if position is None:
-            self.tracks.append(song)
-        else:
-            self.tracks.insert(position, song)
+        song_found = find_object(song, self.tracks)
+        if song_found is None:
+            song_found = Song(song, self.artist)
+            if position is None:
+                self.tracks.append(song_found)
+            else:
+                self.tracks.insert(position, song_found)
 
 
 class Artist:
@@ -130,7 +133,7 @@ def create_checkfile(artist_list):
         for new_artist in artist_list:
             for new_album in new_artist.albums:
                 for new_song in new_album.tracks:
-                    print("{0.name}\t{1.name}\t{1.year}\t{2.title}".format(new_artist, new_album, new_song), file=checkfile)
+                    print("{0.name}\t{1.name}\t{1.year}\t{2.name}".format(new_artist, new_album, new_song), file=checkfile)
 
 
 if __name__ == '__main__':
