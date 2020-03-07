@@ -4,14 +4,12 @@ deep = Player("Deepanshu")
 print(deep.name)
 print(deep.score)
 print(deep.lives)
-deep.lives -= 1
+
+deep.level = 2
 print(deep)
 
-deep.lives -= 1
+deep.level = 4
 print(deep)
 
-deep.lives -= 1
-print(deep)
-
-deep.lives -= 1
+deep.level = 3
 print(deep)
