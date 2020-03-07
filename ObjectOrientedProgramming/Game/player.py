@@ -17,3 +17,6 @@ class Player(object):
             self._lives = 0
 
     lives = property(_get_lives, _set_lives)
+
+    def __str__(self):
+        return f"Name: {self.name} Lives: {self.lives} Level: {self.level} Score: {self.score}"
