@@ -1,7 +1,6 @@
-import player
+from player import Player
 
-deep = player.Player("Deepanshu")
+deep = Player("Deepanshu")
 print(deep.name)
 print(deep.score)
 print(deep.lives)
-
