@@ -16,9 +16,14 @@ class Song:
             duration(Optional[int]): Initial value for the 'duration' attribute.
                 Will default to zero if not specified
         """
-        self.name = title
+        self.title = title
         self.artist = artist
         self.duration = duration
+
+    def get_title(self):
+        return self.title
+
+    name = property(get_title)
 
 
 class Album:
@@ -133,7 +138,7 @@ def create_checkfile(artist_list):
         for new_artist in artist_list:
             for new_album in new_artist.albums:
                 for new_song in new_album.tracks:
-                    print("{0.name}\t{1.name}\t{1.year}\t{2.name}".format(new_artist, new_album, new_song), file=checkfile)
+                    print("{0.name}\t{1.name}\t{1.year}\t{2.title}".format(new_artist, new_album, new_song), file=checkfile)
 
 
 if __name__ == '__main__':
