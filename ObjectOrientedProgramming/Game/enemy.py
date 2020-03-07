@@ -15,3 +15,8 @@ class Enemy:
 
     def __str__(self):
         return f"Name: {self.name}, Lives: {self.lives}, Hit Points: {self.hit_points}"
+
+
+class Troll(Enemy):
+    """Creating sub-class Troll and its properties will be inherited from super class Enemy"""
+    pass
