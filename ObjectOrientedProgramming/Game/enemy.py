@@ -12,3 +12,6 @@ class Enemy:
             print(f"I have {damage} points damage and have {self.hit_points} points left")
         else:
             self.lives -= 1
+
+    def __str__(self):
+        return f"Name: {self.name}, Lives: {self.lives}, Hit Points: {self.hit_points}"
