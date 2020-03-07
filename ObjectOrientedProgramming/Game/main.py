@@ -1,18 +1,11 @@
 from player import Player
+from enemy import Enemy
 
 deep = Player("Deepanshu")
 print(deep.name)
-print(deep._score)
-print(deep.lives)
 
-deep.level = 2
-print(deep)
+random_monster = Enemy("Basic Enemy", 12, 1)
+print(random_monster)
 
-deep.level = 4
-print(deep)
-
-deep.level = 3
-print(deep)
-
-deep.score = 1000
-print(deep)
+random_monster.take_damage(4)
+print(random_monster)

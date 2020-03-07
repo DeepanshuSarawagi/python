@@ -9,7 +9,7 @@ class Enemy:
         remaining_points = self.hit_points - damage
         if remaining_points >= 0:
             self.hit_points = remaining_points
-            print(f"I have {damage} points damage and have {self.hit_points} points left")
+            print(f"I took {damage} points damage and have {self.hit_points} points left")
         else:
             self.lives -= 1
 
