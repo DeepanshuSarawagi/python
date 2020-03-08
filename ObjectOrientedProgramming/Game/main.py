@@ -12,3 +12,6 @@ print(random_monster)
 
 ugly_troll = Troll()
 print(ugly_troll)
+
+another_troll = Troll("Ug", 18, 1)
+print(f"Another Troll- {another_troll}")
