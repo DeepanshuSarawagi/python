@@ -18,3 +18,4 @@ print(f"Another Troll- {another_troll}")
 
 brother = Troll("Urg")
 print(brother)
+brother.grunt()
