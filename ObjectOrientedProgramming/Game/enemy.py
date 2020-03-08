@@ -4,6 +4,7 @@ class Enemy:
         self.name = name
         self.hit_points = hit_points
         self.lives = lives
+        self.alive = True
 
     def take_damage(self, damage):
         remaining_points = self.hit_points - damage
@@ -12,6 +13,11 @@ class Enemy:
             print(f"I took {damage} points damage and have {self.hit_points} points left")
         else:
             self.lives -= 1
+            if self.lives > 0:
+                print(f"{self.name} has lost a life")
+            else:
+                print(f"{self.name} is dead.")
+                self.alive = False
 
     def __str__(self):
         return f"Name: {self.name}, Lives: {self.lives}, Hit Points: {self.hit_points}"

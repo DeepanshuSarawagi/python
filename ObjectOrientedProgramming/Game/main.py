@@ -25,11 +25,11 @@ print(vampire)
 vampire.take_damage(3)
 print(vampire)
 
-vampire.take_damage(9)
-print(vampire)
-
-vampire.take_damage(2)
-print(vampire)
-
 another_troll.take_damage(12)
 print(another_troll)
+
+print("*" * 50)
+
+while vampire.alive:
+    vampire.take_damage(1)
+    print(vampire)
