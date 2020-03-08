@@ -1,5 +1,5 @@
 from player import Player
-from enemy import Enemy, Troll, Vampyre
+from enemy import Enemy, Troll, Vampyre, VampyreKing
 
 deep = Player("Deepanshu")
 print(deep.name)
@@ -32,3 +32,9 @@ print("*" * 50)
 
 while vampire._alive:
     vampire.take_damage(1)
+
+DarthVader = VampyreKing("Darth Vader")
+print(DarthVader)
+
+DarthVader.take_damage(18)
+print(DarthVader)
