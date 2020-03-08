@@ -36,3 +36,15 @@ class Troll(Enemy):
 class Vampyre(Enemy):
     def __init__(self, name):
         super().__init__(name=name, lives=3, hit_points=12)
+
+    def dodges(self):
+        import random
+        if random.randint(1, 3) == 3:
+            print(f"**** {self.name} dodges ****")
+            return True
+        else:
+            return False
+
+    def take_damage(self, damage):
+        if not self.dodges():
+            super().take_damage(damage=damage)

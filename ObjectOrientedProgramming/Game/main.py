@@ -32,4 +32,3 @@ print("*" * 50)
 
 while vampire.alive:
     vampire.take_damage(1)
-    print(vampire)
