@@ -30,5 +30,5 @@ print(another_troll)
 
 print("*" * 50)
 
-while vampire.alive:
+while vampire._alive:
     vampire.take_damage(1)
