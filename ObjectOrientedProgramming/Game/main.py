@@ -10,8 +10,11 @@ print(random_monster)
 random_monster.take_damage(4)
 print(random_monster)
 
-ugly_troll = Troll()
+ugly_troll = Troll("Ugly Troll")
 print(ugly_troll)
 
-another_troll = Troll("Ug", 18, 1)
+another_troll = Troll("Ug")
 print(f"Another Troll- {another_troll}")
+
+brother = Troll("Urg")
+print(brother)

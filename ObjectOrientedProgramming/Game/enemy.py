@@ -19,4 +19,5 @@ class Enemy:
 
 class Troll(Enemy):
     """Creating sub-class Troll and its properties will be inherited from super class Enemy"""
-    pass
+    def __init__(self, name):
+        Enemy.__init__(self, name=name, lives=1, hit_points=23)
