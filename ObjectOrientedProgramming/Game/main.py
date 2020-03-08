@@ -1,5 +1,5 @@
 from player import Player
-from enemy import Enemy, Troll
+from enemy import Enemy, Troll, Vampyre
 
 deep = Player("Deepanshu")
 print(deep.name)
@@ -19,3 +19,17 @@ print(f"Another Troll- {another_troll}")
 brother = Troll("Urg")
 print(brother)
 brother.grunt()
+
+vampire = Vampyre("Deadly Vampire")
+print(vampire)
+vampire.take_damage(3)
+print(vampire)
+
+vampire.take_damage(9)
+print(vampire)
+
+vampire.take_damage(2)
+print(vampire)
+
+another_troll.take_damage(12)
+print(another_troll)

@@ -25,3 +25,8 @@ class Troll(Enemy):
 
     def grunt(self):
         print(f"Me ugly {self.name}. {self.name} stomps you.")
+
+
+class Vampyre(Enemy):
+    def __init__(self, name):
+        super().__init__(name=name, lives=3, hit_points=12)
