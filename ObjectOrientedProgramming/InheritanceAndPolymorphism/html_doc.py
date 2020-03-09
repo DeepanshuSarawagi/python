@@ -21,8 +21,11 @@ class DocType(Tag):
 
 class Head(Tag):
     
-    def __init__(self):
+    def __init__(self, title=None):
         super().__init__('head', '')
+        if title:
+            self._title_tag = Tag('title', title)
+            self.contents = str(self._title_tag)
 
 
 class Body(Tag):
@@ -43,9 +46,9 @@ class Body(Tag):
 
 class HtmlDoc(object):
 
-    def __init__(self):
+    def __init__(self, title=None):
         self._doc_type = DocType()
-        self._head = Head()
+        self._head = Head(title)
         self._body = Body()
 
     def add_tag(self, name, contents):
@@ -60,7 +63,7 @@ class HtmlDoc(object):
 
 
 if __name__ == '__main__':
-    my_page = HtmlDoc()
+    my_page = HtmlDoc('Demo HTML doc')
     my_page.add_tag('h1', "Main heading")
     my_page.add_tag('h2', "Sub heading")
     my_page.add_tag('p', "This is a paragraph.")
