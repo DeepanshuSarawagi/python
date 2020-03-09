@@ -8,8 +8,8 @@ class Tag(object):
     def __str__(self):
         return f"{self.start_tag}{self.contents}{self.end_tag}"
 
-    def display(self):
-        print(self)
+    def display(self, file=None):
+        print(self, file=file)
 
 
 class DocType(Tag):
@@ -35,10 +35,10 @@ class Body(Tag):
         new_tag = Tag(name, contents)
         self._body_contents.append(new_tag)
 
-    def display(self):
+    def display(self, file=None):
         for tag in self._body_contents:
             self.contents += str(tag)
-        super().display()
+        super().display(file=file)
 
 
 class HtmlDoc(object):
@@ -51,12 +51,12 @@ class HtmlDoc(object):
     def add_tag(self, name, contents):
         self._body.add_tag(name, contents)
 
-    def display(self):
-        self._doc_type.display()
-        print('<html>')
-        self._head.display()
-        self._body.display()
-        print('</html>')
+    def display(self, file=None):
+        self._doc_type.display(file=file)
+        print('<html>', file=file)
+        self._head.display(file=file)
+        self._body.display(file=file)
+        print('</html>', file=file)
 
 
 if __name__ == '__main__':
