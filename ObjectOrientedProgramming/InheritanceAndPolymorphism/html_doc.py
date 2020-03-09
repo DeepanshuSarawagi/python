@@ -2,7 +2,7 @@ class Tag(object):
 
     def __init__(self, name, contents):
         self.start_tag = f"<{name}>"
-        self.end_tag = f"</{name}"
+        self.end_tag = f"</{name}>"
         self.contents = contents
 
     def __str__(self):
@@ -64,4 +64,5 @@ if __name__ == '__main__':
     my_page.add_tag('h1', "Main heading")
     my_page.add_tag('h2', "Sub heading")
     my_page.add_tag('p', "This is a paragraph.")
-    my_page.display()
+    with open('test.html', 'w') as test_doc:
+        my_page.display(file=test_doc)
