@@ -39,3 +39,29 @@ class Body(Tag):
         for tag in self._body_contents:
             self.contents += str(tag)
         super().display()
+
+
+class HtmlDoc(object):
+
+    def __init__(self):
+        self._doc_type = DocType()
+        self._head = Head()
+        self._body = Body()
+
+    def add_tag(self, name, contents):
+        self._body.add_tag(name, contents)
+
+    def display(self):
+        self._doc_type.display()
+        print('<html>')
+        self._head.display()
+        self._body.display()
+        print('</html>')
+
+
+if __name__ == '__main__':
+    my_page = HtmlDoc()
+    my_page.add_tag('h1', "Main heading")
+    my_page.add_tag('h2', "Sub heading")
+    my_page.add_tag('p', "This is a paragraph.")
+    my_page.display()
