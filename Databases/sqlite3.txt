@@ -40,5 +40,25 @@ UPDATE contacts SET email="divya@email.com" WHERE name = "Divya";  -> To update 
  INSERT INTO contacts VALUES('Rajat',654397,'rajat@email.com');
  COMMIT;
 
+sqlite> .schema
+CREATE TABLE songs (_id INTEGER PRIMARY KEY, track INTEGER, title TEXT NOT NULL, album INTEGER);
+CREATE TABLE albums (_id INTEGER PRIMARY KEY, name TEXT NOT NULL, artist INTEGER);
+CREATE TABLE artists (_id INTEGER PRIMARY KEY, name TEXT NOT NULL);
 
+Here TEXT NOT NULL denotes that we need to specify the data for this field and we cannot leave it empty.
 
+SELECT * FROM artists ORDER BY name;  -> To display the records sorted/ordered by a particular column/field
+
+SELECT * FROM albums ORDER BY name COLLATE NOCASE;  -> To display the ordered/sorted records ignoring case.
+
+SELECT * FROM albums ORDER BY name COLLATE NOCASE DESC;  -> -> To display the ordered/sorted records ignoring case in
+descending order.
+
+SELECT * FROM albums ORDER BY artist, name COLLATE NOCASE;  -> Displays the sorted albums by sorting first with artist_id,
+and then by album names by all that artist_id.
+
+SELECT * FROM songs ORDER BY album, track COLLATE NOCASE;  -> List all the songs so that the songs from the same album
+appear together in track order.
+
+SELECT songs.track, songs.title, albums.name FROM songs JOIN albums ON songs.album = albums._id;  -> Join two tables in
+a Database.
