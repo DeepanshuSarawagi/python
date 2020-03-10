@@ -1,0 +1,44 @@
+# Basic commands on SQLITE 3
+
+.headers on -> This will show the column names in the start of the table as we keep adding the data.
+
+create table contacts (name text, phone integer, email text); -> Create a simple table named contacts with three fields.
+
+insert into contacts (name, phone, email) values('Deepanshu', 654396, 'deepanshu@email.com'); -> Insert data into the
+table.
+
+SELECT * FROM contacts;  -> To query the data from the table.
+
+INSERT INTO contacts VALUES("Rajat", 654397, "rajat@email.com");  -> Alternate way to add data in table without
+specifying the fields.
+
+INSERT INTO contacts (name, phone) VALUES("Divya", 87654);  -> Insert only data for specific columns/fields in a table.
+
+.backup testbackup -> backup database; syntax (.backup backupfilename)
+
+UPDATE contacts SET email="steve@hisemail.com";  -> Updates all the email address of all the contacts in contacts table.
+
+.restore testbackup  -> to restore from backup database
+
+UPDATE contacts SET email="divya@email.com" WHERE name = "Divya";  -> To update data of a specific contact in a table.
+
+ SELECT * FROM contacts WHERE name="Deepanshu";  -> To query records of a specific row by specifying the WHERE CLAUSE.
+
+ DELETE FROM contacts WHERE name="Divya";  -> Delete a record from the table.
+
+ .tables  -> Prints out all the tables in your database.
+
+ .schema  -> This command prints out the structure of your table.
+
+ .dump  -> Prints the list of INSERT statements used on a particular table
+
+ sqlite> .dump
+ PRAGMA foreign_keys=OFF;
+ BEGIN TRANSACTION;
+ CREATE TABLE contacts (name text, phone integer, email text);
+ INSERT INTO contacts VALUES('Deepanshu',654396,'deepanshu@email.com');
+ INSERT INTO contacts VALUES('Rajat',654397,'rajat@email.com');
+ COMMIT;
+
+
+
