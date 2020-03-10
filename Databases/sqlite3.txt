@@ -69,3 +69,5 @@ in SQLITE3
 
 SELECT songs.track, songs.title, albums.name FROM songs INNER JOIN albums ON songs.album = albums._id;  -> INNER JOIN
 
+SELECT albums.name, songs.track, songs.title FROM songs INNER JOIN albums ON songs.album = albums._id ORDER BY albums.name, songs.track;
+
