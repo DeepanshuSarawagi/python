@@ -65,3 +65,7 @@ a Database.
 
 SELECT albums.name, artists.name FROM albums JOIN artists ON albums.artist = artists._id;  -> Practice JOIN statement
 in SQLITE3
+
+
+SELECT songs.track, songs.title, albums.name FROM songs INNER JOIN albums ON songs.album = albums._id;  -> INNER JOIN
+
