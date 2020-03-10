@@ -74,3 +74,10 @@ SELECT albums.name, songs.track, songs.title FROM songs INNER JOIN albums ON son
 SELECT artists.name, albums.name FROM albums INNER JOIN artists ON albums.artist = artists._id ORDER BY artists.name  COLLATE NOCASE;
  This command queries list of all the artists with their album names in alphabetical order of artist names.
 
+SELECT artists.name, albums.name, songs.track, songs.title FROM songs
+   ...> INNER JOIN albums ON songs.album = albums._id
+   ...> INNER JOIN artists ON albums.artist = artists._id
+   ...> ORDER BY artists.name, albums.name, songs.track COLLATE NOCASE;
+
+Complex JOIN by join all the three tables songs, albums and artists and querying list of all the songs by the artists
+of a particular album.
