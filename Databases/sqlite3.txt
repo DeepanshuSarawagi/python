@@ -62,3 +62,6 @@ appear together in track order.
 
 SELECT songs.track, songs.title, albums.name FROM songs JOIN albums ON songs.album = albums._id;  -> Join two tables in
 a Database.
+
+SELECT albums.name, artists.name FROM albums JOIN artists ON albums.artist = artists._id;  -> Practice JOIN statement
+in SQLITE3
