@@ -81,3 +81,9 @@ SELECT artists.name, albums.name, songs.track, songs.title FROM songs
 
 Complex JOIN by join all the three tables songs, albums and artists and querying list of all the songs by the artists
 of a particular album.
+
+SELECT artists.name, albums.name, songs.track, songs.title FROM songs JOIN albums ON
+songs.album = albums._id JOIN artists ON albums.artist = artists._id
+WHERE songs.title LIKE '%doctor%' ORDER BY artists.name, albums.name, songs.track COLLATE NOCASE;
+
+This command will display the all the songs where string matches with "doctor".
