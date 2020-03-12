@@ -42,3 +42,7 @@ try:
 except ZeroDivisionError:
     print("You cant divide a number by zero.")
     sys.exit(2)
+else:
+    print("Division completed successfully")
+    """The else clause in the try block only executes if the try block is executed without catching/handling exceptions.
+    """
