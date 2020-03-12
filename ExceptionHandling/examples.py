@@ -10,8 +10,6 @@ def factorial(n):
 
 try:
     print(factorial(900))
-except RecursionError:
+except (RecursionError, ZeroDivisionError):
     print("This program cannot calculate large factorials")
     print("This program is terminating")
-except ZeroDivisionError:
-    print("What are you doing dividing by zero???")
