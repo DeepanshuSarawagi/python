@@ -7,6 +7,8 @@ update_cursor.execute(update_sql)
 print(f"{update_cursor.rowcount} rows updated")
 update_cursor.close()
 
+update_cursor.connection.commit()  # Use cursor to commit any changes to DB
+
 for name, phone, email in db.execute("SELECT * FROM contacts"):
     print(name)
     print(phone)
