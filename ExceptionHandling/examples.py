@@ -26,7 +26,7 @@ def getInt(prompt):
         except ValueError:
             print("Invalid Number, please try again")
         except EOFError:
-            sys.exit(0)
+            sys.exit(1)
 
 
 first_number = getInt("Please enter first number: ")
@@ -36,3 +36,4 @@ try:
     print(f"{first_number} divided by {second_number} is {first_number/second_number}")
 except ZeroDivisionError:
     print("You cant divide a number by zero.")
+    sys.exit(2)
