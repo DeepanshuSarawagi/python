@@ -1,3 +1,6 @@
+import sys
+
+
 def factorial(n):
     """To calculate the factorial of n recursively."""
 
@@ -22,6 +25,8 @@ def getInt(prompt):
             return number
         except ValueError:
             print("Invalid Number, please try again")
+        except EOFError:
+            sys.exit(0)
 
 
 first_number = getInt("Please enter first number: ")
