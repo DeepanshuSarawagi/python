@@ -13,3 +13,21 @@ try:
 except (RecursionError, ZeroDivisionError):
     print("This program cannot calculate large factorials")
     print("This program is terminating")
+
+
+def getInt(prompt):
+    while True:
+        try:
+            number = int(input(prompt))
+            return number
+        except ValueError:
+            print("Invalid Number, please try again")
+
+
+first_number = getInt("Please enter first number: ")
+second_number = getInt("Please enter second number: ")
+
+try:
+    print(f"{first_number} divided by {second_number} is {first_number/second_number}")
+except ZeroDivisionError:
+    print("You cant divide a number by zero.")
