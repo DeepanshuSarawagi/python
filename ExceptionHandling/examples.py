@@ -27,6 +27,11 @@ def getInt(prompt):
             print("Invalid Number, please try again")
         except EOFError:
             sys.exit(1)
+        finally:
+            print("The finally clause always executes if there is error or not.")
+
+        """Use this clause to do something even if there is error in program. You can use finally clause to close the 
+        cursors, db connections, print out a message when the program finished executing."""
 
 
 first_number = getInt("Please enter first number: ")
