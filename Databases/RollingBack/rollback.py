@@ -21,7 +21,7 @@ class Account(object):
             self._balance = opening_balance
             cursor.execute("INSERT INTO accounts VALUES(?, ?)", (name, opening_balance))
             cursor.connection.commit()
-            print(f"Account created for {self.name}", end='')
+            print(f"Account created for {self.name} ", end='')
         self.show_balance()
 
     def deposit(self, amount: float) -> float:
@@ -52,3 +52,8 @@ if __name__ == "__main__":
     deep.withdraw(0.50)
     deep.withdraw(0)
     deep.show_balance()
+
+    rajat = Account("Rajat", 100)
+    divya = Account("Divya", 100)
+    sangeetha = Account("Sangeetha", 500)
+    db.close()
