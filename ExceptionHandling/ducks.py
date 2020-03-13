@@ -39,7 +39,10 @@ class Flock(object):
 
     def migrate(self):
         for duck in self.flock:
-            duck.fly()
+            try:
+                duck.fly()
+            except AttributeError:
+                pass
 
 
 class Penguin(object):
