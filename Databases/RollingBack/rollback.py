@@ -13,7 +13,7 @@ class Account(object):
         cursor = db.execute("SELECT name, balance FROM accounts WHERE (name = ?)", (name, ))
         row = cursor.fetchone()
 
-        if row:
+        if row is not None:
             self.name, self._balance = row
             print(f"Account retrieved for {self.name}")
         else:
