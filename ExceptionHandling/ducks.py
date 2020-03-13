@@ -39,7 +39,8 @@ class Flock(object):
         self.flock = []
 
     def add_duck(self, duck: Duck) -> None:
-        if type(duck) is Duck:
+        # if type(duck) is Duck:  # this isnt a pythonic way
+        if isinstance(duck, Duck):
             self.flock.append(duck)
 
     def migrate(self):
