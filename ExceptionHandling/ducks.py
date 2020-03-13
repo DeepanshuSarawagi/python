@@ -38,12 +38,15 @@ class Flock(object):
         self.flock.append(duck)
 
     def migrate(self):
+        problem = None
         for duck in self.flock:
             try:
                 duck.fly()
-            except AttributeError:
+            except AttributeError as e:
                 print("One duck down")
-                raise
+                problem = e
+        if problem:
+            raise problem
 
 
 class Penguin(object):
