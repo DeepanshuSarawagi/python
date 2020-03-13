@@ -53,7 +53,7 @@ class Flock(object):
         for duck in self.flock:
             try:
                 duck.fly()
-                raise AttributeError("Testing exception handler in migrate")
+                raise AttributeError("Testing exception handler in migrate")  # TODO remove this from the release
             except AttributeError as e:
                 print("One duck down")
                 problem = e
