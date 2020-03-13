@@ -19,3 +19,18 @@ class Account(object):
             return amount
         else:
             print("Amount must be greater than zero and no more than balance.")
+            return 0.0
+
+    def show_balance(self):
+        print(f"Balance in the account {self.name} is {self._balance}")
+
+
+if __name__ == "__main__":
+    deep = Account("Deepanshu")
+    deep.deposit(100)
+    deep.deposit(0.10)
+    deep.deposit(0.65)
+    deep.deposit(0.10)
+    deep.withdraw(0.50)
+    deep.withdraw(0)
+    deep.show_balance()
