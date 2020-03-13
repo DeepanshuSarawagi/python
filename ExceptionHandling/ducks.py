@@ -42,7 +42,8 @@ class Flock(object):
             try:
                 duck.fly()
             except AttributeError:
-                pass
+                print("One duck down")
+                raise
 
 
 class Penguin(object):
