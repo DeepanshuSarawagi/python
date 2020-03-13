@@ -30,6 +30,10 @@ class Duck(object):
         self._wing.fly()
 
 
+class Mallard(Duck):
+    pass
+
+
 class Flock(object):
     def __init__(self):
         self.flock = []
