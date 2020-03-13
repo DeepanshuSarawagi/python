@@ -45,6 +45,8 @@ class Flock(object):
         """the gettatr() method check`s the object`s dictionary to check the attribute we specified."""
         if callable(fly_nethod):
             self.flock.append(duck)
+        else:
+            raise TypeError(f"Cannot add duck. Are you sure it is a Duck and not a {str(type(duck).__name__)}")
 
     def migrate(self):
         problem = None
