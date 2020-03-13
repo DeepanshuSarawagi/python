@@ -9,7 +9,7 @@ duck4 = ducks.Duck()
 duck5 = ducks.Duck()
 duck6 = ducks.Duck()
 duck7 = ducks.Duck()
-percy = ducks.Mallard()
+percy = ducks.Penguin()
 
 """Add the ducks to the Flock"""
 flock.add_duck(donald)

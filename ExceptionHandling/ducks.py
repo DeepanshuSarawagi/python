@@ -39,8 +39,11 @@ class Flock(object):
         self.flock = []
 
     def add_duck(self, duck: Duck) -> None:
-        # if type(duck) is Duck:  # this isnt a pythonic way
-        if isinstance(duck, Duck):
+        # if type(duck) is Duck:  # this isn't a pythonic way
+        # if isinstance(duck, Duck):  # still this isn't pythonic way
+        fly_nethod = getattr(duck, 'fly', None)  # getattr(object, 'method', default)
+        """the gettatr() method check`s the object`s dictionary to check the attribute we specified."""
+        if callable(fly_nethod):
             self.flock.append(duck)
 
     def migrate(self):
