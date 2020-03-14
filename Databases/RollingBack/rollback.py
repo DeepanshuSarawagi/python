@@ -16,4 +16,21 @@ class Account(object):
         if 0 < amount <= self._balance:
             self._balance -= amount
             print(f"{amount} withdrawn")
-        return self._balance
+            return amount
+        else:
+            print("Amount must be greater than zero and no more than your balance")
+            return 0.0
+
+    def show_balance(self):
+        print(f"Balance on account {self.name} is {self._balance}. ")
+
+
+if __name__ == "__main__":
+    deep = Account("Deepashu")
+    deep.deposit(100)
+    deep.deposit(0.10)
+    deep.deposit(0.10)
+    deep.withdraw(0.30)
+    deep.withdraw(0)
+    deep.show_balance()
+
