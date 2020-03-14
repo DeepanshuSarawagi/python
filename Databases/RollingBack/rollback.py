@@ -10,6 +10,10 @@ db.execute("CREATE TABLE IF NOT EXISTS history (time TIMESTAMP NOT NULL, account
 
 class Account(object):
 
+    @staticmethod
+    def _current_time():
+        return pytz.utc.localize(datetime.datetime.utcnow())
+
     def __init__(self, name: str, opening_balance: int = 0):
         cursor = db.execute("SELECT name, balance FROM accounts WHERE name = ?", (name, ))
         row = cursor.fetchone()
@@ -29,7 +33,7 @@ class Account(object):
         if amount > 0.0:
             # self._balance += amount
             new_balance = self._balance + amount
-            deposit_time = pytz.utc.localize(datetime.datetime.utcnow())
+            deposit_time = Account._current_time()
             db.execute("UPDATE accounts set balance = ? WHERE (name = ?)", (new_balance, self.name))
             db.execute("INSERT INTO history VALUES(?, ?, ?)", (deposit_time, self.name, amount))
             db.commit()
