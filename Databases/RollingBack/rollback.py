@@ -15,13 +15,13 @@ class Account(object):
 
         if row is not None:
             self.name, self._balance = row
-            print(f"Account retrieved for {self.name}")
+            print(f"Account retrieved for {self.name}. ", end='')
         else:
             self.name = name
             self._balance = opening_balance
             cursor.execute("INSERT INTO accounts VALUES(?, ?)", (name, opening_balance))
             cursor.connection.commit()
-            print(f"Account created for {self.name} ", end='')
+            print(f"Account created for {self.name} ", end=' ')
         self.show_balance()
 
     def deposit(self, amount: float) -> float:
@@ -56,4 +56,7 @@ if __name__ == "__main__":
     rajat = Account("Rajat", 100)
     divya = Account("Divya", 100)
     sangeetha = Account("Sangeetha", 500)
+    pradeep = Account("Pradeep", 1000)
+    deepak = Account("Deepak", 500)
+
     db.close()
