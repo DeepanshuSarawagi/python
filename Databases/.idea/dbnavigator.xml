@@ -38,7 +38,7 @@ COMMIT;]]></console>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
       <object connection-id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8" object-ref="schemas/main/tables/accounts" />
-      <object connection-id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8" object-ref="schemas/main/tables/transactions" />
+      <object connection-id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8" object-ref="schemas/main/tables/history" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
@@ -47,6 +47,7 @@ COMMIT;]]></console>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8" dataset="main.transactions" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8" dataset="main.accounts" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8" dataset="main.history" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
