@@ -24,13 +24,13 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="ee82dc29-8344-4220-a4bc-d8c8519c0a4f">
+      <connection connection-id="4482a621-e0ba-48ae-bd7f-846b93d95c91">
         <schema name="main" object-types="table, view, constraint, dataset trigger, column, index" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="ee82dc29-8344-4220-a4bc-d8c8519c0a4f">
+    <connection id="4482a621-e0ba-48ae-bd7f-846b93d95c91">
       <console name="Accounts" type="STANDARD" schema="main" session="Main"><![CDATA[ALTER TABLE transactions RENAME TO history;
 COMMIT;]]></console>
     </connection>
@@ -39,11 +39,7 @@ COMMIT;]]></console>
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="ee82dc29-8344-4220-a4bc-d8c8519c0a4f" />
-  </component>
-  <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="ee82dc29-8344-4220-a4bc-d8c8519c0a4f" dataset="main.accounts" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="ee82dc29-8344-4220-a4bc-d8c8519c0a4f" dataset="main.history" active-filter-id="EMPTY_FILTER" />
+    <connection id="4482a621-e0ba-48ae-bd7f-846b93d95c91" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -68,7 +64,7 @@ COMMIT;]]></console>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="ee82dc29-8344-4220-a4bc-d8c8519c0a4f" active="true">
+      <connection id="4482a621-e0ba-48ae-bd7f-846b93d95c91" active="true">
         <database>
           <name value="Accounts" />
           <description value="" />
