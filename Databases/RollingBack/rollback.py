@@ -52,3 +52,9 @@ if __name__ == "__main__":
     deep.withdraw(0)
     deep.show_balance()
 
+    rajat = Account("Rajat", 20000)
+    divya = Account("Divya", 20000)
+    sangeetha = Account("Sangeetha", 50000)
+
+    db.close()
+
