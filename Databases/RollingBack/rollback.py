@@ -27,7 +27,11 @@ class Account(object):
             self._balance = opening_balance
             cursor.execute("INSERT INTO accounts VALUES(?, ?)", (name, opening_balance))
             cursor.connection.commit()
+<<<<<<< HEAD
             print(f"Account created for {self.name} ", end=' ')
+=======
+            print(f"Account created for {self.name}", end='')
+>>>>>>> parent of 5e538c8... Create more objects of Account class and save them in DB
         self.show_balance()
 
     def _save_update(self, amount):
@@ -78,6 +82,7 @@ if __name__ == "__main__":
     deep.withdraw(50)
     deep.withdraw(0)
     deep.show_balance()
+<<<<<<< HEAD
 
     rajat = Account("Rajat", 100)
     divya = Account("Divya", 100)
@@ -86,3 +91,5 @@ if __name__ == "__main__":
     deepak = Account("Deepak", 500)
 
     db.close()
+=======
+>>>>>>> parent of 5e538c8... Create more objects of Account class and save them in DB
