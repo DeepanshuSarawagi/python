@@ -19,7 +19,7 @@ class Account(object):
         else:
             self.name = name
             self._balance = opening_balance
-            cursor.execute("INSERT INTO accounts VALUES(?, ?", (name, opening_balance))
+            cursor.execute("INSERT INTO accounts VALUES(?, ?)", (name, opening_balance))
             cursor.connection.commit()
             print(f"Account created for {self.name}. ", end='')
         self.show_balance()
