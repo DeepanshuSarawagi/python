@@ -31,7 +31,8 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8">
-      <console name="Accounts" type="STANDARD" schema="main" session="Main" />
+      <console name="Accounts" type="STANDARD" schema="main" session="Main"><![CDATA[ALTER TABLE transactions RENAME TO history;
+COMMIT;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
