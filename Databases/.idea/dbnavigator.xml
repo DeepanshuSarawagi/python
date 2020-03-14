@@ -38,6 +38,7 @@ COMMIT;]]></console>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
       <object connection-id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8" object-ref="schemas/main/tables/accounts" />
+      <object connection-id="da58f6bb-57c4-47cc-90d7-f4417d3a8fa8" object-ref="schemas/main/tables/history" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
