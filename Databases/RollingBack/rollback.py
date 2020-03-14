@@ -43,7 +43,13 @@ class Account(object):
 
     def withdraw(self, amount: int) -> float:
         if 0 < amount <= self._balance:
-            self._balance -= amount
+            # self._balance -= amount
+            new_balance = self._balance - amount
+            withdraw_time = Account._current_time()
+            db.execute("UPDATE accounts set balance = ? WHERE (name = ?)", (new_balance, self.name))
+            db.execute("INSERT INTO history VALUES(?, ?, ?)", (withdraw_time, self.name, -amount))
+            db.commit()
+            self._balance = new_balance
             print(f"{amount / 100 :.2f} withdrawn")
             return amount / 100
         else:
