@@ -12,7 +12,7 @@ db.execute("CREATE TABLE IF NOT EXISTS transactions(time TIMESTAMP NOT NULL, acc
 class Account(object):
 
     @staticmethod
-    def _current_time(self):
+    def _current_time():
         return pytz.utc.localize(datetime.datetime.utcnow())
 
     def __init__(self, name: str, opening_balance: float = 0.0):
@@ -52,12 +52,13 @@ class Account(object):
 
     def withdraw(self, amount) -> float:
         if 0 < amount <= self._balance:
-            new_balance = self._balance - amount
-            withdrawal_time = Account._current_time()
-            db.execute("UPDATE accounts SET balance = ? WHERE name = ?", (new_balance, self.name))
-            db.execute("INSERT INTO history VALUES(?, ?, ?)", (withdrawal_time, self.name, -amount))
-            db.commit()
-            self._balance = new_balance
+            # new_balance = self._balance - amount
+            # withdrawal_time = Account._current_time()
+            # db.execute("UPDATE accounts SET balance = ? WHERE name = ?", (new_balance, self.name))
+            # db.execute("INSERT INTO history VALUES(?, ?, ?)", (withdrawal_time, self.name, -amount))
+            # db.commit()
+            # self._balance = new_balance
+            self._save_update(-amount)
             print(f"{amount} withdrawn.")
             return amount
         else:
