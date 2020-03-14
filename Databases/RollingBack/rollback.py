@@ -1,4 +1,6 @@
 import sqlite3
+import datetime
+import pytz
 
 db = sqlite3.connect("accounts.sqlite")
 
@@ -26,7 +28,12 @@ class Account(object):
 
     def deposit(self, amount: float) -> float:
         if amount > 0.0:
-            self._balance += amount
+            new_balance = self._balance + amount
+            deposit_time = pytz.utc.localize(datetime.datetime.utcnow())
+            db.execute("UPDATE accounts SET balance = ? WHERE name = ?", (new_balance, self.name))
+            db.execute("INSERT INTO history VALUES(?, ?, ?)", (deposit_time, self.name, amount))
+            db.commit()
+            self._balance = new_balance
             print(f"{amount} deposited.")
         return self._balance
 
@@ -46,10 +53,10 @@ class Account(object):
 if __name__ == "__main__":
     deep = Account("Deepanshu")
     deep.deposit(100)
-    deep.deposit(0.10)
-    deep.deposit(0.65)
-    deep.deposit(0.10)
-    deep.withdraw(0.50)
+    deep.deposit(10)
+    deep.deposit(65)
+    deep.deposit(10)
+    deep.withdraw(50)
     deep.withdraw(0)
     deep.show_balance()
 
