@@ -55,6 +55,8 @@ if __name__ == "__main__":
     rajat = Account("Rajat", 20000)
     divya = Account("Divya", 20000)
     sangeetha = Account("Sangeetha", 50000)
+    pradeep = Account("Pradeep", 100000)
+    deepak = Account("Deepak")
 
     db.close()
 
