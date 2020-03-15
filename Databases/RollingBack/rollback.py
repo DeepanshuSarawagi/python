@@ -16,7 +16,8 @@ class Account(object):
 
     @staticmethod
     def _current_time():
-        return pytz.utc.localize(datetime.datetime.utcnow())
+        # return pytz.utc.localize(datetime.datetime.utcnow())
+        return 1
         # local_time = pytz.utc.localize(datetime.datetime.utcnow())
         # return local_time.astimezone()
 
