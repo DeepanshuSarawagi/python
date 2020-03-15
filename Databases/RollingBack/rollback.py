@@ -31,27 +31,37 @@ class Account(object):
             print(f"Account created for {self.name}. ", end='')
         self.show_balance()
 
+    def _save_update(self, amount):
+        new_balance = self._balance + amount
+        deposit_time = Account._current_time()
+        db.execute("UPDATE accounts set balance = ? WHERE (name = ?)", (new_balance, self.name))
+        db.execute("INSERT INTO history VALUES(?, ?, ?)", (deposit_time, self.name, amount))
+        db.commit()
+        self._balance = new_balance
+
     def deposit(self, amount: int) -> float:
         if amount > 0.0:
             # self._balance += amount
-            new_balance = self._balance + amount
-            deposit_time = Account._current_time()
-            db.execute("UPDATE accounts set balance = ? WHERE (name = ?)", (new_balance, self.name))
-            db.execute("INSERT INTO history VALUES(?, ?, ?)", (deposit_time, self.name, amount))
-            db.commit()
-            self._balance = new_balance
+            # new_balance = self._balance + amount
+            # deposit_time = Account._current_time()
+            # db.execute("UPDATE accounts set balance = ? WHERE (name = ?)", (new_balance, self.name))
+            # db.execute("INSERT INTO history VALUES(?, ?, ?)", (deposit_time, self.name, amount))
+            # db.commit()
+            # self._balance = new_balance
+            self._save_update(amount)
             print(f"{amount / 100 :.2f} deposited.")
         return self._balance / 100
 
     def withdraw(self, amount: int) -> float:
         if 0 < amount <= self._balance:
             # self._balance -= amount
-            new_balance = self._balance - amount
-            withdraw_time = Account._current_time()
-            db.execute("UPDATE accounts set balance = ? WHERE (name = ?)", (new_balance, self.name))
-            db.execute("INSERT INTO history VALUES(?, ?, ?)", (withdraw_time, self.name, -amount))
-            db.commit()
-            self._balance = new_balance
+            # new_balance = self._balance - amount
+            # withdraw_time = Account._current_time()
+            # db.execute("UPDATE accounts set balance = ? WHERE (name = ?)", (new_balance, self.name))
+            # db.execute("INSERT INTO history VALUES(?, ?, ?)", (withdraw_time, self.name, -amount))
+            # db.commit()
+            # self._balance = new_balance
+            self._save_update(-amount)
             print(f"{amount / 100 :.2f} withdrawn")
             return amount / 100
         else:
@@ -78,4 +88,3 @@ if __name__ == "__main__":
     deepak = Account("Deepak")
 
     db.close()
-
