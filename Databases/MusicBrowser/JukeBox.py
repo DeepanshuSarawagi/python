@@ -40,7 +40,7 @@ albumList.config(relief='sunken', border=2)
 songLV = tkinter.Variable(mainWindow)
 songLV.set(("Choose an album",))
 songList = tkinter.Listbox(mainWindow, listvariable=songLV)
-songList.grid(row=1, column=2, sticky='nsew', padx=(30, 0))
+songList.grid(row=1, column=2, rowspan=2, sticky='nsew', padx=(30, 0))
 songList.config(relief='sunken', border=2)
 
 mainWindow.mainloop()
