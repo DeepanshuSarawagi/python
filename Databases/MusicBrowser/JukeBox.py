@@ -29,6 +29,11 @@ artistsList = tkinter.Listbox(mainWindow)
 artistsList.grid(row=1, column=0, rowspan=2, sticky='nsew', padx=(30, 0))
 artistsList.config(relief='sunken', border=2)
 
+# artist scrollbar
+artistScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=artistsList.yview)
+artistScroll.grid(row=1, column=0, rowspan=2, sticky='nse')
+artistsList['yscrollcommand'] = artistScroll.set
+
 # Create Albums list box
 albumLV = tkinter.Variable(mainWindow)
 albumLV.set(('Choose an artists',))
