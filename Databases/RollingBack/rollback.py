@@ -16,8 +16,8 @@ class Account(object):
 
     @staticmethod
     def _current_time():
-        # return pytz.utc.localize(datetime.datetime.utcnow())
-        return 1
+        return pytz.utc.localize(datetime.datetime.utcnow())
+        # return 1
         # local_time = pytz.utc.localize(datetime.datetime.utcnow())
         # return local_time.astimezone()
 
@@ -44,9 +44,9 @@ class Account(object):
             db.execute("INSERT INTO history VALUES(?, ?, ?)", (deposit_time, self.name, amount))
         except sqlite3.Error:
             db.rollback()
-        finally:
+        else:
             db.commit()
-        self._balance = new_balance
+            self._balance = new_balance
 
     def deposit(self, amount: int) -> float:
         if amount > 0.0:
