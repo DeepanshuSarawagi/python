@@ -33,14 +33,14 @@ artistsList.config(relief='sunken', border=2)
 albumLV = tkinter.Variable(mainWindow)
 albumLV.set(('Choose an artists',))
 albumList = tkinter.Listbox(mainWindow, listvariable=albumLV)
-albumList.grid(row=1, column=1, rowspan=2, sticky='nsew', padx=(30, 0))
+albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
 albumList.config(relief='sunken', border=2)
 
 # Songs list box
 songLV = tkinter.Variable(mainWindow)
 songLV.set(("Choose an album",))
 songList = tkinter.Listbox(mainWindow, listvariable=songLV)
-songList.grid(row=1, column=2, rowspan=2, sticky='nsew', padx=(30, 0))
+songList.grid(row=1, column=2, sticky='nsew', padx=(30, 0))
 songList.config(relief='sunken', border=2)
 
 mainWindow.mainloop()
