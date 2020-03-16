@@ -5,8 +5,8 @@ def print_backwards(*args, **kwargs):
     without specifying the named parameter file= yet pass it as an argument while calling the method"""
 
     for word in args[::-1]:
-        print(word[::-1], end=' ', **kwargs)
+        print(word[::-1], **kwargs)
 
 
 with open('backwards.txt', 'w') as backwards:
-    print_backwards("hello", "planet", "earth", "take", "me", "to", "your", "leader", file=backwards)
+    print_backwards("hello", "planet", "earth", "take", "me", "to", "your", "leader", file=backwards, end='\n')
