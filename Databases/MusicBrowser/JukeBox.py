@@ -30,6 +30,19 @@ def get_albums(event):
     albumLV.set(tuple(alist))
 
 
+def get_songs(event):
+    lb = event.widget
+    index = int(lb.curselection()[0])
+    album_name = lb.get(index),
+
+    # get the album is from the database
+    album_id = conn.execute("SELECT albums._id FROM albums WHERE albums.name = ?", album_name).fetchone()
+    alist = []
+    for x in conn.execute("SELECT songs.title FROM songs WHERE songs.album = ? ORDER BY songs.track", album_id):
+        alist.append(x[0])
+    songLV.set(tuple(alist))
+
+
 mainWindow = tkinter.Tk()
 mainWindow.title("Music Juke Box")
 mainWindow.geometry("1024x768")
@@ -76,6 +89,8 @@ albumList = Scrollbox(mainWindow, listvariable=albumLV)
 albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
 albumList.config(relief='sunken', border=2)
 
+albumList.bind('<<ListboxSelect>>', get_songs)
+
 # albumScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=albumList.yview)
 # albumScroll.grid(row=1, column=1, sticky='nse')
 # albumList['yscrollcommand'] = albumScroll.set
@@ -90,3 +105,4 @@ songList.config(relief='sunken', border=2)
 # testList = range(1, 100)
 # albumLV.set(tuple(testList))
 mainWindow.mainloop()
+conn.close()
