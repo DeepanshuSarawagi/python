@@ -11,6 +11,11 @@ class Scrollbox(tkinter.Listbox):
         super().__init__(window, **kwargs)
         self.scrollbar = tkinter.Scrollbar(window, orient=tkinter.VERTICAL, command=self.yview)
 
+    def grid(self, row, column, sticky='nsw', rowspan=1, columnspan=1, **kwargs):
+        super().grid(row=row, column=column, sticky=sticky, rowspan=rowspan, columnspan=columnspan, **kwargs)
+        self.scrollbar.grid(row=row, column=column, sticky='nsw', rowspan=rowspan)
+        self['yscrollcommand'] = self.scrollbar.set
+
 
 mainWindow = tkinter.Tk()
 mainWindow.title("Music Juke Box")
@@ -39,10 +44,10 @@ artistsList = Scrollbox(mainWindow)
 artistsList.grid(row=1, column=0, rowspan=2, sticky='nsew', padx=(30, 0))
 artistsList.config(relief='sunken', border=2)
 
-# artist scrollbar
-artistScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=artistsList.yview)
-artistScroll.grid(row=1, column=0, rowspan=2, sticky='nse')
-artistsList['yscrollcommand'] = artistScroll.set
+# # artist scrollbar
+# artistScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=artistsList.yview)
+# artistScroll.grid(row=1, column=0, rowspan=2, sticky='nse')
+# artistsList['yscrollcommand'] = artistScroll.set
 
 # Create Albums list box
 albumLV = tkinter.Variable(mainWindow)
@@ -51,9 +56,9 @@ albumList = Scrollbox(mainWindow, listvariable=albumLV)
 albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
 albumList.config(relief='sunken', border=2)
 
-albumScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=albumList.yview)
-albumScroll.grid(row=1, column=1, sticky='nse')
-albumList['yscrollcommand'] = albumScroll.set
+# albumScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=albumList.yview)
+# albumScroll.grid(row=1, column=1, sticky='nse')
+# albumList['yscrollcommand'] = albumScroll.set
 
 # Songs list box
 songLV = tkinter.Variable(mainWindow)
