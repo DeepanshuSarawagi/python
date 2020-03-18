@@ -19,28 +19,34 @@ class Scrollbox(tkinter.Listbox):
 
 def get_albums(event):
     lb = event.widget
-    index = lb.curselection()[0]
-    artist_name = lb.get(index),
-
-    # get the artist id from the database
-    artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()
-    alist = []
-    for row in conn.execute("SELECT albums.name FROM albums WHERE albums.artist = ? ORDER BY albums.name", artist_id):
-        alist.append(row[0])
-    albumLV.set(tuple(alist))
+    try:
+        index = lb.curselection()[0]
+        artist_name = lb.get(index),
+        # get the artist id from the database
+        artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()
+        alist = []
+        for row in conn.execute("SELECT albums.name FROM albums WHERE albums.artist = ? ORDER BY albums.name", artist_id):
+            alist.append(row[0])
+        albumLV.set(tuple(alist))
+        songLV.set(("Choose an albums",))
+    except IndexError:
+        pass
 
 
 def get_songs(event):
-    lb = event.widget
-    index = int(lb.curselection()[0])
-    album_name = lb.get(index),
+    try:
+        lb = event.widget
+        index = int(lb.curselection()[0])
+        album_name = lb.get(index),
 
-    # get the album is from the database
-    album_id = conn.execute("SELECT albums._id FROM albums WHERE albums.name = ?", album_name).fetchone()
-    alist = []
-    for x in conn.execute("SELECT songs.title FROM songs WHERE songs.album = ? ORDER BY songs.track", album_id):
-        alist.append(x[0])
-    songLV.set(tuple(alist))
+        # get the album is from the database
+        album_id = conn.execute("SELECT albums._id FROM albums WHERE albums.name = ?", album_name).fetchone()
+        alist = []
+        for x in conn.execute("SELECT songs.title FROM songs WHERE songs.album = ? ORDER BY songs.track", album_id):
+            alist.append(x[0])
+        songLV.set(tuple(alist))
+    except IndexError:
+        pass
 
 
 mainWindow = tkinter.Tk()
@@ -102,7 +108,7 @@ songList = Scrollbox(mainWindow, listvariable=songLV)
 songList.grid(row=1, column=2, sticky='nsew', padx=(30, 0))
 songList.config(relief='sunken', border=2)
 
-# testList = range(1, 100)
-# albumLV.set(tuple(testList))
+testList = range(1, 100)
+albumLV.set(tuple(testList))
 mainWindow.mainloop()
 conn.close()
