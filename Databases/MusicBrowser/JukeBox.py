@@ -2,6 +2,16 @@ import sqlite3
 import tkinter
 
 conn = sqlite3.connect("music.sqlite")
+
+
+class Scrollbox(tkinter.Listbox):
+
+    def __init__(self, window, **kwargs):
+
+        super().__init__(window, **kwargs)
+        self.scrollbar = tkinter.Scrollbar(window, orient=tkinter.VERTICAL, command=self.yview)
+
+
 mainWindow = tkinter.Tk()
 mainWindow.title("Music Juke Box")
 mainWindow.geometry("1024x768")
@@ -25,7 +35,7 @@ tkinter.Label(mainWindow, text="Albums").grid(row=0, column=1)
 tkinter.Label(mainWindow, text="Songs").grid(row=0, column=2)
 
 # Create Artists list box
-artistsList = tkinter.Listbox(mainWindow)
+artistsList = Scrollbox(mainWindow)
 artistsList.grid(row=1, column=0, rowspan=2, sticky='nsew', padx=(30, 0))
 artistsList.config(relief='sunken', border=2)
 
@@ -37,15 +47,21 @@ artistsList['yscrollcommand'] = artistScroll.set
 # Create Albums list box
 albumLV = tkinter.Variable(mainWindow)
 albumLV.set(('Choose an artists',))
-albumList = tkinter.Listbox(mainWindow, listvariable=albumLV)
+albumList = Scrollbox(mainWindow, listvariable=albumLV)
 albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
 albumList.config(relief='sunken', border=2)
+
+albumScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=albumList.yview)
+albumScroll.grid(row=1, column=1, sticky='nse')
+albumList['yscrollcommand'] = albumScroll.set
 
 # Songs list box
 songLV = tkinter.Variable(mainWindow)
 songLV.set(("Choose an album",))
-songList = tkinter.Listbox(mainWindow, listvariable=songLV)
+songList = Scrollbox(mainWindow, listvariable=songLV)
 songList.grid(row=1, column=2, sticky='nsew', padx=(30, 0))
 songList.config(relief='sunken', border=2)
 
+testList = range(1, 100)
+albumLV.set(tuple(testList))
 mainWindow.mainloop()
