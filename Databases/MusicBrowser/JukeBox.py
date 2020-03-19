@@ -51,22 +51,21 @@ class DataListBox(Scrollbox):
         for value in self.cursor:
             self.insert(tkinter.END, value[0])
 
+    def get_albums(self, event):
+        lb = event.widget
+        if lb.curselection():  # fix the IndexError: tuple out of range
+            index = lb.curselection()[0]
+            artist_name = lb.get(index),
+            # get the artist id from the database
+            artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()[0]
+            albumList.requery(artist_id)
 
-def get_albums(event):
-    lb = event.widget
-    if lb.curselection():  # fix the IndexError: tuple out of range
-        index = lb.curselection()[0]
-        artist_name = lb.get(index),
-        # get the artist id from the database
-        artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()[0]
-        albumList.requery(artist_id)
-
-        # artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()
-        # alist = []
-        # for row in conn.execute("SELECT albums.name FROM albums WHERE albums.artist = ? ORDER BY albums.name", artist_id):
-        #     alist.append(row[0])
-        # albumLV.set(tuple(alist))
-        # songLV.set(("Choose an albums",))
+            # artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()
+            # alist = []
+            # for row in conn.execute("SELECT albums.name FROM albums WHERE albums.artist = ? ORDER BY albums.name", artist_id):
+            #     alist.append(row[0])
+            # albumLV.set(tuple(alist))
+            # songLV.set(("Choose an albums",))
 
 
 def get_songs(event):
@@ -116,7 +115,7 @@ artistsList.config(relief='sunken', border=2)
 #     artistsList.insert(tkinter.END, artist[0])
 
 artistsList.requery()
-artistsList.bind('<<ListboxSelect>>', get_albums)
+artistsList.bind('<<ListboxSelect>>', artistsList.get_albums)
 
 # # artist scrollbar
 # artistScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=artistsList.yview)
