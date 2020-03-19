@@ -118,7 +118,8 @@ artistsList.bind('<<ListboxSelect>>', get_albums)
 # Create Albums list box
 albumLV = tkinter.Variable(mainWindow)
 albumLV.set(('Choose an artists',))
-albumList = Scrollbox(mainWindow, listvariable=albumLV)
+albumList = DataListBox(mainWindow, conn, "albums", "name", sort_order=("name",))
+albumList.requery()
 albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
 albumList.config(relief='sunken', border=2)
 
@@ -131,7 +132,8 @@ albumList.bind('<<ListboxSelect>>', get_songs)
 # Songs list box
 songLV = tkinter.Variable(mainWindow)
 songLV.set(("Choose an album",))
-songList = Scrollbox(mainWindow, listvariable=songLV)
+songList = DataListBox(mainWindow, conn, "songs", "title", sort_order=("track", "title"))
+songList.requery()
 songList.grid(row=1, column=2, sticky='nsew', padx=(30, 0))
 songList.config(relief='sunken', border=2)
 
