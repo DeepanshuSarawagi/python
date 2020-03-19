@@ -17,6 +17,29 @@ class Scrollbox(tkinter.Listbox):
         self['yscrollcommand'] = self.scrollbar.set
 
 
+class DataListBox(Scrollbox):
+
+    def __init__(self, window, connection, table, field, sort_order=(), **kwargs):
+        super().__init__(window, **kwargs)
+
+        self.cursor = connection.cursor()
+        self.table = table
+        self.field = field
+
+        self.sql_select = "SELECT " + self.field + ", _id" + " FROM " + self.table
+        if sort_order:
+            self.sql_sort = "ORDER BY " + ",".join(sort_order)
+        else:
+            self.sql_sort = "ORDER BY " + self.field
+
+    def clear(self):
+        self.delete(0, tkinter.END)
+
+    def requery(self):
+        print(self.sql_select + self.sql_sort)  # TODO remove this line once testing is complete
+        self.clear()
+
+
 def get_albums(event):
     lb = event.widget
     if lb.curselection():  # fix the IndexError: tuple out of range
