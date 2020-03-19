@@ -28,9 +28,9 @@ class DataListBox(Scrollbox):
 
         self.sql_select = "SELECT " + self.field + ", _id" + " FROM " + self.table
         if sort_order:
-            self.sql_sort = "ORDER BY " + ",".join(sort_order)
+            self.sql_sort = " ORDER BY " + ",".join(sort_order)
         else:
-            self.sql_sort = "ORDER BY " + self.field
+            self.sql_sort = " ORDER BY " + self.field
 
     def clear(self):
         self.delete(0, tkinter.END)
@@ -98,15 +98,16 @@ tkinter.Label(mainWindow, text="Albums").grid(row=0, column=1)
 tkinter.Label(mainWindow, text="Songs").grid(row=0, column=2)
 
 # Create Artists list box
-artistsList = Scrollbox(mainWindow)
+artistsList = DataListBox(mainWindow, conn, "artists", "name")
 artistsList.grid(row=1, column=0, rowspan=2, sticky='nsew', padx=(30, 0))
 artistsList.config(relief='sunken', border=2)
 
 # insert the artist list data in the artist listbox from database
-for artist in conn.execute("SELECT artists.name FROM artists ORDER BY artists.name"):
-    # print(artist)
-    artistsList.insert(tkinter.END, artist[0])
+# for artist in conn.execute("SELECT artists.name FROM artists ORDER BY artists.name"):
+#     # print(artist)
+#     artistsList.insert(tkinter.END, artist[0])
 
+artistsList.requery()
 artistsList.bind('<<ListboxSelect>>', get_albums)
 
 # # artist scrollbar
