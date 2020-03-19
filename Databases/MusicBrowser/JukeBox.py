@@ -37,7 +37,14 @@ class DataListBox(Scrollbox):
 
     def requery(self):
         print(self.sql_select + self.sql_sort)  # TODO remove this line once testing is complete
+        self.cursor.execute(self.sql_select + self.sql_sort)
+
+        # clear the list box contents before re-laoding
         self.clear()
+
+        # reload the data
+        for value in self.cursor:
+            self.insert(tkinter.END, value[0])
 
 
 def get_albums(event):
