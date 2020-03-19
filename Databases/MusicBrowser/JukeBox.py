@@ -19,7 +19,7 @@ class Scrollbox(tkinter.Listbox):
 
 def get_albums(event):
     lb = event.widget
-    try:
+    if lb.curselection():  # fix the IndexError: tuple out of range
         index = lb.curselection()[0]
         artist_name = lb.get(index),
         # get the artist id from the database
@@ -29,24 +29,20 @@ def get_albums(event):
             alist.append(row[0])
         albumLV.set(tuple(alist))
         songLV.set(("Choose an albums",))
-    except IndexError:
-        pass
 
 
 def get_songs(event):
-    try:
         lb = event.widget
-        index = int(lb.curselection()[0])
-        album_name = lb.get(index),
+        if lb.curselection():
+            index = int(lb.curselection()[0])
+            album_name = lb.get(index),
 
-        # get the album is from the database
-        album_id = conn.execute("SELECT albums._id FROM albums WHERE albums.name = ?", album_name).fetchone()
-        alist = []
-        for x in conn.execute("SELECT songs.title FROM songs WHERE songs.album = ? ORDER BY songs.track", album_id):
-            alist.append(x[0])
-        songLV.set(tuple(alist))
-    except IndexError:
-        pass
+            # get the album is from the database
+            album_id = conn.execute("SELECT albums._id FROM albums WHERE albums.name = ?", album_name).fetchone()
+            alist = []
+            for x in conn.execute("SELECT songs.title FROM songs WHERE songs.album = ? ORDER BY songs.track", album_id):
+                alist.append(x[0])
+            songLV.set(tuple(alist))
 
 
 mainWindow = tkinter.Tk()
