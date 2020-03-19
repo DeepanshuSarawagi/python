@@ -35,9 +35,14 @@ class DataListBox(Scrollbox):
     def clear(self):
         self.delete(0, tkinter.END)
 
-    def requery(self):
-        print(self.sql_select + self.sql_sort)  # TODO remove this line once testing is complete
-        self.cursor.execute(self.sql_select + self.sql_sort)
+    def requery(self, link_value=None):
+        if link_value:
+            sql = self.sql_select + " WHERE " + " artist" + " =?" + self.sql_sort
+            print(sql)  # TODO remove this line once testing is complete
+            self.cursor.execute(sql, (link_value,))
+        else:
+            print(self.sql_select + self.sql_sort)  # TODO remove this line once testing is complete
+            self.cursor.execute(self.sql_select + self.sql_sort)
 
         # clear the list box contents before re-laoding
         self.clear()
@@ -119,7 +124,7 @@ artistsList.bind('<<ListboxSelect>>', get_albums)
 albumLV = tkinter.Variable(mainWindow)
 albumLV.set(('Choose an artists',))
 albumList = DataListBox(mainWindow, conn, "albums", "name", sort_order=("name",))
-albumList.requery()
+albumList.requery(12)
 albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
 albumList.config(relief='sunken', border=2)
 
