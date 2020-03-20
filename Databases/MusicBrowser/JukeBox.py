@@ -62,7 +62,6 @@ class DataListBox(Scrollbox):
             self.linked_box.clear()
 
     def on_select(self, event):
-        print(self is event.widget)  # TODO remove this line once testing is complete
         if self.linked_box:
             if self.curselection():  # fix the IndexError: tuple out of range
                 index = self.curselection()[0]
