@@ -57,7 +57,7 @@ class DataListBox(Scrollbox):
             index = self.curselection()[0]
             artist_name = self.get(index),
             # get the artist id from the database
-            artist_id = conn.execute(self.sql_select + " WHERE " + self.field + " = ?", artist_name).fetchone()[1]
+            artist_id = self.cursor.execute(self.sql_select + " WHERE " + self.field + " = ?", artist_name).fetchone()[1]
             print(f"artist id is {artist_id}")  # TODO remove this line once testing is complete
             albumList.requery(artist_id)
 
