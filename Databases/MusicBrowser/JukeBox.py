@@ -53,20 +53,14 @@ class DataListBox(Scrollbox):
 
     def on_select(self, event):
         print(self is event.widget)  # TODO remove this line once testing is complete
-        if self.curselection():  # fix the IndexError: tuple out of range
-            index = self.curselection()[0]
-            artist_name = self.get(index),
-            # get the artist id from the database
-            artist_id = self.cursor.execute(self.sql_select + " WHERE " + self.field + " = ?", artist_name).fetchone()[1]
-            print(f"artist id is {artist_id}")  # TODO remove this line once testing is complete
-            albumList.requery(artist_id)
-
-            # artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()
-            # alist = []
-            # for row in conn.execute("SELECT albums.name FROM albums WHERE albums.artist = ? ORDER BY albums.name", artist_id):
-            #     alist.append(row[0])
-            # albumLV.set(tuple(alist))
-            # songLV.set(("Choose an albums",))
+        if self.linked_box:
+            if self.curselection():  # fix the IndexError: tuple out of range
+                index = self.curselection()[0]
+                artist_name = self.get(index),
+                # get the artist id from the database
+                artist_id = self.cursor.execute(self.sql_select + " WHERE " + self.field + " = ?", artist_name).fetchone()[1]
+                print(f"artist id is {artist_id}")  # TODO remove this line once testing is complete
+                self.linked_box.requery(artist_id)
 
 
 def get_songs(event):
