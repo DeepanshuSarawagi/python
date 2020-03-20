@@ -44,20 +44,21 @@ class DataListBox(Scrollbox):
             print(self.sql_select + self.sql_sort)  # TODO remove this line once testing is complete
             self.cursor.execute(self.sql_select + self.sql_sort)
 
-        # clear the list box contents before re-laoding
+        # clear the list box contents before re-loading
         self.clear()
 
         # reload the data
         for value in self.cursor:
             self.insert(tkinter.END, value[0])
 
-    def get_albums(self, event):
-        lb = event.widget
-        if lb.curselection():  # fix the IndexError: tuple out of range
-            index = lb.curselection()[0]
-            artist_name = lb.get(index),
+    def on_select(self, event):
+        print(self is event.widget)  # TODO remove this line once testing is complete
+        if self.curselection():  # fix the IndexError: tuple out of range
+            index = self.curselection()[0]
+            artist_name = self.get(index),
             # get the artist id from the database
-            artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()[0]
+            artist_id = conn.execute(self.sql_select + " WHERE " + self.field + " = ?", artist_name).fetchone()[1]
+            print(f"artist id is {artist_id}")  # TODO remove this line once testing is complete
             albumList.requery(artist_id)
 
             # artist_id = conn.execute("SELECT artists._id FROM artists WHERE artists.name=?", artist_name).fetchone()
@@ -115,7 +116,7 @@ artistsList.config(relief='sunken', border=2)
 #     artistsList.insert(tkinter.END, artist[0])
 
 artistsList.requery()
-artistsList.bind('<<ListboxSelect>>', artistsList.get_albums)
+artistsList.bind('<<ListboxSelect>>', artistsList.on_select)
 
 # # artist scrollbar
 # artistScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=artistsList.yview)
