@@ -22,9 +22,14 @@ class DataListBox(Scrollbox):
     def __init__(self, window, connection, table, field, sort_order=(), **kwargs):
         super().__init__(window, **kwargs)
 
+        self.linked_box = None
+        self.link_filed = None
+
         self.cursor = connection.cursor()
         self.table = table
         self.field = field
+
+        self.bind("<<ListboxSelect", self.on_select)
 
         self.sql_select = "SELECT " + self.field + ", _id" + " FROM " + self.table
         if sort_order:
@@ -34,6 +39,10 @@ class DataListBox(Scrollbox):
 
     def clear(self):
         self.delete(0, tkinter.END)
+
+    def link(self, widget, link_field):
+        self.linked_box = widget
+        widget.link_field = link_field
 
     def requery(self, link_value=None):
         if link_value:
@@ -110,7 +119,6 @@ artistsList.config(relief='sunken', border=2)
 #     artistsList.insert(tkinter.END, artist[0])
 
 artistsList.requery()
-artistsList.bind('<<ListboxSelect>>', artistsList.on_select)
 
 # # artist scrollbar
 # artistScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=artistsList.yview)
