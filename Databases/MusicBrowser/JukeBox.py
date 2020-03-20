@@ -22,6 +22,7 @@ class DataListBox(Scrollbox):
 
         self.linked_box = None
         self.link_field = None
+        self.link_value = None
 
         self.cursor = connection.cursor()
         self.table = table
@@ -43,6 +44,7 @@ class DataListBox(Scrollbox):
         widget.link_field = link_field
 
     def requery(self, link_value=None):
+        self.link_value = link_value
         if link_value and self.link_field:
             sql = self.sql_select + " WHERE " + self.link_field + "=?" + self.sql_sort
             self.cursor.execute(sql, (link_value,))
@@ -64,11 +66,18 @@ class DataListBox(Scrollbox):
         if self.linked_box:
             if self.curselection():  # fix the IndexError: tuple out of range
                 index = self.curselection()[0]
-                artist_name = self.get(index),
+                value = self.get(index),
+                # get the ID from the database row
+                # make sure we are getting the correct one by including link_value if appropriate
                 # get the artist id from the database
-                artist_id = self.cursor.execute(self.sql_select + " WHERE " + self.field + " = ?", artist_name).fetchone()[1]
-                print(f"artist id is {artist_id}")  # TODO remove this line once testing is complete
-                self.linked_box.requery(artist_id)
+                if self.link_value:
+                    value = value[0], self.link_value
+                    sql_where = " WHERE " + self.field + "=? AND " + self.link_field + "=?"
+                else:
+                    sql_where = " WHERE " +self.field + "=?"
+
+                link_id = self.cursor.execute(self.sql_select + sql_where, value).fetchone()[1]
+                self.linked_box.requery(link_id)
 
 
 if __name__ == "__main__":
