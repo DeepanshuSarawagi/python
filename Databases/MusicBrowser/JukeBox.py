@@ -23,13 +23,13 @@ class DataListBox(Scrollbox):
         super().__init__(window, **kwargs)
 
         self.linked_box = None
-        self.link_filed = None
+        self.link_field = None
 
         self.cursor = connection.cursor()
         self.table = table
         self.field = field
 
-        self.bind("<<ListboxSelect", self.on_select)
+        self.bind("<<ListboxSelect>>", self.on_select)
 
         self.sql_select = "SELECT " + self.field + ", _id" + " FROM " + self.table
         if sort_order:
@@ -45,8 +45,8 @@ class DataListBox(Scrollbox):
         widget.link_field = link_field
 
     def requery(self, link_value=None):
-        if link_value:
-            sql = self.sql_select + " WHERE " + " artist" + " =?" + self.sql_sort
+        if link_value and self.link_field:
+            sql = self.sql_select + " WHERE " + self.link_field + "=?" + self.sql_sort
             print(sql)  # TODO remove this line once testing is complete
             self.cursor.execute(sql, (link_value,))
         else:
@@ -59,6 +59,9 @@ class DataListBox(Scrollbox):
         # reload the data
         for value in self.cursor:
             self.insert(tkinter.END, value[0])
+
+        if self.linked_box:
+            self.linked_box.clear()
 
     def on_select(self, event):
         print(self is event.widget)  # TODO remove this line once testing is complete
@@ -133,7 +136,8 @@ albumList.requery(12)
 albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
 albumList.config(relief='sunken', border=2)
 
-albumList.bind('<<ListboxSelect>>', get_songs)
+# albumList.bind('<<ListboxSelect>>', get_songs)
+artistsList.link(albumList, "artist")
 
 # albumScroll = tkinter.Scrollbar(mainWindow, orient=tkinter.VERTICAL, command=albumList.yview)
 # albumScroll.grid(row=1, column=1, sticky='nse')
@@ -146,6 +150,7 @@ songList = DataListBox(mainWindow, conn, "songs", "title", sort_order=("track", 
 songList.requery()
 songList.grid(row=1, column=2, sticky='nsew', padx=(30, 0))
 songList.config(relief='sunken', border=2)
+albumList.link(songList, "album")
 
 testList = range(1, 100)
 albumLV.set(tuple(testList))
