@@ -47,10 +47,8 @@ class DataListBox(Scrollbox):
     def requery(self, link_value=None):
         if link_value and self.link_field:
             sql = self.sql_select + " WHERE " + self.link_field + "=?" + self.sql_sort
-            print(sql)  # TODO remove this line once testing is complete
             self.cursor.execute(sql, (link_value,))
         else:
-            print(self.sql_select + self.sql_sort)  # TODO remove this line once testing is complete
             self.cursor.execute(self.sql_select + self.sql_sort)
 
         # clear the list box contents before re-loading
@@ -73,20 +71,6 @@ class DataListBox(Scrollbox):
                 artist_id = self.cursor.execute(self.sql_select + " WHERE " + self.field + " = ?", artist_name).fetchone()[1]
                 print(f"artist id is {artist_id}")  # TODO remove this line once testing is complete
                 self.linked_box.requery(artist_id)
-
-
-def get_songs(event):
-        lb = event.widget
-        if lb.curselection():
-            index = int(lb.curselection()[0])
-            album_name = lb.get(index),
-
-            # get the album is from the database
-            album_id = conn.execute("SELECT albums._id FROM albums WHERE albums.name = ?", album_name).fetchone()
-            alist = []
-            for x in conn.execute("SELECT songs.title FROM songs WHERE songs.album = ? ORDER BY songs.track", album_id):
-                alist.append(x[0])
-            songLV.set(tuple(alist))
 
 
 mainWindow = tkinter.Tk()
