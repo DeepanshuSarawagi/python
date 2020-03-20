@@ -116,7 +116,7 @@ if __name__ == "__main__":
     albumLV = tkinter.Variable(mainWindow)
     albumLV.set(('Choose an artists',))
     albumList = DataListBox(mainWindow, conn, "albums", "name", sort_order=("name",))
-    albumList.requery()
+    # albumList.requery()
     albumList.grid(row=1, column=1, sticky='nsew', padx=(30, 0))
     albumList.config(relief='sunken', border=2)
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
     songLV = tkinter.Variable(mainWindow)
     songLV.set(("Choose an album",))
     songList = DataListBox(mainWindow, conn, "songs", "title", sort_order=("track", "title"))
-    songList.requery()
+    # songList.requery()
     songList.grid(row=1, column=2, sticky='nsew', padx=(30, 0))
     songList.config(relief='sunken', border=2)
     albumList.link(songList, "album")
