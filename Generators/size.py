@@ -21,7 +21,9 @@ print(f" The size of my range is {sys.getsizeof(my_range)} bytes")
 
 big_list = []
 
+_ = input("line 24")
 for val in big_range:
+    _ = input("line 26- inside loop")
     big_list.append(val)
 
 
