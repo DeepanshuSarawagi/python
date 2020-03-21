@@ -4,5 +4,8 @@ root = "music"
 
 for path, directories, files in os.walk(root, topdown=True):
     print(path)
-    for f in files:
-        print(f"\t{f}")
+    print(directories)
+    print(files)
+    input()
+    # for f in files:
+    #     print(f"\t{f}")
