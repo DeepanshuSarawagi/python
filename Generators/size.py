@@ -10,10 +10,15 @@ def my_range(n: int):
         start += 1
 
 
-_ = input("line 12")
 big_range = my_range(5)
 # big_range = range(10000)
-_ = input("line 16")
+_ = input("line 15")
+
+print(next(big_range))
+
+""" the next value will be returned as 1 when the for loop is executed at line 25 which in-turn calls the  my_range 
+function. This happens because the first value of my_range is already consumed by the generator function when called 
+at line 17. """
 
 print(f"The size of big range is {sys.getsizeof(big_range)} bytes")
 print(f" The size of my range is {sys.getsizeof(my_range)} bytes")
