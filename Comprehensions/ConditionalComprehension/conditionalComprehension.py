@@ -39,6 +39,6 @@ print(veg_meals)
 
 """Lets say there is a customer who doesn't like 'eggs', 'spam', and 'bread and butter' together. Below is the code"""
 
-diet_meals = [meal for meal in menu if "spam" not in meal and "eggs" not in meal if not ("bread" in meal and "butter" in meal)]
+diet_meals = [meal for meal in menu if "spam" not in meal and "eggs" not in meal
+              if not ("bread" in meal and "butter" in meal)]
 print(f"Diet meal menu is {diet_meals}")
-
