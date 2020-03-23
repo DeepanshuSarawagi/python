@@ -2,10 +2,11 @@ menu = [
     ["eggs", "spam", "eggs"],
     ["eggs", "bread", "bacon"],
     ["bread", "butter", "jam"],
-    ["panini", "tofu", "cheese"],
+    ["bread", "tofu", "cheese"],
     ["eggs", "spam", "spam", "milk"],
     ["milk", "cookies", "spam"],
-    ["milk", "cookies", "cereal"]
+    ["milk", "cookies", "cereal"],
+    ["cookies", "butter"]
 ]
 meals = []
 
@@ -29,3 +30,27 @@ here, filter is now part of the expression."""
 x = 12
 expression = "Tweleve" if x == 12 else "unknown"
 print(expression)
+
+print()
+
+items = set()
+
+for meal in menu:
+    for item in meal:
+        items.add(item)
+print(items)
+
+print()
+
+meals = []
+for meal in menu:
+    if "spam" not in meal:
+        meals.append(meal)
+    else:
+        meals.append(f"A meal containing spam was skipped")
+print(meals)
+
+for meal in menu:
+    print(meal, "contains spam" if "spam" in meal else "contains bread" if "bread" in meal else "contains milk" if
+          "milk" in meal else "contains egg")
+# this is not a desired expression since meal defaults to egg if none of the above condition is satisfied
