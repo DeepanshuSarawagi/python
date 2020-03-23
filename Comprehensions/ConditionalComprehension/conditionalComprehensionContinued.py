@@ -54,3 +54,11 @@ for meal in menu:
     print(meal, "contains spam" if "spam" in meal else "contains bread" if "bread" in meal else "contains milk" if
           "milk" in meal else "contains egg")
 # this is not a desired expression since meal defaults to egg if none of the above condition is satisfied
+
+print()
+
+for meal in menu:
+    for item in items:
+        if item in meal:
+            print(f"A {meal} contains {item}")
+            break
