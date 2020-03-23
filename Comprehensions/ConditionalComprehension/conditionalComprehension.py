@@ -11,3 +11,11 @@ menu = [
 for meal in menu:
     if "spam" not in meal:
         print(meal)
+
+# Solution using conitional comprehension
+
+print("Below is the solution using conditional comprehension")
+meals = [meal for meal in menu if "spam" not in meal]
+print(meals)
+for good_meal in meals:  # iterate over the list of items when retrieved using conditional comprehension
+    print(good_meal)
