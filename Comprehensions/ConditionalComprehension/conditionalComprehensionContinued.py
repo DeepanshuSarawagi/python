@@ -62,3 +62,23 @@ for meal in menu:
         if item in meal:
             print(f"A {meal} contains {item}")
             break
+
+print()
+count_fizz = 0
+count_buzz = 0
+count_fizzbuzz = 0
+for x in range(1, 61):
+    fizzbuzz = "fizz buzz" if x % 15 == 0 else "fizz" if x % 3 == 0 else "buzz" if x % 5 == 0 else str(x)
+    if fizzbuzz == "fizz buzz":
+        count_fizzbuzz += 1
+    if fizzbuzz == "fizz":
+        count_fizz += 1
+    if fizzbuzz == "buzz":
+        count_buzz += 1
+    print(fizzbuzz)
+
+print(f"There {count_buzz} buzz in this range")
+print(f"There are {count_fizz} fizz in this range")
+print(f"There are {count_fizzbuzz} fizzbuzz in this range")
+
+
