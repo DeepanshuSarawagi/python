@@ -1,0 +1,27 @@
+menu = [
+    ["eggs", "spam", "eggs"],
+    ["eggs", "bread", "bacon"],
+    ["bread", "butter", "jam"],
+    ["panini", "tofu", "cheese"],
+    ["eggs", "spam", "spam", "milk"],
+    ["milk", "cookies", "spam"],
+    ["milk", "cookies", "cereal"]
+]
+meals = []
+
+for meal in menu:
+    if "spam" not in meal:
+        meals.append(meal)
+    else:
+        meals.append(f"a meal was skipped")
+
+print(meals)
+print()
+
+# Lets try creating a solution using else clause in conditional comprehension
+
+meals = [meal if "spam" not in meal else "a meal was skipped" for meal in menu]
+print(meals)
+
+"""As we can see in the output, we have produced identical outputs by creation a more complex expression. If we notice
+here, filter is now part of the expression."""
