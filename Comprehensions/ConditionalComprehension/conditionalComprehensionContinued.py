@@ -25,3 +25,7 @@ print(meals)
 
 """As we can see in the output, we have produced identical outputs by creation a more complex expression. If we notice
 here, filter is now part of the expression."""
+
+x = 12
+expression = "Tweleve" if x == 12 else "unknown"
+print(expression)
