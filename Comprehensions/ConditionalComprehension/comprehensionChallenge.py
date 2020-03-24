@@ -36,3 +36,15 @@ for loc in sorted(locations):
     forest = [(exit, locations[exit]) for exit in exits if loc in exits[exit].values()]
     print(f"Locations leading to {loc}", end='\t')
     print(forest)
+
+# convert comprehensions to for loop
+print("* " * 40)
+
+
+for loc in sorted(locations):
+    forest = []
+    for xit in exits:
+        if loc in exits[xit].values():
+            forest.append((xit, locations[xit]))
+    print(f"Locations leading to {loc}", end='\t')
+    print(forest)
