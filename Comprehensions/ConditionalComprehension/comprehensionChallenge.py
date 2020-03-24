@@ -31,3 +31,8 @@ exits = {0: {"Q": 0},
 loc = 5
 forest = [(exit, locations[exit]) for exit in exits if loc in exits[exit].values()]
 print(forest)
+
+for loc in sorted(locations):
+    forest = [(exit, locations[exit]) for exit in exits if loc in exits[exit].values()]
+    print(f"Locations leading to {loc}", end='\t')
+    print(forest)
