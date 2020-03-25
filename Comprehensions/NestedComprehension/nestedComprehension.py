@@ -38,5 +38,5 @@ for i in range(1, 11):
     for j in range(1, 11):
         print(i, i * j)
 
-nested_times_table = [f"{i} {i*j}" for i in range(1, 11) for j in range(1, 11)]
-print(nested_times_table)
+times_table = [f"{i} {i*j}" for i in range(1, 11) for j in range(1, 11)]
+print(times_table)
