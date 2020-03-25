@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Comprehensions.iml" filepath="$PROJECT_DIR$/Comprehensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/ConditionalComprehension/ConditionalComprehension.iml" filepath="$PROJECT_DIR$/ConditionalComprehension/ConditionalComprehension.iml" />
       <module fileurl="file://$PROJECT_DIR$/ListComprehension/ListComprehension.iml" filepath="$PROJECT_DIR$/ListComprehension/ListComprehension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NestedComprehension/NestedComprehension.iml" filepath="$PROJECT_DIR$/NestedComprehension/NestedComprehension.iml" />
     </modules>
   </component>
 </project>
