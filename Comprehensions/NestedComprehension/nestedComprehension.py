@@ -22,3 +22,10 @@ for nested_meals in [[(burger, topping) for burger in burgers] for topping in to
     print(nested_meals)
 
 print()
+
+nested_meals = []
+for topping in toppings:
+    for burger in burgers:
+        nested_meals.append((burger, topping))
+
+print(nested_meals)
