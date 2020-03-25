@@ -7,3 +7,11 @@ toppings = ["cheese", "salad", "jalepenos"]
 meals = [(burger, topping) for burger in burgers for topping in toppings]
 
 print(meals)
+print()
+
+meals = []
+for burger in burgers:
+    for topping in toppings:
+        meals.append((burger, topping))
+
+print(meals)
