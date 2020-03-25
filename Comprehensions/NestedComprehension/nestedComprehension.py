@@ -29,3 +29,12 @@ for topping in toppings:
         nested_meals.append((burger, topping))
 
 print(nested_meals)
+
+# Nested for loop to nested comprehension challenge
+# Create a nested comprehension by converting below for loop
+
+print()
+for i in range(1, 11):
+    for j in range(1, 11):
+        print(i, i * j)
+
