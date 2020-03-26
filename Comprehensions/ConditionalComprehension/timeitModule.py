@@ -49,5 +49,13 @@ for index, loc in enumerate(exits_to_destination_3):
     print(loc)
 """
 
-result_1 = timeit.timeit(nested_loops)
-print(f"Nested loops:'\t'{result_1}")
+result_1 = timeit.timeit(nested_loops, globals=globals(), number=1000)
+print()
+
+result_2 = timeit.timeit(list_comprehension, globals=globals(), number=1000)
+print()
+
+result_3 = timeit.timeit(nested_comprehension, globals=globals(), number=1000)
+print(f"Nested loops take:'\t'{result_1} seconds to execute the code 1000 times.")
+print(f"List comprehensions take:'\t'{result_2} seconds to execute the code 1000 times.")
+print(f"Nested comprehensions take:'\t'{result_3} seconds to execute the code 1000 times.")
