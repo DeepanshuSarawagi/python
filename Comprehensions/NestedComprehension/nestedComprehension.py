@@ -40,3 +40,6 @@ for i in range(1, 11):
 
 times_table = [f"{i} {i*j}" for i in range(1, 11) for j in range(1, 11)]
 print(times_table)
+
+for x , y in [(i, i*j) for i in range(1, 11) for j in range(1, 11)]:
+    print(x, y)
