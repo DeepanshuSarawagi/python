@@ -24,3 +24,26 @@ for loc in sorted(locations):
     print(exits_to_destination_1)
 
 print()
+
+print("List comprehensions inside a for loop")
+print("-------------------------------------")
+for loc in sorted(locations):
+    exits_to_destination_2 = [(xit, locations[xit]) for xit in exits if loc in exits[xit].values()]
+    print(f"Locations leading to {loc}: ", end='\t')
+    print(exits_to_destination_2)
+print()
+
+print("Nested comprehensions")
+print("---------------------")
+
+exits_to_destination_3 = [[(xit, locations[xit]) for xit in exits if loc in exits[xit].values()]
+                          for loc in sorted(locations)]
+print(exits_to_destination_3)
+print()
+
+# Since we have got the output but our desired output should be list all the items in a separate list,
+# we can use enumerate function to get the index of each list from the outer list
+
+for index, loc in enumerate(exits_to_destination_3):
+    print(f"Locations leading to {index: }", end='\t')
+    print(loc)
