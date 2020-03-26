@@ -48,3 +48,6 @@ for index, loc in enumerate(exits_to_destination_3):
     print(f"Locations leading to {index: }", end='\t')
     print(loc)
 """
+
+result_1 = timeit.timeit(nested_loops)
+print(f"Nested loops:'\t'{result_1}")
