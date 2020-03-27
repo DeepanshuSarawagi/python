@@ -39,6 +39,9 @@ def nested_loops():
             if loc in exits[xit].values():
                 exits_to_destination_1.append((xit, locations[xit]))
         result.append(exits_to_destination_1)
+    # Print the result before returning the result
+    for x in result:
+        pass
     return result
 
 
@@ -47,18 +50,27 @@ def list_comprehension():
     for loc in sorted(locations):
         exits_to_destination_2 = [(xit, locations[xit]) for xit in exits if loc in exits[xit].values()]
         result.append(exits_to_destination_2)
+    # Print the result before returning the result
+    for x in result:
+        pass
     return result
 
 
 def nested_comprehension():
     exits_to_destination_3 = [[(xit, locations[xit]) for xit in exits if loc in exits[xit].values()]
                               for loc in sorted(locations)]
+    # Print the result before returning the result
+    for x in exits_to_destination_3:
+        pass
     return exits_to_destination_3
 
 
 def nested_generators():
     exits_to_destination_4 = ([(xit, locations[xit]) for xit in exits if loc in exits[xit].values()]
                               for loc in sorted(locations))
+    # Print the result before returning the result
+    for x in exits_to_destination_4:
+        pass
     return exits_to_destination_4
 
 
