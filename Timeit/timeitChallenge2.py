@@ -19,7 +19,7 @@ def factorial(n):
 
 
 if __name__ == "__main__":
-    print(f"It took {timeit.timeit('x=fact(200)', setup='from __main__ import fact', number=10000)} "
+    print(f"It took {timeit.repeat('x=fact(200)', setup='from __main__ import fact', number=10000)} "
           f"seconds to calculate factorial using iterative method")
-    print(f"It took {timeit.timeit('x=factorial(200)', setup='from __main__ import factorial', number=10000)} "
+    print(f"It took {timeit.repeat('x=factorial(200)', setup='from __main__ import factorial', number=10000)} "
           f"seconds to calculate factorial using recursive method")
