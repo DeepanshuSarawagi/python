@@ -65,6 +65,7 @@ def nested_generators():
 print(nested_loops())
 print(list_comprehension())
 print(nested_comprehension())
+print(nested_comprehension())
 result_1 = timeit.timeit(nested_loops, number=10000)
 result_2 = timeit.timeit(list_comprehension, number=10000)
 result_3 = timeit.timeit(nested_comprehension, number=10000)
