@@ -35,11 +35,11 @@ def map_iter():
 
 
 if __name__ == "__main__":
-    list1 = timeit.timeit("caps()", setup="from __main__ import caps", number=10000)
+    list1 = timeit.timeit("caps()", setup="from __main__ import caps", number=100000)
     print(list1)
-    list2 = timeit.timeit("map_caps()", setup="from __main__ import map_caps", number=10000)
+    list2 = timeit.timeit("map_caps()", setup="from __main__ import map_caps", number=100000)
     print(list2)
-    list3 = timeit.timeit("words_caps()", setup="from __main__ import words_caps", number=10000)
+    list3 = timeit.timeit("words_caps()", setup="from __main__ import words_caps", number=100000)
     print(list3)
-    list4 = timeit.timeit("words_map()", setup="from __main__ import words_map", number=10000)
+    list4 = timeit.timeit("words_map()", setup="from __main__ import words_map", number=100000)
     print(list4)
