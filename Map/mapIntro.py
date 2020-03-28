@@ -16,3 +16,5 @@ print(words)
 map_words = list(map(str.upper, string.split(' ')))
 print(map_words)
 
+for x in map(str.upper, string.split(' ')):
+    print(x)
