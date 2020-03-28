@@ -34,16 +34,12 @@ def map_iter():
         return x
 
 
-result1 = timeit.timeit(caps, globals=globals(), number=10000)
-result2 = timeit.timeit(map_caps, globals=globals(), number=10000)
-result3 = timeit.timeit(words_caps, globals=globals(), number=10000)
-result4 = timeit.timeit(words_map, globals=globals(), number=10000)
-result5 = timeit.timeit(map_iter, globals=globals(), number=10000)
-
-print(result1)
-print(result2)
-print(result3)
-print(result4)
-print(result5)
-
-
+if __name__ == "__main__":
+    list1 = timeit.timeit(caps, globals=globals(), number=10000)
+    print(list1)
+    list2 = timeit.timeit(map_caps, globals=globals(), number=10000)
+    print(list2)
+    list3 = timeit.timeit(words_caps, globals=globals(), number=10000)
+    print(list3)
+    list4 = timeit.timeit(words_map, globals=globals(), number=10000)
+    print(list4)
