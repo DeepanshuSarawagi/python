@@ -20,8 +20,7 @@ a = input("a: ")
 b = input("b: ")
 
 c = a
-d = b
-a = d
+a = b
 b = c
 
 print("a: " + a)
