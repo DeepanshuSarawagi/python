@@ -13,3 +13,16 @@ print("Hello Mr. " + input("What is your last name? "))
 
 name = input("Please enter your username: ")
 print(len(name))
+
+# Exercise 4 - Interchange the values of a and b using variables
+
+a = input("a: ")
+b = input("b: ")
+
+c = a
+d = b
+a = d
+b = c
+
+print("a: " + a)
+print("b: " + b)
