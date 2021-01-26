@@ -20,4 +20,4 @@ for i in range(0, len(str(two_digit_number))):
 print(sum_of_numbers)
 
 # Remembering the PEMDASLR rule
-print(3 * 3 + 3 / 3 - 3)
+print(3 * 3 + 3 / 3 - 3 ** 2)
