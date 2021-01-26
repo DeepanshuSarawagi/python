@@ -18,3 +18,6 @@ sum_of_numbers = 0
 for i in range(0, len(str(two_digit_number))):
     sum_of_numbers += int(two_digit_number[i])
 print(sum_of_numbers)
+
+# Remembering the PEMDASLR rule
+print(3 * 3 + 3 / 3 - 3)
