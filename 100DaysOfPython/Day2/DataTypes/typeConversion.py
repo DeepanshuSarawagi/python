@@ -5,3 +5,5 @@ print("Your name has " + str(num_char) + " characters")  # Type conversion happe
                                                          # the type integer to string
 # Or we can use the fStrings
 print("Your name has {} characters".format(num_char))
+
+print(70 + float("170.5"))
