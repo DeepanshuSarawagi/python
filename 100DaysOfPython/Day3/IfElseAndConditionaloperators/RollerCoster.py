@@ -14,3 +14,15 @@ if num % 2 == 0:
     print("{} is an even number".format(num))
 else:
     print("{} is an odd number".format(num))
+
+# Nested if-else statement
+
+if height >= 120:
+    print("You can ride the rollercoster")
+    age = int(input("Please enter your age: "))
+    if age > 18:
+        print("Please pay $12 for the ride. Enjoy!!")
+    else:
+        print("Please pay $7 for the ride. Enjoy!!")
+else:
+    print("Sorry! You cannot take the ride due to safety measures!")
