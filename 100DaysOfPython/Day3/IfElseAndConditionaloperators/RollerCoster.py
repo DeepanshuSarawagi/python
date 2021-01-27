@@ -22,7 +22,9 @@ if height >= 120:
     age = int(input("Please enter your age: "))
     if age > 18:
         print("Please pay $12 for the ride. Enjoy!!")
-    else:
+    elif 12 <= age <= 18:
         print("Please pay $7 for the ride. Enjoy!!")
+    else:
+        print("Please pay $5 for the ride. Enjoy!!")
 else:
     print("Sorry! You cannot take the ride due to safety measures!")
