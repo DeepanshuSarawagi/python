@@ -27,9 +27,10 @@ for high_score in high_scores:
     if int(high_score) > highest_score:
         highest_score = int(high_score)
 
-print(highest_score)
-lowest = 100
-for i in range(0, (len(high_scores) - 1)):
+print("Highest score in the list is {}".format(highest_score))
+
+lowest = int(high_scores[0])
+for i in range(0, (len(high_scores))):
     if int(high_scores[i]) < lowest:
         lowest = int(high_scores[i])
-print(lowest)
+print("Lowest score in the list is {}".format(lowest))
