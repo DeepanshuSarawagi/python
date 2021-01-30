@@ -12,6 +12,8 @@ print(dirty_dozen)
 
 # This is how we traverse through list of lists
 
+print(dirty_dozen[1][1])
+print()
 for items in dirty_dozen:
     for item in items:
         print(item)
