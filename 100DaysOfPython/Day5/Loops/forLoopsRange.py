@@ -8,6 +8,6 @@ print(sum_of_numbers)
 # Day 5 - Exercise 3
 
 sum_of_even = 0
-for i in range(0, 101, 2):
+for i in range(0, 101, 2):  # Here we are using the step as 2 to loop through every second item in the range
     sum_of_even += i
 print(sum_of_even)
