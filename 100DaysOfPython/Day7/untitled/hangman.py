@@ -12,11 +12,15 @@ word_list = ["aardvark", "baboon", "camel"]
 
 word = random.choice(word_list)
 
-guess = input("Please guess a letter of your choice: ").lower()
 
 list_of_blanks = []
+
 for i in range(0, len(word)):
     list_of_blanks.append("_")
+
+print(list_of_blanks)
+
+guess = input("Please guess a letter of your choice: ").lower()
 
 for i in range(0, len(word)):
     if guess == word[i]:
