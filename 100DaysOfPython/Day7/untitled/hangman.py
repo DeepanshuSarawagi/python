@@ -21,8 +21,5 @@ for i in range(0, len(word)):
 for i in range(0, len(word)):
     if guess == word[i]:
         list_of_blanks[i] = guess
-        print("Right")
-    else:
-        print("Wrong")
 
 print(list_of_blanks)
