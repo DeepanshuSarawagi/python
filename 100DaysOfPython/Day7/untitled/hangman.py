@@ -18,12 +18,17 @@ list_of_blanks = []
 for i in range(0, len(word)):
     list_of_blanks.append("_")
 
-print(list_of_blanks)
+var = False
 
-guess = input("Please guess a letter of your choice: ").lower()
+while var is False:
+    print(list_of_blanks)
 
-for i in range(0, len(word)):
-    if guess == word[i]:
-        list_of_blanks[i] = guess
+    guess = input("Please guess a letter of your choice: ").lower()
+
+    for i in range(0, len(word)):
+        if guess == word[i]:
+            list_of_blanks[i] = guess
+    if list(word) == list_of_blanks:
+        var = True
 
 print(list_of_blanks)
