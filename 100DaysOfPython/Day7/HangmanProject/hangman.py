@@ -1,9 +1,10 @@
 import random
 import hangman_art
+import hangman_words
 
 print(hangman_art.logo)
 
-word_list = ["aardvark", "baboon", "camel"]
+word_list = hangman_words.word_list
 word = random.choice(word_list)
 
 
@@ -26,7 +27,7 @@ while var is False:
 
     if guess not in word:
         lives -= 1
-        print(stages[lives])
+        print(hangman_art.stages[lives])
 
     if lives == 0:
         print("You Lose!")
