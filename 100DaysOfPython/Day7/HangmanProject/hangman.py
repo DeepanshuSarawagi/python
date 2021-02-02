@@ -21,11 +21,15 @@ while var is False:
 
     guess = input("Please guess a letter of your choice: ").lower()
 
+    if guess in list_of_blanks:
+        print("You have already guessed this letter: {}".format(guess))
+
     for i in range(0, len(word)):
         if guess == word[i]:
             list_of_blanks[i] = guess
 
     if guess not in word:
+        print("You guessed {}. This letter is not in the word. You lose a life".format(guess))
         lives -= 1
         print(hangman_art.stages[lives])
 
