@@ -1,5 +1,9 @@
 # In this lesson we are going to review the basics of Functions
 
+# Difference between parameter and argument
+# Parameter is the name of the data that is passed in
+# Argument is the actual data that is passed while calling a function
+
 def greet():
     print("Hello!")
     print("Welcome to the coders club!")
@@ -7,6 +11,7 @@ def greet():
 
 
 greet()
+
 
 def greet_with_name(name):
     print("Hello {}".format(name))
