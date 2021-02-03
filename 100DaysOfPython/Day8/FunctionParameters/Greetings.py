@@ -19,4 +19,5 @@ def greet_with_name(name, location):
     print("How is the weather today in {}?".format(location))
 
 
-greet_with_name(name=input("Enter your name: "), location="Chennai")
+greet_with_name(input("Enter your name: "), location="Chennai")  # This is the example of a keyword argument
+greet_with_name("Divya", "Bengaluru")  # This is the example of positional argument
