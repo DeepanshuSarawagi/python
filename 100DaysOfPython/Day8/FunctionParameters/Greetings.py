@@ -7,3 +7,10 @@ def greet():
 
 
 greet()
+
+def greet_with_name(name):
+    print("Hello {}".format(name))
+    print("How are you doing, {}?".format(name))
+
+
+greet_with_name(name=input("Enter your name: "))
