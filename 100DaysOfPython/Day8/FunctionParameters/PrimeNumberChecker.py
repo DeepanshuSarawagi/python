@@ -19,4 +19,18 @@ def prime_checker(number):
                 break
 
 
-prime_checker(number=number)
+# prime_checker(number=number)
+
+
+def prime_number_checker(number):
+    isPrime = True
+    for i in range(2, number):
+        if number % 1 == 0:
+            isPrime = False
+    if isPrime:
+        print("{} is a prime number".format(number))
+    else:
+        print("{} is not a prime number".format(number))
+
+
+prime_number_checker(number=number)
