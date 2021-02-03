@@ -13,9 +13,10 @@ def greet():
 greet()
 
 
-def greet_with_name(name):
+def greet_with_name(name, location):
     print("Hello {}".format(name))
     print("How are you doing, {}?".format(name))
+    print("How is the weather today in {}?".format(location))
 
 
-greet_with_name(name=input("Enter your name: "))
+greet_with_name(name=input("Enter your name: "), location="Chennai")
