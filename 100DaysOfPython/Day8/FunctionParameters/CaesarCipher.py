@@ -15,7 +15,7 @@ def encrypt(message, shift):
             index = alphabets.index(message[i])
             newIndex = index + shift
             if newIndex > 25:
-                newIndex -= 26
+                newIndex -= len(alphabets)
                 encodedMessage += alphabets[newIndex]
             else:
                 encodedMessage += alphabets[newIndex]
