@@ -3,10 +3,6 @@
 alphabets = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
              "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-direction = input("Please type 'encode' for encoding the message and 'decode' for decoding the message: ").lower()
-shift = int(input("Type a number of your choice: "))
-message = input("Enter the message you want to encode: ").lower()
-
 
 def encrypt(message, shift):
     encodedMessage = ""
@@ -40,7 +36,21 @@ def decrypt(message, shift):
     return decodedMessage
 
 
-encodedMessage = encrypt(message=message, shift=shift)
-decodedMessage = decrypt(message=encodedMessage, shift=shift)
-print(encodedMessage)
-print(decodedMessage)
+isTrue = True
+
+
+while(isTrue):
+    direction = input("Please type 'encode' for encoding the message and 'decode' for decoding the message: ").lower()
+    if direction == "encode":
+        shift = int(input("Type a number of your choice: "))
+        message = input("Enter the message you want to encode: ").lower()
+        encodedMessage = encrypt(message=message, shift=shift)
+        print("Your encoded message is {}".format(encodedMessage))
+    elif direction == "decode":
+        shift = int(input("Type a number of your choice: "))
+        message = input("Enter the message you want to decode: ").lower()
+        decodedMessage = decrypt(message=message, shift=shift)
+        print("Your decoded message is {}".format(decodedMessage))
+    else:
+        print("Invalid option. Please try again!")
+        isTrue = False
