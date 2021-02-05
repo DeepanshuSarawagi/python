@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Dictionaries.iml" filepath="$PROJECT_DIR$/Dictionaries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nesting/Nesting.iml" filepath="$PROJECT_DIR$/Nesting/Nesting.iml" />
     </modules>
   </component>
 </project>
