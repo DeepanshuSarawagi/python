@@ -21,8 +21,8 @@ def divide(n1, n2):
 
 
 operations = {
-    "+": "Addition",
-    "-": "Subtraction",
-    "*": "Multiplication",
-    "/": "Division"
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide
     }
