@@ -26,3 +26,14 @@ operations = {
     "*": multiply,
     "/": divide
     }
+
+num1 = int(input("What's the first number?: "))
+num2 = int(input("What's the second number?: "))
+
+for operate in operations:
+    print(operate)
+choice = input("Which operation would you like to perform? ")
+
+function = operations[choice](num1, num2)
+
+print("{} {} {} is = {}".format(num1, choice, num2, function))
