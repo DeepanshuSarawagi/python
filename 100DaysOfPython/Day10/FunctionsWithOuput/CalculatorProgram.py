@@ -25,15 +25,39 @@ operations = {
     "-": subtract,
     "*": multiply,
     "/": divide
-    }
+}
 
 num1 = int(input("What's the first number?: "))
-num2 = int(input("What's the second number?: "))
 
 for operate in operations:
     print(operate)
 choice = input("Which operation would you like to perform? ")
 
-function = operations[choice](num1, num2)
+num2 = int(input("What's the second number?: "))
 
-print("{} {} {} is = {}".format(num1, choice, num2, function))
+function = operations[choice]
+
+result = function(num1, num2)
+
+print("{} {} {} is = {}".format(num1, choice, num2, result))
+
+should_continue = True
+
+
+def continue_operation(num):
+    for operate in operations:
+        print(operate)
+    choice = input("Which operation would you like to perform? ")
+    num3 = int(input("Enter another number of your choice: "))
+    function = operations[choice]
+    another_result = function(num, num3)
+    print("{:.2f} {} {:.2f} is = {:.2f}".format(num, choice, num3, another_result))
+    return another_result
+
+
+while should_continue:
+    to_continue = input("Do you want to continue the operation? Type 'y' for Yes or 'n' for No: ").lower()
+    if to_continue == "y":
+        result = continue_operation(num=result)
+    else:
+        should_continue = False
