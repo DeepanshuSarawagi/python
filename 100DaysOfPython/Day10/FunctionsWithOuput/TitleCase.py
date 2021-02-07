@@ -10,6 +10,10 @@ def format_name(f_name, l_name):
 
 
 def title_case(name):
+    """
+    :param name: This will accept one parameter name
+    :return: The parameter name will be formatted to the title case and returned to the user
+    """
     titled_case = ""
     for i in range(len(name)):
         if i == 0:
