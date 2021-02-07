@@ -1,7 +1,9 @@
 # In this chapter we are going to learn how to change the string with Title Case
-
+# Always remember that return keyword is always the end of the function
 
 def format_name(f_name, l_name):
+    if f_name == "" or l_name == "":
+        return                     # This is going to end the function since we are asking the function to quit
     f_name_titled = title_case(f_name)
     l_named_titled = title_case(l_name)
     return f_name_titled + " " + l_named_titled
