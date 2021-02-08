@@ -28,42 +28,42 @@ operations = {
 }
 
 
+def calculator():
+    num1 = int(input("What's the first number?: "))
 
-num1 = int(input("What's the first number?: "))
+    def print_operations():
+        for operate in operations:
+            print(operate)
 
-
-def print_operations():
-    for operate in operations:
-        print(operate)
-
-
-print_operations()
-choice = input("Which operation would you like to perform? ")
-
-num2 = int(input("What's the second number?: "))
-
-function = operations[choice]
-
-result = function(num1, num2)
-
-print("{} {} {} is = {}".format(num1, choice, num2, result))
-
-should_continue = True
-
-
-def continue_operation(num):
     print_operations()
     choice = input("Which operation would you like to perform? ")
-    num3 = int(input("Enter another number of your choice: "))
+
+    num2 = int(input("What's the second number?: "))
+
     function = operations[choice]
-    another_result = function(num, num3)
-    print("{:.2f} {} {:.2f} is = {:.2f}".format(num, choice, num3, another_result))
-    return another_result
+
+    result = function(num1, num2)
+
+    print("{} {} {} is = {}".format(num1, choice, num2, result))
+
+    should_continue = True
+
+    def continue_operation(num):
+        print_operations()
+        choice = input("Which operation would you like to perform? ")
+        num3 = int(input("Enter another number of your choice: "))
+        function = operations[choice]
+        another_result = function(num, num3)
+        print("{:.2f} {} {:.2f} is = {:.2f}".format(num, choice, num3, another_result))
+        return another_result
+
+    while should_continue:
+        to_continue = input("Do you want to continue the operation? Type 'y' for Yes or 'n' for No: ").lower()
+        if to_continue == "y":
+            result = continue_operation(num=result)
+        else:
+            should_continue = False
+            calculator()
 
 
-while should_continue:
-    to_continue = input("Do you want to continue the operation? Type 'y' for Yes or 'n' for No: ").lower()
-    if to_continue == "y":
-        result = continue_operation(num=result)
-    else:
-        should_continue = False
+calculator()
