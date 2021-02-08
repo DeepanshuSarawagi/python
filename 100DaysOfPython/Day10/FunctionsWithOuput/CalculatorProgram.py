@@ -2,7 +2,7 @@
 In this project we are going to create a simple Calculator program.
 This program will do basic mathematical operations like add, subtract, multiply and divide
 """
-
+import os
 
 def add(n1, n2):
     return n1 + n2
@@ -63,6 +63,7 @@ def calculator():
             result = continue_operation(num=result)
         else:
             should_continue = False
+            os.system("clear")
             calculator()
 
 
