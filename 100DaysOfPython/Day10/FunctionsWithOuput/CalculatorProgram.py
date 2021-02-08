@@ -4,6 +4,7 @@ This program will do basic mathematical operations like add, subtract, multiply 
 """
 import os
 
+
 def add(n1, n2):
     return n1 + n2
 
@@ -29,7 +30,7 @@ operations = {
 
 
 def calculator():
-    num1 = int(input("What's the first number?: "))
+    num1 = float(input("What's the first number?: "))
 
     def print_operations():
         for operate in operations:
@@ -38,7 +39,7 @@ def calculator():
     print_operations()
     choice = input("Which operation would you like to perform? ")
 
-    num2 = int(input("What's the second number?: "))
+    num2 = float(input("What's the second number?: "))
 
     function = operations[choice]
 
@@ -51,7 +52,7 @@ def calculator():
     def continue_operation(num):
         print_operations()
         choice = input("Which operation would you like to perform? ")
-        num3 = int(input("Enter another number of your choice: "))
+        num3 = float(input("Enter another number of your choice: "))
         function = operations[choice]
         another_result = function(num, num3)
         print("{:.2f} {} {:.2f} is = {:.2f}".format(num, choice, num3, another_result))
@@ -62,9 +63,12 @@ def calculator():
         if to_continue == "y":
             result = continue_operation(num=result)
         else:
-            should_continue = False
-            os.system("clear")
-            calculator()
+            final = input("Type 'y' to start over the calculation or type 'n' to exit the calculator? ").lower()
+            if final == "y":
+                os.system("clear")
+                calculator()
+            else:
+                should_continue = False
 
 
 calculator()
