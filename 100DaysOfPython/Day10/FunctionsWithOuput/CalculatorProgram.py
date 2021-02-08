@@ -27,10 +27,17 @@ operations = {
     "/": divide
 }
 
+
+
 num1 = int(input("What's the first number?: "))
 
-for operate in operations:
-    print(operate)
+
+def print_operations():
+    for operate in operations:
+        print(operate)
+
+
+print_operations()
 choice = input("Which operation would you like to perform? ")
 
 num2 = int(input("What's the second number?: "))
@@ -45,8 +52,7 @@ should_continue = True
 
 
 def continue_operation(num):
-    for operate in operations:
-        print(operate)
+    print_operations()
     choice = input("Which operation would you like to perform? ")
     num3 = int(input("Enter another number of your choice: "))
     function = operations[choice]
