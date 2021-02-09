@@ -63,18 +63,32 @@ dealers_hand = []
 
 game_deck = cards.copy()
 
+player_score = 0
+dealer_score = 0
+
 
 def initial_game():
+    global player_score
+    global dealer_score
     for i in range(2):
         card = random.choice(list(game_deck.keys()))
         if card not in players_hand:
             players_hand.append(card)
             game_deck.pop(card)
 
+    for hand in players_hand:
+        player_score += cards[hand]
+
+    print(player_score)
+
     card = random.choice(list(game_deck.keys()))
     if card not in dealers_hand:
         dealers_hand.append(card)
         game_deck.pop(card)
+
+    for hand in dealers_hand:
+        dealer_score += cards[hand]
+    print(dealer_score)
 
 
 initial_game()
