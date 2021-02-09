@@ -1,5 +1,8 @@
 # In this project we are going to create a BlackJack command line game
 
+import os
+import random
+
 cards = {
     "A of Hearts": 1,
     "2 of Hearts": 2,
@@ -28,7 +31,6 @@ cards = {
     "Queen of Diamonds": 10,
     "King of Diamonds": 10,
     "A of Spades": 1,
-    "1 of Spades": 1,
     "2 of Spades": 2,
     "3 of Spades": 3,
     "4 of Spades": 4,
@@ -55,3 +57,15 @@ cards = {
     "Queen of Clubs": 10,
     "King of Clubs": 10
 }
+
+players_hand = []
+dealers_hand = []
+
+
+for i in range(2):
+    card = random.choice(list(cards.keys()))
+    if card not in players_hand:
+        players_hand.append(card)
+
+
+print(players_hand)
