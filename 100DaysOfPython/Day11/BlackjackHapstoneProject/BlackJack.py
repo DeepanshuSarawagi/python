@@ -108,5 +108,51 @@ def display_hands(hands):
     print()
 
 
-initial_game()
+want_to_play = True
+
+
+def deal_player():
+    card = random.choice(list(game_deck.keys()))
+    if card not in players_hand:
+        players_hand.append(card)
+        game_deck.pop(card)
+
+
+def deal_dealer():
+    card = random.choice(list(game_deck.keys()))
+    if card not in dealers_hand:
+        dealers_hand.append(card)
+        game_deck.pop(card)
+
+
+def final_game():
+    global dealer_score
+    initial_game()
+
+
+while want_to_play is True:
+    game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
+    if game == "y":
+        final_game()
+        continue_dealing = True
+        while continue_dealing:
+            choice = input("Do you still want to deal or fold? Type 'y' to deal or type 'n' to fold: ").lower()
+            if choice == "y":
+                deal_player()
+                display_hands(players_hand)
+                final_player_score = calculate_score(players_hand)
+                print(final_player_score)
+            else:
+                while dealer_score < 17:
+                    deal_dealer()
+                    dealer_score = calculate_score(dealers_hand)
+
+                final_dealer_score = calculate_score(dealers_hand)
+                display_hands(dealers_hand)
+                print(final_dealer_score)
+                continue_dealing = False
+    else:
+        want_to_play = False
+
+
 print(game_deck)
