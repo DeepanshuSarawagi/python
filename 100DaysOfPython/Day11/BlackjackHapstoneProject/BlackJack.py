@@ -153,6 +153,7 @@ while want_to_play is True:
     players_hand.clear()
     game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
     if game == "y":
+        os.system("clear")
         final_game()
     else:
         want_to_play = False
