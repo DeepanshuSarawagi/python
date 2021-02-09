@@ -61,11 +61,23 @@ cards = {
 players_hand = []
 dealers_hand = []
 
-
-for i in range(2):
-    card = random.choice(list(cards.keys()))
-    if card not in players_hand:
-        players_hand.append(card)
+game_deck = cards.copy()
 
 
+def initial_game():
+    for i in range(2):
+        card = random.choice(list(game_deck.keys()))
+        if card not in players_hand:
+            players_hand.append(card)
+            game_deck.pop(card)
+
+    card = random.choice(list(game_deck.keys()))
+    if card not in dealers_hand:
+        dealers_hand.append(card)
+        game_deck.pop(card)
+
+
+initial_game()
 print(players_hand)
+print(dealers_hand)
+print(game_deck)
