@@ -93,7 +93,11 @@ def calculate_score(hands):
     score = 0
     for card in hands:
         score += cards[card]
-    return score
+    if ("A of Hearts" in hands or "A of Diamonds" in hands or "A of Spades" in hands or "A of Clubs" in hands) \
+            and (score < 22):
+        return score + 10
+    else:
+        return score
 
 
 initial_game()
