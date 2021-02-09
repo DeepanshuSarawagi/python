@@ -76,8 +76,7 @@ def initial_game():
             players_hand.append(card)
             game_deck.pop(card)
 
-    for hand in players_hand:
-        player_score += cards[hand]
+    player_score = calculate_score(players_hand)
 
     print(player_score)
 
@@ -86,9 +85,15 @@ def initial_game():
         dealers_hand.append(card)
         game_deck.pop(card)
 
-    for hand in dealers_hand:
-        dealer_score += cards[hand]
+    dealer_score = calculate_score(dealers_hand)
     print(dealer_score)
+
+
+def calculate_score(hands):
+    score = 0
+    for card in hands:
+        score += cards[card]
+    return score
 
 
 initial_game()
