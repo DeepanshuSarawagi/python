@@ -65,6 +65,25 @@ game_deck = cards.copy()
 
 player_score = 0
 dealer_score = 0
+ace = 11
+
+
+def calculate_score(hands):
+    score = 0
+    for card in hands:
+        score += cards[card]
+    if ("A of Hearts" in hands or "A of Diamonds" in hands or "A of Spades" in hands or "A of Clubs" in hands) \
+            and (score + ace < 22):
+        return score + 10
+    else:
+        return score
+
+
+def display_hands(player_hand, dealer_hand):
+    print("Player's hands: {}".format(player_hand))
+    print("Player's score: {}".format(player_score))
+    print("Dealer's hands: {}".format(dealer_hand))
+    print("Dealer's score: {}".format(dealer_score))
 
 
 def initial_game():
@@ -76,35 +95,16 @@ def initial_game():
             players_hand.append(card)
             game_deck.pop(card)
 
+    player_score = calculate_score(hands=players_hand)
     display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
-    player_score = calculate_score(players_hand)
-
-    print(player_score)
 
     card = random.choice(list(game_deck.keys()))
     if card not in dealers_hand:
         dealers_hand.append(card)
         game_deck.pop(card)
 
-    display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
     dealer_score = calculate_score(dealers_hand)
-    print(dealer_score)
-
-
-def calculate_score(hands):
-    score = 0
-    for card in hands:
-        score += cards[card]
-    if ("A of Hearts" in hands or "A of Diamonds" in hands or "A of Spades" in hands or "A of Clubs" in hands) \
-            and (score < 22):
-        return score + 10
-    else:
-        return score
-
-
-def display_hands(player_hand, dealer_hand):
-    print("Player's hands: {}".format(player_hand))
-    print("Dealer's hands: {}".format(dealer_hand))
+    display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
 
 
 want_to_play = True
@@ -146,9 +146,8 @@ def final_game():
         choice = input("Do you still want to deal or fold? Type 'y' to deal or type 'n' to fold: ").lower()
         if choice == "y":
             deal_player()
-            display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
             player_score = calculate_score(players_hand)
-            print(player_score)
+            display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
         else:
             while dealer_score < 17:
                 deal_dealer()
@@ -156,7 +155,6 @@ def final_game():
 
             dealer_score = calculate_score(dealers_hand)
             display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
-            print(dealer_score)
             declare_winner(player_score=player_score, dealer_score=dealer_score)
             continue_dealing = False
 
@@ -167,6 +165,8 @@ while want_to_play is True:
     game = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ").lower()
     if game == "y":
         os.system("clear")
+        player_score = 0
+        dealer_score = 0
         final_game()
     else:
         want_to_play = False
