@@ -76,7 +76,7 @@ def initial_game():
             players_hand.append(card)
             game_deck.pop(card)
 
-    display_hands(players_hand)
+    display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
     player_score = calculate_score(players_hand)
 
     print(player_score)
@@ -86,7 +86,7 @@ def initial_game():
         dealers_hand.append(card)
         game_deck.pop(card)
 
-    display_hands(dealers_hand)
+    display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
     dealer_score = calculate_score(dealers_hand)
     print(dealer_score)
 
@@ -102,10 +102,9 @@ def calculate_score(hands):
         return score
 
 
-def display_hands(hands):
-    for hand in hands:
-        print(hand, end="\t")
-    print()
+def display_hands(player_hand, dealer_hand):
+    print("Player's hands: {}".format(player_hand))
+    print("Dealer's hands: {}".format(dealer_hand))
 
 
 want_to_play = True
@@ -147,7 +146,7 @@ def final_game():
         choice = input("Do you still want to deal or fold? Type 'y' to deal or type 'n' to fold: ").lower()
         if choice == "y":
             deal_player()
-            display_hands(players_hand)
+            display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
             player_score = calculate_score(players_hand)
             print(player_score)
         else:
@@ -156,7 +155,7 @@ def final_game():
                 dealer_score = calculate_score(dealers_hand)
 
             dealer_score = calculate_score(dealers_hand)
-            display_hands(dealers_hand)
+            display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
             print(dealer_score)
             declare_winner(player_score=player_score, dealer_score=dealer_score)
             continue_dealing = False
