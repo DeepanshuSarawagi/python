@@ -125,7 +125,7 @@ def deal_dealer():
         game_deck.pop(card)
 
 
-def declare_winner():
+def declare_winner(player_score, dealer_score):
     if player_score == dealer_score:
         print("Player score is {}. Dealer score is {}. It is a draw".format(player_score, dealer_score))
     elif player_score == 21 or dealer_score > 21:
@@ -158,7 +158,7 @@ def final_game():
             dealer_score = calculate_score(dealers_hand)
             display_hands(dealers_hand)
             print(dealer_score)
-            declare_winner()
+            declare_winner(player_score=player_score, dealer_score=dealer_score)
             continue_dealing = False
 
 
