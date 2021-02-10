@@ -73,7 +73,7 @@ def calculate_score(hands):
     for card in hands:
         score += cards[card]
     if ("A of Hearts" in hands or "A of Diamonds" in hands or "A of Spades" in hands or "A of Clubs" in hands) \
-            and (score + ace < 22):
+            and (score < 22):
         return score + 10
     else:
         return score
@@ -125,7 +125,11 @@ def deal_dealer():
 
 
 def declare_winner(player_score, dealer_score):
-    if player_score == dealer_score:
+    if player_score > 21:
+        print("You lost!")
+    elif dealer_score > 21:
+        print("You win!")
+    elif player_score == dealer_score:
         print("Player score is {}. Dealer score is {}. It is a draw".format(player_score, dealer_score))
     elif player_score == 21 or dealer_score > 21:
         print("Yon win!")
