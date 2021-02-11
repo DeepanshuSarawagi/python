@@ -144,24 +144,39 @@ def declare_winner(player_score, dealer_score):
         print("You lost!")
 
 
+def is_game_over():
+    global player_score
+    global dealer_score
+    if player_score == 21 or dealer_score == 21:
+        return True
+    elif player_score > 21 or dealer_score > 21:
+        return True
+    else:
+        return False
+
+
 def final_game():
     global dealer_score
     global player_score
     initial_game()
     continue_dealing = True
     while continue_dealing:
-        choice = input("Do you still want to deal or fold? Type 'y' to deal or type 'n' to fold: ").lower()
-        if choice == "y":
-            deal_player()
-            player_score = calculate_score(players_hand)
-            display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
-        else:
-            while dealer_score < 17:
-                deal_dealer()
-                dealer_score = calculate_score(dealers_hand)
+        if not is_game_over():
+            choice = input("Do you still want to deal or fold? Type 'y' to deal or type 'n' to fold: ").lower()
+            if choice == "y":
+                deal_player()
+                player_score = calculate_score(players_hand)
+                display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
+            else:
+                while dealer_score < 17:
+                    deal_dealer()
+                    dealer_score = calculate_score(dealers_hand)
 
-            dealer_score = calculate_score(dealers_hand)
-            display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
+                dealer_score = calculate_score(dealers_hand)
+                display_hands(player_hand=players_hand, dealer_hand=dealers_hand)
+                declare_winner(player_score=player_score, dealer_score=dealer_score)
+                continue_dealing = False
+        else:
             declare_winner(player_score=player_score, dealer_score=dealer_score)
             continue_dealing = False
 
