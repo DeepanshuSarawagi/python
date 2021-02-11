@@ -73,8 +73,6 @@ hands_of_ace = ["A of Hearts", "A of Diamonds", "A of Spades", "A of Clubs"]
 def calculate_score(hands):
     score = 0
     for card in hands:
-        # if (("A of Hearts" in hands) or ("A of Diamonds" in hands) or ("A of Spades" in hands) or
-        #     ("A of Clubs" in hands)) and (score + ace < 22):
         if card in hands_of_ace and score + ace < 22:
             score += ace
         else:
