@@ -67,16 +67,19 @@ player_score = 0
 dealer_score = 0
 ace = 11
 
+hands_of_ace = ["A of Hearts", "A of Diamonds", "A of Spades", "A of Clubs"]
+
 
 def calculate_score(hands):
     score = 0
     for card in hands:
-        score += cards[card]
-    if ("A of Hearts" in hands or "A of Diamonds" in hands or "A of Spades" in hands or "A of Clubs" in hands) \
-            and (score < 22):
-        return score + 10
-    else:
-        return score
+        # if (("A of Hearts" in hands) or ("A of Diamonds" in hands) or ("A of Spades" in hands) or
+        #     ("A of Clubs" in hands)) and (score + ace < 22):
+        if card in hands_of_ace and score + ace < 22:
+            score += ace
+        else:
+            score += cards[card]
+    return score
 
 
 def display_hands(player_hand, dealer_hand):
