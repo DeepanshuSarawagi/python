@@ -1,6 +1,7 @@
 # This is how instructor completed the project
 import random
 
+
 def calculate_score(cards):
     if sum(cards) == 0 and len(cards) == 2:
         return 0
@@ -21,7 +22,7 @@ def deal_card():
 
 user_cards = []
 computer_cards = []
-
+is_game_over = False
 
 for _ in range(2):
     user_cards.append(deal_card())
@@ -29,3 +30,9 @@ for _ in range(2):
 
 user_score = calculate_score(user_cards)
 computer_score = calculate_score(computer_cards)
+
+print("Your cards: {}. Your score is {}.".format(user_cards, user_score))
+print("Computer's first card: {}".format(computer_cards[0]))
+
+if user_score == 0 or computer_score == 0 or computer_score > 21:
+    is_game_over = True
