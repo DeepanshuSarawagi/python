@@ -3,7 +3,7 @@ import random
 
 
 def calculate_score(cards):
-    if sum(cards) == 0 and len(cards) == 2:
+    if sum(cards) == 21 and len(cards) == 2:
         return 0
     if 11 in cards and sum(cards) > 21:
         cards.remove(11)
@@ -28,11 +28,23 @@ for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
 
-user_score = calculate_score(user_cards)
-computer_score = calculate_score(computer_cards)
+while not is_game_over:
 
-print("Your cards: {}. Your score is {}.".format(user_cards, user_score))
-print("Computer's first card: {}".format(computer_cards[0]))
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
 
-if user_score == 0 or computer_score == 0 or computer_score > 21:
-    is_game_over = True
+    print("Your cards: {}. Your score is {}.".format(user_cards, user_score))
+    print("Computer's first card: {}".format(computer_cards[0]))
+
+    if user_score == 0 or computer_score == 0 or computer_score > 21:
+        is_game_over = True
+    else:
+        user_should_deal = input("Do you want to deal another card or fold? Type 'y' or 'n': ").lower()
+        if user_should_deal == "y":
+            user_cards.append(deal_card())
+        else:
+            is_game_over = True
+
+while computer_score != 0 and computer_score < 17:
+    computer_cards.append(deal_card())
+    computer_score = calculate_score(computer_cards)
