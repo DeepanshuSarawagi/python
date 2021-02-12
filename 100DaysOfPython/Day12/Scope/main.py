@@ -10,3 +10,13 @@ def increase_enemies():
 
 increase_enemies()
 print("enemies outside function: {}".format(enemies))
+
+player_health = 10
+
+
+def drink_potion():
+    potion_strength = 2  # This variable is in local scope to this function
+    print(player_health)  # The variable player_health id from global/outer scope of this function
+
+
+print(drink_potion())
