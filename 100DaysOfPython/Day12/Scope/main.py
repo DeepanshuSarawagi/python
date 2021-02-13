@@ -4,7 +4,9 @@ enemies = 1
 
 
 def increase_enemies():
-    enemies = 2
+    global enemies  # We need to explicitly mention that we need to modify a variable which is defined outside the
+                    # function
+    enemies += 1
     print("enemies inside function: {}".format(enemies))
 
 
