@@ -5,9 +5,9 @@ import random
 def difficulty_level():
     count = 0
     if difficulty == "easy":
-        count = 11
+        count = 10
         print("You have 10 attempts to guess the number: ")
-        if not number_guessing() and count < 11:
+        if not number_guessing() and count < 1:
             number_guessing()
             count -= 1
     else:
