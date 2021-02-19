@@ -12,8 +12,11 @@ def difficulty_level():
             count -= 1
     else:
         print("You have 5 attempts to guess the number: ")
-        while number_guessing() != True and count < 6:
+        count = 5
+        print("You have 10 attempts to guess the number: ")
+        if not number_guessing() and count < 1:
             number_guessing()
+            count -= 1
 
 
 def number_guessing():
