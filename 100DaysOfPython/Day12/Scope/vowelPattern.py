@@ -27,7 +27,7 @@ if letter in vowels:
         new_index = index_of_vowel + count
         if new_index > 25:
             next_char = alphabets[(new_index - 26)]
-            if next_char not in vowels and length <= 6:
+            if next_char not in vowels:
                 s = append_char(next_char)
                 length = len(s)
             else:
@@ -35,7 +35,7 @@ if letter in vowels:
                 continue
         else:
             next_char = alphabets[new_index]
-            if next_char not in vowels and length <= 6:
+            if next_char not in vowels:
                 s = append_char(next_char)
                 length = len(s)
             else:
