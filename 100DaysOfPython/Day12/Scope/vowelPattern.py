@@ -31,7 +31,6 @@ if letter in vowels:
                 s = append_char(next_char)
                 length = len(s)
             else:
-                length = len(s)
                 continue
         else:
             next_char = alphabets[new_index]
@@ -39,7 +38,6 @@ if letter in vowels:
                 s = append_char(next_char)
                 length = len(s)
             else:
-                length = len(s)
                 continue
 else:
     print("It is not a vowel. Please try again.")
