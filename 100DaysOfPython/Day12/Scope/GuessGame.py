@@ -25,10 +25,7 @@ print("Welcome to the guessing game!")
 print("I'm thinking of a number between 1 and 100")
 
 answer = random.randint(1, 100)
-guess = int(input("Make a guess: "))
 turns = set_difficulty()
-
-print("Pssssst!! The answer is {}".format(answer))
-
-
 print("You have {} attempts remaining to guess the number.".format(turns))
+print("Pssssst!! The answer is {}".format(answer))
+guess = int(input("Make a guess: "))
