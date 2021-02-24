@@ -30,12 +30,16 @@ def game():
 
     answer = random.randint(1, 100)
     turns = set_difficulty()
-    print("You have {} attempts remaining to guess the number.".format(turns))
     print("Pssssst!! The answer is {}".format(answer))
     guess = 0
     while guess != answer:
+        print("You have {} attempts remaining to guess the number.".format(turns))
         guess = int(input("Make a guess: "))
-        check_answer(guess=guess, answer=answer, turns=turns)
+        turns = check_answer(guess=guess, answer=answer, turns=turns)
+
+        if turns == 0:
+            print("You have run out of attempts. You lose!!")
+            return
 
 
 game()
