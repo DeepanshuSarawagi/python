@@ -40,6 +40,8 @@ def game():
         if turns == 0:
             print("You have run out of attempts. You lose!!")
             return
+        else:
+            print("Guess again!")
 
 
 game()
