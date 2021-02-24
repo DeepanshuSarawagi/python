@@ -16,15 +16,19 @@ def check_answer(guess, answer):
 def set_difficulty():
     level = input("Choose a difficult 'easy' or 'hard': ").lower()
     if level == "easy":
-        turns = EASY_LEVEL_TURNS
+        return EASY_LEVEL_TURNS
     else:
-        turns = HARD_LEVEL_TURNS
+        return HARD_LEVEL_TURNS
 
 
 print("Welcome to the guessing game!")
 print("I'm thinking of a number between 1 and 100")
 
 answer = random.randint(1, 100)
-
 guess = int(input("Make a guess: "))
+turns = set_difficulty()
 
+print("Pssssst!! The answer is {}".format(answer))
+
+
+print("You have {} attempts remaining to guess the number.".format(turns))
