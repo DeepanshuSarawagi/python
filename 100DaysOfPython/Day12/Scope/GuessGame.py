@@ -4,11 +4,14 @@ EASY_LEVEL_TURNS = 10
 HARD_LEVEL_TURNS = 5
 
 
-def check_answer(guess, answer):
+def check_answer(guess, answer, turns):
+    """Checks the answer against the guess and returns the turn by decrementing it by 1 if not matched"""
     if guess > answer:
         print("Too high.")
+        return turns - 1
     elif guess < answer:
         print("Too low.")
+        return turns - 1
     else:
         print("You got it right. The answer was {}".format(answer))
 
@@ -32,7 +35,7 @@ def game():
     guess = 0
     while guess != answer:
         guess = int(input("Make a guess: "))
-        check_answer(guess=guess, answer=answer)
+        check_answer(guess=guess, answer=answer, turns=turns)
 
 
 game()
