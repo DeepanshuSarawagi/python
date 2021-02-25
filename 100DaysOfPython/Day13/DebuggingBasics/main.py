@@ -11,11 +11,15 @@ def my_function():
 
 my_function()
 
-# # Reproduce the Bug
-# from random import randint
-# dice_imgs = ["❶", "❷", "❸", "❹", "❺", "❻"]
-# dice_num = randint(1, 6)
-# print(dice_imgs[dice_num])
+# Reproduce the Bug
+from random import randint
+
+dice_imgs = ["❶", "❷", "❸", "❹", "❺", "❻"]
+# dice_num = randint(1, 6)  # this is the bug. We have to change the upper bound limit to 5 since upper bound in
+# randint() fn is inclusive and while accessing the list, the index always starts from 0. And the 6th element will be
+# accessed as list[5]
+dice_num = randint(1, 5)
+print(dice_imgs[dice_num])
 
 # # Play Computer
 # year = int(input("What's your year of birth?"))
