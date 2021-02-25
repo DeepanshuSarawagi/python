@@ -40,8 +40,8 @@ if age > 18:
     print(f"You can drive at age {age}.")
 
 # Print is Your Friend
-pages = 0
-word_per_page = 0
+# pages = 0
+# word_per_page = 0
 pages = int(input("Number of pages: "))
 # word_per_page == int(input("Number of words per page: "))  # This is again a bug since we did a equivalent
 # assignment rather than assigning the user input to a variable
