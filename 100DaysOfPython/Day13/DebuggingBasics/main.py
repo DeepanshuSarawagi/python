@@ -26,14 +26,18 @@ year = int(input("What's your year of birth?"))
 # if year > 1980 and year < 1994:  # This is the bug. We need to include the operand = in this line of code.
 # Whenever the user enters the year 1994 there was no way computer can evaluate to if statements
 if 1980 < year <= 1994:
-  print("You are a millenial.")
+    print("You are a millenial.")
 elif year > 1994:
-  print("You are a Gen Z.")
+    print("You are a Gen Z.")
 
-# # Fix the Errors
-# age = input("How old are you?")
-# if age > 18:
-# print("You can drive at age {age}.")
+# Fix the Errors
+# age = input("How old are you?")  # This is the bug here. When we get the user input, it is always in STRING datatype.
+# We need to cast the input to int datatype.
+age = int(input("How old are you?"))
+if age > 18:
+# print("You can drive at age {age}.")  # Second error is the poor indentation and then the print statement was not
+# a f"string"
+    print(f"You can drive at age {age}.")
 
 # #Print is Your Friend
 # pages = 0
