@@ -23,6 +23,13 @@ score = 0
 got_it_right = True
 
 
+def compare(first_item, second_item):
+    if first_item[1] > second_item[1]:
+        return True
+    else:
+        return False
+
+
 def play_game():
     global first_item
     global second_item
@@ -33,21 +40,19 @@ def play_game():
     choice = input("Who has more followers? Type 'A' or 'B': ").upper()
 
     if choice == "A":
-        if first_item[1] > second_item[1]:
+        if compare(first_item=first_item, second_item=second_item):
             score += 1
-            got_it_right = True
             print("You got it right. Current score: {}".format(score))
         else:
             print("Sorry you got it wrong! Final score: {}".format(score))
             got_it_right = False
     elif choice == "B":
-        if second_item[1] > first_item[1]:
-            score += 1
-            got_it_right = True
-            print("You got it right. Current score: {}".format(score))
-        else:
+        if compare(first_item=first_item, second_item=second_item):
             print("Sorry you got it wrong! Final score: {}".format(score))
             got_it_right = False
+        else:
+            score += 1
+            print("You got it right. Current score: {}".format(score))
     first_item = second_item
     second_item = list(random.choice(game_data.data).values())
     if second_item == first_item:
