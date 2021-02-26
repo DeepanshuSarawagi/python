@@ -1,15 +1,6 @@
 import game_data
 import random
 
-# for i in range(len(game_data.data)):
-#     list_of_keys = list(game_data.data[i].keys())
-#     list_value = list(game_data.data[i].values())
-#     print(list_of_keys)
-#     print(list_value)
-#     for j in range(len(list_of_keys)):
-#         print("{}: {}".format(list_of_keys[j], list_value[j]))
-
-
 first_random = random.choice(game_data.data)
 first_item = list(first_random.values())
 second_random = random.choice(game_data.data)
