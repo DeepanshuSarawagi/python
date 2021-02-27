@@ -56,6 +56,10 @@ def process_coins():
 def is_transaction_successful(money_received, cost_of_drink):
     """Return True when payment is accepted or Return False if payment is insufficient"""
     if money_received >= cost_of_drink:
+        global profit
+        change = round(money_received - cost_of_drink, 2)
+        print("Here is {} in change.".format(change))
+        profit += cost_of_drink
         return True
     else:
         print("Sorry that's not enough money! Money refunded")
@@ -75,5 +79,6 @@ while is_on:
         print("Money: ${}".format(profit))
     else:
         drink = MENU[choice]
-        if print(is_resource_sufficient(drink["ingredients"])):
+        if is_resource_sufficient(drink["ingredients"]):
             payment = process_coins()
+            is_transaction_successful(money_received=payment, cost_of_drink=drink["cost"])
