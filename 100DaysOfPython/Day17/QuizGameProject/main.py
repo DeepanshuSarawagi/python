@@ -17,12 +17,20 @@ class User:
         self.name = name
         self.age = age
         self.work = work
+        self.followers = 0
+        self.following = 0
 
     def print_user_details(self):
-        print("Your name is {}, your age is {} and you are a {} professional".format(self.name, self.age, self.work))
+        print("Your name is {}, your age is {} and you are a {} professional. You have {} followers"
+              .format(self.name, self.age, self.work, self.followers))
+
+    def follow(self, user):
+        user.followers += 1
+        self.following += 1
 
 
 deep = User("Deepanshu", 28, "IT")
-deep.print_user_details()
 rajat = User("Rajat", 26, "Business")
+deep.follow(user=rajat)
+deep.print_user_details()
 rajat.print_user_details()
