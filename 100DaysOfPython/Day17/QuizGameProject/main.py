@@ -1,5 +1,8 @@
 class User:
-
+    """
+    Attribute is a variable associated with the object of class
+    methods are functions defined in the class
+    """
     def __init__(self, name, age, work):
         self.name = name
         self.age = age
