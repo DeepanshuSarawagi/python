@@ -8,4 +8,10 @@ class QuizBrain:
         question = self.question_list[self.question_number]
         self.question_number += 1
         choice = input("Q{}: {} True/False?: ".format(self.question_number, question.text))
-        print(choice)
+        ans = ""
+        for i in range(len(choice)):
+            if i == 0:
+                ans += choice[i].upper()
+            else:
+                ans += choice[i]
+        print(ans)
