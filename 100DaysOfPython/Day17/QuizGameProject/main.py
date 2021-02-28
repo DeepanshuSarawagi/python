@@ -10,6 +10,8 @@ class User:
     Constructor is a method which is also called as initializing an object.
     The way we create a constructor is using def __init__() method
 
+    Attributes are the things the object has and the methods are the things the objects does
+
     """
     def __init__(self, name, age, work):
         self.name = name
