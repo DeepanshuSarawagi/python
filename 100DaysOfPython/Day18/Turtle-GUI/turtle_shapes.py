@@ -1,68 +1,28 @@
 from turtle import Turtle
 from turtle import Screen
+import random
+
+screen = Screen()
+
+screen.colormode(255)
 
 timmy = Turtle()
 timmy.shape("turtle")
 timmy.color("orange")
 
 
-def triangle():
-    timmy.forward(100)
-    timmy.right(120)
+def draw_shapes(distance, n):
+    angle = round(360 / n, 2)
+    R = random.randrange(0, 257, 10)
+    G = random.randrange(0, 257, 10)
+    B = random.randrange(0, 257, 10)
+    timmy.color(R, G, B)
+    for _ in range(n):
+        timmy.forward(distance)
+        timmy.right(angle)
 
 
-def square():
-    timmy.forward(100)
-    timmy.right(90)
+for i in range(3, 11):
+    draw_shapes(100, i)
 
-
-def pentagon():
-    timmy.forward(100)
-    timmy.right(72)
-
-
-def hexagon():
-    timmy.forward(100)
-    timmy.right(60)
-
-
-def heptagon():
-    timmy.forward(100)
-    timmy.right(51.42)
-
-
-def octagon():
-    timmy.forward(100)
-    timmy.right(45)
-
-
-def nonagon():
-    timmy.forward(100)
-    timmy.right(40)
-
-
-def decagon():
-    timmy.forward(100)
-    timmy.right(36)
-
-
-for _ in range(3):
-    triangle()
-for _ in range(4):
-    square()
-for _ in range(5):
-    pentagon()
-for _ in range(6):
-    hexagon()
-for _ in range(7):
-    heptagon()
-for _ in range(8):
-    octagon()
-for _ in range(9):
-    nonagon()
-for _ in range(10):
-    decagon()
-
-screen = Screen()
 screen.exitonclick()
-
