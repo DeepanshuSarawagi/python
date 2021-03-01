@@ -18,5 +18,23 @@ for i in range(10):
     timmy.pendown()
 
 
+def parallel():
+    timmy.forward(100)
+    timmy.rt(90)
+    timmy.pu()
+    timmy.forward(10)
+    timmy.rt(90)
+    timmy.pendown()
+    timmy.forward(100)
+    timmy.left(90)
+    timmy.penup()
+    timmy.forward(10)
+    timmy.left(90)
+    timmy.pendown()
+
+
+for _ in range(5):
+    parallel()
+
 screen = Screen()
 screen.exitonclick()
