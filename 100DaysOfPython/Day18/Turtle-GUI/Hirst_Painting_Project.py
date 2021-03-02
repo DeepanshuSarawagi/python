@@ -5,6 +5,7 @@ import random
 screen = Screen()
 screen.colormode(255)
 timmy = turtle.Turtle()
+timmy.hideturtle()
 timmy.penup()
 
 
