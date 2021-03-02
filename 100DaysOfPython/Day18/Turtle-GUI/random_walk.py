@@ -6,8 +6,8 @@ screen = Screen()
 timmy = Turtle()
 timmy.width(10)
 screen.colormode(255)
-direction = [timmy.forward, timmy.back]
-side = [timmy.right, timmy.left]
+direction = [timmy.forward]
+side = [0, 90, 180, 270]
 timmy.speed("fast")
 
 
@@ -21,7 +21,7 @@ def move():
         dist = random.randint(20, 30)
         random_direction(distance=dist)
         random_side = random.choice(side)
-        random_side(angle=90)
+        timmy.setheading(random_side)
 
 
 move()
