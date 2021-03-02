@@ -12,7 +12,7 @@ timmy.speed("fast")
 
 
 def move():
-    for _ in range(100):
+    for _ in range(200):
         R = random.randrange(0, 257, 10)
         B = random.randrange(0, 257, 10)
         G = random.randrange(0, 257, 10)
