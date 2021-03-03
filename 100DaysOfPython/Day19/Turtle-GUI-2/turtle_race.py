@@ -1,5 +1,7 @@
 from turtle import Turtle, Screen
+import random
 
+is_race_on = False
 screen = Screen()
 screen.setup(width=500, height=400)
 guess = screen.textinput("Turtle Race", "Which color turtle will win the race?")
@@ -35,6 +37,23 @@ tim6.penup()
 tim6.setposition(x=-240, y=-100)
 tim6.color(colors[5])
 
-current_color = tim1.color()
-print(current_color)
+turtles = [tim1, tim2, tim3, tim4, tim5, tim6]
+
+if guess:
+    is_race_on = True
+
+while is_race_on:
+
+    for turtle in turtles:
+        if turtle.xcor() > 230:
+            is_race_on = False
+            winning_color = turtle.pencolor()
+            if guess == winning_color:
+                print("You have won!! The {} color turtle is the winner!!!".format(winning_color))
+            else:
+                print("You have lost!! The {} color turtle is the winner!!!".format(winning_color))
+        else:
+            dist = random.randint(0, 20)
+            turtle.forward(dist)
+
 screen.exitonclick()
