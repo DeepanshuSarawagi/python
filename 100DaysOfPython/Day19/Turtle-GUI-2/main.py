@@ -16,3 +16,6 @@ screen.onkey(fun=move_forward, key="Up")  # The Screen.onkey() method accepts tw
 # event occurs. Like for example, in our case, when a key is presses.
 
 screen.exitonclick()
+
+# Higher Order Functions. A higher Order Function is called when a function accepts another function as an
+# input/argument
