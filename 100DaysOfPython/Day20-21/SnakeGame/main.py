@@ -27,11 +27,20 @@ for _ in range(3):
     timmy.shape("square")
     all_turtles.append(timmy)
 
-timmy = all_turtles[0]
-timmy1 = all_turtles[1]
-timmy2 = all_turtles[2]
-timmy1.setx(timmy.position()[0] - 20)
-timmy2.setx(timmy1.position()[0] - 20)
+# timmy = all_turtles[0]
+# timmy1 = all_turtles[1]
+# timmy2 = all_turtles[2]
+# timmy1.setx(timmy.position()[0] - 20)
+# timmy2.setx(timmy1.position()[0] - 20)
+
+for i in range(len(all_turtles)):
+    if i == 0:
+        continue
+    else:
+        previous_turtle = all_turtles[i-1]
+        turtle = all_turtles[i]
+        turtle.setx(previous_turtle.position()[0] - 20)
+
 
 
 screen.exitonclick()
