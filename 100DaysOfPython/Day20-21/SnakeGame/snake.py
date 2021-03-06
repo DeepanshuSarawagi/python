@@ -25,10 +25,16 @@ class Snake:
                 turtle = self.all_turtles[i]
                 turtle.setx(previous_turtle.position()[0] - 20)
 
+    def initialise_snake_body(self):
+        self.create_snake_body()
+        self.snake_position()
+
     def move(self):
+
         for turtle_num in range(len(self.all_turtles) - 1, 0, -1):
             new_x = self.all_turtles[turtle_num - 1].xcor()
             new_y = self.all_turtles[turtle_num - 1].ycor()
             self.all_turtles[turtle_num].goto(new_x, new_y)
 
         self.all_turtles[0].forward(20)
+        self.all_turtles[0].right(90)
