@@ -8,7 +8,6 @@ screen.bgcolor("black")
 screen.title("Python Snake Game")
 screen.tracer(0)  # We are doing this to turn off the animation and have the screen pause the animation
 snake = snake.Snake()
-snake.initialise_snake_body()
 
 game_is_on = True
 

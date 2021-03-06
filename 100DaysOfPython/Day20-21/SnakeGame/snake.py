@@ -5,6 +5,7 @@ class Snake:
 
     def __init__(self):
         self.all_turtles = []
+        self.initialise_snake_body()
 
     def create_snake_body(self):
         for _ in range(3):
