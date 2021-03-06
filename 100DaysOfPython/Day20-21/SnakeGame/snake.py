@@ -1,5 +1,8 @@
 from turtle import Turtle
 
+MOVE_DISTANCE = 20
+ANGLE = 90
+
 
 class Snake:
 
@@ -37,5 +40,5 @@ class Snake:
             new_y = self.all_turtles[turtle_num - 1].ycor()
             self.all_turtles[turtle_num].goto(new_x, new_y)
 
-        self.all_turtles[0].forward(20)
-        self.all_turtles[0].right(90)
+        self.all_turtles[0].forward(MOVE_DISTANCE)
+        self.all_turtles[0].right(ANGLE)
