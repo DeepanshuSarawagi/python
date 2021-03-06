@@ -45,4 +45,15 @@ class Snake:
     def up(self):
         turtle = self.all_turtles[0]
         turtle.setheading(90)
-        self.move()
+
+    def down(self):
+        turtle = self.all_turtles[0]
+        turtle.setheading(270)
+
+    def right(self):
+        turtle = self.all_turtles[0]
+        turtle.setheading(0)
+
+    def left(self):
+        turtle = self.all_turtles[0]
+        turtle.setheading(180)

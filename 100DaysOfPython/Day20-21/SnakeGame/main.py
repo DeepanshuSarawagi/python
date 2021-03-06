@@ -11,6 +11,9 @@ snake = snake.Snake()
 
 screen.listen()
 screen.onkey(key="Up", fun=snake.up)
+screen.onkey(key="Right", fun=snake.right)
+screen.onkey(key="Left", fun=snake.left)
+screen.onkey(key="Down", fun=snake.down)
 
 game_is_on = True
 
@@ -18,6 +21,6 @@ while game_is_on:
     screen.update()  # Turning back the animation once all the segments of snake i.e; once all the turtles
     # are created and ready to move
     time.sleep(0.1)
-    # snake.move()
+    snake.move()
 
 screen.exitonclick()
