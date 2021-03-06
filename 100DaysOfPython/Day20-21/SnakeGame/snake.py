@@ -37,6 +37,16 @@ class Snake:
         self.create_snake_body()
         self.snake_position()
 
+    def extend_snake(self):
+        last_segment = self.all_turtles[-1]
+        position = last_segment.position()
+        timmy = Turtle()
+        timmy.color("white")
+        timmy.shape("square")
+        timmy.penup()
+        timmy.goto(position)
+        self.all_turtles.append(timmy)
+
     def move(self):
 
         for turtle_num in range(len(self.all_turtles) - 1, 0, -1):
