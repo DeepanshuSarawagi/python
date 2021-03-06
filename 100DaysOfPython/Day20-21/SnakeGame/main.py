@@ -12,7 +12,6 @@ screen.tracer(0)  # We are doing this to turn off the animation and have the scr
 snake = snake.Snake()
 food = food.Food()
 s = scoreboard.Scoreboard()
-s.hideturtle()
 score = s.score
 
 screen.listen()
