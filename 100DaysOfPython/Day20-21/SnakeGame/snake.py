@@ -9,6 +9,7 @@ class Snake:
     def __init__(self):
         self.all_turtles = []
         self.initialise_snake_body()
+        self.head = self.all_turtles[0]
 
     def create_snake_body(self):
         for _ in range(3):
@@ -43,17 +44,13 @@ class Snake:
         self.all_turtles[0].forward(MOVE_DISTANCE)
 
     def up(self):
-        turtle = self.all_turtles[0]
-        turtle.setheading(90)
+        self.head.setheading(90)
 
     def down(self):
-        turtle = self.all_turtles[0]
-        turtle.setheading(270)
+        self.head.setheading(270)
 
     def right(self):
-        turtle = self.all_turtles[0]
-        turtle.setheading(0)
+        self.head.setheading(0)
 
     def left(self):
-        turtle = self.all_turtles[0]
-        turtle.setheading(180)
+        self.head.setheading(180)
