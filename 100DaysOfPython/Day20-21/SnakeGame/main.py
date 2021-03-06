@@ -25,8 +25,18 @@ game_is_on = True
 while game_is_on:
     screen.update()  # Turning back the animation once all the segments of snake i.e; once all the turtles
     # are created and ready to move
-    time.sleep(0.1)
-    snake.move()
+    if len(snake.all_snakes) < 7:
+        time.sleep(0.4)
+        snake.move()
+    elif len(snake.all_snakes) < 12:
+        time.sleep(0.3)
+        snake.move()
+    elif len(snake.all_snakes) < 15:
+        time.sleep(0.2)
+        snake.move()
+    else:
+        time.sleep(0.1)
+        snake.move()
     # Detect collision with food
     if snake.head.distance(food) < 15:
         score += 1
@@ -41,7 +51,7 @@ while game_is_on:
 
     # Detect collision with snake's tail
     for segment in snake.all_snakes[3:]:
-        if snake.head.distance(segment) < 10:
+        if snake.head.distance(segment) < 20:
             s.game_over()
             game_is_on = False
 
