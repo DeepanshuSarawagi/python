@@ -22,7 +22,6 @@ class Snake:
             timmy.shape("square")
             timmy.penup()
             self.all_turtles.append(timmy)
-        print(self.all_turtles)
 
     def snake_position(self):
 

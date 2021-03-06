@@ -2,7 +2,7 @@ from turtle import Screen
 import time
 import snake
 import food
-
+import scoreboard
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -11,6 +11,9 @@ screen.title("Python Snake Game")
 screen.tracer(0)  # We are doing this to turn off the animation and have the screen pause the animation
 snake = snake.Snake()
 food = food.Food()
+s = scoreboard.Scoreboard()
+s.hideturtle()
+score = s.score
 
 screen.listen()
 screen.onkey(key="Up", fun=snake.up)
@@ -25,9 +28,10 @@ while game_is_on:
     # are created and ready to move
     time.sleep(0.1)
     snake.move()
-
     # Detect collision with food
     if snake.head.distance(food) < 15:
+        score += 1
+        s.update_score(score=score)
         food.refresh()
 
 screen.exitonclick()
