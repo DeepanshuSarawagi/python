@@ -41,4 +41,8 @@ class Snake:
             self.all_turtles[turtle_num].goto(new_x, new_y)
 
         self.all_turtles[0].forward(MOVE_DISTANCE)
-        self.all_turtles[0].right(ANGLE)
+
+    def up(self):
+        turtle = self.all_turtles[0]
+        turtle.setheading(90)
+        self.move()
