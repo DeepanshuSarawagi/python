@@ -7,17 +7,16 @@ class Paddle(Turtle):
         super(Paddle, self).__init__()
         self.shape("square")
         self.color("white")
-        self.shapesize(stretch_wid=1.0, stretch_len=5.0)
+        self.shapesize(stretch_wid=5.0, stretch_len=1.0)
         self.penup()
-        self.setheading(90)
         self.setposition(350, 0)
 
     def move_paddle_up(self):
-        # y_cor = self.ycor()
-        if self.ycor() < 250:
-            self.forward(20)
+        new_y = self.ycor() + 20
+        if self.ycor() < 230:
+            self.goto(self.xcor(), new_y)
 
     def move_paddle_down(self):
-        # y_cor = self.ycor()
-        if self.ycor() > -250:
-            self.backward(20)
+        new_y = self.ycor() - 20
+        if self.ycor() > -230:
+            self.goto(self.xcor(), new_y)
