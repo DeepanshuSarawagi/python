@@ -10,6 +10,7 @@ class Ball(Turtle):
         self.color("orange")
         self.penup()
         self.setposition((0, 0))
+        self.speed("fast")
 
     def move_ball(self):
         x_pos = random.randint(-350, 350)
