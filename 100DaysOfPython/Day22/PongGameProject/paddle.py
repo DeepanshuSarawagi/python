@@ -13,7 +13,11 @@ class Paddle(Turtle):
         self.setposition(350, 0)
 
     def move_paddle_up(self):
-        self.forward(20)
+        # y_cor = self.ycor()
+        if self.ycor() < 250:
+            self.forward(20)
 
     def move_paddle_down(self):
-        self.backward(20)
+        # y_cor = self.ycor()
+        if self.ycor() > -250:
+            self.backward(20)
