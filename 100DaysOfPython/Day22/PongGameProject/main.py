@@ -7,7 +7,10 @@ screen.bgcolor("black")
 screen.title("Pong Game")
 screen.tracer(0)
 
-right_paddle = Paddle()
+right_paddle = Paddle(350, 0)
+left_paddle = Paddle(-350, 0)
+
+
 screen.listen()
 
 screen.onkey(key="Up", fun=right_paddle.move_paddle_up)
