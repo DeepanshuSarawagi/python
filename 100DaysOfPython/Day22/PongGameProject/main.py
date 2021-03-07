@@ -15,6 +15,8 @@ screen.listen()
 
 screen.onkey(key="Up", fun=right_paddle.move_paddle_up)
 screen.onkey(key="Down", fun=right_paddle.move_paddle_down)
+screen.onkey(key="w", fun=left_paddle.move_paddle_up)
+screen.onkey(key="s", fun=left_paddle.move_paddle_down)
 
 game_is_on = True
 while game_is_on:
