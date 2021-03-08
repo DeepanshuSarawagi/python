@@ -10,7 +10,7 @@ class Ball(Turtle):
         self.color("orange")
         self.penup()
         self.setposition((0, 0))
-        self.speed("fast")
+        self.speed("fastest")
         self.x_move = 10
         self.y_move = 10
 
