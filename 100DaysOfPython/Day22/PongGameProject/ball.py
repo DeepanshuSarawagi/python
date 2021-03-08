@@ -11,8 +11,13 @@ class Ball(Turtle):
         self.penup()
         self.setposition((0, 0))
         self.speed("fast")
+        self.x_move = 10
+        self.y_move = 10
 
     def move_ball(self):
-        x_pos = random.randint(-350, 350)
-        y_pos = random.randint(-300, 300)
-        self.setposition((x_pos, y_pos))
+        x_pos = self.xcor() + self.x_move
+        y_pos = self.ycor() + self.y_move
+        self.goto(x_pos, y_pos)
+
+    def bounce(self):
+        self.y_move *= -1
