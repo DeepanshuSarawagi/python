@@ -13,7 +13,7 @@ screen.tracer(0)
 right_paddle = Paddle(350, 0)
 left_paddle = Paddle(-350, 0)
 ball = Ball()
-l_scoreboard = Scoreboard()
+scoreboard = Scoreboard()
 
 screen.listen()
 
@@ -40,8 +40,10 @@ while game_is_on:
 
     if ball.xcor() > 380:
         ball.reset_position()
+        scoreboard.l_point()
 
     if ball.xcor() < -380:
         ball.reset_position()
+        scoreboard.r_point()
 
 screen.exitonclick()
