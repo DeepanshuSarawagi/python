@@ -56,6 +56,11 @@ class Snake:
 
         self.head.forward(MOVE_DISTANCE)
 
+    def reset(self):
+        self.all_snakes.clear()
+        self.initialise_snake_body()
+        self.head = self.all_snakes[0]
+
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
