@@ -57,6 +57,8 @@ class Snake:
         self.head.forward(MOVE_DISTANCE)
 
     def reset(self):
+        for snake in self.all_snakes:
+            snake.goto(1000, 1000)
         self.all_snakes.clear()
         self.initialise_snake_body()
         self.head = self.all_snakes[0]
