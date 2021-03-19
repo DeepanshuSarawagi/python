@@ -6,5 +6,5 @@ with open("Input/Letters/starting_letter.txt", mode="r") as file:
     for name in names:
         name = name.strip("\n")
         new_letter = lines.replace("[name],", name + ",")
-        with open(f"Output/ReadyToSend/letter_for_{name}", "w") as file:
+        with open(f"Output/ReadyToSend/letter_for_{name}.txt", "w") as file:
             file.write(new_letter)
