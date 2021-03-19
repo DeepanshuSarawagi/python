@@ -1,12 +1,14 @@
 from turtle import Turtle
 
+FILE_LOCATION = "/Users/deepanshusarawagi/Desktop/Learning/python/100DaysOfPython/Day24/FilesDirectoriesPaths"
+
 
 class Scoreboard(Turtle):
 
     def __init__(self):
         super(Scoreboard, self).__init__()
         self.score = 0
-        with open("highscore.txt", "r") as file:
+        with open(f"{FILE_LOCATION}/highscore.txt", "r") as file:
             data = file.read()
         self.high_score = int(data)
         self.hideturtle()
@@ -27,7 +29,7 @@ class Scoreboard(Turtle):
     def reset(self):
         if self.score > self.high_score:
             self.high_score = self.score
-            with open("highscore.txt", "w") as file:
+            with open(f"{FILE_LOCATION}/highscore.txt", "w") as file:
                 file.write(f"{self.high_score}")
         self.score = 0
         self.update_score()
