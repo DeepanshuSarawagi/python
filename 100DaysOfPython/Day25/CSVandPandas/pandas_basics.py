@@ -39,3 +39,5 @@ print("{:.2f}".format(average_temp))
 # We can use Series.mean method to get the mean value of a Series data
 average_temp = data["temp"].mean()   # We can call the mean method here because data type of data["temp"] is Series
 print(average_temp)
+max_temp = data["temp"].max()
+print(max_temp)
