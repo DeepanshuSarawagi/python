@@ -20,3 +20,7 @@ d = {
 
 data = pandas.DataFrame(d)
 print(data)
+
+data = pandas.read_csv("weather_data.csv")
+data_dict = data.to_dict()
+print(data_dict)
