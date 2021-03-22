@@ -41,3 +41,9 @@ average_temp = data["temp"].mean()   # We can call the mean method here because 
 print(average_temp)
 max_temp = data["temp"].max()
 print(max_temp)
+
+# We can use pandas to print the column values of a csv by just calling it as a method. For example
+
+print(data.day)
+print(data.temp)
+print(data.condition)
