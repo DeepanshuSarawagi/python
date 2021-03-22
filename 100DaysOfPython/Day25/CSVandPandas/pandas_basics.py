@@ -27,3 +27,15 @@ print(data_dict)
 
 temperature_list = data["temp"].to_list()
 print(temperature_list)
+
+sum_of_temp = 0
+
+for temp in temperature_list:
+    sum_of_temp += temp
+
+average_temp = sum_of_temp / len(temperature_list)
+print("{:.2f}".format(average_temp))
+
+# We can use Series.mean method to get the mean value of a Series data
+average_temp = data["temp"].mean()   # We can call the mean method here because data type of data["temp"] is Series
+print(average_temp)
