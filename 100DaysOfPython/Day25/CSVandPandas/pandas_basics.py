@@ -42,7 +42,7 @@ print(average_temp)
 max_temp = data["temp"].max()
 print(max_temp)
 
-# We can use pandas to print the column values of a csv by just calling it as a method. For example
+# We can use pandas to print the column values of a csv by just calling it as an attribute. For example
 
 print(data.day)
 print(data.temp)
