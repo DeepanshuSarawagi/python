@@ -47,3 +47,9 @@ print(max_temp)
 print(data.day)
 print(data.temp)
 print(data.condition)
+
+print()
+# How to print a specific column of data
+print(data[data.day == "Monday"])
+
+print(data[data.temp == data.temp.max()])
