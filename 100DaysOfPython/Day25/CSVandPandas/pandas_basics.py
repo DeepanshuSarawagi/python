@@ -53,3 +53,12 @@ print()
 print(data[data.day == "Monday"])
 
 print(data[data.temp == data.temp.max()])
+
+# We can create data as objects and access it's data as attributes
+
+monday = data[data.day == "Monday"]
+print(monday.condition)
+
+monday_temp = monday.temp
+monday_temp = monday_temp * (9/5) + 32
+print(monday_temp)
