@@ -62,3 +62,5 @@ print(monday.condition)
 monday_temp = monday.temp
 monday_temp = monday_temp * (9/5) + 32
 print(monday_temp)
+
+print(data[data.condition == "Sunny"])
