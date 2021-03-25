@@ -13,12 +13,14 @@ turtle.shape(image)
 #
 #
 # turtle.onscreenclick(get_mouse_click_coor)
+
 count = 0
 answer_state = screen.textinput(title=f"{count}/50 Guess the state", prompt="What is the state name?").title()
 print(answer_state)
 
 states_data = pandas.read_csv("50_states.csv")
-list_of_states = states_data.state
+
+list_of_states = states_data.state.to_list()
 print(list_of_states)
 
 turtle.mainloop()
