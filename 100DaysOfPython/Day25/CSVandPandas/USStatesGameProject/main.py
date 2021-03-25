@@ -14,7 +14,7 @@ turtle.shape(image)
 #
 # turtle.onscreenclick(get_mouse_click_coor)
 
-answer_state = screen.textinput(title="Guess the state", prompt="What is the state name?")
+answer_state = screen.textinput(title="Guess the state", prompt="What is the state name?").title()
 print(answer_state)
 
 turtle.mainloop()
