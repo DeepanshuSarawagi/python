@@ -29,7 +29,7 @@ def print_state_on_map(state):
 
 
 while count < 51:
-    answer_state = screen.textinput(title=f"{count}/50 Guess the state", prompt="What is the state name?").title()
+    answer_state = screen.textinput(title=f"{count}/50. Guess the next state", prompt="What is the state name?").title()
     print(answer_state)
     if (answer_state in list_of_states) and (answer_state not in guessed_states):
         guessed_states.append(answer_state)
