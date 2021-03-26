@@ -18,3 +18,11 @@ print(student_scores)
 
 passed_students = {student: score for student, score in student_scores.items() if score > 60}
 print(passed_students)
+
+# Day - 26 - Challenge 4
+
+sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
+list_of_words = sentence.split(" ")
+
+new_dict = {word: len(word) for word in list_of_words}
+print(new_dict)
