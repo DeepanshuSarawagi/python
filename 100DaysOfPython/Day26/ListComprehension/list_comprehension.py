@@ -34,3 +34,23 @@ numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
 even_numbers = [num for num in numbers if num % 2 == 0]
 print(even_numbers)
+
+with open("file1.txt", "r") as file1:
+    list1 = file1.readlines()
+    final_list1 = []
+    for li in list1:
+        li = int(li.strip("\n"))
+        final_list1.append(li)
+
+with open("file2.txt", "r") as file2:
+    list2 = file2.readlines()
+    final_list2 = []
+    for li in list2:
+        li = int(li.strip("\n"))
+        final_list2.append(li)
+
+print(final_list1)
+print(final_list2)
+
+common_numbers = [num for num in final_list1 if num in final_list2]
+print(common_numbers)
