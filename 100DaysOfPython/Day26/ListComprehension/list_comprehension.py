@@ -4,3 +4,8 @@
 numbers = [1, 2, 3, 4, 5]
 new_list = [(n + 1) for n in numbers]  # Here we are creating new list using existing list using list comprehension
 print(new_list)
+
+name = "Deepanshu"
+
+new_list = [letter for letter in name]
+print(new_list)
