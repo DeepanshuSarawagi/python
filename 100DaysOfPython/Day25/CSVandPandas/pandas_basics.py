@@ -1,4 +1,5 @@
 import pandas
+import random
 
 with open("weather_data.csv", "r") as data_file:
     data = pandas.read_csv(data_file)
@@ -64,3 +65,22 @@ monday_temp = monday_temp * (9/5) + 32
 print(monday_temp)
 
 print(data[data.condition == "Sunny"])
+
+# In this lesson we are going to learn how to loop through Pandas Dataframe
+
+student_dict = {
+    "Student": ["Deepanshu", "Divya", "Rajat", "Vandana"],
+    "Score": [random.randint(50, 100) for i in range(0, 4)]
+}
+print(student_dict)
+
+student_data_frame = pandas.DataFrame(student_dict)
+print(student_data_frame)
+
+for (index, row) in student_data_frame.iterrows():
+    print(row.Student)
+    print(row.Score)
+
+for index, row in student_data_frame.iterrows():
+    if row.Score > 65:
+        print(row.Student)
