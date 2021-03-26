@@ -12,3 +12,10 @@ print(new_list)
 
 squared_list = [n * 2 for n in range(1, 5)]
 print(squared_list)
+
+# Conditional list comprehension
+
+names = ["Alex", "Beth", "Caroline", "Dave", "Eleanor", "Fred"]
+
+short_names = [name for name in names if len(name) <= 4]
+print(short_names)
