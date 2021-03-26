@@ -22,3 +22,10 @@ print(short_names)
 
 long_names = [name.upper() for name in names if len(name) > 4]
 print(long_names)
+
+# Day 26 - Challenge 1
+
+numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+
+squared_numbers = [n ** 2 for n in numbers]
+print(squared_numbers)
