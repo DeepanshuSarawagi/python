@@ -9,3 +9,6 @@ name = "Deepanshu"
 
 new_list = [letter for letter in name]
 print(new_list)
+
+squared_list = [n * 2 for n in range(1, 5)]
+print(squared_list)
