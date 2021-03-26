@@ -26,3 +26,18 @@ list_of_words = sentence.split(" ")
 
 new_dict = {word: len(word) for word in list_of_words}
 print(new_dict)
+
+# Day 26 - Challenge 5
+
+weather_c = {
+    "Monday": 12,
+    "Tuesday": 14,
+    "Wednesday": 15,
+    "Thursday": 14,
+    "Friday": 21,
+    "Saturday": 22,
+    "Sunday": 24,
+}
+
+weather_f = {day: "{:.1f}".format(temp * 1.8 + 32) for day, temp in weather_c.items()}
+print(weather_f)
