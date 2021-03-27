@@ -29,3 +29,20 @@ def calculate(n, **kwargs):
 
 
 calculate(n=10, add=5, subtract=6, multiply=10, divide=2)
+
+
+"""Similarly we can use **kwargs in the __init__ method while creating a class. Refer to below exmaple"""
+
+
+class Car:
+
+    def __init__(self, **kwargs):
+        self.model = kwargs["model"]
+        self.make = kwargs["make"]
+
+    def print_car_details(self):
+        print("You created a car. Your car make is {} and model is {}.".format(self.make, self.model))
+
+
+my_car = Car(make="BMW", model="GT")
+my_car.print_car_details()
