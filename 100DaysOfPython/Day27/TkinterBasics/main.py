@@ -16,7 +16,13 @@ my_label.pack()  # We need to call this method so that the label becomes visible
 #
 # messagebox1 = messagebox.showinfo(title="Example", message="information")
 
-button = Button(text="Click Me")
+
+def button_clicked():
+    print("I got clicked")
+    my_label.config(text="I got clicked")
+
+
+button = Button(text="Click Me", command=button_clicked)
 button.pack()
 
 window.mainloop()
