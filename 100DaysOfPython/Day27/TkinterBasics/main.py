@@ -19,10 +19,14 @@ my_label.pack()  # We need to call this method so that the label becomes visible
 
 def button_clicked():
     print("I got clicked")
-    my_label.config(text="I got clicked")
+    text_message = input.get()
+    my_label.config(text=text_message)
 
 
 button = Button(text="Click Me", command=button_clicked)
 button.pack()
+
+input = Entry()
+input.pack()
 
 window.mainloop()
