@@ -30,4 +30,9 @@ input = Entry(width=30)
 input.insert(END, string="Some text to begin with")
 input.pack()
 
+text = Text(height=5, width=30)
+text.focus()  # To have the cursor at starting point in text box
+text.insert(END, chars="Some multiline text to begin with in a text box")
+print(text.get(1.0, END))
+text.pack()
 window.mainloop()
