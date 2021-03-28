@@ -52,4 +52,13 @@ def scale_used(value):
 scale = Scale(from_=0, to=50, command=scale_used)
 scale.pack()
 
+
+def checkButton_used():
+    print(checked_state.get())
+
+
+checked_state = IntVar()
+check_button = Checkbutton(text="Is On?", variable=checked_state, command=checkButton_used, state="normal")
+check_button.pack()
+
 window.mainloop()
