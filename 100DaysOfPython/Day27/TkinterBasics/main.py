@@ -35,4 +35,12 @@ text.focus()  # To have the cursor at starting point in text box
 text.insert(END, chars="Some multiline text to begin with in a text box")
 print(text.get(1.0, END))
 text.pack()
+
+
+def spinbox_used():
+    print(spinbox.get())
+
+
+spinbox = Spinbox(from_=0, to=10, width=5, command=spinbox_used)
+spinbox.pack()
 window.mainloop()
