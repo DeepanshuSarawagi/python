@@ -3,7 +3,7 @@ from tkinter import *
 
 window = Tk()
 window.title("My First GUI Program")
-window.minsize(width=500, height=300)
+window.minsize(width=500, height=500)
 
 # We will now create a label inside the tkinter window
 my_label = Label(text="My first label", font=("Arial", 24))
@@ -43,4 +43,13 @@ def spinbox_used():
 
 spinbox = Spinbox(from_=0, to=10, width=5, command=spinbox_used)
 spinbox.pack()
+
+
+def scale_used(value):
+    print(value)
+
+
+scale = Scale(from_=0, to=50, command=scale_used)
+scale.pack()
+
 window.mainloop()
