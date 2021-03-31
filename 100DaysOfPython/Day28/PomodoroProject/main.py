@@ -10,8 +10,17 @@ WORK_MIN = 0.5
 SHORT_BREAK_MIN = 0.5
 LONG_BREAK_MIN = 20
 reps = 0
-
+timer = None
 # ---------------------------- TIMER RESET ------------------------------- # 
+
+
+def reset_time():
+    global reps
+    window.after_cancel(timer)
+    canvas.itemconfig(timer_text, text="00:00")
+    timer_label.config(text="Timer")
+    tick_label.config(text="")
+    reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
@@ -38,7 +47,7 @@ def start_timer():
 
 
 def count_down(count):
-    # global reps
+    global timer
     count_min = count // 60
     count_sec = count % 60
     if count_sec < 10:
@@ -48,7 +57,7 @@ def count_down(count):
 
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
-        window.after(1000, count_down, count - 1)  # We are using the Tk.after() method to do something after a certain
+        timer = window.after(1000, count_down, count - 1)  # We are using the Tk.after() method to do something after a certain
         # time. And to repeat it every 1 second, we are the function recursively.
     else:
         start_timer()
@@ -79,7 +88,7 @@ timer_label.grid(row=0, column=1)
 start_button = Button(text="Start", bg=YELLOW, highlightthickness=0, command=start_timer)
 start_button.grid(row=2, column=0)
 
-reset_button = Button(text="Reset", bg=YELLOW, highlightthickness=0)
+reset_button = Button(text="Reset", bg=YELLOW, highlightthickness=0, command=reset_time)
 reset_button.grid(row=2, column=2)
 
 tick_label = Label(bg=YELLOW)
