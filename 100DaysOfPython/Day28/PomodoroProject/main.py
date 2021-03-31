@@ -9,6 +9,7 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+reps = 0
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
@@ -16,7 +17,21 @@ LONG_BREAK_MIN = 20
 
 
 def start_timer():
-    count_down(5 * 60)  # converting 5 minutes into seconds
+    global reps
+    reps += 1
+    work_sec = int(WORK_MIN * 60)
+    short_break_sec = int(SHORT_BREAK_MIN * 60)
+    long_break_sec = LONG_BREAK_MIN * 60
+
+    if reps % 4 == 0:
+        count_down(long_break_sec)
+        timer_label.config(text="Long Break Time", fg=PINK)
+    elif reps % 2 == 0:
+        count_down(short_break_sec)
+        timer_label.config(text="Break Time", fg=GREEN)
+    else:
+        count_down(work_sec)
+        timer_label.config(text="Work Time", fg=RED)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -34,6 +49,8 @@ def count_down(count):
     if count > 0:
         window.after(1000, count_down, count - 1)  # We are using the Tk.after() method to do something after a certain
         # time. And to repeat it every 1 second, we are the function recursively.
+    else:
+        start_timer()
 
 # ---------------------------- UI SETUP ------------------------------- #
 
