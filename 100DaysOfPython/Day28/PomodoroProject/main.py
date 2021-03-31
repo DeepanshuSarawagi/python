@@ -20,4 +20,8 @@ LONG_BREAK_MIN = 20
 
 window = Tk()
 window.title("Pomodoro Project")
+canvas = Canvas(width=200, height=224)
+image = PhotoImage(file="tomato.png")
+canvas.create_image(100, 112, image=image)
+canvas.pack()
 window.mainloop()
