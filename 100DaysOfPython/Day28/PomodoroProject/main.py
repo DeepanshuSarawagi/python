@@ -6,8 +6,8 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 25
-SHORT_BREAK_MIN = 5
+WORK_MIN = 0.5
+SHORT_BREAK_MIN = 0.5
 LONG_BREAK_MIN = 20
 reps = 0
 
@@ -23,21 +23,22 @@ def start_timer():
     short_break_sec = int(SHORT_BREAK_MIN * 60)
     long_break_sec = LONG_BREAK_MIN * 60
 
-    if reps % 4 == 0:
+    if reps % 8 == 0:
         count_down(long_break_sec)
-        timer_label.config(text="Long Break Time", fg=PINK)
+        timer_label.config(text="Long Break", fg=PINK)
     elif reps % 2 == 0:
         count_down(short_break_sec)
-        timer_label.config(text="Break Time", fg=GREEN)
+        timer_label.config(text="Short Break", fg=GREEN)
     else:
         count_down(work_sec)
-        timer_label.config(text="Work Time", fg=RED)
+        timer_label.config(text="Work", fg=RED)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 
 def count_down(count):
+    # global reps
     count_min = count // 60
     count_sec = count % 60
     if count_sec < 10:
@@ -51,6 +52,12 @@ def count_down(count):
         # time. And to repeat it every 1 second, we are the function recursively.
     else:
         start_timer()
+        marks = ""
+        work_sessions = reps // 2
+        for _ in range(work_sessions):
+            marks += "✅"
+        tick_label.config(text=marks)
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -75,7 +82,7 @@ start_button.grid(row=2, column=0)
 reset_button = Button(text="Reset", bg=YELLOW, highlightthickness=0)
 reset_button.grid(row=2, column=2)
 
-tick_label = Label(text="✅", bg=YELLOW)
+tick_label = Label(bg=YELLOW)
 tick_label.grid(row=3, column=1)
 
 window.mainloop()
