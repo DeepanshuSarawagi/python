@@ -16,11 +16,21 @@ LONG_BREAK_MIN = 20
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
+
+def count_down(count):
+    print(count)
+    if count > 0:
+        window.after(1000, count_down, count - 1)  # We are using the Tk.after() method to do something after a certain
+        # time. And to repeat it every 1 second, we are the function recursively.
+
 # ---------------------------- UI SETUP ------------------------------- #
+
 
 window = Tk()
 window.title("Pomodoro Project")
 window.config(padx=100, pady=50, bg=YELLOW)
+count_down(5)
+
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 image = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=image)
@@ -38,6 +48,6 @@ reset_button = Button(text="Reset", bg=YELLOW, highlightthickness=0)
 reset_button.grid(row=2, column=2)
 
 tick_label = Label(text="✅", bg=YELLOW)
-tick_label.grid(row=2, column=1)
+tick_label.grid(row=3, column=1)
 
 window.mainloop()
