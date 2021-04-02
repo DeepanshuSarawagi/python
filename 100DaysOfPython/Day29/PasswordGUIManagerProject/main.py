@@ -1,12 +1,42 @@
 from tkinter import *
+import random
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+characters = ["a", "b", "c", "d", "f", "g", "g", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+              "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+special_symbols = ["@", "!", "$", "^"]
+
+
+def generate_password():
+    password_list = []
+    password = ""
+    for _ in range(8):
+        char = random.choice(characters)
+        choice = random.randint(0, 1)
+        if choice == 1:
+            char = char.upper()
+        if char not in password_list:
+            password_list.append(char)
+    for _ in range(2):
+        number = random.choice(numbers)
+        password_list.append(number)
+    for _ in range(2):
+        char = random.choice(special_symbols)
+        password_list.append(char)
+    for _ in range(0, len(password_list)):
+        p = random.choice(password_list)
+        if p not in password:
+            password += p
+    print(password_list)
+    password_entry.insert(0, password)
+    password_list.clear()
+
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 
 def add_password():
-
     website = website_entry.get()
     email = email_user_entry.get()
     password = password_entry.get()
@@ -50,7 +80,7 @@ password_label.grid(row=3, column=0)
 password_entry = Entry(width=21)
 password_entry.grid(row=3, column=1)
 
-gen_password_button = Button(text="Generate Password")
+gen_password_button = Button(text="Generate Password", command=generate_password)
 gen_password_button.grid(row=3, column=2)
 
 add_password_button = Button(text="Add Password", width=36, command=add_password)
