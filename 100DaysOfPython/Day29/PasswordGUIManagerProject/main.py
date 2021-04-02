@@ -32,4 +32,7 @@ password_entry.grid(row=3, column=1)
 gen_password_button = Button(text="Generate Password")
 gen_password_button.grid(row=3, column=2)
 
+add_password_button = Button(text="Add Password", width=36)
+add_password_button.grid(row=4, column=1, columnspan=2)
+
 window.mainloop()
