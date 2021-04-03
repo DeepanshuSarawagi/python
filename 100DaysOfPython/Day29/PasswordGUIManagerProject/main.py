@@ -50,15 +50,18 @@ def add_password():
     email = email_user_entry.get()
     password = password_entry.get()
     add_password_button.focus()
-    is_ok = messagebox.askokcancel(title="Website", message=f"Email: {email}\n Password: {password}\n "
-                                                            f"Is it ok to save? ")
-    if is_ok:
-        with open("passwords.txt", "a") as file:
-            final_string = "{} | {} | {}\n".format(website, email, password)
-            file.writelines(final_string)
-        website_entry.delete(0, "end")
-        password_entry.delete(0, "end")
-        website_entry.focus()
+    if len(website) == 0 or len(password) == 0:
+        messagebox.showwarning(title="Warning", message="Don't leave any fields empty.")
+    else:
+        is_ok = messagebox.askokcancel(title="Website", message=f"Email: {email}\n Password: {password}\n "
+                                                                f"Is it ok to save? ")
+        if is_ok:
+            with open("passwords.txt", "a") as file:
+                final_string = "{} | {} | {}\n".format(website, email, password)
+                file.writelines(final_string)
+            website_entry.delete(0, "end")
+            password_entry.delete(0, "end")
+            website_entry.focus()
 
 
 # ---------------------------- UI SETUP ------------------------------- #
