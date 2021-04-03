@@ -8,27 +8,34 @@ numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 special_symbols = ["@", "!", "$", "^"]
 
 
+def gen_random_character():
+    char = random.choice(characters)
+    choice = random.randint(0, 1)
+    if choice == 1:
+        char = char.upper()
+    return char
+
+
 def generate_password():
     password_list = []
     password = ""
-    for _ in range(8):
-        char = random.choice(characters)
-        choice = random.randint(0, 1)
-        if choice == 1:
-            char = char.upper()
+    while len(password_list) < 8:
+        char = gen_random_character()
         if char not in password_list:
             password_list.append(char)
+        else:
+            continue
+
     for _ in range(2):
         number = random.choice(numbers)
         password_list.append(number)
     for _ in range(2):
         char = random.choice(special_symbols)
         password_list.append(char)
-    for _ in range(0, len(password_list)):
-        p = random.choice(password_list)
-        if p not in password:
-            password += p
-    print(password_list)
+
+    random.shuffle(password_list)
+    for p in range(0, len(password_list)):
+        password += password_list[p]
     password_entry.insert(0, password)
     password_list.clear()
 
