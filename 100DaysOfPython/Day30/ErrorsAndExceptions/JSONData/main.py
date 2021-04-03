@@ -91,12 +91,12 @@ def search_account():
             email = data[website]["email"]
             password = data[website]["password"]
     except FileNotFoundError:
-        print("File is not found. Please add at least one account and password.")
+        messagebox.showinfo(title="Error", message="No data file found.")
     except KeyError as account:
         messagebox.showinfo(title="Password", message="The account {} you are searching for doesn't exist."
                             .format(account))
     else:
-        messagebox.showinfo(title=website, message=f"Email: {email}\n Password: {password}")
+        messagebox.showinfo(title=website, message=f"Email: {email}\nPassword: {password}")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -117,7 +117,7 @@ website_entry = Entry(width=21)
 website_entry.focus()
 website_entry.grid(row=1, column=1)
 
-search_button = Button(text="Search Account", command=search_account)
+search_button = Button(text="Search", command=search_account, width=12)
 search_button.grid(row=1, column=2)
 
 email_user_label = Label(text="Email/Username: ")
