@@ -52,10 +52,8 @@ def add_password():
         final_string = "{} | {} | {}\n".format(website, email, password)
         file.writelines(final_string)
     website_entry.delete(0, "end")
-    email_user_entry.delete(0, "end")
     password_entry.delete(0, "end")
     website_entry.focus()
-    email_user_entry.insert(0, "example@email.com")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
