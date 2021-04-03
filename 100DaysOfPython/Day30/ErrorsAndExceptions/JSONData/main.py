@@ -66,7 +66,7 @@ def add_password():
                                                                 f"Is it ok to save? ")
         if is_ok:
             with open("passwords.json", "w") as file:
-                json.dump(new_data, file)
+                json.dump(new_data, file, indent=4)
             website_entry.delete(0, "end")
             password_entry.delete(0, "end")
             website_entry.focus()
