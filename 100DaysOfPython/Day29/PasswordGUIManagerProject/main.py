@@ -1,5 +1,7 @@
 from tkinter import *
 import random
+from tkinter import messagebox
+
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 characters = ["a", "b", "c", "d", "f", "g", "g", "i", "j", "k", "l", "m", "n", "o", "p", "q",
@@ -48,12 +50,15 @@ def add_password():
     email = email_user_entry.get()
     password = password_entry.get()
     add_password_button.focus()
-    with open("passwords.txt", "a") as file:
-        final_string = "{} | {} | {}\n".format(website, email, password)
-        file.writelines(final_string)
-    website_entry.delete(0, "end")
-    password_entry.delete(0, "end")
-    website_entry.focus()
+    is_ok = messagebox.askokcancel(title="Website", message=f"Email: {email}\n Password: {password}\n "
+                                                            f"Is it ok to save? ")
+    if is_ok:
+        with open("passwords.txt", "a") as file:
+            final_string = "{} | {} | {}\n".format(website, email, password)
+            file.writelines(final_string)
+        website_entry.delete(0, "end")
+        password_entry.delete(0, "end")
+        website_entry.focus()
 
 
 # ---------------------------- UI SETUP ------------------------------- #
