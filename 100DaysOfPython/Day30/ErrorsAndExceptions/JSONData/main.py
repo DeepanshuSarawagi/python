@@ -88,9 +88,16 @@ def search_account():
     try:
         with open("passwords.json", "r") as file:
             data = json.load(file)
-            print(type(data))
+            email = data[website]["email"]
+            password = data[website]["password"]
     except FileNotFoundError:
         print("File is not found. Please add at least one account and password.")
+    except KeyError as account:
+        messagebox.showinfo(title="Password", message="The account {} you are searching for doesn't exist."
+                            .format(account))
+    else:
+        messagebox.showinfo(title=website, message=f"Email: {email}\n Password: {password}")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 
