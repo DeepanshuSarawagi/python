@@ -25,10 +25,10 @@ facebook_posts = [
 
 total_likes = 0
 
-try:
-    for post in facebook_posts:
-        total_likes += post['Likes']
-except KeyError:
-    total_likes += 0
+for post in facebook_posts:
+    try:
+        total_likes += post["Likes"]
+    except KeyError:
+        total_likes += 0
 
 print(total_likes)
