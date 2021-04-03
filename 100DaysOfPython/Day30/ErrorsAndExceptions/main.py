@@ -14,10 +14,16 @@ try:
     a_dictionary = {
         "key": "value"
     }
-    print(a_dictionary["abc"])  # Deliberately raising KeyError to demonstrate below except clause
+    # print(a_dictionary["abc"])  # Deliberately raising KeyError to demonstrate below except clause
+    print(a_dictionary["key"])  # Commented out above line to ensure else block of code gets executed
 except KeyError as key_error:
     print("The key {} does not exist.".format(key_error))
 except FileNotFoundError:
     print("The file is not found. Creating one.")
     with open("a_file.txt", "w") as file:
         file.write("Writing some data\n")
+else:
+    content = file.read()
+    print(content)    # When no exceptions is raised in the try block, then the code in this block gets executed.
+finally:
+    print("You have finally reached this block of code")  # This block of code will always execute no matter what
