@@ -65,8 +65,18 @@ def add_password():
         is_ok = messagebox.askokcancel(title="Website", message=f"Email: {email}\n Password: {password}\n "
                                                                 f"Is it ok to save? ")
         if is_ok:
-            with open("passwords.json", "w") as file:
-                json.dump(new_data, file, indent=4)
+            try:
+                with open("passwords.json", "r") as file:
+                    # Loading the data from the JSON file
+                    data = json.load(file)
+                    # Updating the data with new data
+                    data.update(new_data)
+                    # Writing the data to the JSON file
+                with open("passwords.json", "w") as file:
+                    json.dump(data, file, indent=4)
+            except FileNotFoundError:
+                with open("passwords.json", "w") as file:
+                    json.dump(new_data, file, indent=4)
             website_entry.delete(0, "end")
             password_entry.delete(0, "end")
             website_entry.focus()
