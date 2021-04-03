@@ -27,3 +27,4 @@ else:
     print(content)    # When no exceptions is raised in the try block, then the code in this block gets executed.
 finally:
     print("You have finally reached this block of code")  # This block of code will always execute no matter what
+    raise KeyError("This is an error that I made up.")  # raise keyword is used to raise our own exceptions
