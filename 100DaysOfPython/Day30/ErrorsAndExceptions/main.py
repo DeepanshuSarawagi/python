@@ -8,4 +8,5 @@ try:
         file.read()
 except FileNotFoundError:
     print("The file is not found. Creating one.")
-    file = open("a_file.txt", "w")
+    with open("a_file.txt", "w") as file:
+        file.write("Writing some data\n")
