@@ -93,7 +93,7 @@ def search_account():
     except FileNotFoundError:
         messagebox.showinfo(title="Error", message="No data file found.")
     except KeyError as account:
-        messagebox.showinfo(title="Password", message="The account {} you are searching for doesn't exist."
+        messagebox.showinfo(title="Error", message="The account {} you are searching for doesn't exist."
                             .format(account))
     else:
         messagebox.showinfo(title=website, message=f"Email: {email}\nPassword: {password}")
