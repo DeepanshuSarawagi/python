@@ -83,6 +83,15 @@ def add_password():
                 website_entry.focus()
 
 
+def search_account():
+    website = website_entry.get().title()
+    try:
+        with open("passwords.json", "r") as file:
+            data = json.load(file)
+            print(type(data))
+    except FileNotFoundError:
+        print("File is not found. Please add at least one account and password.")
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 
@@ -97,9 +106,12 @@ canvas.grid(row=0, column=1)
 
 website_label = Label(text="Website: ")
 website_label.grid(row=1, column=0)
-website_entry = Entry(width=35)
+website_entry = Entry(width=21)
 website_entry.focus()
-website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.grid(row=1, column=1)
+
+search_button = Button(text="Search Account", command=search_account)
+search_button.grid(row=1, column=2)
 
 email_user_label = Label(text="Email/Username: ")
 email_user_label.grid(row=2, column=0)
