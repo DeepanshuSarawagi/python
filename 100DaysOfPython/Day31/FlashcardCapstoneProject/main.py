@@ -26,10 +26,11 @@ french = canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text="")
 
 
 def create_flash_cards():
-    global french
-    canvas.delete(french)
+    # global french
+    # canvas.delete(french)
     random_fr = random.choice(data_dict)
-    french = canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text=random_fr["French"])
+    # french = canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text=random_fr["French"])
+    canvas.itemconfig(french, text=random_fr["French"])
 
 
 right_button = Button(image=right_image, highlightthickness=0, command=create_flash_cards)
