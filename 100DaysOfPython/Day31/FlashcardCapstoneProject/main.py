@@ -17,19 +17,19 @@ wrong_image = PhotoImage(file="images/wrong.png")
 # reading CSV using pandas
 data = pandas.read_csv("data/french_words.csv")
 # data_dict = {row.French: row.English for index, row in data.iterrows()}
-data_dict = pandas.DataFrame.to_dict(data)
+data_dict = data.to_dict(orient="records")
 # print(data_dict)
 
 # Creating text in canvas
-canvas.create_text(400, 150, font=("Ariel", 34, "italic"), text="French")
-french = canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text=data_dict["French"][0])
+title = canvas.create_text(400, 150, font=("Ariel", 34, "italic"), text="French")
+french = canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text="")
 
 
 def create_flash_cards():
     global french
     canvas.delete(french)
-    random_fr = random.randint(0, 100)
-    french = canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text=data_dict["French"][random_fr])
+    random_fr = random.choice(data_dict)
+    french = canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text=random_fr["French"])
 
 
 right_button = Button(image=right_image, highlightthickness=0, command=create_flash_cards)
@@ -38,5 +38,6 @@ right_button.grid(row=1, column=1, pady=50)
 wrong_button = Button(image=wrong_image, highlightthickness=0, command=create_flash_cards)
 wrong_button.grid(row=1, column=0, pady=50)
 
+create_flash_cards()
 
 window.mainloop()
