@@ -19,7 +19,8 @@ data = pandas.read_csv("data/french_words.csv")
 data_dict = pandas.DataFrame.to_dict(data)
 
 # Creating text in canvas
-canvas.create_text(400, 150, font=("Arial", 34, "italic"), text="French")
+canvas.create_text(400, 150, font=("Ariel", 34, "italic"), text="French")
+canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text=data_dict["French"][0])
 
 right_button = Button(image=right_image, highlightthickness=0)
 right_button.grid(row=1, column=1, pady=50)
