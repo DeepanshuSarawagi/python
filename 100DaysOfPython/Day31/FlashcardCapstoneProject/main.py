@@ -1,5 +1,6 @@
-BACKGROUND_COLOR = "#B1DDC6"
 from tkinter import *
+import pandas
+BACKGROUND_COLOR = "#B1DDC6"
 
 window = Tk()
 window.title("Flash Card Project")
@@ -12,11 +13,19 @@ canvas.create_image(400, 263, image=card_front)
 right_image = PhotoImage(file="images/right.png")
 wrong_image = PhotoImage(file="images/wrong.png")
 
+# reading CSV using pandas
+data = pandas.read_csv("data/french_words.csv")
+# data_dict = {row.French: row.English for index, row in data.iterrows()}
+data_dict = pandas.DataFrame.to_dict(data)
+
+# Creating text in canvas
+canvas.create_text(400, 150, font=("Arial", 34, "italic"), text="French")
+
 right_button = Button(image=right_image, highlightthickness=0)
 right_button.grid(row=1, column=1, pady=50)
 
 wrong_button = Button(image=wrong_image, highlightthickness=0)
 wrong_button.grid(row=1, column=0, pady=50)
 
-window.mainloop()
 
+window.mainloop()
