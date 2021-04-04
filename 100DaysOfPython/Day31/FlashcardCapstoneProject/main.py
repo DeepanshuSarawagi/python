@@ -47,9 +47,16 @@ def create_flash_cards():
     flip_timer = window.after(3000, func=flip_card)
 
 
+def is_know():
+    data_dict.remove(random_fr)
+    data = pandas.DataFrame(data_dict)
+    data.to_csv("data/words_to_learn.csv", index=False)
+    create_flash_cards()
+
+
 flip_timer = window.after(3000, func=flip_card)
 
-right_button = Button(image=right_image, highlightthickness=0, command=create_flash_cards)
+right_button = Button(image=right_image, highlightthickness=0, command=is_know)
 right_button.grid(row=1, column=1, pady=50)
 
 wrong_button = Button(image=wrong_image, highlightthickness=0, command=create_flash_cards)
