@@ -37,14 +37,17 @@ def flip_card():
 def create_flash_cards():
     # global french
     # canvas.delete(french)
-    global random_fr
+    global random_fr, flip_timer
+    window.after_cancel(flip_timer)
     random_fr = random.choice(data_dict)
     # french = canvas.create_text(400, 263, font=("Ariel", 48, "bold"), text=random_fr["French"])
     canvas.itemconfig(card_image, image=card_front)
     canvas.itemconfig(title, text="French", fill="black")
     canvas.itemconfig(card_word, text=random_fr["French"], fill="black")
-    window.after(3000, func=flip_card)
+    flip_timer = window.after(3000, func=flip_card)
 
+
+flip_timer = window.after(3000, func=flip_card)
 
 right_button = Button(image=right_image, highlightthickness=0, command=create_flash_cards)
 right_button.grid(row=1, column=1, pady=50)
@@ -53,6 +56,5 @@ wrong_button = Button(image=wrong_image, highlightthickness=0, command=create_fl
 wrong_button.grid(row=1, column=0, pady=50)
 
 create_flash_cards()
-window.after(3000, func=flip_card)
 
 window.mainloop()
