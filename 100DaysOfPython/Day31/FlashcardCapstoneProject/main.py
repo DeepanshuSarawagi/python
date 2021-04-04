@@ -3,6 +3,7 @@ import pandas
 import random
 BACKGROUND_COLOR = "#B1DDC6"
 random_fr = {}
+data_dict = {}
 
 window = Tk()
 window.title("Flash Card Project")
@@ -17,11 +18,16 @@ card_back = PhotoImage(file="images/card_back.png")
 right_image = PhotoImage(file="images/right.png")
 wrong_image = PhotoImage(file="images/wrong.png")
 
-# reading CSV using pandas
-data = pandas.read_csv("data/french_words.csv")
-# data_dict = {row.French: row.English for index, row in data.iterrows()}
-data_dict = data.to_dict(orient="records")
-# print(data_dict)
+try:
+    # reading CSV using pandas
+    data = pandas.read_csv("data/words_to_learn.csv.csv")
+except FileNotFoundError:
+    original_data = pandas.read_csv("data/french_words.csv")
+    data_dict = original_data.to_dict(orient="records")
+else:
+    # data_dict = {row.French: row.English for index, row in data.iterrows()}
+    data_dict = data.to_dict(orient="records")
+    # print(data_dict)
 
 # Creating text in canvas
 title = canvas.create_text(400, 150, font=("Ariel", 34, "italic"), text="")
