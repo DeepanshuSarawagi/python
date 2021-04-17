@@ -34,4 +34,4 @@ class QuizInterface:
 
     def get_next_question(self):
         q_text = self.quiz.next_question()
-        self.canvas.itemconfig(self.question_text, text=q_text, justify="center")
+        self.canvas.itemconfig(self.question_text, text=q_text, justify="left")
