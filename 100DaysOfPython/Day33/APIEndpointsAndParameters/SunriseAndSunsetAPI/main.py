@@ -12,7 +12,10 @@ response.raise_for_status()
 data = response.json()
 sunrise = data["results"]["sunrise"]
 sunset = data["results"]["sunset"]
-
+print(sunrise)
+print(sunset)
 print(datetime.datetime.utcnow())
+
+print()
 
 print("{}, {}".format(sunrise.split("T")[1].split("+")[0], sunset.split("T")[1].split("+")[0]))
