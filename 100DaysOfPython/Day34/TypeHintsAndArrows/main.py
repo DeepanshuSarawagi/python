@@ -23,3 +23,15 @@ def show_basic_info(age: int, name: str, height: float):
 
 
 show_basic_info(age="Twenty Eight", name=28, height=178.8)  # If you notice, we get a type error here as well
+
+
+def can_you_drive(age: int) -> bool:  # Here also we are adding a Type Hint which says this function is expected
+    # to return data of type boolean
+    if age >= 18:
+        can_drive = True
+    else:
+        can_drive = False
+    return can_drive
+
+
+print(can_you_drive(age=28))
