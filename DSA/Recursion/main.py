@@ -76,10 +76,11 @@ fibonacci(10)
 
 
 def sum_of_digits(n):
-    if n <= 10:
-        return 1
+    assert n > 0, "N should be a positive integer"
+    if n < 10:
+        return int(n)
     else:
         return int(n % 10) + sum_of_digits(n/10)
 
 
-print(sum_of_digits(12241214))
+print(sum_of_digits(230))
