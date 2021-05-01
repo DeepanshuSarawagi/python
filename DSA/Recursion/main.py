@@ -52,11 +52,9 @@ print(power_of_two(5))
 
 
 def factorial(n):
-
+    assert 0 <= n == int(n), "n must be a positive integer only."
     if n == 0 or n == 1:
         return 1
-    elif n == 2:
-        return 2
     else:
         return n * factorial(n-1)
 
