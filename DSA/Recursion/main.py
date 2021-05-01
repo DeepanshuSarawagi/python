@@ -84,3 +84,16 @@ def sum_of_digits(n):
 
 
 print(sum_of_digits(230))
+
+# Exercise 2 - Hoe to calculate the power of number using recursion
+
+
+def power_of_number(n, power):
+    assert n > 0 and power > 0, "The parameters should be positive integers"
+    if power == 1:
+        return n
+    else:
+        return n * power_of_number(n, power - 1)
+
+
+print(power_of_number(2, 7))
