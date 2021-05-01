@@ -3,7 +3,7 @@ def recursive_method(n):
         print("Recursion completed, I`m the first method.")
     else:
         print("I`m the method no. {} in the recursion".format(n))
-        recursive_method(n-1)
+        recursive_method(n - 1)
 
 
 recursive_method(5)
@@ -37,3 +37,15 @@ def fourth_method():
 
 
 first_method()
+
+
+def power_of_two(n):
+    if n == 0:
+        return 1
+    else:
+        # power = power_of_two(n-1)
+        # print(power)
+        return power_of_two(n-1) * 2
+
+
+print(power_of_two(5))
