@@ -109,3 +109,12 @@ def gcd(a, b):
 
 
 print(gcd(48, 18))
+
+
+def decimcalToBinary(n):
+    if n == 0:
+        return 0
+    else:
+        return n % 2 + 10 * decimcalToBinary(int(n / 2))
+
+print(decimcalToBinary(10))
