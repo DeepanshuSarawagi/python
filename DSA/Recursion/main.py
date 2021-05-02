@@ -134,3 +134,12 @@ def recursiveRange(num):
     if num == 0:
         return 0
     return num + recursiveRange(num - 1)
+
+
+def reverse(strng):
+    string = ""
+    return string + strng[::-1]
+
+
+print(reverse("python"))
+
