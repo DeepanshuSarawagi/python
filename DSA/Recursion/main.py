@@ -149,3 +149,16 @@ def isPalindrome(strng):
 
 
 print(isPalindrome("malayalam"))
+
+
+def capitalizeFirst(arr):
+    result = []
+    if len(arr) == 0:
+        return result
+    result.append(arr[0].title())
+    return result + capitalizeFirst(arr[1:])
+
+
+print(capitalizeFirst(["car", "bat", "ball"]))
+
+
