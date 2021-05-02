@@ -162,3 +162,12 @@ def capitalizeFirst(arr):
 print(capitalizeFirst(["car", "bat", "ball"]))
 
 
+def capitalizeWords(arr):
+    result = []
+    if len(arr) == 0:
+        return result
+    result.append(arr[0].upper())
+    return result + capitalizeWords(arr[1:])
+
+
+print(capitalizeWords(["i", "am", "learning", "python"]))
