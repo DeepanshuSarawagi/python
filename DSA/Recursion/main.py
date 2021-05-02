@@ -89,11 +89,23 @@ print(sum_of_digits(230))
 
 
 def power_of_number(n, power):
-    assert n > 0 and power > 0, "The parameters should be positive integers"
+    assert power > 0, "The parameters should be positive integers"
     if power == 1:
         return n
     else:
         return n * power_of_number(n, power - 1)
 
 
-print(power_of_number(2, 7))
+print(power_of_number(-2.2, 7))
+
+# Exercise 3, greatest common divisor
+
+
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+
+print(gcd(48, 18))
