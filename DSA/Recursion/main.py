@@ -118,3 +118,19 @@ def decimcalToBinary(n):
         return n % 2 + 10 * decimcalToBinary(int(n / 2))
 
 print(decimcalToBinary(10))
+
+
+def productOfArray(arr):
+    product = 1
+    for i in range(0, len(arr)):
+        product = product * arr[i]
+    return product
+
+
+print(productOfArray([1,2,3]))
+
+
+def recursiveRange(num):
+    if num == 0:
+        return 0
+    return num + recursiveRange(num - 1)
