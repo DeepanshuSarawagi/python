@@ -143,3 +143,9 @@ def reverse(strng):
 
 print(reverse("python"))
 
+
+def isPalindrome(strng):
+    return strng == strng[::-1]
+
+
+print(isPalindrome("malayalam"))
