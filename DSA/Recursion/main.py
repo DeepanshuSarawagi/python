@@ -183,3 +183,16 @@ def sum(n):
 
 
 print(sum(500))
+
+
+# Example of O(N) time complexity
+
+def find_biggest_number(sampleArray):
+    biggest_number = sampleArray[0]
+    for index in range(1, len(sampleArray)):
+        if sampleArray[index] > biggest_number:
+            biggest_number = sampleArray[index]
+    print(biggest_number)
+
+
+find_biggest_number([5, 1, 45, 97, -10, 105, 28, 57])
