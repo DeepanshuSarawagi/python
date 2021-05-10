@@ -77,3 +77,16 @@ def print_10_pairs(arrayA, arrayB):
 # complexity of O(n*m)
 
 print_10_pairs([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
+
+
+def reverse_array(array):
+    for i in range(0, int(len(array) / 2)):
+        temp = array[i]
+        array[i] = array[-i-1]
+        array[-i-1] = temp
+    print(array)
+
+
+# Since we are iterating over n/2 times, it will have a time complexity O(N/2) times.
+# By removing the constants, we can conclude that, the final time complexity will be O(N)
+reverse_array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
