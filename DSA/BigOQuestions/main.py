@@ -61,3 +61,19 @@ def print_pairs(array1, array2):
 # only loop m times where m is the length of array2. hence, we can say that it will have a time complexity of O(n*m)
 
 print_pairs([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
+print()
+
+
+def print_10_pairs(arrayA, arrayB):
+    for i in range(len(arrayA)):
+        for j in range(len(arrayB)):
+            for k in range(0, 10):
+                print("{}, {}".format(arrayA[i], arrayB[j]))
+
+
+# Here, we know that from the previous example, we know that the two outer for loops have a time complexity of O(n*m)
+# time complexity. How about the third for loop? We have to understand that that we are looping through the constant
+# time range of 1000 times, hence, it will have a time complexity of O(1). Hence even this function has a time
+# complexity of O(n*m)
+
+print_10_pairs([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
