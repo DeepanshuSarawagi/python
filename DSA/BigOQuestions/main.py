@@ -90,3 +90,19 @@ def reverse_array(array):
 # Since we are iterating over n/2 times, it will have a time complexity O(N/2) times.
 # By removing the constants, we can conclude that, the final time complexity will be O(N)
 reverse_array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+
+def powersof2(n):
+    if n == 0:
+        return 1
+    else:
+        a = int(n/2)
+        print("a is now: {}".format(a))
+        prev = powersof2(a)
+        print("Prev is now: {}".format(prev))
+        curr = prev * 2
+        print("Curr is now: {}".format(curr))
+        return curr
+
+
+print(powersof2(5))
