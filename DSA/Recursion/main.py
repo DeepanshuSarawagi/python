@@ -196,3 +196,14 @@ def find_biggest_number(sampleArray):
 
 
 find_biggest_number([5, 1, 45, 97, -10, 105, 28, 57])
+
+
+# Example of 2^n time complexity
+
+def find_maximum_recursive(sampleArray, n):
+    if n == 1:
+        return sampleArray[0]
+    return max(sampleArray[n-1], find_maximum_recursive(sampleArray, n-1))
+
+
+print(find_maximum_recursive([5, 1, 45, 97, -10, 105, 28, 57], 8))
