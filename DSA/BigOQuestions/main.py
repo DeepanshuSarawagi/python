@@ -46,3 +46,18 @@ def print_unordered_pairs(array):
 
 print_unordered_pairs([1, 2, 3, 4, 5])
 print()
+
+
+def print_pairs(array1, array2):
+    for i in range(len(array1)):
+        for j in range(len(array2)):
+            if array1[i] < array2[j]:
+                print("{}, {}".format(array1[i], array2[j]))
+
+
+# Here, we need to understand the length of an array. If both the arrays have same length then it will have a quadratic
+# time complexity because for every n elements in array1, every element in array2 will loop n times.
+# If the lengths of both the arrays are different, then for every n elements in array1, every element in array2 will
+# only loop m times where m is the length of array2. hence, we can say that it will have a time complexity of O(n*m)
+
+print_pairs([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])
