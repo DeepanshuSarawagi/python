@@ -15,3 +15,34 @@ def fun(array):
 # If we remove the constants from the equation, it can be further simplified to O(n) time complexity
 
 fun([1, 2, 3, 4, 5])
+
+
+# Calculate the time complexity of below example
+
+
+def print_pairs(array):
+    for i in array:
+        for j in array:
+            print(str(i) + ", " + str(j))
+
+
+# If we observe the above function carefully, the inner for loop takes the O(n) complexity however, since it is nested
+# and we are iterating the same array and printing the pairs, in the nested for loop, the outer for loop will have time
+# complexity of O(n^2) complexity.
+
+print_pairs([1, 2, 3, 4, 5])
+print()
+
+
+def print_unordered_pairs(array):
+    for i in range(0, len(array)):
+        for j in range(i+1, len(array)):
+            print("{}, {}".format(array[i], array[j]))
+
+
+# In the above case, we can see that outer for loop runs O(n) times and inner loop will run o(n/2) times,
+# hence, n^2 / 2 times which can be simplified to time complexity of O(n^2) time complexity
+
+
+print_unordered_pairs([1, 2, 3, 4, 5])
+print()
