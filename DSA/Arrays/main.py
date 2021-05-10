@@ -15,3 +15,11 @@ list1 = [1, 2, 3, 4, 5]
 array2 = array.array('i')
 array2.fromlist(list1)
 print(array2)
+
+
+def traverse_array(array):
+    for i in array:
+        print(i, end="\t")
+
+
+traverse_array(array2)
