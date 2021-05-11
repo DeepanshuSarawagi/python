@@ -29,11 +29,12 @@ traverse_array(array2)
 # Searching through an array
 
 def search_array(array, value):
-    for i in array:
-        if i == value:
-            return array.index(value)
-    return "The element doesn't exist in this array"
+    for i in array:                                     # For loop has a time complexity of O(N)
+        if i == value:                                  # If condition has a time complexity of O(1)
+            return array.index(value)                   # return statement has a time complexity of O(1)
+    return "The element doesn't exist in this array"    # return statement has a time complexity of O(1)
 
 
+# above function has a time complexity of O(N), which is a linear time complexity
 print()
 print("{}".format(search_array(array2, 4)))
