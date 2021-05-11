@@ -43,3 +43,10 @@ print(my_array.index(21))
 # Reverse an array
 my_array.reverse()
 print(my_array)
+
+# Get the buffer info of an array
+buffer = my_array.buffer_info()
+print(buffer)  # This will print the buffer address of the array memory and also prints the no. of elements in an array
+
+# Use the count method, to count the occurrence of an element in an array
+print(my_array.count(11))
