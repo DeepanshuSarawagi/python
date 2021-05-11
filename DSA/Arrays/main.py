@@ -38,3 +38,20 @@ def search_array(array, value):
 # above function has a time complexity of O(N), which is a linear time complexity
 print()
 print("{}".format(search_array(array2, 4)))
+
+
+for i in array2:
+    print(array2.index(i))
+print()
+
+
+def delete_element(array, value):
+    for i in array:
+        if i == value:
+            array.remove(value)
+
+
+# Remember whenever we delete an element in array, the remaining elements shift towards left and the position after
+# last index remains empty
+# The above function has a time complexity of O(N)
+delete_element(array2, 4)
