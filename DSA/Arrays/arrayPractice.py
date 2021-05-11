@@ -8,3 +8,8 @@ for i in my_array:
 print()
 
 print(my_array[0])  # Accessing individual elements
+
+# Append a value to the array. We can only insert at the end of array using append() method
+
+my_array.append(6)
+print(my_array)
