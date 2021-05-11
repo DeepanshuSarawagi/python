@@ -55,3 +55,8 @@ print(my_array.count(11))
 # Convert the array to string
 string_array = my_array.tostring()
 print(string_array)
+
+# Convert the string array to int using fromString() method
+int_array = array('i')
+int_array.fromstring(string_array)
+print(int_array)
