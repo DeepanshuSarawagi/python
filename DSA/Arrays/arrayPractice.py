@@ -60,3 +60,6 @@ print(string_array)
 int_array = array('i')
 int_array.fromstring(string_array)
 print(int_array)
+
+# Slicing through an array
+print(my_array[0::2])  # This will print every third element in array. Slicing in array is very similar to slicing lists
