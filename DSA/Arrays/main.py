@@ -24,3 +24,16 @@ def traverse_array(array):
 
 # Also, if we notice, traversal through array will have a linear time complexity of O(N)
 traverse_array(array2)
+
+
+# Searching through an array
+
+def search_array(array, value):
+    for i in array:
+        if i == value:
+            return array.index(value)
+    return "The element doesn't exist in this array"
+
+
+print()
+print("{}".format(search_array(array2, 4)))
