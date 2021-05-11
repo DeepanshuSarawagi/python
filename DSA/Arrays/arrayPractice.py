@@ -23,3 +23,8 @@ print(my_array)
 my_array1 = array('i', [10, 11, 12])
 my_array.extend(my_array1)
 print(my_array)
+
+# Insert the elements in an array from list
+list1 = [20, 21, 22]
+my_array.fromlist(list1)  # This will add extra three elements from the list at the end of this array
+print(my_array)
