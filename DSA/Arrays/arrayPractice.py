@@ -32,3 +32,7 @@ print(my_array)
 # Remove an element from array
 my_array.remove(11)  # This method will remove first occurrence of value/element in the array
 print(my_array)
+
+# Remove the last element from array using pop method
+my_array.pop()
+print(my_array)
