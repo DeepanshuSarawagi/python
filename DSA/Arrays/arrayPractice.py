@@ -36,3 +36,6 @@ print(my_array)
 # Remove the last element from array using pop method
 my_array.pop()
 print(my_array)
+
+# Fetch any element from array using index() method
+print(my_array.index(21))
