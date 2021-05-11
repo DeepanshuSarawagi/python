@@ -49,4 +49,9 @@ buffer = my_array.buffer_info()
 print(buffer)  # This will print the buffer address of the array memory and also prints the no. of elements in an array
 
 # Use the count method, to count the occurrence of an element in an array
+my_array.append(11)
 print(my_array.count(11))
+
+# Convert the array to string
+string_array = my_array.tostring()
+print(string_array)
