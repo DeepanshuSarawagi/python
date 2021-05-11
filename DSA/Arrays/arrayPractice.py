@@ -13,3 +13,7 @@ print(my_array[0])  # Accessing individual elements
 
 my_array.append(6)
 print(my_array)
+
+# Insert an element in array at any position in an array
+my_array.insert(0, 11)
+print(my_array)
