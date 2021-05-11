@@ -39,3 +39,7 @@ print(my_array)
 
 # Fetch any element from array using index() method
 print(my_array.index(21))
+
+# Reverse an array
+my_array.reverse()
+print(my_array)
