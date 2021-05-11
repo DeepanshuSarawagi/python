@@ -17,3 +17,9 @@ print(my_array)
 # Insert an element in array at any position in an array
 my_array.insert(0, 11)
 print(my_array)
+
+# Extend the array. Using this method we can extend the array with more than one value. The parameter passed in the
+# extend() method should be an iterable object
+my_array1 = array('i', [10, 11, 12])
+my_array.extend(my_array1)
+print(my_array)
