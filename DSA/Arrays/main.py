@@ -22,4 +22,5 @@ def traverse_array(array):
         print(i, end="\t")
 
 
+# Also, if we notice, traversal through array will have a linear time complexity of O(N)
 traverse_array(array2)
