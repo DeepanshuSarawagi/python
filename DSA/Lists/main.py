@@ -16,3 +16,5 @@ for i in shopping_list:
     print(i)
 
 print(shopping_list[-1])
+
+print(shopping_list[::-1])  # printing the list in reverse order
