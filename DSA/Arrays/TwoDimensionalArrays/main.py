@@ -38,3 +38,15 @@ def access_elements(array, rowIndex: int, colIndex: int) -> None:
 
 
 access_elements(new2D_Array, 3, 5)
+
+# Traversing through the 2-D array
+
+
+def traverse_array(array):
+    for i in range(len(array)):
+        for j in range(len(array[0])):
+            print(array[i][j], end="\t")
+        print()
+
+
+traverse_array(new2D_Array)
