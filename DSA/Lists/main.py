@@ -39,3 +39,10 @@ print(shopping_list)
 dry_fruits = ["Walnuts", "Almonds", "Cashew"]
 shopping_list.extend(dry_fruits)
 print(shopping_list)
+
+# Slicing elements from a list
+
+print(shopping_list[0:3])
+
+new_list = shopping_list[0:3]
+print(new_list)
