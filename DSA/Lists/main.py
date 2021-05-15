@@ -18,3 +18,9 @@ for i in shopping_list:
 print(shopping_list[-1])
 
 print(shopping_list[::-1])  # printing the list in reverse order
+
+sum_of_items = 0
+for i in range(len(integers)):
+    sum_of_items += integers[i]
+
+print(sum_of_items)
