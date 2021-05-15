@@ -46,3 +46,6 @@ print(shopping_list[0:3])
 
 new_list = shopping_list[0:3]
 print(new_list)
+
+new_shopping_list = shopping_list[0::2]  # This will omit every alternative element from the list and create new list
+print(new_shopping_list)
