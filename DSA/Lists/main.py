@@ -6,3 +6,6 @@ print(str)
 
 mixed_list = [45, "food", 87.5, 100, "spam"]
 print(mixed_list)
+
+nested_list = [1, 2, 3, 5, [1.6, 1.7], ["spam", "eggs"]]
+print(nested_list)
