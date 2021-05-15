@@ -52,3 +52,7 @@ print(new_shopping_list)
 
 shopping_list.pop(1)  # Delete an element from the list at a given index
 print(shopping_list)
+
+shopping_list.remove("Cheese")
+del shopping_list[1]
+print(shopping_list)
