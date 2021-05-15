@@ -29,3 +29,6 @@ print(sum_of_items)
 
 shopping_list[2] = "Tofu"
 print(shopping_list)
+
+shopping_list.insert(3, "Apples")
+print(shopping_list)
