@@ -56,8 +56,8 @@ def search_element(element, array):
     for i in range(len(array)):
         for j in range(len(array[0])):
             if array[i][j] == element:
-                return "{} found at row {} and column {}".format(element, i, j)
+                return "{} found at row {} and column {}".format(element, i + 1, j + 1)
     return "The element {} is not found in given array.".format(element)
 
 
-print(search_element(45, new2D_Array))
+print(search_element(15, new2D_Array))
