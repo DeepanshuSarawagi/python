@@ -1,4 +1,5 @@
 import numpy
+
 # Creating two dimensional arrays
 # We will be creating it using a simple for loop
 
@@ -24,3 +25,16 @@ print(new2DArray)
 new2D_Array = numpy.append(twoDArray, [[97], [98], [99], [100]], axis=1)
 
 print(new2D_Array)
+
+print(len(new2D_Array))  # This prints the no. of rows in an array
+print(len(new2D_Array[0]))  # This prints the no. of columns in an array
+
+
+def access_elements(array, rowIndex: int, colIndex: int) -> None:
+    if rowIndex >= len(array) and colIndex >= len(array[0]):
+        print("You are trying to access an element which is not present in the array")
+    else:
+        print(array[rowIndex][colIndex])
+
+
+access_elements(new2D_Array, 3, 5)
