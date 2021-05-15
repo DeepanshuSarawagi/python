@@ -61,3 +61,9 @@ def search_element(element, array):
 
 
 print(search_element(15, new2D_Array))
+
+
+# How to delete a row/column in 2-D array
+
+new2D_Array = numpy.delete(twoDArray, 0, axis=0)
+print(new2D_Array)
