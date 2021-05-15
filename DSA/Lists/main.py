@@ -24,3 +24,8 @@ for i in range(len(integers)):
     sum_of_items += integers[i]
 
 print(sum_of_items)
+
+# Updating the list
+
+shopping_list[2] = "Tofu"
+print(shopping_list)
