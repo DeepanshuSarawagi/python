@@ -32,3 +32,10 @@ print(shopping_list)
 
 shopping_list.insert(3, "Apples")
 print(shopping_list)
+
+shopping_list.append("Mulberry")
+print(shopping_list)
+
+dry_fruits = ["Walnuts", "Almonds", "Cashew"]
+shopping_list.extend(dry_fruits)
+print(shopping_list)
