@@ -50,3 +50,14 @@ def traverse_array(array):
 
 
 traverse_array(new2D_Array)
+
+
+def search_element(element, array):
+    for i in range(len(array)):
+        for j in range(len(array[0])):
+            if array[i][j] == element:
+                return "{} found at row {} and column {}".format(element, i, j)
+    return "The element {} is not found in given array.".format(element)
+
+
+print(search_element(45, new2D_Array))
