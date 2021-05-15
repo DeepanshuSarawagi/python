@@ -56,3 +56,16 @@ print(shopping_list)
 shopping_list.remove("Cheese")
 del shopping_list[1]
 print(shopping_list)
+
+if 4 in integers:
+    print("Found the element")
+
+
+def searchInList(list, value):
+    for i in list:
+        if i == value:
+            return list.index(value)
+    return "The value does not exist in the list"
+
+
+print(searchInList(shopping_list, "Apples"))
