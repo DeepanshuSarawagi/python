@@ -91,3 +91,12 @@ print(max(list1))
 print(min(list1))
 
 print(sum(list1))  # This will return the sum of all the elements in the list
+
+values = []
+while True:
+    inp = input("Enter a number: ")
+    if inp == "done":
+        break
+    values.append(float(inp))
+
+print("Average = {}".format(sum(values) / len(values)))
