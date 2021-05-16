@@ -112,3 +112,7 @@ list_of_words = words.split(" ")
 print(list_of_words)
 
 print(" ".join(list_of_words))
+
+unsorted = [2, 7, 5, 1, 0, 9, 8, 11, 6]
+sorted_list = sorted(unsorted)
+print(sorted_list)
