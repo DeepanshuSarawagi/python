@@ -82,3 +82,8 @@ a = [1, 2, 3, 4]
 b = 4
 c = a * b  # the list will have repetitive elements 4 times
 print(c)
+
+# max function returns the highest value in the list
+
+list1 = [98, 65, 57, 89, 99, 88, 47]
+print(max(list1))
