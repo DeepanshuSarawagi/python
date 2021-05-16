@@ -75,3 +75,10 @@ a = [1, 2, 3]
 b = [4, 5, 6]
 c = a + b
 print(c)
+
+# We can increase the elements in the list by n times using the * operator
+
+a = [1, 2, 3, 4]
+b = 4
+c = a * b  # the list will have repetitive elements 4 times
+print(c)
