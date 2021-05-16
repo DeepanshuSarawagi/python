@@ -100,3 +100,13 @@ while True:
     values.append(float(inp))
 
 print("Average = {}".format(sum(values) / len(values)))
+
+# creating a list from string
+
+string = "abcdefghi"
+list_of_strings = list(string)
+print(list_of_strings)
+
+words = "This is a sentence and it will be converted into a list of words"
+list_of_words = words.split(" ")
+print(list_of_words)
