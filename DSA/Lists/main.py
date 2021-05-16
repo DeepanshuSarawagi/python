@@ -110,3 +110,5 @@ print(list_of_strings)
 words = "This is a sentence and it will be converted into a list of words"
 list_of_words = words.split(" ")
 print(list_of_words)
+
+print(" ".join(list_of_words))
