@@ -69,3 +69,9 @@ def searchInList(list, value):
 
 
 print(searchInList(shopping_list, "Apples"))
+
+# List operations and functions
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = a + b
+print(c)
