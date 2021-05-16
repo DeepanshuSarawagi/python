@@ -87,3 +87,5 @@ print(c)
 
 list1 = [98, 65, 57, 89, 99, 88, 47]
 print(max(list1))
+
+print(min(list1))
