@@ -27,3 +27,7 @@ print(my_dict.get("gender", "Male"))  # This method returns the value of key if 
 print(my_dict.get("city"))
 
 print(my_dict.items())  # This will return the list of key-value pairs as tuples
+
+print(my_dict.keys())  # This will return the list of keys in the dictionary
+
+print(my_dict.values())  # This will return the list of values in the dictionary
