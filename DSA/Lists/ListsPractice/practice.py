@@ -25,7 +25,7 @@ def findPairs(nums, target):
 
 findPairs([1, 6, 3, 4, 5, 8, 11], 9)
 
-my_array = numpy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+my_array = numpy.array([1, 20, 30, 44, 5, 56, 57, 8, 9, 10, 31, 12, 13, 14, 35, 16, 27, 58, 19, 21])
 
 
 def find_element(array, value):
@@ -36,3 +36,12 @@ def find_element(array, value):
 
 
 print(find_element(my_array, 18))
+
+
+def max_product(array):
+    array.sort()
+    max = array[-1] * array[-2]
+    print(max)
+
+
+max_product(my_array)
