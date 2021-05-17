@@ -26,3 +26,4 @@ print(my_dict.get("gender", "Male"))  # This method returns the value of key if 
 # doesn't exist then it returns None. refer to below example
 print(my_dict.get("city"))
 
+print(my_dict.items())  # This will return the list of key-value pairs as tuples
