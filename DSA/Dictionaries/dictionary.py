@@ -15,3 +15,6 @@ my_dict = {
 
 my_dict["age"] = 36
 print(my_dict)
+
+my_dict["address"] = "location a/b"
+print(my_dict)
