@@ -39,3 +39,28 @@ def firstSecond(givenList):
 
 
 print(firstSecond(given_list))
+
+
+def missingNumber(myList, totalCount):
+    sum1 = totalCount * (totalCount + 1) / 2
+    sum2 = sum(myList)
+    return sum1 - sum2
+
+
+print(missingNumber([1, 2, 3, 5, 6], 6))
+
+
+my_list = [1, 1, 2, 2, 3, 4, 5]
+
+
+def removeDuplicates(myList):
+    new_list = []
+    for i in range(len(myList)):
+        if myList[i] in new_list:
+            continue
+        else:
+            new_list.append(myList[i])
+    return new_list
+
+
+print(removeDuplicates(my_list))
