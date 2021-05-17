@@ -45,3 +45,16 @@ def max_product(array):
 
 
 max_product(my_array)
+
+list = [1, 2, 5, 55, 76, 23, 45, 55, 10]
+
+
+def determine_unique(list):
+    for i in range(len(list)):
+        for j in range(i+1, len(list)):
+            if list[i] == list[j]:
+                return "The given list is not unique"
+    return "The given list is unique"
+
+
+print(determine_unique(list))
