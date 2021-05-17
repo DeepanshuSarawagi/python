@@ -64,3 +64,21 @@ def removeDuplicates(myList):
 
 
 print(removeDuplicates(my_list))
+
+
+my_list = [2, 4, 3, 5, 6, -2, 4, 7, 8, 9]
+
+
+def pairSum(myList, sum):
+    pair_sum = []
+    for i in range(len(myList)):
+        for j in range(i+1, len(myList)):
+            if myList[i] == myList[j]:
+                continue
+            elif myList[i] + myList[j] == sum:
+                new_pair = str(myList[i]) + "+" + str(myList[j])
+                pair_sum.append(new_pair)
+    return pair_sum
+
+
+print(pairSum(my_list, 7))
