@@ -18,3 +18,11 @@ print(my_dict)
 
 my_dict["address"] = "location a/b"
 print(my_dict)
+
+
+def traverse_dict(dictionary):
+    for key in dictionary.keys():
+        print("{}: {}".format(key, dictionary[key]))
+
+
+traverse_dict(my_dict)
