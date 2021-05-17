@@ -20,3 +20,9 @@ fromkeys() method returns the dictionary with the given sequence of elements as 
 
 dict_2 = {}.fromkeys([1, 2, 3], 0)  # Remember that all the keys will have the same value as 0
 print(dict_2)
+
+print(my_dict.get("gender", "Male"))  # This method returns the value of key if exists in the dictionary else it will
+# return the value we specified as parameter in get() method. If we do not pass the value paramter and if the key
+# doesn't exist then it returns None. refer to below example
+print(my_dict.get("city"))
+
