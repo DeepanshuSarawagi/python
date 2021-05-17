@@ -26,3 +26,15 @@ def traverse_dict(dictionary):
 
 
 traverse_dict(my_dict)
+
+# Searching an element in a dictionary
+
+
+def search_dictionary(dictionary, value):
+    for key in dictionary.keys():
+        if dictionary[key] == value:
+            return key, value
+    return "The value doesn't exist in the dictionary"
+
+
+print(search_dictionary(my_dict, 26))
