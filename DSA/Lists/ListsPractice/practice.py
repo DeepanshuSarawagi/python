@@ -58,3 +58,14 @@ def determine_unique(list):
 
 
 print(determine_unique(list))
+
+
+def permutation(list1, list2):
+    if len(list2) != len(list1):
+        return False
+    list1.sort()
+    list2.sort()
+    return list1 == list2
+
+
+print(permutation([1, 1, 3, 4], [4, 1, 3, 1]))
