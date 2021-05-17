@@ -31,3 +31,12 @@ print(my_dict.items())  # This will return the list of key-value pairs as tuples
 print(my_dict.keys())  # This will return the list of keys in the dictionary
 
 print(my_dict.values())  # This will return the list of values in the dictionary
+
+"""
+setdefault() method in the dictionary accepts two parameters, key and value. If the key exists in the dictionary, it
+returns the value else it will insert the key in the dictionary with the default-value specified as parameter in the 
+method
+"""
+
+print(my_dict.setdefault("gender", "Not Defined"))
+print(my_dict)
