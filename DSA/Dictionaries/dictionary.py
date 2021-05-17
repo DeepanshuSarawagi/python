@@ -5,3 +5,4 @@ engToEsp = {
 }
 
 print(engToEsp)
+print(engToEsp["one"])
