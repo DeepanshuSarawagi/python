@@ -22,3 +22,20 @@ def sumDiagonal(a):
 
 
 print(sumDiagonal(myList2D))
+
+
+# Return the first and second best scroes from the list
+given_list = [84, 85, 86, 87, 85, 90, 85, 83, 23, 45, 84, 1, 2, 0]
+
+
+def firstSecond(givenList):
+    givenList.sort()
+    first = givenList[-1]
+    second = givenList[-2]
+    for i in range(len(givenList) - 1):
+        if givenList[i] > second:
+            second = givenList[i]
+    return first, second
+
+
+print(firstSecond(given_list))
