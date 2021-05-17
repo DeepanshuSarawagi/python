@@ -69,3 +69,13 @@ def permutation(list1, list2):
 
 
 print(permutation([1, 1, 3, 4], [4, 1, 3, 1]))
+
+TwoDArray = numpy.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+print(TwoDArray)
+
+
+def rotate_matrix(array):
+    n = len(array)
+    for layer in range(n // 2):
+        pass  # Come back again
