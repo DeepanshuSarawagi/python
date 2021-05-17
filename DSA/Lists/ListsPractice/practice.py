@@ -1,3 +1,5 @@
+import numpy
+
 # Write the function to find the missing number from the list
 
 list1 = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -22,3 +24,15 @@ def findPairs(nums, target):
 
 
 findPairs([1, 6, 3, 4, 5, 8, 11], 9)
+
+my_array = numpy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+
+
+def find_element(array, value):
+    for i in range(len(array)):
+        if array[i] == value:
+            return "Value found in the given array at index {}".format(i)
+    return "Value not found in the given array"
+
+
+print(find_element(my_array, 18))
