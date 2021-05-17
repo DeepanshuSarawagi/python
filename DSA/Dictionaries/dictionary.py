@@ -38,3 +38,13 @@ def search_dictionary(dictionary, value):
 
 
 print(search_dictionary(my_dict, 26))
+
+my_dict["education"] = "master"
+
+print(my_dict)
+
+# Removing a key-value pair from the dictionary
+print(my_dict.pop("name"))  # This also returns the value of key-value pair which is removed
+print(my_dict.popitem())  # This also returns the last key-value pair in the dictionary which was removed
+print(my_dict.popitem())
+print(my_dict)
