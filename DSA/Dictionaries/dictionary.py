@@ -48,3 +48,6 @@ print(my_dict.pop("name"))  # This also returns the value of key-value pair whic
 print(my_dict.popitem())  # This also returns the last key-value pair in the dictionary which was removed
 print(my_dict.popitem())
 print(my_dict)
+
+my_dict.clear()  # This clears the entire dictionary
+print(my_dict)
