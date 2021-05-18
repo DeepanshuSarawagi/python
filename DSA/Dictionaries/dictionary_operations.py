@@ -18,3 +18,14 @@ print("uno" in my_dict.values())
 
 for key in my_dict:
     print(key)
+
+print()
+
+my_dict_2 = {
+    0: False,
+    1: False
+}
+
+print(all(my_dict_2))
+print()
+print(any(my_dict_2))
