@@ -6,3 +6,6 @@ print(new_t)
 # If we want to create a tuple with just one element then we need to end it with a comma
 new_t2 = ("a",)
 print(new_t2)
+
+tuple_1 = tuple("abcdefghijklmnopqrstuvwxyz")
+print(tuple_1)
