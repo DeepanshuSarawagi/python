@@ -35,3 +35,8 @@ print(len(my_dict_2))
 
 print(sorted(my_dict_2))
 print(sorted(my_dict, reverse=False))
+
+dict = {'c': 97, 'a': 96, 'b': 98}
+
+for _ in sorted(dict):
+    print(dict[_])
