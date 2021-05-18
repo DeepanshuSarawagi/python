@@ -29,3 +29,5 @@ my_dict_2 = {
 print(all(my_dict_2))
 print()
 print(any(my_dict_2))
+
+print(len(my_dict_2))
