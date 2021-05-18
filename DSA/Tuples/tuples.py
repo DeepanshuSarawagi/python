@@ -12,3 +12,8 @@ print(tuple_1)
 
 for i in range(len(tuple_1)):
     print(tuple_1[i])
+
+print(tuple_1[10:1:-1])
+
+# tuple_1[0] = "d"  # This will error out since tuples are immutable
+print(tuple_1)
