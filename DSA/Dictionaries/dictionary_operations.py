@@ -22,7 +22,8 @@ for key in my_dict:
 print()
 
 my_dict_2 = {
-    0: False,
+    2: False,
+    0: True,
     1: False
 }
 
@@ -31,3 +32,6 @@ print()
 print(any(my_dict_2))
 
 print(len(my_dict_2))
+
+print(sorted(my_dict_2))
+print(sorted(my_dict, reverse=False))
