@@ -14,3 +14,9 @@ tuple1 = (7, 8, 10, 9, 15, 11)
 print(tuple1)  # We can reassign entire tuple but we cannot change single element of a tuple
 print(tuple1[1:4])
 # del tuple1[1] tuple doesnt support item deletion
+
+list2 = [(1, 2), (3, 4), (5, 6)]  # Storing list of tuples
+print(list2)
+
+tuples2 = ([1, 2], [3, 4], [5, 6])
+print(tuples2)  # Storing tuple of lists
