@@ -4,3 +4,5 @@ my_tuple1 = (1, 2, 6, 9, 8, 7)
 print(my_tuple1 + my_tuple)  # Concatenating two tuples using + operator
 
 print(my_tuple * 4)  # This tuple creates a new tuple 4 times.
+
+print( 1 in my_tuple)  # in operator returns boolean if the element exists in tuple
