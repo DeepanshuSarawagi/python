@@ -8,3 +8,5 @@ print(my_tuple * 4)  # This tuple creates a new tuple 4 times.
 print( 1 in my_tuple)  # in operator returns boolean if the element exists in tuple
 
 print(my_tuple1.count(1))  # This will return the count of element exists in tuple
+
+print(my_tuple1.index(9))  # This returns the index of element passed as a parameter in the index() method
