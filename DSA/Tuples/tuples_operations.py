@@ -13,3 +13,5 @@ print(my_tuple1.index(9))  # This returns the index of element passed as a param
 
 print(max(my_tuple1))
 print(min(my_tuple1))
+
+print(tuple([6, 9, 10, 3, 12]))  # By using the tuple function we can convert the iterable list into tuple
