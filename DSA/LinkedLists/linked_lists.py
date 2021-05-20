@@ -48,3 +48,13 @@ class SinglyLinkedList:
                 # node
                 temp_node.next = new_node  # Inserting new node in between current node and current's next node
                 new_node.next = next_node  # and setting new node's next reference to next node
+
+    # Traverse through Single Linked List
+    def traverse_singly_linked_list(self):
+        if self.head is None:
+            print("The Singly Linked List is empty")
+        else:
+            node = self.head
+            while node is not None:
+                print(node.value)
+                node = node.next

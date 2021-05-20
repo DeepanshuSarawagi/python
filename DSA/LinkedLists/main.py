@@ -14,3 +14,5 @@ singlyLinkedList.insert_singly_linked_list(6, 3)
 # singlyLinkedList.head.next = node2
 # singlyLinkedList.tail = node2
 print([node.value for node in singlyLinkedList])
+
+singlyLinkedList.traverse_singly_linked_list()
