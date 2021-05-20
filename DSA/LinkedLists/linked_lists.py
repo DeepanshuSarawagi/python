@@ -34,5 +34,17 @@ class SinglyLinkedList:
                 new_node.next = self.head  # We are doing this because head stores node1's physical location.
                 # Hence we are setting the new node's next reference to the first node's physical location
                 self.head = new_node  # Here we are updating the head with new node's physical location
-
-
+            elif location == 1:  # inserting element at the end of SLL
+                new_node.next = None  # Here we are setting last node's next reference to null
+                self.tail.next = new_node  # Here we are setting the next reference of last node to new node
+                self.tail = new_node
+            else:
+                temp_node = self.head
+                index = 0
+                while index < location - 1:
+                    temp_node = temp_node.next
+                    index += 1
+                next_node = temp_node.next  # considering temp node is current node, current node's next value is next
+                # node
+                temp_node.next = new_node  # Inserting new node in between current node and current's next node
+                new_node.next = next_node  # and setting new node's next reference to next node
