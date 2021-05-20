@@ -7,3 +7,4 @@ node2 = linked_lists.Node(2)
 singlyLinkedList.head = node1
 singlyLinkedList.head.next = node2
 singlyLinkedList.tail = node2
+print([node.value for node in singlyLinkedList])
