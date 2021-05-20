@@ -58,3 +58,17 @@ class SinglyLinkedList:
             while node is not None:
                 print(node.value)
                 node = node.next
+
+    # Search in Single Linked List
+    def search_singly_linked_list(self, value):
+        if self.head is None:
+            return "The Singly Linked List is empty"
+        else:
+            node = self.head
+            index = 0
+            while node is not None:
+                if node.value == value:
+                    return "Found element at index {}".format(index)
+                node = node.next
+                index += 1
+            return "The value does not exist in the list"

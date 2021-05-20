@@ -16,3 +16,4 @@ singlyLinkedList.insert_singly_linked_list(6, 3)
 print([node.value for node in singlyLinkedList])
 
 singlyLinkedList.traverse_singly_linked_list()
+print(singlyLinkedList.search_singly_linked_list(6))
