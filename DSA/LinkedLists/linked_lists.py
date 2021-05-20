@@ -72,3 +72,41 @@ class SinglyLinkedList:
                 node = node.next
                 index += 1
             return "The value does not exist in the list"
+
+    # Deleting a node from singly linked list
+    def delete_node(self, location):
+        if self.head is None:
+            print("The list is empty")
+        else:
+            if location == 0:  # Checking if we want to delete the node at beginning of SLL
+                if self.head == self.tail:  # Checking if we have just one node in SLL
+                    self.head = None
+                    self.tail = None  # Breaking the links of head/tail with that node
+                else:
+                    self.head = self.head.next  # We know that head has reference of first node's physical location.
+                    # hence we are setting the head's reference with first node's next node i.e., second node
+                    # this will delete the link between head and first node
+            elif location == 1:  # checking if we want to delete the last node
+                if self.head == self.tail:  # Checking if we have just one node in SLL
+                    self.head = None
+                    self.tail = None  # Breaking the links of head/tail with that node
+                else:
+                    node = self.head
+                    while node is not None:
+                        if node.next == self.tail:  # we know that tail has reference to last node, hence traverse
+                            # until we find the last node and then break the loop. Loop will terminate at last node's
+                            # previous node
+                            break
+                        node = node.next
+                    node.next = None  # once last node is found, set its previous node's reference to Null
+                    self.tail = node  # and set the tail with reference of previous node
+            else:
+                temp_node = self.head
+                index = 0
+                while index < location - 1:
+                    temp_node = temp_node.next  # iterate until we find the node we want to delete. temp node is the
+                    # one before the node which has to be deleted
+                    index += 1
+                next_node = temp_node.next
+                temp_node.next = next_node.next  # setting temp node's next reference with next node's next reference.
+                # hence this will break the link between current node and next node.
