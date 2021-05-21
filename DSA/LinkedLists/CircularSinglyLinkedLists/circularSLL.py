@@ -59,3 +59,4 @@ class CircularSinglyLinkedList:
                 # node
                 temp_node.next = new_node  # Inserting new node in between current node and current's next node
                 new_node.next = next_node  # and setting new node's next reference to next node
+            return "New node has been successfully inserted"
