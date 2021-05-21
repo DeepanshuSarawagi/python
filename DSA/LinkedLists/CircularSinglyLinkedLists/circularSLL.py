@@ -27,4 +27,4 @@ class CircularSinglyLinkedList:
         node.next = node
         self.head = node
         self.tail = node
-        return "The cirular singly linked list is created"
+        return "The circular singly linked list is created"
