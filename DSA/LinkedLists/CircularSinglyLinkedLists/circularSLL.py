@@ -44,8 +44,18 @@ class CircularSinglyLinkedList:
                 self.tail.next = new_node  # We know that tail has the reference to last node. hence last node's next
                 # reference will be new node
             elif location == 1:
-                new_node.next = self.tail.next  # Here, we are setting the next reference of new node with the first node.
-                # We know that tail has reference to last node. And last node's next reference is first node. Hence a
-                # link will be established between new node and first node
+                new_node.next = self.tail.next  # Here, we are setting the next reference of new node with the first
+                # node. We know that tail has reference to last node. And last node's next reference is first node.
+                # Hence a link will be established between new node and first node
                 self.tail.next = new_node  # Here we are setting the last node's next reference with new node
                 self.tail = new_node  # Setting the tail's reference with new node, thereby making it last node
+            else:
+                temp_node = self.head
+                index = 0
+                while index < location - 1:
+                    temp_node = temp_node.next
+                    index += 1
+                next_node = temp_node.next  # considering temp node is current node, current node's next value is next
+                # node
+                temp_node.next = new_node  # Inserting new node in between current node and current's next node
+                new_node.next = next_node  # and setting new node's next reference to next node
