@@ -110,3 +110,10 @@ class SinglyLinkedList:
                 next_node = temp_node.next
                 temp_node.next = next_node.next  # setting temp node's next reference with next node's next reference.
                 # hence this will break the link between current node and next node.
+
+    def delete_singly_linked_list(self):
+        if self.head is None:
+            print("The list is empty.")
+        else:
+            self.head = None
+            self.tail = None
