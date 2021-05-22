@@ -72,3 +72,16 @@ class CircularSinglyLinkedList:
                 temp_node = temp_node.next
                 if temp_node == self.tail.next:
                     break
+
+    # Searching for an element in circular SLL
+    def search_element(self, value):
+        if self.head is None:
+            print("The list is empty")
+        else:
+            temp_node = self.head
+            while temp_node is not None:
+                if temp_node.value == value:
+                    return "Value found in list"
+                temp_node = temp_node.next
+                if temp_node == self.tail.next:
+                    return "Value does not exist in the list"
