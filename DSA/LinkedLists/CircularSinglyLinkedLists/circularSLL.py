@@ -60,3 +60,15 @@ class CircularSinglyLinkedList:
                 temp_node.next = new_node  # Inserting new node in between current node and current's next node
                 new_node.next = next_node  # and setting new node's next reference to next node
             return "New node has been successfully inserted"
+
+    # Traversal in circular singly linked list
+    def traversal_circularSLL(self):
+        if self.head is None:
+            print("The list is empty")
+        else:
+            temp_node = self.head
+            while temp_node:
+                print(temp_node.value)
+                temp_node = temp_node.next
+                if temp_node == self.tail.next:
+                    break
