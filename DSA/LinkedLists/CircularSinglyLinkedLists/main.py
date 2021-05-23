@@ -24,3 +24,6 @@ print([node.value for node in circular_sll])
 print()
 circular_sll.delete_node(3)
 print([node.value for node in circular_sll])
+
+circular_sll.delete_circular_sll()
+print([node.value for node in circular_sll])

@@ -122,3 +122,11 @@ class CircularSinglyLinkedList:
                 next_node = node.next  # Getting the next node of current node
                 node.next = next_node.next  # Creating the link between current node and node after next node. This way
                 # the node between current node and node after next node gets deleted.
+
+    # Delete entire circular SLL
+    def delete_circular_sll(self):
+        if self.head is None:
+            print("The linked list is already empty")
+        self.head = None
+        self.tail.next = None
+        self.tail = None
