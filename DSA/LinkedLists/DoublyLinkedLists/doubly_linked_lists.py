@@ -26,9 +26,9 @@ class DoublyLinkedList:
     This class will be used to create Doubly Linked List objects.
     They will form the blueprint of implementing doubly linked list data structure
 
-    @attributes:
-        self.head = This attribute will hold the reference of first node's physical address in the DLL.
-        self.tail = This attribute will hold the reference of last node's physical address in the DLL.
+    @Attributes:
+        self.head: This attribute will hold the reference of first node's physical address in the DLL.
+        self.tail: This attribute will hold the reference of last node's physical address in the DLL.
     """
 
     def __init__(self):
@@ -49,3 +49,44 @@ class DoublyLinkedList:
         self.head = node
         self.tail = node
         return "The Doubly Linked List is created successfully"
+
+    # Insertion of a new node in Doubly Linked List
+    def insert_node(self, value, location):
+        """
+        This method is created to insert a new node in the Doubly Linked List. The new node can be inserted at the
+        beginning, middle or end of the list.
+        :param value: This will hold the value of Node object assigned to it
+        :param location: This parameter will insert the new node either at the beginning, end, or at any position in the
+        list.
+        :return: None
+        """
+        if self.head is None:
+            print("The list is empty")
+        else:
+            new_node = Node(value=value)
+            if location == 0:  # Checking if we want to insert the new node at beginning of the DLL
+                new_node.prev = None  # If we insert at beginning, we need to set the previous reference of this new
+                # node to None
+                new_node.next = self.head  # We know that self.head has the reference to first node in the list.
+                # New node's next reference should be list's first node
+                self.head.prev = new_node  # First node's previous reference is set to new node thereby creating a
+                # two-way link between them
+                self.head = new_node  # Updating the head's reference to new node
+            elif location == 1:  # Checking if we want to insert the new node at the end of the list
+                new_node.next = None  # Setting the new node's next reference to None
+                new_node.prev = self.tail  # We know that tail has reference to last node. setting the new node's
+                # previous reference to last node.
+                self.tail.next = new_node  # Setting the last node's next reference to new node. Thereby creating a
+                # two-way link between them
+                self.tail = new_node  # Updating the tail's reference with new node
+            else:
+                current_node = self.head
+                index = 0
+                while index < location - 1:  # Looping until the position before where we want to insert the new node
+                    current_node = current_node.next
+                    index += 1
+                next_node = current_node.next  # Getting the next node from current node's next reference
+                new_node.next = next_node  # Setting the new node's next reference to next node
+                new_node.prev = current_node  # new node's previous reference to current node
+                next_node.prev = new_node  # Next node's previous reference to new node
+                current_node.next = new_node  # current node's next reference to new node
