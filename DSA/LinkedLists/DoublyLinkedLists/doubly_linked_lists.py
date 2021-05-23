@@ -162,3 +162,16 @@ class DoublyLinkedList:
                 next_node = current_node.next
                 current_node.next = next_node.next
                 next_node.next.prev = current_node
+
+    # Delete entire doubly linked lists
+    def delete_doubly_ll(self):
+        if self.head is None:
+            print("There are no nodes in the list")
+        else:
+            node = self.head
+            while node:
+                node.prev = None
+                node = node.next
+            self.head = None
+            self.tail = None
+            print("The Doubly Linked List has been successfully deleted")
