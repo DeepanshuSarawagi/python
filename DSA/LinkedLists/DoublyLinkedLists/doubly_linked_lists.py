@@ -127,3 +127,38 @@ class DoublyLinkedList:
                 node = node.next
                 index += 1
             return "The element doesn't exist in the list"
+
+    # Delete a node/item in Doubly Linked List
+    def delete_node(self, location):
+        """
+        This method will delete the node from the doubly linked list based on the parameter location passed.
+        :param location: will delete first node from the list if 0, will delete last node from the list if 1. Any other
+        value will delete the node at the given index
+        :return: None
+        """
+        if self.head is None:
+            print("There are no nodes or items in the list")
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+                    self.head.prev = None
+            elif location == 1:
+                if self.head == self.tail:
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.tail = self.tail.prev
+                    self.tail.next = None
+            else:
+                current_node = self.head
+                index = 0
+                while index < location - 1:
+                    current_node = current_node.next
+                    index += 1
+                next_node = current_node.next
+                current_node.next = next_node.next
+                next_node.next.prev = current_node
