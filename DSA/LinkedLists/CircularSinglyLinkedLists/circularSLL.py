@@ -85,3 +85,40 @@ class CircularSinglyLinkedList:
                 temp_node = temp_node.next
                 if temp_node == self.tail.next:
                     return "Value does not exist in the list"
+
+    # Deleting a node from circular SLL
+    def delete_node(self, location):
+        if self.head is None:
+            print("The linked list is empty")
+        else:
+            if location == 0:
+                if self.head == self.tail:  # Checking if there is only one node in the Circular SLL
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next  # Here we are setting the reference of head with the next node of
+                    # first node.
+                    self.tail.next = self.head  # Creating the link between last node and second node
+            elif location == 1:
+                if self.head == self.tail:  # Checking if there is only one node in the Circular SLL
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    node = self.head
+                    while node is not None:
+                        if node.next == self.tail:  # here we are looping until the node before last node
+                            break
+                        node = node.next
+                    node.next = self.head  # here we are setting this node's reference to the head (first node)
+                    self.tail = node  # Setting the reference of tail with this node
+            else:
+                node = self.head
+                index = 0
+                while index < location - 1:  # here we are looping until the location of node which needs to be deleted
+                    node = node.next
+                    index += 1
+                next_node = node.next  # Getting the next node of current node
+                node.next = next_node.next  # Creating the link between current node and node after next node. This way
+                # the node between current node and node after next node gets deleted.
