@@ -132,7 +132,7 @@ class DoublyLinkedList:
     def delete_node(self, location):
         """
         This method will delete the node from the doubly linked list based on the parameter location passed.
-        :param location: will delete first node from the list if 0, will delete last node from the list if 1. Any other
+        :param location: will delete first node from the list if 0, will delete last node from the list if -1. Any other
         value will delete the node at the given index
         :return: None
         """
@@ -146,7 +146,7 @@ class DoublyLinkedList:
                 else:
                     self.head = self.head.next
                     self.head.prev = None
-            elif location == 1:
+            elif location == -1:
                 if self.head == self.tail:
                     self.head = None
                     self.tail = None
