@@ -90,3 +90,26 @@ class DoublyLinkedList:
                 new_node.prev = current_node  # new node's previous reference to current node
                 next_node.prev = new_node  # Next node's previous reference to new node
                 current_node.next = new_node  # current node's next reference to new node
+
+    def traversal(self, location):
+        """
+        This method will traverse through the doubly linked list either in forward or backward direction.
+        :param location: 0 will traverse from beginning of the list in forward direction and 1 will traverse through
+        the list from the end of the list in backward direction
+        :return: None
+        """
+        if self.head is None:
+            print("The list is empty.")
+        else:
+            if location == 0:
+                node = self.head
+                while node is not None:
+                    print(node.value)
+                    node = node.next
+            elif location == 1:
+                node = self.tail
+                while node is not None:
+                    print(node.value)
+                    node = node.prev
+            else:
+                print("Location undefined. Please try again.")

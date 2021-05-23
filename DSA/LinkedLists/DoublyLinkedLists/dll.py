@@ -10,3 +10,7 @@ my_dll.insert_node(2, 2)
 print([node.value for node in my_dll])
 my_dll.insert_node(3, 2)
 print([node.value for node in my_dll])
+
+my_dll.traversal(0)
+print()
+my_dll.traversal(1)
