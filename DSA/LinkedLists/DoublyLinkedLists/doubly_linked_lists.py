@@ -113,3 +113,17 @@ class DoublyLinkedList:
                     node = node.prev
             else:
                 print("Location undefined. Please try again.")
+
+    # Search for elements/nodes in Doubly Linked List
+    def search_elements(self, value):
+        if self.head is None:
+            print("The linked list is empty")
+        else:
+            node = self.head
+            index = 0
+            while node is not None:
+                if node.value == value:
+                    return "Found the element at position {} in the linked list".format(index + 1)
+                node = node.next
+                index += 1
+            return "The element doesn't exist in the list"
