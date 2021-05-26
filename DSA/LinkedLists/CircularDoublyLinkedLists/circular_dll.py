@@ -53,16 +53,16 @@ class CircularDoublyLinkedLists:
         while node:
             yield node
             node = node.next
-            if node.next == self.tail.next:
+            if node == self.tail.next:
                 break
 
     def create_circular_dll(self, node_value):
         node = Node(value=node_value)
+        self.head = node
+        self.tail = node
         node.next = node  # Since we are creating circular doubly linked list with just one node, we are point the
         # node's next reference and node's previous reference to itself
         node.prev = node
-        self.head = node
-        self.tail = node
 
     def insert_node(self, node_value, location):
         """
@@ -96,8 +96,7 @@ class CircularDoublyLinkedLists:
                 while index < location - 1:
                     current_node = current_node.next
                     index += 1
-                next_node = current_node.next
-                new_node.next = next_node
+                new_node.next = current_node.next
                 new_node.prev = current_node
-                next_node.prev = new_node
+                new_node.next.prev = new_node
                 current_node.next = new_node
