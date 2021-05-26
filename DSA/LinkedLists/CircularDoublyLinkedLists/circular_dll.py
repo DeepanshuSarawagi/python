@@ -58,7 +58,8 @@ class CircularDoublyLinkedLists:
 
     def create_circular_dll(self, node_value):
         node = Node(value=node_value)
-        node.next = node
+        node.next = node  # Since we are creating circular doubly linked list with just one node, we are point the
+        # node's next reference and node's previous reference to itself
         node.prev = node
         self.head = node
         self.tail = node
