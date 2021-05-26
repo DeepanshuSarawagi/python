@@ -48,9 +48,17 @@ class CircularDoublyLinkedLists:
         self.head = None
         self.tail = None
 
-
     def __iter__(self):
         node = self.head
         while node:
             yield node
             node = node.next
+            if node.next == self.tail.next:
+                break
+
+    def create_circular_dll(self, node_value):
+        node = Node(value=node_value)
+        node.next = node
+        node.prev = node
+        self.head = node
+        self.tail = node
