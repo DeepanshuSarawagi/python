@@ -63,3 +63,41 @@ class CircularDoublyLinkedLists:
         node.prev = node
         self.head = node
         self.tail = node
+
+    def insert_node(self, node_value, location):
+        """
+        This method is used to insert new_node in the circular doubly linked list based on the location parameter
+        passed. If value of location is 0, then new node will be inserted at the beginning of the list. if value of
+        location is -1, the new node will be inserted at the end of the list. Else new node will be inserted at any
+        given position between first and last node
+        :param node_value: This parameter will hold the value of new node
+        :param location: This parameter will decide in which position new node will be inserted
+        :return: None
+        """
+        if self.head is None:
+            print("The circular doubly linked list is empty")
+        else:
+            new_node = Node(value=node_value)
+            if location == 0:
+                new_node.next = self.head
+                new_node.prev = self.tail
+                self.head.prev = new_node
+                self.head = new_node
+                self.tail.next = new_node
+            elif location == -1:
+                new_node.next = self.head
+                new_node.prev = self.tail
+                self.head.prev = new_node
+                self.tail.next = new_node
+                self.tail = new_node
+            else:
+                current_node = self.head
+                index = 0
+                while index < location - 1:
+                    current_node = current_node.next
+                    index += 1
+                next_node = current_node.next
+                new_node.next = next_node
+                new_node.prev = current_node
+                next_node.prev = new_node
+                current_node.next = new_node
