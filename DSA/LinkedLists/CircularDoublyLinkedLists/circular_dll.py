@@ -165,3 +165,16 @@ class CircularDoublyLinkedLists:
                     index += 1
                 current_node.next = current_node.next.next
                 current_node.next.prev = current_node
+
+    def delete_cdll(self):
+        if self.head is None:
+            print("There is not any node to delete")
+        else:
+            self.tail.next = None
+            node = self.head
+            while node is not None:
+                node.prev = None
+                node = node.next
+            self.head = None
+            self.tail = None
+        print("The circular doubly linked list has been deleted")
