@@ -132,3 +132,36 @@ class CircularDoublyLinkedLists:
                 if node == self.tail.next:
                     break
             return "Node not found in the list"
+
+    def delete_node(self, location):
+        if self.head is None:
+            print("There are no nodes in the list to delete")
+        else:
+            if location == 0:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.tail.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.head = self.head.next
+                    self.head.prev = self.tail
+                    self.tail.next = self.head
+            elif location == -1:
+                if self.head == self.tail:
+                    self.head.next = None
+                    self.tail.next = None
+                    self.head = None
+                    self.tail = None
+                else:
+                    self.tail = self.tail.prev
+                    self.tail.next = self.head
+                    self.head.prev = self.tail
+            else:
+                current_node = self.head
+                index = 0
+                while index < location - 1:
+                    current_node = current_node.next
+                    index += 1
+                current_node.next = current_node.next.next
+                current_node.next.prev = current_node
