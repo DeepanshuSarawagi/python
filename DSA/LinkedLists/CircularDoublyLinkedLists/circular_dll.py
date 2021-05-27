@@ -100,3 +100,11 @@ class CircularDoublyLinkedLists:
                 new_node.prev = current_node
                 new_node.next.prev = new_node
                 current_node.next = new_node
+
+    def traverse_nodes(self):
+        node = self.head
+        while node:
+            print(node.value)
+            node = node.next
+            if node == self.tail.next:
+                break
