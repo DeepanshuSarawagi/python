@@ -119,3 +119,16 @@ class CircularDoublyLinkedLists:
                 if node == self.head:
                     break
                 node = node.prev
+
+    def search_node(self, value):
+        if self.head is None:
+            return "No node found in the list"
+        else:
+            node = self.head
+            while node is not None:
+                if node.value == value:
+                    return "Found element in the node"
+                node = node.next
+                if node == self.tail.next:
+                    break
+            return "Node not found in the list"
