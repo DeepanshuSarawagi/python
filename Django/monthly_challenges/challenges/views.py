@@ -30,3 +30,7 @@ def monthly_challenges(request, month):
     else:
         return HttpResponseNotFound("Oops! Page not found.")
     return HttpResponse(challenge_text)
+
+
+def monthly_challenges_by_num(request, month):
+    return HttpResponse(month)
