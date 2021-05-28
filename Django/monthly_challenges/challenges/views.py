@@ -1,5 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
+
+monthly_challenges = {
+    "january": "Walk for 30 minutes a day",
+    "february": "Learn Django for 20 minutes a day",
+    "march": "Do yoga to correct your spine posture",
+    "april": "Walk for 30 minutes a day",
+    "may": "Learn Django for 20 minutes a day",
+    "june": "Do yoga to correct your spine posture",
+    "july": "Walk for 30 minutes a day",
+    "august": "Learn Django for 20 minutes a day",
+    "september": "Do yoga to correct your spine posture",
+    "october": "Walk for 30 minutes a day",
+    "november": "Learn Django for 20 minutes a day",
+    "december": "Do yoga to correct your spine posture",
+}
+
 # Create your views here.
 
 # Remember that every view is a standalone function/class
@@ -19,18 +35,13 @@ from django.http import HttpResponse, HttpResponseNotFound
 
 # Commenting the above code briefly so that we can create dynamic views
 
-def monthly_challenges(request, month):
-    challenge_text = None
-    if month == "january":
-        challenge_text = "Walk for 30 minutes a day"
-    elif month == "february":
-        challenge_text = "Learn a new programming skill"
-    elif month == "march":
-        challenge_text = "Meditate for at least 20 minutes a day"
-    else:
-        return HttpResponseNotFound("Oops! Page not found.")
-    return HttpResponse(challenge_text)
+def monthly_challenge(request, month):
+    try:
+        challenge_text = monthly_challenges[month]
+        return HttpResponse(challenge_text)
+    except:
+        return HttpResponseNotFound("This month does not exist!")
 
 
-def monthly_challenges_by_num(request, month):
+def monthly_challenge_by_num(request, month):
     return HttpResponse(month)

@@ -14,9 +14,9 @@ urlpatterns = [
 
     # We can also create a placeholder which will be a dynamic identifier. Based on the datatype of URI/placeholder,
     # views will then pass it as an argument and request a function
-    path("<int:month>", views.monthly_challenges_by_num),
+    path("<int:month>", views.monthly_challenge_by_num),
 
-    path("<str:month>", views.monthly_challenges)  # Here month is the placeholder and the syntax to create is <>
+    path("<str:month>", views.monthly_challenge)  # Here month is the placeholder and the syntax to create is <>
     # Here datatype of month is passed as string
 
 ]
