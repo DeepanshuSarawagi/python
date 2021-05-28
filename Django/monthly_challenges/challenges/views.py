@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 monthly_challenges = {
     "january": "Walk for 30 minutes a day",
@@ -44,4 +44,7 @@ def monthly_challenge(request, month):
 
 
 def monthly_challenge_by_num(request, month):
-    return HttpResponse(month)
+    months = list(monthly_challenges.keys())
+    redirect_month = months[month - 1]  # We are getting the month as an integer argument and getting the actual month from
+    # the dictionary using the key. This key is got from the list months by accessing month argument as index
+    return HttpResponseRedirect("/challenges/" + redirect_month)
