@@ -18,6 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("challenges/", include("challenges.urls"))  # Binding the global Django monthly_challenges project with the
+    path("challenge/", include("challenges.urls"))  # Binding the global Django monthly_challenges project with the
     # challenges app and asking Django to include all the URLs of the challenges app
 ]

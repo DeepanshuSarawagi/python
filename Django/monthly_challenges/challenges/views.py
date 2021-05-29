@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 
 monthly_challenges = {
     "january": "Walk for 30 minutes a day",
@@ -45,6 +46,12 @@ def monthly_challenge(request, month):
 
 def monthly_challenge_by_num(request, month):
     months = list(monthly_challenges.keys())
-    redirect_month = months[month - 1]  # We are getting the month as an integer argument and getting the actual month from
-    # the dictionary using the key. This key is got from the list months by accessing month argument as index
-    return HttpResponseRedirect("/challenges/" + redirect_month)
+    redirect_month = months[month - 1]  # We are getting the month as an integer argument and getting the actual month
+    # from the dictionary using the key. This key is got from the list months by accessing month argument as index
+    redirect_path = reverse("month-challenge", args=[redirect_month])
+    # Reverse function allows us to construct paths by referring to the name values of URLS
+    # in app specific urls.py. It will then prefix the path with URI in the project specific urls.py which is
+    # /challenges/
+    # It also accepts one more args as array which we want to append after /challenges/ and that is passed as array
+    # hence the final result would be challenges/ + redirect_month e.g., /challenges/january
+    return HttpResponseRedirect(redirect_path)

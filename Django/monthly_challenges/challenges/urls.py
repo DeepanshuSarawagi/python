@@ -16,7 +16,16 @@ urlpatterns = [
     # views will then pass it as an argument and request a function
     path("<int:month>", views.monthly_challenge_by_num),
 
-    path("<str:month>", views.monthly_challenge)  # Here month is the placeholder and the syntax to create is <>
-    # Here datatype of month is passed as string
+    path("<str:month>", views.monthly_challenge, name="month-challenge")
+    # Here month is the placeholder and the syntax to create is <>
+    # Here datatype of month is passed as string.
+    # Since we have hardcoded the /challenges path in the project specific urls.py, if we make any change there, we need
+    # to ensure that similar path change needs to be done app level urls.py as well. To avoid this mistake, we can have
+    # Django construct the URL Path for us without hardcoding it in our app specific urls.py or app specific views.py.
+    # To make this even more dynamic and have Django construct path so that
+    # we dont have to hardcode the path in HTTPResponse, it accepts one more named argument called "name"
+    # We set this name parameter to a string value of our choice
+    # This named argument is a string and it can be used as a parameter in the reverse function.
+
 
 ]
