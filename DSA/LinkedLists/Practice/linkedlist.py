@@ -1,3 +1,6 @@
+import random
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -30,3 +33,20 @@ class LinkedList:
             result += 1
             node = node.next
         return result
+
+    def add(self, value):
+        if self.head is None:
+            node = Node(value=value)
+            self.head = node
+            self.tail = node
+        else:
+            self.tail.next = Node(value=value)
+            self.tail = self.tail.next
+        return self.tail
+
+    def generate(self, n, min_value, max_value):
+        self.head = None
+        self.tail = None
+        for i in range(n):
+            self.add(random.randint(min_value, max_value))
+        return self
