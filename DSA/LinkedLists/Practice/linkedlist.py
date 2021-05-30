@@ -18,3 +18,15 @@ class LinkedList:
         while node:
             yield node
             node = node.next
+
+    def __str__(self):
+        values = [str(x.value) for x in self]
+        return ' -> '.join(values)
+
+    def __len__(self):
+        result = 0
+        node = self.head
+        while node:
+            result += 1
+            node = node.next
+        return result
