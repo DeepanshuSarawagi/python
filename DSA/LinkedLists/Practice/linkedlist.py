@@ -54,25 +54,43 @@ class LinkedList:
     def remove_duplicates(self):
         node = self.head
         index = 0
+        is_tail = False
         node_value = node.value
-        while node:
+        while node is not None:
             node = node.next
             index += 1
             next_node_value = node.value
             if next_node_value == node_value:
                 print("Found duplicate at index {}".format(index))
-        self.delete_node(index)
+                if self.tail == node:
+                    is_tail = True
+                self.delete_node(index, is_tail)
+                break
 
-    def delete_node(self, location):
+    def delete_node(self, location, is_tail: bool):
         node = self.head
         index = 0
-        while index < location:
-            node = node.next
-        next_node = node.next
-        if self.tail == next_node:
-            print("We are deleting the duplicate node which is tail of the linked list")
+        if is_tail is True:
+            while node is not None:
+                if node.next == self.tail:
+                    break
+                node = node.next
             node.next = None
             self.tail = node
         else:
-            print("We are deleting the duplicate node from the middle of the linked list")
+            while index < location - 1:
+                node = node.next
+                index += 1
+            next_node = node.next
             node.next = next_node.next
+        # while index < location:
+        #     node = node.next
+        #     index += 1
+        # next_node = node.next
+        # if self.tail == next_node:
+        #     print("We are deleting the duplicate node which is tail of the linked list")
+        #     node.next = None
+        #     self.tail = node
+        # else:
+        #     print("We are deleting the duplicate node from the middle of the linked list")
+        #     node.next = next_node.next
