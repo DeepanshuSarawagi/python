@@ -58,13 +58,16 @@ class LinkedList:
         temp_set = []
         while node is not None:
             if node.value in temp_set:
+                print("Found duplicate at index {}".format(index))
                 if self.tail == node:
                     is_tail = True
                 self.delete_node(index, is_tail)
+                print(self)
             else:
                 temp_set.append(node.value)
+                index += 1
+            print("Temp set is now {}".format(temp_set))
             node = node.next
-            index += 1
 
     def delete_node(self, location, is_tail: bool):
         node = self.head
