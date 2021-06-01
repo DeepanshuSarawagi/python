@@ -39,7 +39,8 @@ monthly_challenges = {
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        return HttpResponse(challenge_text)
+        response_data = "<h1>{}</h1>".format(challenge_text)
+        return HttpResponse(response_data)
     except:
         return HttpResponseNotFound("This month does not exist!")
 
