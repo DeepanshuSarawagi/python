@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'challenges',  # Here we are binding the app in Installed apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

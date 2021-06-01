@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
+from django.template.loader import render_to_string  # We import this module to render the HTML document as string
+# and then return the response back to client
 
 monthly_challenges = {
     "january": "Walk for 30 minutes a day",
@@ -54,7 +56,8 @@ def index(request):
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        response_data = "<h1>{}</h1>".format(challenge_text)
+        # response_data = "<h1>{}</h1>".format(challenge_text)
+        response_data = render_to_string("challenges/challenge.html")  # path to html doc to render to string
         return HttpResponse(response_data)
     except:
         return HttpResponseNotFound("<h1>This month does not exist!</h1>")
