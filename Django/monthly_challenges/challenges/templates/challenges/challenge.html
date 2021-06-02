@@ -10,13 +10,14 @@ This is the generic convention in Django
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ month }} Challenges</title>
+    <title>{{ month|title }} Challenges</title>  <!--We are using the title filter from the DTL to convert the text
+    into title case -->
 </head>
 <body>
-    <h1>{{ month }}'s Challenge</h1>
+    <h1>{{ month|title }}'s Challenge</h1>
     <!-- <h2>Go for a walk for at least 20 minutes for a day!</h2> We will be setting the text in this tag dynamically
     using DTL syntax. This is not a regular HTML syntax and will be picked up by Django. The special syntax is called as
     Django Template Language -->
-    <h2>{{ text }}</h2>  <!-- Text inside curly braces is DTL syntax }}
+    <h2>{{ text }}</h2>  <!-- Text inside curly braces is DTL syntax }} -->
 </body>
 </html>

@@ -57,8 +57,10 @@ def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
         # response_data = "<h1>{}</h1>".format(challenge_text)
-        return render(request=request, template_name="challenges/challenge.html", context={"text": challenge_text
-            , "month": month.capitalize()})
+        return render(request=request, template_name="challenges/challenge.html", context={
+            "text": challenge_text,
+            "month": month
+        })
         # Commenting below code because we will be rendering html using render module
         # response_data = render_to_string("challenges/challenge.html")  # path to html doc to render to string
         # return HttpResponse(response_data)
