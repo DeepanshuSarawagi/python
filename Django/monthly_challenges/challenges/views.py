@@ -57,10 +57,12 @@ def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
         # response_data = "<h1>{}</h1>".format(challenge_text)
-        return render(request=request, template_name="challenges/challenge.html")
+        return render(request=request, template_name="challenges/challenge.html", context={"text": challenge_text})
         # Commenting below code because we will be rendering html using render module
         # response_data = render_to_string("challenges/challenge.html")  # path to html doc to render to string
         # return HttpResponse(response_data)
+        # We pass the third positional keyword argument called context which will be used to inject dynamic content in
+        # the HTML page using DTL
     except:
         return HttpResponseNotFound("<h1>This month does not exist!</h1>")
 
