@@ -66,7 +66,7 @@ def monthly_challenge(request, month):
         # return HttpResponse(response_data)
         # We pass the third positional keyword argument called context which will be used to inject dynamic content in
         # the HTML page using DTL
-    except:
+    except HttpResponseNotFound:
         return HttpResponseNotFound("<h1>This month does not exist!</h1>")
 
 
