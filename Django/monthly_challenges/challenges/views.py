@@ -39,18 +39,22 @@ monthly_challenges = {
 # Commenting the above code briefly so that we can create dynamic views
 
 def index(request):
-    list_items = ""
+    # list_items = ""
     months = list(monthly_challenges.keys())
-    for month in months:
-        capitalized_month = month.capitalize()
-        month_url = reverse("month-challenge", args=[month])
-        list_items += f"<li><a href=\"{month_url}\">{capitalized_month}</a></li>"
-    response_data = f"""
-        <h1>Hello! Welcome to your monthly challenges page</h1>
-        <p1>Click on the below links to view your challenges</p1>
-        <ul>{list_items}</ul>
-    """
-    return HttpResponse(response_data)
+    # for month in months:
+    #     capitalized_month = month.capitalize()
+    #     month_url = reverse("month-challenge", args=[month])
+    #     list_items += f"<li><a href=\"{month_url}\">{capitalized_month}</a></li>"
+    # response_data = f"""
+    #     <h1>Hello! Welcome to your monthly challenges page</h1>
+    #     <p1>Click on the below links to view your challenges</p1>
+    #     <ul>{list_items}</ul>
+    # """
+    # return HttpResponse(response_data)
+    # # Commented the above code so that we have DTL do the work of creating dynamic list and displaying it to the user
+    return render(request, "challenges/index.html", {
+        "months": months
+    })
 
 
 def monthly_challenge(request, month):
