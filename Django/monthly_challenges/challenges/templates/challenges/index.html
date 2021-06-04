@@ -8,7 +8,10 @@
 <body>
     <ul>
         {% for month in months %}  <!-- Starting the for loop in DTL syntax and loop through the list of items -->
-        <li><a href="">{{ month|title }}</a></li>  <!-- create the anchor tag and set the URL reference using -->
+            <!-- <li><a href="/challenge/{{ month }}">{{ month|title }}</a></li> --> <!-- create the anchor tag and set the
+        URL reference using DTL interpolation. Better way of doing it is below code-->
+            <li><a href="{% url 'month-challenge' month %}">{{ month|title }}</a></li>  <!-- Here, DTL will take the value of
+            month as argument for the url which is identified by the name month-challenge -->
         {% endfor %}  <!-- We need to specifically tell when we end the for list in DTL syntax -->
     </ul>
 </body>
