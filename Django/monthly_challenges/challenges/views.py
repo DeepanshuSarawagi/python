@@ -8,14 +8,14 @@ monthly_challenges = {
     "january": "Walk for 30 minutes a day",
     "february": "Learn Django for 20 minutes a day",
     "march": "Do yoga to correct your spine posture",
-    "april": "Walk for 30 minutes a day",
+    "april": None,
     "may": "Learn Django for 20 minutes a day",
     "june": "Do yoga to correct your spine posture",
     "july": "Walk for 30 minutes a day",
     "august": "Learn Django for 20 minutes a day",
     "september": "Do yoga to correct your spine posture",
     "october": "Walk for 30 minutes a day",
-    "november": "Learn Django for 20 minutes a day",
+    "november": None,
     "december": "Do yoga to correct your spine posture",
 }
 

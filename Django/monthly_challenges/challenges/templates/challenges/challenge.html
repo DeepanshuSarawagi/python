@@ -18,6 +18,10 @@ This is the generic convention in Django
     <!-- <h2>Go for a walk for at least 20 minutes for a day!</h2> We will be setting the text in this tag dynamically
     using DTL syntax. This is not a regular HTML syntax and will be picked up by Django. The special syntax is called as
     Django Template Language -->
+    {% if text is not None %}
     <h2>{{ text }}</h2>  <!-- Text inside curly braces is DTL syntax }} -->
+    {%  else %}
+    <h2>There is no challenge set for this month</h2>
+    {% endif %}
 </body>
 </html>
