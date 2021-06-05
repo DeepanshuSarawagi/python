@@ -1,6 +1,6 @@
 <!-- We will be using template inheritance to avoid duplication of HTML code in HTML document.
 We will be able to accomplish this using "block" tag in DTL -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@ We will be able to accomplish this using "block" tag in DTL -->
     <title>{% block page_title %}My Challenges{% endblock %}</title> <!-- Here we are using block tag and the variable
     page_title will be used in app-specific HTML docs. If no title is defined then a default title "My Challenges"
     will be used -->
+    <link rel="stylesheet" href="{% static "styles.css" %}">
     {% block css_files %}
     {% endblock %}
 </head>
