@@ -1,5 +1,8 @@
 ul {
     list-style: none;
-    background-color: black;
-    text-transform: full-width;
+}
+li{
+    color: black;
+    transform-origin: center;
+    text-align: left;
 }

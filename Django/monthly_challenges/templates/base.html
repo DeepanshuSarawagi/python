@@ -9,6 +9,8 @@ We will be able to accomplish this using "block" tag in DTL -->
     <title>{% block page_title %}My Challenges{% endblock %}</title> <!-- Here we are using block tag and the variable
     page_title will be used in app-specific HTML docs. If no title is defined then a default title "My Challenges"
     will be used -->
+    {% block css_files %}
+    {% endblock %}
 </head>
 <body>
     {% block content %} {% endblock %}  <!-- Here we again using the block tag with a variable. We will then inherit

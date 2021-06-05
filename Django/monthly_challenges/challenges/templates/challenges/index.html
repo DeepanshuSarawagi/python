@@ -1,6 +1,11 @@
 {% extends "base.html" %}  <!-- We are inheriting the template from base.html -->
 
 <!-- We have now injected the title and body content in the page_title and content using block tag -->
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+{% endblock %}
 
 {% block page_title %}
     All Challenges
