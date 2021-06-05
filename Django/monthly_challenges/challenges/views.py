@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, Http404
 from django.urls import reverse
-# from django.template.loader import render_to_string  # We import this module to render the HTML document as string
+from django.template.loader import render_to_string  # We import this module to render the HTML document as string
 # and then return the response back to client
 
 monthly_challenges = {
@@ -70,8 +70,8 @@ def monthly_challenge(request, month):
         # return HttpResponse(response_data)
         # We pass the third positional keyword argument called context which will be used to inject dynamic content in
         # the HTML page using DTL
-    except HttpResponseNotFound:
-        return HttpResponseNotFound("<h1>This month does not exist!</h1>")
+    except:
+        raise Http404()
 
 
 def monthly_challenge_by_num(request, month):
