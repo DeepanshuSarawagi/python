@@ -6,7 +6,6 @@ This is the generic convention in Django
  -->
 
 {% extends "base.html" %}
-
 {% block page_title %}
 
     {{ month|title }} Challenges <!--We are using the title filter from the DTL to convert the text
@@ -14,6 +13,8 @@ This is the generic convention in Django
 {% endblock %}
 
 {% block content %}
+    {% include "challenges/includes/header.html" %}  <!-- This is the DTL syntax include tag to include the HTML snippet
+    from header.html -->
     <h1>{{ month|title }}'s Challenge</h1>
     <!-- <h2>Go for a walk for at least 20 minutes for a day!</h2> We will be setting the text in this tag dynamically
     using DTL syntax. This is not a regular HTML syntax and will be picked up by Django. The special syntax is called as
