@@ -5,15 +5,15 @@ under templates/<app name>/ directory. So in our case, we are creating challenge
 This is the generic convention in Django
  -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
+
+{% block page_title %}
+
     <title>{{ month|title }} Challenges</title>  <!--We are using the title filter from the DTL to convert the text
     into title case -->
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <h1>{{ month|title }}'s Challenge</h1>
     <!-- <h2>Go for a walk for at least 20 minutes for a day!</h2> We will be setting the text in this tag dynamically
     using DTL syntax. This is not a regular HTML syntax and will be picked up by Django. The special syntax is called as
@@ -23,5 +23,4 @@ This is the generic convention in Django
     {%  else %}
     <h2>There is no challenge set for this month</h2>
     {% endif %}
-</body>
-</html>
+{% endblock %}
