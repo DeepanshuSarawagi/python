@@ -9,7 +9,7 @@ This is the generic convention in Django
 
 {% block page_title %}
 
-    <title>{{ month|title }} Challenges</title>  <!--We are using the title filter from the DTL to convert the text
+    {{ month|title }} Challenges <!--We are using the title filter from the DTL to convert the text
     into title case -->
 {% endblock %}
 
