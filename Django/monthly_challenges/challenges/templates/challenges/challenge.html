@@ -13,7 +13,7 @@ This is the generic convention in Django
 {% endblock %}
 
 {% block content %}
-    {% include "challenges/includes/header.html" %}  <!-- This is the DTL syntax include tag to include the HTML snippet
+    {% include "challenges/includes/header.html" with active_page="challenge" %}  <!-- This is the DTL syntax include tag to include the HTML snippet
     from header.html -->
     <h1>{{ month|title }}'s Challenge</h1>
     <!-- <h2>Go for a walk for at least 20 minutes for a day!</h2> We will be setting the text in this tag dynamically
