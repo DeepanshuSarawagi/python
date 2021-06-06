@@ -10,6 +10,7 @@ ul {
     flex-direction: column;
     flex-wrap: wrap;
     height: 30rem;
+    background-color: lightcoral;
 }
  li{
      margin: 1rem 0;
@@ -31,5 +32,5 @@ ul {
 
  li a:hover,
  li a:active{
-     color: #7f0d66;
+     color: #182ffd;
  }
