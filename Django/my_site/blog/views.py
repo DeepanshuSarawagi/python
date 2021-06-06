@@ -9,5 +9,5 @@ def posts(request):
     return None
 
 
-def post_details(request):
+def post_detail(request):
     return None
