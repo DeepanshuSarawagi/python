@@ -6,28 +6,22 @@
 {% endblock %}
 
 {%  block css_files %}
-    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}"/>
 {% endblock %}
 
 {% block content %}
     <header id="main-navigation">
         <h1>
-            <a href="">
-                Deeps' Blog
-            </a>
+            <a href="">Deeps' Blog</a>
         </h1>
         <nav>
-            <a href="">
-                All Posts
-            </a>
+            <a href="">All Posts</a>
         </nav>
     </header>
     <section id="welcome">
         <header>
-            <img src="" alt="Deepanshu - The author of this blog"/>
-            <h2>
-                Deepanshu's Blog
-            </h2>
+            <img src="{% static "blog/images/deep.jpg" %}" alt="Deepanshu - The author of this blog"/>
+            <h2>Deepanshu's Blog</h2>
         </header>
         <p>
             Hi! I am Deepanshu. I love to blog about tech and the world! My favourite programming language is Python.
@@ -36,14 +30,12 @@
     </section>
 
     <section id="latest-posts">
-        <h2>
-            My Latest Thoughts
-        </h2>
+        <h2>My Latest Thoughts</h2>
         <ul>
             <li>
                 <article class="post">
                     <a href="">
-                        <img src="" alt="Mountain hiking"/>
+                        <img src="{% static "blog/images/mountains.jpg" %}" alt="Mountain hiking"/>
                         <div class="post__content">
                             <h3>
                                 Mountain Hiking
