@@ -20,3 +20,5 @@ print(linkedlist_1)
 # linkedlist_1.remove_duplicates()
 inst1 = linkedlist.LinkedList()
 print(inst1.remove_dups(linkedlist_1))
+
+print(linkedlist_1.nth_from_last(3))

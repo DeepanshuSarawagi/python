@@ -99,3 +99,18 @@ class LinkedList:
                     visited_nodes.add(current_node.next.value)
                     current_node = current_node.next
         return ll
+
+    def nth_from_last(self, n):
+        pointer1 = self.head
+        pointer2 = self.head
+
+        for i in range(n):
+            if pointer2 is None:
+                return
+            else:
+                pointer2 = pointer2.next
+                print(pointer2)
+        while pointer2:
+            pointer1 = pointer1.next
+            pointer2 = pointer2.next
+        return pointer1
