@@ -85,3 +85,17 @@ class LinkedList:
                 index += 1
             next_node = node.next
             node.next = next_node.next
+
+    def remove_dups(self, ll):
+        if ll.head is None:
+            return
+        else:
+            current_node = ll.head
+            visited_nodes = {current_node.value}
+            while current_node.next:
+                if current_node.next.value in visited_nodes:
+                    current_node.next = current_node.next.next
+                else:
+                    visited_nodes.add(current_node.next.value)
+                    current_node = current_node.next
+        return ll
