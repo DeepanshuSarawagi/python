@@ -114,3 +114,6 @@ class LinkedList:
             pointer1 = pointer1.next
             pointer2 = pointer2.next
         return pointer1
+
+    def partition_ll(self):
+        current_node = self.head
