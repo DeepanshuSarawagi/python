@@ -117,3 +117,5 @@ class LinkedList:
 
     def partition_ll(self):
         current_node = self.head
+        while current_node:
+            pass
