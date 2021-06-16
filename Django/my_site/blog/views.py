@@ -89,7 +89,9 @@ def starting_page(request):
 
 
 def all_posts(request):
-    return render(request, "blog/posts.html")
+    return render(request, "blog/posts.html", context={
+        "posts": posts
+    })
 
 
 def post_detail(request, slug):
