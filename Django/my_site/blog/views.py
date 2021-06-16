@@ -95,4 +95,7 @@ def all_posts(request):
 
 
 def post_detail(request, slug):
-    return render(request, "blog/post-detail.html")
+    identified_post = next(post for post in posts if post['slug'] == slug)
+    return render(request, "blog/post-detail.html", context={
+        "post": identified_post
+    })
