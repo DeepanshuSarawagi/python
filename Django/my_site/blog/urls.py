@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path("", views.starting_page, name="starting-page"),
-    path("posts", views.posts, name="posts-page"),
+    path("posts", views.all_posts, name="posts-page"),
     path("posts/<slug>", views.post_detail, name="post-detail-page")  # This concept of having URLs like this is
     # called as slug
 ]
