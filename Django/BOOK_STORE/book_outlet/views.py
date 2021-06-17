@@ -1,3 +1,4 @@
+from django.db.models import Avg
 from django.shortcuts import render, get_object_or_404
 from .models import Book
 
@@ -6,8 +7,14 @@ from .models import Book
 
 def index(request):
     books = Book.objects.all()
+    num_books = books.count()
+    avg_rating = books.aggregate(Avg("rating"))  # We are using the built-in Aggregate() and using the Avg class, we
+    # are calculating the average rating. rating is the attribute of Book class in models.py
+
     return render(request, "book_outlet/index.html", context={
-        "books": books
+        "books": books,
+        "total_num_of_books": num_books,
+        "average_rating": avg_rating
     })
 
 

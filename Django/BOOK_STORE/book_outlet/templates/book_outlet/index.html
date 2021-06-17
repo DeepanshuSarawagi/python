@@ -11,4 +11,8 @@ All Books
             <li><a href="{{ book.get_absolute_url }}">{{ book.title }} (Rating - {{ book.rating }})</a> </li>
         {% endfor %}
     </ul>
+    <hr>
+
+    <p>There are {{ total_num_of_books }} books in this outlet and has an average rating of
+        {{ average_rating.rating__avg }}.</p>
 {% endblock %}
