@@ -6,7 +6,7 @@ from .models import Book
 
 
 def index(request):
-    books = Book.objects.all()
+    books = Book.objects.all().order_by("-rating")  # sorting the list of books based on rating in Descending order
     num_books = books.count()
     avg_rating = books.aggregate(Avg("rating"))  # We are using the built-in Aggregate() and using the Avg class, we
     # are calculating the average rating. rating is the attribute of Book class in models.py
