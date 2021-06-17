@@ -10,7 +10,8 @@ class Book(models.Model):
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])  # IntegerField() is a Django Model field type. This shows what kind of
     # data we will store in title field. We have added the validators as a Keyword arg by importing
     # the validators class and instantiating the Min and MaxValueValidator
-    author = models.CharField(max_length=100)
+    author = models.CharField(null=True, max_length=100)
+    is_bestselling = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.title} {self.rating}"
