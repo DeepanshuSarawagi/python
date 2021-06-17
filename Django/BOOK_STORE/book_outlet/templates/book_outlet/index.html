@@ -5,9 +5,9 @@ All Books
 {% endblock %}
 
 {% block content %}
-    <ul>
+    <ul xmlns="http://www.w3.org/1999/html">
         {% for book in books %}
-        <li>{{ book.title }} (Rating - {{ book.rating }})</li>
+            <li><a href="{% url "book-detail" book.id  %}"> {{ book.title }} (Rating - {{ book.rating }})</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
