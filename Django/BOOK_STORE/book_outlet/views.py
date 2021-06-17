@@ -13,7 +13,8 @@ def index(request):
 
 def book_detail(request, slug):
     # book = Book.objects.get(pk=id)  # pk is the default named keyword argument which means primary key
-    book = get_object_or_404(Book, slug=slug)  # slug is the parameter and value slug is the attribute in models
+    book = get_object_or_404(Book, slug=slug)  # named keyword arg slug is the attribute in the models and value is the
+    # parameter slug passed when book_detail is called
     return render(request, "book_outlet/book-detail.html", context={
         "title": book.title,
         "author": book.author,
