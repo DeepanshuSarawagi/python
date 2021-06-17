@@ -18,7 +18,7 @@ class Book(models.Model):
 
     def get_absolute_url(self):  # We are overriding this method which automatically gets called by Django to load
         # the specific url/page
-        return reverse("book-detail", args=[self.id])
+        return reverse("book-detail", args=[self.slug])
 
     # Here we are overwriting the save() method and slugifying the title of the book
     # This slugified field will be then used in the URLs
