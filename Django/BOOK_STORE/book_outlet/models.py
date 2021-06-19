@@ -14,7 +14,8 @@ class Book(models.Model):
     # the validators class and instantiating the Min and MaxValueValidator
     author = models.CharField(null=True, max_length=100)
     is_bestselling = models.BooleanField(default=False)
-    slug = models.SlugField(default="", blank=True, editable=False, null=False, db_index=True)
+    # slug = models.SlugField(default="", blank=True, editable=False, null=False, db_index=True)
+    slug = models.SlugField(default="", blank=True, null=False, db_index=True)
     # Harry Potter 1 => harry-potter-1
     # We have used db_index=True which will create a index for this field in the table since we use it a lot,
     # which will improve the performance of find operation whenever an Object is looked up using this field
