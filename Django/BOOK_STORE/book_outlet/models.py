@@ -22,10 +22,10 @@ class Book(models.Model):
     # Above code is commented because we are creating a separate class for Author to build a one-to-many relationship
     # between and author and their books. Hence we will set the author field to a Foreign Key field and it will accept
     # one argument which is a model i.e., to which model we can build the relationship with
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)  # We have now set the relationship between book and
-    # the author. We now need to let the model know that what happens if the object with which we are building
-    # relationship gets deleted. In that case, we need to use the on_delete=CASCADE which means, delete all the related
-    # model objects before deleting the remote model object
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)  # We have now set the relationship
+    # between book and the author. We now need to let the model know that what happens if the object with which we
+    # are building relationship gets deleted. In that case, we need to use the on_delete=CASCADE which means,
+    # delete all the related model objects before deleting the remote model object
     is_bestselling = models.BooleanField(default=False)
     # slug = models.SlugField(default="", blank=True, editable=False, null=False, db_index=True)
     slug = models.SlugField(default="", blank=True, null=False, db_index=True)
