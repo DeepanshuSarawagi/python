@@ -23,7 +23,7 @@ class Book(models.Model):
     # Above code is commented because we are creating a separate class for Author to build a one-to-many relationship
     # between and author and their books. Hence we will set the author field to a Foreign Key field and it will accept
     # one argument which is a model i.e., to which model we can build the relationship with
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)  # We have now set the relationship
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, related_name="books")  # We have now set the relationship
     # between book and the author. We now need to let the model know that what happens if the object with which we
     # are building relationship gets deleted. In that case, we need to use the on_delete=CASCADE which means,
     # delete all the related model objects before deleting the remote model object
@@ -35,6 +35,7 @@ class Book(models.Model):
     # which will improve the performance of find operation whenever an Object is looked up using this field
     # Setting blank=True so that it is not a required field in the django admin site
     # Setting the field Editable=False so that it doesnt show up in admin site
+
     """
     Book -> Primary model
     Book.author is the field
@@ -49,16 +50,23 @@ class Book(models.Model):
         
         We can also use the modifiers in the query.
         for example:
-        rowling_books = Book.objects.filter(author__last_name__contains="wling")
+        => rowling_books = Book.objects.filter(author__last_name__contains="wling")
         This will return us the QuerySet of books by author whose last name contains wling -> Ro'wling'
         
         We can also query the Author and all the books by the author. Since we do not have any book field in the Author 
         class, Django automatically creates a book_set since it has a relationship with the Book class
         Refer to the below query.
-        jkr = Author.objects.get(first_name="J.K.")
-        jkr.book_set.all()
+        => jkr = Author.objects.get(first_name="J.K.")
+        => jkr.book_set.all()
         This above query will return all the books by Author whose first_name is J.K.
-        
+        Note: Django automatically creates the book_set property on the Author object. It takes the class name of the 
+        model and creates a set of related data.
+        The alternate method to get all the books by an author is to set the value of one more named parameter called 
+        "related_name". We need to pass this named argument in the field where we have established relationship with the
+        remote model. In our case it will be the "author" ForeignKey field of Book class. For e.g.
+        author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, related_name="books")
+        Now we can query the books by an author like this
+        => jkr.books.all()
     """
 
     def get_absolute_url(self):  # We are overriding this method which automatically gets called by Django to load
