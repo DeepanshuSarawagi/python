@@ -67,6 +67,10 @@ class Book(models.Model):
         author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True, related_name="books")
         Now we can query the books by an author like this
         => jkr.books.all()
+        
+        Once we have got the Query set of books, we can now apply filters to query a certain set of data using the 
+        modifiers. For example, we can filter all the books by an author whose rating is greater than 3
+        => jkr.books.filter(rating__gt=3)
     """
 
     def get_absolute_url(self):  # We are overriding this method which automatically gets called by Django to load
