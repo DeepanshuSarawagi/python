@@ -15,7 +15,8 @@ class Book(models.Model):
 
     title = models.CharField(max_length=100)  # CharField() is a Django Model field type. This shows what kind of
     # data we will store in title field
-    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])  # IntegerField() is a Django Model field type. This shows what kind of
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    # IntegerField() is a Django Model field type. This shows what kind of
     # data we will store in title field. We have added the validators as a Keyword arg by importing
     # the validators class and instantiating the Min and MaxValueValidator
     # author = models.CharField(null=True, max_length=100)
@@ -35,12 +36,29 @@ class Book(models.Model):
     # Setting blank=True so that it is not a required field in the django admin site
     # Setting the field Editable=False so that it doesnt show up in admin site
     """
+    Book -> Primary model
+    Book.author is the field
+    Author -> related model
+    
         After establishing relationship between Book and Author model, we can also use query sets to query the related
         data of which relationship is established.
         For example, we can find all the books by an author whose last_name is Rowling. The django query would be
         Book.objects.filter(author__last_name="Rowling")  -> Here author is the field of Book class and since we have
         established a relationship on Author model, we can get the Author's last name. So author is the field of Book
         model and last_name is the field of Author model.
+        
+        We can also use the modifiers in the query.
+        for example:
+        rowling_books = Book.objects.filter(author__last_name__contains="wling")
+        This will return us the QuerySet of books by author whose last name contains wling -> Ro'wling'
+        
+        We can also query the Author and all the books by the author. Since we do not have any book field in the Author 
+        class, Django automatically creates a book_set since it has a relationship with the Book class
+        Refer to the below query.
+        jkr = Author.objects.get(first_name="J.K.")
+        jkr.book_set.all()
+        This above query will return all the books by Author whose first_name is J.K.
+        
     """
 
     def get_absolute_url(self):  # We are overriding this method which automatically gets called by Django to load
