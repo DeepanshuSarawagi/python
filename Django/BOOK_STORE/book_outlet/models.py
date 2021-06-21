@@ -34,6 +34,14 @@ class Book(models.Model):
     # which will improve the performance of find operation whenever an Object is looked up using this field
     # Setting blank=True so that it is not a required field in the django admin site
     # Setting the field Editable=False so that it doesnt show up in admin site
+    """
+        After establishing relationship between Book and Author model, we can also use query sets to query the related
+        data of which relationship is established.
+        For example, we can find all the books by an author whose last_name is Rowling. The django query would be
+        Book.objects.filter(author__last_name="Rowling")  -> Here author is the field of Book class and since we have
+        established a relationship on Author model, we can get the Author's last name. So author is the field of Book
+        model and last_name is the field of Author model.
+    """
 
     def get_absolute_url(self):  # We are overriding this method which automatically gets called by Django to load
         # the specific url/page
