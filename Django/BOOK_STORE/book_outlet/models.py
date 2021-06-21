@@ -5,10 +5,23 @@ from django.utils.text import slugify
 # Create your models here.
 
 
+class Address(models.Model):
+    """
+        In this model class, we are going to establish a ont-to-one relationship with Address and Author.
+        Which is one address for one author. We can create a relationship by using a one-to-one field.
+        Remember that, we wont use the ForeignKey field since that is used for the many-to-one relationship.
+        In one-to-one relationship we dont have to specify the related_name as an argument in the OneToOneField.
+    """
+    street = models.CharField(max_length=100)
+    postal_code = models.CharField(max_length=7)
+    city = models.CharField(max_length=50)
+
+
 class Author(models.Model):
 
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    address = models.OneToOneField(Address, on_delete=models.CASCADE)
 
     def full_name(self):
         return self.first_name + " " + self.last_name
