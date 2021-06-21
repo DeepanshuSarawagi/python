@@ -8,7 +8,7 @@ class BookAdmin(admin.ModelAdmin):
     # readonly_fields = ("slug",)
     prepopulated_fields = {"slug": ("title",)}
     list_filter = ("author", "rating")
-    list_display = ("title", "rating")
+    list_display = ("title", "rating", "author")
 
 
 class AuthorAdmin(admin.ModelAdmin):
