@@ -16,6 +16,9 @@ class Address(models.Model):
     postal_code = models.CharField(max_length=7)
     city = models.CharField(max_length=50)
 
+    def __str__(self):
+        return f"{self.street}, {self.city}, {self.postal_code}"
+
 
 class Author(models.Model):
 
