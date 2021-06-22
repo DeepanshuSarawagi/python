@@ -19,6 +19,11 @@ class Address(models.Model):
     def __str__(self):
         return f"{self.street}, {self.city}, {self.postal_code}"
 
+    class Meta:
+        verbose_name_plural: "Address Entries"  # This is being done to fix the plural form of Address model in the
+        # django admin site. Django allows us to create the Meta inner-class for the models which will allow us to
+        # change the behaviour of fields/attributes
+
 
 class Author(models.Model):
 
