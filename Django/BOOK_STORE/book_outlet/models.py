@@ -111,6 +111,35 @@ class Book(models.Model):
         => jkr.books.filter(rating__gt=3)
     """
 
+    """
+    Book -> Primary model
+    Book.published_countries is the field
+    Country -> Related model
+    
+    We are now going to form a ManyToMany relationship between Book and Country. Which means a book can be published in 
+    many countries and a country can have many books.
+    We created the Book.country field of type ManyToMany(Country).
+    In this case, we need not specify the on_delete=models.CASCADE because deleting a book
+    # in a country should not delete the book object itself. This relationship is setup differently. Most relationship
+    # are created with two tables. But in this case, there is a third table created. it is mapping table
+    # between book and country. If a book belongs to two countries, then two rows will be created between this mapping
+    # table. Therefore, when we delete a country, Book model will not be affected at all.
+    
+    We first create Book objects and Country objects and then using the book object, we assign the values to the 
+    Book.published_countries using the following method. For example,
+    => india = Country(name="India", code="IN")
+    => meluha = Book.objects.get(title="Immortals of Meluha")
+    => meluha.published_countries.add(india)
+    
+    Note that, we need to call the .add() method on the published_countries field. Since it is a 
+    ManyToMany relationship field, Django automatically creates this method.
+    
+    To retrieve books published in a country, we just need to use the following method
+    => india = Country.objects.get(code="IN")
+    => india.book_set.all()
+    This will return the QuerySet of all the books published in India  
+    """
+
     def get_absolute_url(self):  # We are overriding this method which automatically gets called by Django to load
         # the specific url/page
         return reverse("book-detail", args=[self.slug])
