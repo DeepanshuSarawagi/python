@@ -88,6 +88,7 @@ def starting_page(request):
 
 
 def all_posts(request):
+    posts = Post.objects.all()
     return render(request, "blog/posts.html", context={
         "posts": posts
     })
