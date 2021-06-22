@@ -5,6 +5,11 @@ from django.utils.text import slugify
 # Create your models here.
 
 
+class Country(models.Model):
+    name = models.CharField(max_length=80)
+    code = models.CharField(max_length=2)
+
+
 class Address(models.Model):
     """
         In this model class, we are going to establish a ont-to-one relationship with Address and Author.
@@ -62,6 +67,12 @@ class Book(models.Model):
     # which will improve the performance of find operation whenever an Object is looked up using this field
     # Setting blank=True so that it is not a required field in the django admin site
     # Setting the field Editable=False so that it doesnt show up in admin site
+    published_countries = models.ManyToManyField(Country)  # We are now establishing a ManyToMany relationship between
+    # Book and Country model. In this case, we need not specify the on_delete=models.CASCADE because deleting a book
+    # in a country should not delete the book object itself. This relationship is setup differently. Most relationship
+    # are created with two tables. But in this case, there is a third table created. it is mapping table
+    # between book and country. If a book belongs to two countries, then two rows will be created between this mapping
+    # table. Therefore, when we delete a country, Book model will not be affected at all.
 
     """
     Book -> Primary model
