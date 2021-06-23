@@ -19,6 +19,12 @@ def review(request):
     # Commenting out above code, since we have created a Django Form class
     # We will handle form specific operations/validations using it
 
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            redirect_path = reverse("thankyou")
+            return HttpResponseRedirect(redirect_path)
     form = ReviewForm()
     return render(request, "reviews/review.html", context={
         "form": form
