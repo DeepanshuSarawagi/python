@@ -1,22 +1,27 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from .forms import ReviewForm
 
 # Create your views here.
 
 
 def review(request):
-    if request.method == "POST":
-        entered_username = request.POST['username']
-        if entered_username == "":
-            return render(request, "reviews/review.html", context={
-                "has_error": True
-            })
-        print(entered_username)
-        redirect_path = reverse("thankyou")
-        return HttpResponseRedirect(redirect_path)
+    # if request.method == "POST":
+    #     entered_username = request.POST['username']
+    #     if entered_username == "":
+    #         return render(request, "reviews/review.html", context={
+    #             "has_error": True
+    #         })
+    #     print(entered_username)
+    #     redirect_path = reverse("thankyou")
+    #     return HttpResponseRedirect(redirect_path)
+    # Commenting out above code, since we have created a Django Form class
+    # We will handle form specific operations/validations using it
+
+    form = ReviewForm()
     return render(request, "reviews/review.html", context={
-        "has_error": False
+        "form": form
     })
 
 
