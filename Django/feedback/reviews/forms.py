@@ -2,4 +2,4 @@ from django import forms
 
 
 class ReviewForm(forms.Form):
-    user_name = forms.CharField(max_length=100)
+    user_name = forms.CharField(max_length=100, label="Your Name")
