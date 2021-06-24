@@ -25,7 +25,8 @@ def review(request):
             print(form.cleaned_data)
             redirect_path = reverse("thankyou")
             return HttpResponseRedirect(redirect_path)
-    form = ReviewForm()
+    else:
+        form = ReviewForm()
     return render(request, "reviews/review.html", context={
         "form": form
     })
