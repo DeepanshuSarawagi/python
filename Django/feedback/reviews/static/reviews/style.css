@@ -51,4 +51,21 @@ button:active {
 .form-control label {
     font-weight: bold;
     display: block;
+    margin-bottom: 0.5rem;
+}
+
+.errorlist {
+    list-style: none;
+    margin: 0.5rem 0;
+    padding: 0;
+    color: darkred;
+}
+
+.errors input {
+    border-color: darkred;
+    background-color: #ffd0e1;
+}
+
+.errors label {
+    color: darkred;
 }
