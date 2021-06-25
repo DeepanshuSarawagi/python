@@ -14,7 +14,9 @@
         {% if has_error %}
             <p>This is an invalid form submission. Please submit a valid username.</p>
         {%  endif %}-->
-    {{ form }}
+    {{ form.user_name.label_tag }}
+    {{ form.user_name }}
+    {{ form.user_name.errors }}
     <button type="submit">Send</button>
     </form>
 </body>
