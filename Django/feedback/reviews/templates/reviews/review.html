@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static "reviews/style.css" %}">
 </head>
 <body>
     <form action="/" method="POST">
@@ -14,9 +16,11 @@
         {% if has_error %}
             <p>This is an invalid form submission. Please submit a valid username.</p>
         {%  endif %}-->
-    {{ form.user_name.label_tag }}
-    {{ form.user_name }}
-    {{ form.user_name.errors }}
+    <div class="form-control {% if form.user_name.errors %} errors {% endif %}">
+        {{ form.user_name.label_tag }}
+        {{ form.user_name }}
+        {{ form.user_name.errors }}
+    </div>
     <button type="submit">Send</button>
     </form>
 </body>
