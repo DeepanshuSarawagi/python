@@ -16,11 +16,18 @@
         {% if has_error %}
             <p>This is an invalid form submission. Please submit a valid username.</p>
         {%  endif %}-->
-    <div class="form-control {% if form.user_name.errors %} errors {% endif %}">
+    <!--<div class="form-control {% if form.user_name.errors %} errors {% endif %}">
         {{ form.user_name.label_tag }}
         {{ form.user_name }}
         {{ form.user_name.errors }}
-    </div>
+    </div>-->
+    {% for field in form %}
+        <div class="form-control {% if field.error %} errors {% endif %}">
+        {{ field.label_tag }}
+        {{ field }}
+        {{ field.errors }}
+        </div>
+    {% endfor %}
     <button type="submit">Send</button>
     </form>
 </body>
