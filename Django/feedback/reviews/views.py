@@ -23,9 +23,17 @@ def review(request):
     if request.method == "POST":
         form = ReviewForm(request.POST)
         if form.is_valid():
-            review = Review(user_name=form.cleaned_data['user_name'], review_text=form.cleaned_data['review_text'],
-                            rating=form.cleaned_data['rating'])
-            review.save()
+            # review = Review(user_name=form.cleaned_data['user_name'], review_text=form.cleaned_data['review_text'],
+            #                 rating=form.cleaned_data['rating'])
+            # review.save()
+
+            # Commented above code, since we have created a ModelForm instead of a regular Form. We can then directly
+            # call the .save() method on the ReviewForm instance. We need not create a Model instance and then save the
+            # data. Note that, this will save only the new data created by the model. But we can also update the
+            # existing data.
+
+            form.save()  # This will save the data to the Review Model db since we have connected the ModelForm with
+            # Review model.
             redirect_path = reverse("thankyou")
             return HttpResponseRedirect(redirect_path)
     else:
