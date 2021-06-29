@@ -28,3 +28,14 @@ class ReviewForm(forms.ModelForm):  # Creating a ModelForm
         # the user
         fields = '__all__'  # This will display all the Model fields in the form to the user
         # exclude = ['review_text']  # Exclude the Model fields which Django shouldn't render in the form
+        labels = {
+            "user_name": "Your Name",
+            "review_text": "Your Review",
+            "rating": "Your Rating"
+        }
+        error_messages = {
+            "user_name": {
+                "required": "Your name must not be empty",
+                "max_length": "Your name cannot exceed 100 characters"
+            }
+        }
