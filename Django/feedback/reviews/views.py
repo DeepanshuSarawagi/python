@@ -21,8 +21,9 @@ def review(request):
     # We will handle form specific operations/validations using it
 
     if request.method == "POST":
-        existing_data = Review.objects.get(pk=1)  # We are getting an existing data and modifying it
-        form = ReviewForm(request.POST, instance=existing_data)  # This updates the existing data
+        # existing_data = Review.objects.get(pk=1)  # We are getting an existing data and modifying it
+        # form = ReviewForm(request.POST, instance=existing_data)  # This updates the existing data
+        form = ReviewForm(request.POST)
         if form.is_valid():
             # review = Review(user_name=form.cleaned_data['user_name'], review_text=form.cleaned_data['review_text'],
             #                 rating=form.cleaned_data['rating'])
