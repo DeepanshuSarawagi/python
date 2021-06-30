@@ -21,7 +21,8 @@ def review(request):
     # We will handle form specific operations/validations using it
 
     if request.method == "POST":
-        form = ReviewForm(request.POST)
+        existing_data = Review.objects.get(pk=1)  # We are getting an existing data and modifying it
+        form = ReviewForm(request.POST, instance=existing_data)  # This updates the existing data
         if form.is_valid():
             # review = Review(user_name=form.cleaned_data['user_name'], review_text=form.cleaned_data['review_text'],
             #                 rating=form.cleaned_data['rating'])
@@ -30,7 +31,8 @@ def review(request):
             # Commented above code, since we have created a ModelForm instead of a regular Form. We can then directly
             # call the .save() method on the ReviewForm instance. We need not create a Model instance and then save the
             # data. Note that, this will save only the new data created by the model. But we can also update the
-            # existing data.
+            # existing data. We can create an instance of existing model and pass it as a value to the argument
+            # "instance" to the ModelForm object
 
             form.save()  # This will save the data to the Review Model db since we have connected the ModelForm with
             # Review model.
