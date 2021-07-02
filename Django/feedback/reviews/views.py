@@ -4,6 +4,7 @@ from django.urls import reverse
 from .forms import ReviewForm
 from django.views import View
 from .models import Review
+from django.views.generic.base import TemplateView
 
 # Create your views here.
 
@@ -70,7 +71,10 @@ class ReviewView(View):
 # Commented out above code since we have created class based view instead of function based view
 
 
-class ThankYouView(View):
+# class ThankYouView(View):
+#
+#     def get(self, request):
+#         return render(request, "reviews/thank_you.html")
 
-    def get(self, request):
-        return render(request, "reviews/thank_you.html")
+class ThankYouView(TemplateView):
+    template_name = "reviews/thank_you.html"
