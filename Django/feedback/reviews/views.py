@@ -69,5 +69,8 @@ class ReviewView(View):
 #     })
 # Commented out above code since we have created class based view instead of function based view
 
-def thank_you(request):
-    return render(request, "reviews/thank_you.html")
+
+class ThankYouView(View):
+
+    def get(self, request):
+        return render(request, "reviews/thank_you.html")
