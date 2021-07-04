@@ -69,3 +69,7 @@ button:active {
 .errors label {
     color: darkred;
 }
+
+.reviewlist {
+    list-style-type: none;
+}
