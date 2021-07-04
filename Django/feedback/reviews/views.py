@@ -6,6 +6,7 @@ from django.views import View
 from .models import Review
 from django.views.generic.base import TemplateView
 
+
 # Create your views here.
 
 
@@ -82,4 +83,14 @@ class ThankYouView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ThankYouView, self).get_context_data()
         context['message'] = "This works"  # construct the context which will be exposed to the template
+        return context
+
+
+class ReviewsListView(TemplateView):
+    template_name = "reviews/review_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ReviewsListView, self).get_context_data()
+        reviews = Review.objects.all()
+        context["reviews"] = reviews
         return context
