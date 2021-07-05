@@ -5,6 +5,7 @@ from .forms import ReviewForm
 from django.views import View
 from .models import Review
 from django.views.generic.base import TemplateView
+from django.views.generic import ListView
 
 
 # Create your views here.
@@ -100,6 +101,7 @@ class SingleReviewView(TemplateView):
     template_name = "reviews/single_review.html"
 
     def get_context_data(self, **kwargs):
+        # print(kwargs)  # Understand of use of kwargs here
         context = super(SingleReviewView, self).get_context_data(**kwargs)
         review_id = kwargs["id"]
         selected_review = Review.objects.get(pk=review_id)
