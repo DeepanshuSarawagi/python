@@ -106,6 +106,8 @@ class ReviewsListView(ListView):
     # with the actual Model which has data
     # Django will then render the data by the Model which we have pointed to and render it to the template
     # review_list.html
+    context_object_name = "reviews"  # This variable will hold the list of model data which will be rendered to the
+    # template
 
 
 class SingleReviewView(TemplateView):

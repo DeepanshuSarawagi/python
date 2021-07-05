@@ -7,7 +7,9 @@ All reviews!
 {% block content %}
     <ul class="reviewlist">
             {#  for review in reviews #}
-            {% for review in object_list %}
+            {#  for review in object_list  #}
+            {# We are using the reviews as context_object_name property defined in the views #}
+            {% for review in reviews %}
             <li>
                 {{ review.user_name }} (Rating: {{ review.rating }})
             </li>
