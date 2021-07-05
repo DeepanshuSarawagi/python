@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="{% static "profiles/styles.css" %}">
 </head>
 <body>
-    <form action="/profiles" method="POST" enctype="multipart/form-data">  <!-- enctype attribute is a special HTML
+    <form action="/profiles/" method="POST" enctype="multipart/form-data">  <!-- enctype attribute is a special HTML
     attribute, this tells the browser when form is submitted will contain a file. That will change how the request is
     sent to the server -->
-        <input type="file"/>
+        {% csrf_token %}
+        <input type="file" name="image"/>
         <button>Upload!</button>
     </form>
 </body>
