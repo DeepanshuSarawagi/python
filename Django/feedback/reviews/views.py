@@ -6,30 +6,45 @@ from django.views import View
 from .models import Review
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import FormView
 
 
 # Create your views here.
 
 
-class ReviewView(View):
+# class ReviewView(View):
+#
+#     def get(self, request):
+#         form = ReviewForm()
+#         return render(request, "reviews/review.html", context={
+#             "form": form
+#         })
+#
+#     def post(self, request):
+#         form = ReviewForm(request.POST)
+#         if form.is_valid():
+#             form.save()  # This will save the data to the Review Model db since we have connected the ModelForm with
+#             # Review model.
+#             redirect_path = reverse("thankyou")
+#             return HttpResponseRedirect(redirect_path)
+#         return render(request, "reviews/review.html", context={
+#             "form": form
+#         })
 
-    def get(self, request):
-        form = ReviewForm()
-        return render(request, "reviews/review.html", context={
-            "form": form
-        })
 
-    def post(self, request):
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            form.save()  # This will save the data to the Review Model db since we have connected the ModelForm with
-            # Review model.
-            redirect_path = reverse("thankyou")
-            return HttpResponseRedirect(redirect_path)
-        return render(request, "reviews/review.html", context={
-            "form": form
-        })
+class ReviewView(FormView):
+    template_name = "reviews/review.html"
+    form_class = ReviewForm  # We need to let Django know which Form class should be used for rendering the template
+    # and validating the data. Using FormView, will eliminate the use of  get() method
 
+    # Form submission is also automatically handled by the FormView i.e., POST method
+    success_url = "/thank-you"  # We need to define this parameter to let Django know to redirect when the form
+    # submission is successful
+
+    def form_valid(self, form):  # We also need to explicitly let Django know to save the data in database when the
+        # form submission is successful
+        form.save()
+        return super(ReviewView, self).form_valid(form)
 
 # def review(request):
 #     # if request.method == "POST":
@@ -138,5 +153,5 @@ class SingleReviewView(DetailView):
     model = Review  # Just like in the ListView we need to set the model property with the actual Model from which it
     # has to fetch the data. For fetching the single piece of data from the Model, we need to provide any context since
     # Django will load the data automatically. In the urls.py we need to identify the single piece of data using pk
-    # - primary key. Djanago will then automatically load the data using the pk from the Model and render it in the
+    # - primary key. Django will then automatically load the data using the pk from the Model and render it in the
     # template
