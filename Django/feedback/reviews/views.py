@@ -109,6 +109,13 @@ class ReviewsListView(ListView):
     context_object_name = "reviews"  # This variable will hold the list of model data which will be rendered to the
     # template
 
+    # By overriding below data we are controlling what data should be rendered to the template.
+    # Here we are returning data to the template by using the queryset() and filtering data where rating > 4
+    def get_queryset(self):
+        base_query = super(ReviewsListView, self).get_queryset()
+        data = base_query.filter(rating__gt=4)
+        return data
+
 
 class SingleReviewView(TemplateView):
     template_name = "reviews/single_review.html"
