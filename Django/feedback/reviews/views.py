@@ -5,7 +5,7 @@ from .forms import ReviewForm
 from django.views import View
 from .models import Review
 from django.views.generic.base import TemplateView
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 
 # Create your views here.
@@ -117,13 +117,26 @@ class ReviewsListView(ListView):
         return data
 
 
-class SingleReviewView(TemplateView):
-    template_name = "reviews/single_review.html"
+# class SingleReviewView(TemplateView):
+#     template_name = "reviews/single_review.html"
+#
+#     def get_context_data(self, **kwargs):
+#         # print(kwargs)  # Understand of use of kwargs here
+#         context = super(SingleReviewView, self).get_context_data(**kwargs)
+#         review_id = kwargs["id"]
+#         selected_review = Review.objects.get(pk=review_id)
+#         context["review"] = selected_review
+#         return context
 
-    def get_context_data(self, **kwargs):
-        # print(kwargs)  # Understand of use of kwargs here
-        context = super(SingleReviewView, self).get_context_data(**kwargs)
-        review_id = kwargs["id"]
-        selected_review = Review.objects.get(pk=review_id)
-        context["review"] = selected_review
-        return context
+
+# We have commented out above code to learn about DetailView. Whenever we want to return a template with a single piece
+# of data we can use the DetailView instead of generic Template View
+
+
+class SingleReviewView(DetailView):
+    template_name = "reviews/single_review.html"
+    model = Review  # Just like in the ListView we need to set the model property with the actual Model from which it
+    # has to fetch the data. For fetching the single piece of data from the Model, we need to provide any context since
+    # Django will load the data automatically. In the urls.py we need to identify the single piece of data using pk
+    # - primary key. Djanago will then automatically load the data using the pk from the Model and render it in the
+    # template
