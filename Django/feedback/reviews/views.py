@@ -87,14 +87,25 @@ class ThankYouView(TemplateView):
         return context
 
 
-class ReviewsListView(TemplateView):
+# class ReviewsListView(TemplateView):
+#     template_name = "reviews/review_list.html"
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(ReviewsListView, self).get_context_data(**kwargs)
+#         reviews = Review.objects.all()
+#         context["reviews"] = reviews
+#         return context
+
+
+# We have commented out above code because we are going to render the list of data using the ListView template
+
+class ReviewsListView(ListView):
     template_name = "reviews/review_list.html"
 
-    def get_context_data(self, **kwargs):
-        context = super(ReviewsListView, self).get_context_data(**kwargs)
-        reviews = Review.objects.all()
-        context["reviews"] = reviews
-        return context
+    model = Review  # Django will now fetch the list of data using the model. Hence, we are pointing the model variable
+    # with the actual Model which has data
+    # Django will then render the data by the Model which we have pointed to and render it to the template
+    # review_list.html
 
 
 class SingleReviewView(TemplateView):

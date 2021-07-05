@@ -6,7 +6,8 @@ All reviews!
 
 {% block content %}
     <ul class="reviewlist">
-        {% for review in reviews %}
+            {#  for review in reviews #}
+            {% for review in object_list %}
             <li>
                 {{ review.user_name }} (Rating: {{ review.rating }})
             </li>
