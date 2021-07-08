@@ -20,5 +20,10 @@ class CreateProfileView(View):
         })
 
     def post(self, request):
-        store_file(request.FILES["image"])
-        return HttpResponseRedirect("/profiles")
+        submitted_form = ProfileForm(request.POST, request.FILES)
+        if submitted_form.is_valid():
+            store_file(request.FILES["image"])
+            return HttpResponseRedirect("/profiles")
+        return render(request, "profiles/create_profile.html", context={
+            "form": submitted_form
+        })
