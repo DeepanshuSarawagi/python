@@ -13,7 +13,8 @@
     attribute, this tells the browser when form is submitted will contain a file. That will change how the request is
     sent to the server -->
         {% csrf_token %}
-        <input type="file" name="image"/>
+        <!-- <input type="file" name="image"/> -->
+        {{ form }}
         <button>Upload!</button>
     </form>
 </body>
