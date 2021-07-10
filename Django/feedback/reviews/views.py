@@ -160,7 +160,8 @@ class SingleReviewView(DetailView):
         context = super(SingleReviewView, self).get_context_data()
         loaded_review = self.object  # We are loading the review
         request = self.request  # we are getting the request here
-        favorite_id = request.session["favorite_review"]  # getting the session's data
+        # favorite_id = request.session["favorite_review"]  # getting the session's data
+        favorite_id = request.session.get("favorite_review")
         context["is_favorite"] = favorite_id == str(loaded_review.id)  # comparing the ID's and checking if this is
         # favorite review
         return context
