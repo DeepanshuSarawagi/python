@@ -155,3 +155,12 @@ class SingleReviewView(DetailView):
     # Django will load the data automatically. In the urls.py we need to identify the single piece of data using pk
     # - primary key. Django will then automatically load the data using the pk from the Model and render it in the
     # template
+
+
+class AddFavoriteView(View):
+    def post(self, request):
+        review_id = request.POST['review_id']
+        fav_review = Review.objects.get(pk=review_id)
+        request.session["favorite_review"] = fav_review  # request has a property called session. We are adding new
+        # data to this session by using a key and value of choice. hence we are using a key of favorite_review and
+        # storing fav_review as value in it.
