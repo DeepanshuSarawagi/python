@@ -122,6 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_ROOT = BASE_DIR / 'uploads'
+MEDIA_URL = '/user-media/'  # Django does not expose the project directories to the user in the browser. To serve the
+# user uploaded files in the browser, we need to add this setting which Django will construct to display the user
+# uploaded files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
