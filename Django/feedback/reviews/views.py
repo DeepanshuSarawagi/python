@@ -156,6 +156,15 @@ class SingleReviewView(DetailView):
     # - primary key. Django will then automatically load the data using the pk from the Model and render it in the
     # template
 
+    def get_context_data(self, **kwargs):
+        context = super(SingleReviewView, self).get_context_data()
+        loaded_review = self.object  # We are loading the review
+        request = self.request  # we are getting the request here
+        favorite_id = request.session["favorite_review"]  # getting the session's data
+        context["is_favorite"] = favorite_id == str(loaded_review.id)  # comparing the ID's and checking if this is
+        # favorite review
+        return context
+
 
 class AddFavoriteView(View):
 
@@ -168,5 +177,5 @@ class AddFavoriteView(View):
         # Now, this line of code will error out since we are saving the Review Object in the session data. And object
         # is not JSON serializable. Instead, we need to save data which either has to be a string or a dictionary.
         # Hence we will comment out this line of code and just save the review_id which is a string data.
-        request.session["favorite_sesison"] = review_id
+        request.session["favorite_review"] = review_id
         return HttpResponseRedirect("/reviews/" + review_id)
