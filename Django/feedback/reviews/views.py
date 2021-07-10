@@ -164,3 +164,4 @@ class AddFavoriteView(View):
         request.session["favorite_review"] = fav_review  # request has a property called session. We are adding new
         # data to this session by using a key and value of choice. hence we are using a key of favorite_review and
         # storing fav_review as value in it.
+        return HttpResponseRedirect("/reviews/" + review_id)
