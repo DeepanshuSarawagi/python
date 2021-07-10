@@ -158,10 +158,15 @@ class SingleReviewView(DetailView):
 
 
 class AddFavoriteView(View):
+
     def post(self, request):
         review_id = request.POST['review_id']
-        fav_review = Review.objects.get(pk=review_id)
-        request.session["favorite_review"] = fav_review  # request has a property called session. We are adding new
+        # fav_review = Review.objects.get(pk=review_id)
+        # request.session["favorite_review"] = fav_review  # request has a property called session. We are adding new
         # data to this session by using a key and value of choice. hence we are using a key of favorite_review and
         # storing fav_review as value in it.
+        # Now, this line of code will error out since we are saving the Review Object in the session data. And object
+        # is not JSON serializable. Instead, we need to save data which either has to be a string or a dictionary.
+        # Hence we will comment out this line of code and just save the review_id which is a string data.
+        request.session["favorite_sesison"] = review_id
         return HttpResponseRedirect("/reviews/" + review_id)
