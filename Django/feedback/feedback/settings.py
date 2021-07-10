@@ -130,3 +130,4 @@ MEDIA_URL = '/user-media/'  # Django does not expose the project directories to 
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SESSION_COOKIE_AGE = 1800  # Configuring session to be active for 30 minutes
