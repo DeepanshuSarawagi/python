@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from datetime import date
 from .models import Post
+from django.views.generic import ListView
 
 # posts = [
 #     {"slug": "hike-in-the-mountains",
@@ -80,11 +81,23 @@ def get_date(post):
     return post['date']
 
 
-def starting_page(request):
-    latest_posts = Post.objects.all().order_by("-date")[:3]  # We are sorting the Posts in descending order on date
-    return render(request, "blog/index.html", {
-        "posts": latest_posts
-    })
+# def starting_page(request):
+#     latest_posts = Post.objects.all().order_by("-date")[:3]  # We are sorting the Posts in descending order on date
+#     return render(request, "blog/index.html", {
+#         "posts": latest_posts
+#     })
+# Commented above code since we are converting the fn view to class based view
+
+
+class StartingPage(ListView):
+    template_name = "blog/index.html"
+    model = Post
+    ordering = ["-date"]
+    
+    def get_queryset(self):
+        queryset = super(StartingPage, self).get_queryset()
+        data = queryset[:3]
+        return data
 
 
 def all_posts(request):
