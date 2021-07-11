@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from datetime import date
 from .models import Post
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 # posts = [
 #     {"slug": "hike-in-the-mountains",
@@ -116,12 +116,23 @@ class AllPostsView(ListView):
     context_object_name = "posts"
 
 
-def post_detail(request, slug):
-    # posts = Post.objects.all()
-    # identified_post = next(post for post in posts if post['slug'] == slug)
+# def post_detail(request, slug):
+#     # posts = Post.objects.all()
+#     # identified_post = next(post for post in posts if post['slug'] == slug)
+#
+#     identified_post = get_object_or_404(Post, slug=slug)
+#     return render(request, "blog/post-detail.html", context={
+#         "post": identified_post,
+#         "post_tags": identified_post.tags.all()
+#     })
+# Commented above code to convert the post_detail view to class based view
 
-    identified_post = get_object_or_404(Post, slug=slug)
-    return render(request, "blog/post-detail.html", context={
-        "post": identified_post,
-        "post_tags": identified_post.tags.all()
-    })
+
+class SinglePostView(DetailView):
+    template_name = "blog/post-detail.html"
+    model = Post
+
+    def get_context_data(self, **kwargs):
+        context = super(SinglePostView, self).get_context_data()
+        context["post_tags"] = self.object.tags.all()
+        return context
