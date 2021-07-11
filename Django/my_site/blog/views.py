@@ -101,11 +101,19 @@ class StartingPage(ListView):
         return data
 
 
-def all_posts(request):
-    posts = Post.objects.all()
-    return render(request, "blog/posts.html", context={
-        "posts": posts
-    })
+# def all_posts(request):
+#     posts = Post.objects.all()
+#     return render(request, "blog/posts.html", context={
+#         "posts": posts
+#     })
+# Commented above code since we are converting all_posts view to class based view
+
+
+class AllPostsView(ListView):
+    template_name = "blog/posts.html"
+    model = Post
+    ordering = ["-date"]
+    context_object_name = "posts"
 
 
 def post_detail(request, slug):
