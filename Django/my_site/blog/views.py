@@ -93,6 +93,7 @@ class StartingPage(ListView):
     template_name = "blog/index.html"
     model = Post
     ordering = ["-date"]
+    context_object_name = "posts"  # By default the context name is "object_list". "We are changing it to 'posts'"
     
     def get_queryset(self):
         queryset = super(StartingPage, self).get_queryset()
