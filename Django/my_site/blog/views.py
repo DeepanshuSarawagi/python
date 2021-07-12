@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from datetime import date
 from .models import Post
 from django.views.generic import ListView, DetailView
+from .forms import CommentForm
 
 # posts = [
 #     {"slug": "hike-in-the-mountains",
@@ -135,4 +136,5 @@ class SinglePostView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(SinglePostView, self).get_context_data()
         context["post_tags"] = self.object.tags.all()
+        context["comment_form"] = CommentForm()
         return context
