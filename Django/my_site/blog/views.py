@@ -3,6 +3,8 @@ from datetime import date
 from .models import Post
 from django.views.generic import ListView, DetailView
 from django.views import View
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from .forms import CommentForm
 
 # posts = [
@@ -151,3 +153,17 @@ class SinglePostView(View):
             "comment_form": CommentForm()
         }
         return render(request, "blog/post-detail.html", context=context)
+
+    def post(self, request, slug):
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment_form.save()
+            return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
+
+        post = Post.objects.get(slug=slug)
+        context = {
+            "post": post,
+            "post_tags": post.tags.all(),
+            "comment_form": CommentForm()
+        }
+        return render(request, "blog/posts.html", context=context)
