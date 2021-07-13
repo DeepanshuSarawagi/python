@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from datetime import date
 from .models import Post
 from django.views.generic import ListView, DetailView
+from django.views import View
 from .forms import CommentForm
 
 # posts = [
@@ -129,12 +130,24 @@ class AllPostsView(ListView):
 # Commented above code to convert the post_detail view to class based view
 
 
-class SinglePostView(DetailView):
-    template_name = "blog/post-detail.html"
-    model = Post
+# class SinglePostView(DetailView):
+#     template_name = "blog/post-detail.html"
+#     model = Post
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(SinglePostView, self).get_context_data()
+#         context["post_tags"] = self.object.tags.all()
+#         context["comment_form"] = CommentForm()
+#         return context
 
-    def get_context_data(self, **kwargs):
-        context = super(SinglePostView, self).get_context_data()
-        context["post_tags"] = self.object.tags.all()
-        context["comment_form"] = CommentForm()
-        return context
+
+class SinglePostView(View):
+
+    def get(self, request, slug):
+        post = Post.objects.get(slug=slug)
+        context = {
+            "post": post,
+            "post_tags": post.tags.all(),
+            "comment_form": CommentForm()
+        }
+        return render(request, "blog/post-detail.html", context=context)
