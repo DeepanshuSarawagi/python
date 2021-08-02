@@ -149,8 +149,8 @@ class SinglePostView(View):
         post = Post.objects.get(slug=slug)
         context = {
             "post": post,
-            "post_tags": post.tags.all(),
-            "comment_form": CommentForm()
+            "post_tags": post.tags.all(),  # getting all post tags
+            "comment_form": CommentForm()  # creating content form
         }
         return render(request, "blog/post-detail.html", context=context)
 
