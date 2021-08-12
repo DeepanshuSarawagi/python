@@ -50,3 +50,6 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """Return string representation of our user"""
         return self.email
+
+    class Meta:
+        verbose_name_plural = "User Profiles"
