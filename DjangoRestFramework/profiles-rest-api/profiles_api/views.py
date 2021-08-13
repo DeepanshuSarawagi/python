@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from profiles_api import serializers
-
+from rest_framework import viewsets
 
 class HelloAPIView(APIView):
     """Test API View"""
@@ -57,4 +57,20 @@ class HelloAPIView(APIView):
 
         return Response({
             "method": "DELETE"
+        })
+
+
+class HelloViewSet(viewsets.ViewSet):
+    """Test API ViewSet"""
+
+    def list(self, request):
+        """Return a hello message"""
+        a_viewset = [
+            'Uses actions (list, create, retrieve, update, partial_update)',
+            'Automatically maps to the URLs using Routers',
+            'Provides more functionality with less code'
+        ]
+        return Response({
+            "message": "Hello",
+            'a_viewset': a_viewset
         })
