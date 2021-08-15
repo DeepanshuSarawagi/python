@@ -34,3 +34,14 @@ class UserProfileSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+
+    # This method will ensure that when a user decides to update the password, it is saved as cleartext and we will be
+    # unable to login. In order to override the default behaviour of DRF, we need to hash the user password when it is
+    # updated
+    def update(self, instance, validated_data):
+        """ Handle updating user account"""
+        if 'password' in validated_data:
+            password = validated_data.pop('password')
+            instance.set_password(password)
+        
+        return super(UserProfileSerializer, self).update(instance, validated_data)
