@@ -15,7 +15,7 @@ class UserProfileManager(BaseUserManager):
             raise ValueError("Users must have an email address")
         email = self.normalize_email(email)
         user = self.model(name=name, email=email)
-        user.set_password(password)
+        user.set_password(password)  # This hashes the password instead of saving it as plain text in the DB
         user.save(using=self._db)
         return user
 
