@@ -89,3 +89,18 @@ class HelloViewSet(viewsets.ViewSet):
         else:
             return Response(serializer.errors, status=status.HTTP_408_REQUEST_TIMEOUT)
 
+    def retrieve(self, request, pk=None):
+        """Handle getting objects using its ID"""
+        return Response({"http_method": "GET"})
+
+    def update(self, request, pk=None):
+        """Handle updating an object using its ID"""
+        return Response({
+            "http_method": "PUT"
+        })
+
+    def partial_update(self, request, pk=None):
+        """Handle updating part of an object using its ID"""
+        return Response({
+            "http_method": "PATCH"
+        })
