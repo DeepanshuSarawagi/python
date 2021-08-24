@@ -10,6 +10,7 @@ router.register("profile-viewset", views.UserProfileViewSet)  # If we define the
 
 urlpatterns = [
     path('hello-view', views.HelloAPIView.as_view()),
+    path('login/', views.UserLoginApiView.as_view()),
     path("", include(router.urls))  # As we have registered the viewsets with the router, it creates a list of URLs and
     # we need to include them in the path.
 ]
