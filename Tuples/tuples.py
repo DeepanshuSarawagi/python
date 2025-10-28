@@ -1,4 +1,4 @@
-# In this chapter we are learning about typles in Python.
+# In this chapter we are learning about tuples in Python.
 
 """Usually tuples consists of number of values separated by comma. It is a best practice to enclose a tuple in
 parenthesis. Refer to below example to understand about tuples."""
