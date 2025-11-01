@@ -15,3 +15,6 @@ print(greeting + ' ' + name)
 
 name1 = input("Please enter your name: ")
 print(greeting + ' ' + name1)
+
+import math
+print(math.pi)
