@@ -27,3 +27,13 @@ print("C:\\Users\\deepanshusarawagi\\notes.txt")
 # We can create a raw string by adding the letter "r" in front of the string.
 print(r"C:\Users\deepanshusarawagi\notes.txt")
 
+"""As we can see following string despite being split, however, it will print on same line since each string has been 
+escaped with a back slash."""
+
+anotherSplitString = """This string has been \
+split over \
+several \
+times.
+"""
+print(anotherSplitString)
+
