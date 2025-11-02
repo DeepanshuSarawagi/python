@@ -6,3 +6,4 @@ print(parrot[3])
 print(parrot[-1])  # Will print the last character of the string
 print(parrot[-14]) # Will print the first character of the string
 print(parrot[:9:2]) # Stepper, it will skip every 1 character until index 9
+print(parrot[::2]) # Skip every consecutive char from the string
