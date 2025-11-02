@@ -17,3 +17,10 @@ values = "".join(char if char not in separators else " " for char in numbers).sp
 print(values)
 numbers_list = [int(val) for val in values]
 print(numbers_list)
+
+letters = "abcdefghijklmnopqrstuvwxyz"
+backwards = letters[25::-1]
+print(backwards)
+print(letters[16:13:-1])
+print(letters[4::-1])
+print(letters[-1:-9:-1])
