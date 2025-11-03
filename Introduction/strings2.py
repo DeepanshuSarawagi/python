@@ -24,3 +24,7 @@ print(backwards)
 print(letters[16:13:-1])
 print(letters[4::-1])
 print(letters[-1:-9:-1])
+
+# Common python slicing idioms
+print(letters[-4:])
+print(letters[-1])
