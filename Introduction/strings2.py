@@ -28,3 +28,13 @@ print(letters[-1:-9:-1])
 # Common python slicing idioms
 print(letters[-4:])
 print(letters[-1])
+
+age = 25
+# print("My age is " + age + "years.") # This wont works since we cannot concatenate string with int.
+# To overcome this issue, we will use f-strings.
+print(f"My age is {age} years old.")
+# We can also print the float value like this
+print(f"Value of Pi is approximately {22 / 7:12.51f}")
+# We can also use precision along with variablized value.
+pi = 22 / 7
+print(f"Value of Pi is approximately {pi:12.51f}")
