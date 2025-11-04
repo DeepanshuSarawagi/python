@@ -16,3 +16,8 @@ while guess != answer:
         print("You guessed the number")
     else:
         print("Keep guessing the number")
+
+if age < 16 or age > 65:
+    print("enjoy your free time")
+else:
+    print("Have a good day at work!")
