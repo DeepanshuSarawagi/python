@@ -7,7 +7,17 @@ guess = int(input())
 # print(guess)
 if guess < answer:
     print("Your guess is too low")
+    guess = int(input("Please guess higher: "))
+    if guess == answer:
+        print("Well done, you guessed correctly!")
+    else:
+        print("Sorry! You have not guessed correctly")
 elif guess > answer:
     print("Your guess is too high")
+    guess = int(input("Please guess lower: "))
+    if guess == answer:
+        print("Well done, you guessed correctly!")
+    else:
+        print("Sorry! You have not guessed correctly")
 else:
     print("You guessed correctly")
