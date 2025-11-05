@@ -2,8 +2,9 @@ parrot = "Norwegian Blue"
 
 for char in parrot:
     print(char)
-
-numbers = input("Please enter a series of numbers using any separators ';,.:': ")
+numbers = "123,456,789"
+for char in numbers:
+    print(char)
 print(numbers)
 separator = ""
 
@@ -23,9 +24,30 @@ shopping_list = ["milk", "pasta", "cottage cheese", "spam", "bread", "rice"]
 #     if item != "spam":
 #         print("Buy " + item)
 
-# using continue
+# using continue statement
 
 for item in shopping_list:
     if item == "spam":
         continue
     print("Buy " + item)
+
+print()
+
+# Using break statement
+for item in shopping_list:
+    if item == "spam":
+        break
+    print("Buy " + item)
+
+# Searching exercise
+
+print()
+item_to_find = "spam"
+found_at = None
+
+for index in range(len(shopping_list)):
+    if shopping_list[index] == item_to_find:
+        found_at = index
+        break
+
+print("Found {} at index {}".format(item_to_find, found_at))
