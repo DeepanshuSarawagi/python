@@ -17,3 +17,15 @@ values = "".join(char if char not in separator else " " for char in numbers).spl
 
 int_values = sum([int(val) for val in values])
 print(int_values)
+
+shopping_list = ["milk", "pasta", "cottage cheese", "spam", "bread", "rice"]
+# for item in shopping_list:
+#     if item != "spam":
+#         print("Buy " + item)
+
+# using continue
+
+for item in shopping_list:
+    if item == "spam":
+        continue
+    print("Buy " + item)
