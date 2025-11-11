@@ -1,5 +1,5 @@
 low = 1
-high = 1000
+high = 100000
 print("Please enter a number between {} and {}: ".format(low, high))
 input("Press Enter to continue...")
 guesses = 1
