@@ -1,10 +1,10 @@
 low = 1
-high = 100000
+high = 1000
 print("Please enter a number between {} and {}: ".format(low, high))
 input("Press Enter to continue...")
 guesses = 1
 
-while True:
+while low != high:
     print("\tGuessing in the range of {} to {}".format(low, high))
     guess = low + (high - low) // 2
     high_low = input("My guess is {}. Should I guess higher or lower? "
@@ -21,6 +21,9 @@ while True:
     else:
         print("Please enter h, l or c.")
     guesses += 1
+else:
+    print("You thought of the number {}".format(low))
+    print("I got it in {} guesses".format(guesses))
 
 number = 5
 multiplier = 8
