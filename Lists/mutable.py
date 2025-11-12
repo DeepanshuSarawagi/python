@@ -35,3 +35,25 @@ print(id(c))
 print(id(d))
 print(id(e))
 print(id(f))
+
+"""Here is some more code to show that the list is mutable. 
+Since variables are pointing to same object, they are just references to the same object, any change made to the object will be reflected in all variables.
+"""
+
+print("Adding butter")
+b.append("butter")
+
+print("Adding cream")
+a.append(
+    'cream'
+)
+
+print()
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+print(f)
+print(shopping_list)
+print(another_list)
