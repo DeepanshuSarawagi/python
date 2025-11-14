@@ -7,7 +7,7 @@ while current_choice != "0":
     if current_choice in valid_choices:
         print("Adding {}".format(current_choice))
         computer_parts.append(available_parts[int(current_choice) - 1])
-
+        print("Your list now contains: {}".format(computer_parts))
     else:
         print("Please add options from the list below:")
         """enumerate function adds a counter to an iterable and returns it"""

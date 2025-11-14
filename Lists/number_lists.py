@@ -17,3 +17,11 @@ print()
 
 print("mississippi".count("s"))
 print("mississippi".count("iss"))
+
+even.extend(odd)
+print(even)
+another_even = even
+print(another_even)
+print()
+even.sort(reverse=True)
+print(even)
