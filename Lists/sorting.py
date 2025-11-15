@@ -17,6 +17,5 @@ print(numbers)
 a variable assigned to it since it doesn't return anything, whereas, the sorted function returns a list and hence a 
 variable needs to be assigned to it."""
 
-missing_letter = sorted("The quick brown fox jumps over the lazy dog")
+missing_letter = sorted("The quick brown fox jumps over the lazy dog", key=str.casefold)
 print(missing_letter)
-
