@@ -38,10 +38,10 @@ def sanitise_2(data):
             del data[top_index - index]
 
 
-def sanitise_3(data):
-    for index in range(len(data) - 1, -1, -1):
-        if data[index] < min_valid or data[index] > max_valid:
-            del data[index]
+# def sanitise_3(data):
+#     for index in range(len(data) - 1, -1, -1):
+#         if data[index] < min_valid or data[index] > max_valid:
+#             del data[index]
 
 
 if __name__ == "__main__":
@@ -50,12 +50,12 @@ if __name__ == "__main__":
                       setup="from __main__ import sanitise_1,"
                             "data_list1",
                       number=1)
-    print("{:15.15f}".format(x))
+    print("{:15.25f}".format(x))
     y = timeit.timeit("sanitise_2(data_list2)",
                       setup="from __main__ import sanitise_2,"
                             "data_list2",
                       number=1)
-    print("{:15.15f}".format(y))
+    print("{:15.25f}".format(y))
     # z = timeit.timeit("sanitise_3(data_list3)",
     #                   setup="from __main__ import sanitise_3,"
     #                         "data_list3",
