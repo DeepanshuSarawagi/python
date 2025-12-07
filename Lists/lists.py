@@ -62,3 +62,12 @@ for meal in menu:
     if "spam" not in meal:
         for ingredients in meal:
             print(ingredients)
+
+numbers = "9,223,289;865 965:437.116"
+separators = numbers[1::4]
+print(separators)
+values = "".join(char if char not in separators else " " for char in numbers).split()
+print(values)
+
+int_list = [int(value) for value in values]
+print(int_list)
