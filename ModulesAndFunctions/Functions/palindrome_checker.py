@@ -14,4 +14,8 @@ def is_palindrome(string):
     return string.lower() == backwards.lower()
 
 if __name__ == "__main__":
-    print(is_palindrome("malayalam"))
+    word = input("Please enter a word to check: ")
+    if is_palindrome(word):
+        print(f'"{word}" is a palindrome.')
+    else:
+        print(f'"{word}" is not a palindrome.')
