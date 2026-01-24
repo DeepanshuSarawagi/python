@@ -1,4 +1,4 @@
-def is_palindrome(string):
+def is_palindrome(string: str) -> bool:
     """
     Check if the given string is a palindrome.
 
@@ -13,7 +13,7 @@ def is_palindrome(string):
     backwards = string[::-1]
     return string.lower() == backwards.lower()
 
-def palindrome_sentence(sentence):
+def palindrome_sentence(sentence: str) -> bool:
     """
     Check if the given sentence is a palindrome, ignoring spaces and punctuation.
 
