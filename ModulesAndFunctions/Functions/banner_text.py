@@ -18,6 +18,8 @@ def banner_text(text: str, width: int = 80) -> None:
         output_string = "**{}**".format(text.center(width - 4))
         print(output_string)
 
+print(banner_text.__doc__)
+
 banner_text("*")
 banner_text("Always look on the bright side of life...")
 banner_text("Don't panic!")
