@@ -7,10 +7,11 @@ def banner_text(text: str = " ", width: int = 80) -> None:
 
     Returns:
         str: A string representing the banner with the text centered.
+    :raises ValueError: If the length of the text is too long to fit in the banner.
     """
     if len(text) >= width - 4:
         print("EEK!!")
-        print("The text is too long to fit in the specified width.")
+        raise ValueError("String '{}' is larger than the specified width '{}'".format(text, width))
 
     if text == "*":
         print("*" * width)
