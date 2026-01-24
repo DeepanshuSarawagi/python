@@ -1,4 +1,4 @@
-def fibonacci_number(n):
+def fibonacci_number(n: int) -> int:
     """
     This function returns the `n` th Fibonacci number for the positive `n`.
     :param n: The number to return.
