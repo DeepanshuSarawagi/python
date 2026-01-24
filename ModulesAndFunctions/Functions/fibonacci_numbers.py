@@ -1,6 +1,6 @@
 def fibonacci_number(n):
     """
-    This function returns the `n`th Fibonacci number for the positive `n`.
+    This function returns the `n` th Fibonacci number for the positive `n`.
     :param n: The number to return.
     """
 
