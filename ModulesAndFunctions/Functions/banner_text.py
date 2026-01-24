@@ -1,4 +1,4 @@
-def banner_text(text: str, width: int = 80) -> None:
+def banner_text(text: str = " ", width: int = 80) -> None:
     """Generate a banner with the given text centered within a specified width.
 
     Args:
