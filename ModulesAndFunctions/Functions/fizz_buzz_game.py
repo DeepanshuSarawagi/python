@@ -16,5 +16,18 @@ def fizz_buzz_game(number):
     else:
         return str(number)
 
-for i in range(1, 101):
-    print(fizz_buzz_game(i))
+input("Play Fizz Buzz game? Press enter to continue...")
+print()
+
+next_number = 0
+while next_number < 99:
+    next_number += 1
+    print("Computer response is {}: ".format(fizz_buzz_game(next_number)))
+    next_number += 1
+    correct_answer = fizz_buzz_game(next_number)
+    players_answer = input("Your answer: ")
+    if players_answer != correct_answer:
+        print("You lose. The correct answer was {}".format(correct_answer))
+        break
+else:
+    print("Well done! You reached the {}".format(next_number))
