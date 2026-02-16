@@ -9,3 +9,4 @@ def test_star(*args):
         print(x)
 
 test_star(0,1,2,3,4,5,)
+test_star()
